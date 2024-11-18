@@ -1,9 +1,6 @@
 - name: Home
   link: /
-  url: /
 - name: Packages
-  link: /packages/
-  url: /packages.html
+  link: /packages.html
 - name: About
-  link: /about/
-  url: /about.html
+  link: /about.html
