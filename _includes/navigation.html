@@ -10,7 +10,7 @@
       <ul class="nav mr-auto">
         {% for item in site.data.navigation %}
           <li class="nav-item px-1">
-            <a class="btn btn-secondary nav-link {% if page.url == item.url %} active {% endif %} fs-5" href="{{ item.link }}" {% if page.url == item.url %} aria-current="page" {% endif %}> {{ item.name }} </a>
+            <a class="btn btn-secondary nav-link {% if page.url == item.link %} active {% endif %} fs-5" href="{{ item.link }}" {% if page.url == item.link %} aria-current="page" {% endif %}> {{ item.name }} </a>
           </li>
         {% endfor %}
       </ul>
