@@ -1,0 +1,20 @@
+<nav class="navbar fixed-top navbar-expand-lg mb-5 bg-success" data-bs-theme = "dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="/assets/images/logo.svg" alt="Bootstrap" width="140" height="60">
+    </a>
+    <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+      <ul class="nav mr-auto">
+        {% for item in site.data.navigation %}
+          <li class="nav-item px-1">
+            <a class="btn btn-secondary nav-link {% if page.url == item.url %} active {% endif %} fs-5" href="{{ item.link }}" {% if page.url == item.url %} aria-current="page" {% endif %}> {{ item.name }} </a>
+          </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+  </div>
+</nav>
