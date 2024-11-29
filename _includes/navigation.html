@@ -8,13 +8,24 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
       <ul class="nav mr-auto">
-        {% for item in site.data.navigation %}
           <li class="nav-item px-1">
-            <a class="btn btn-secondary nav-link {% if page.url == item.link %} active {% endif %} fs-5" href="{{ item.link }}" {% if page.url == item.link %} aria-current="page" {% endif %}> {{ item.name }} </a>
+            <a class="nav-link fs-5" href="/"> Home </a>
           </li>
-        {% endfor %}
-      </ul>
 
+          <li class="nav-item px-1">
+            <a class="nav-link fs-5" href="/packages/"> Packages </a>
+          </li>
+
+          <li class="nav-item dropdown px-1">
+            <a class="nav-link fs-5 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> About </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/about/faqs/">FAQ</a></li>
+              <li><a class="dropdown-item" href="/about/brands/">Brands</a></li>
+              <li><a class="dropdown-item" href="/about/contact/">Contact</a></li>
+            </ul>
+          </li>
+
+      </ul>
     </div>
   </div>
 </nav>

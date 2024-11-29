@@ -5,100 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title> Home </title>
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
-    <link href="/assets/css/styles.css" rel="stylesheet">
-  
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-
-    </style>
-  
+    <link href="/assets/css/styles.css" rel="stylesheet">  
     <link href="/assets/css/carousel.css" rel="stylesheet">
   </head>
   <body class ="bg-info">
     <!-- Header with Logo and Navigation -->
-
-
-     <header> 
-      
-     
-    <nav class="navbar fixed-top navbar-expand-lg mb-5 bg-success" data-bs-theme = "dark">
+    <header> 
+      <nav class="navbar fixed-top navbar-expand-lg mb-5 bg-success" data-bs-theme = "dark">
   <div class="container">
     <a class="navbar-brand" href="/">
       <img src="/assets/images/logo.svg" alt="Bootstrap" width="60" height="60">
@@ -108,36 +21,37 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
       <ul class="nav mr-auto">
-        
           <li class="nav-item px-1">
-            <a class="btn btn-secondary nav-link  active  fs-5" href="/"  aria-current="page" > Home </a>
+            <a class="nav-link fs-5" href="/"> Home </a>
           </li>
-        
-          <li class="nav-item px-1">
-            <a class="btn btn-secondary nav-link  fs-5" href="/packages/" > Packages </a>
-          </li>
-        
-          <li class="nav-item px-1">
-            <a class="btn btn-secondary nav-link  fs-5" href="/about/" > About </a>
-          </li>
-        
-      </ul>
 
+          <li class="nav-item px-1">
+            <a class="nav-link fs-5" href="/packages/"> Packages </a>
+          </li>
+
+          <li class="nav-item dropdown px-1">
+            <a class="nav-link fs-5 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> About </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/about/faqs/">FAQ</a></li>
+              <li><a class="dropdown-item" href="/about/brands/">Brands</a></li>
+              <li><a class="dropdown-item" href="/about/contact/">Contact</a></li>
+            </ul>
+          </li>
+
+      </ul>
     </div>
   </div>
 </nav>
 
-  
-  </header>
-
+    </header>
 
     <!-- Main Content -->
-     <main> 
+    <main> 
       <div class="container mt-5">
-    <div class="container py-5 mt-5">
+        <div class="container py-5 mt-5">
   <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
       <img src="/assets/images/logo.svg" alt="Bootstrap" width="200" height="200">
-      <h1 class="display-3 fw-bold text-body-primary">VANS Professional Audio Rentals</h1>
+      <h1 class="display-3 fw-bold text-body-primary">Professional Audio Rentals</h1>
       <p class="fs-3 text-body-secondary">
         Affordable, professional quality audio for your events. 
       </p>
@@ -199,99 +113,96 @@
 
 <div class="container marketing mt-5">
 
-<!--<hr class="featurette-divider">-->
+  <!--<hr class="featurette-divider">-->
 
-<div class="row featurette py-5">
-  <div class="col-md-7">
-    <h2 class="featurette-heading fw-normal lh-1">Affordability <span class="text-body-secondary">is key. </span></h2>
-    <p class="lead">We offer clear, upfront pricing so you know exactly what you’re paying for. Our rental equipment is priced per day (24-hour period), ensuring transparency and value. We believe that small businesses and community organizers deserve access to high-quality professional audio for their events at affordable rates.</p>
+  <div class="row featurette py-5">
+    <div class="col-md-7">
+      <h2 class="featurette-heading fw-normal lh-1">Affordability <span class="text-body-secondary">is key. </span></h2>
+      <p class="lead">We offer clear, upfront pricing so you know exactly what you’re paying for. Our rental equipment is priced per day (24-hour period), ensuring transparency and value. We believe that small businesses and community organizers deserve access to high-quality professional audio for their events at affordable rates.</p>
+    </div>
+    <div class="col-md-5">
+      <img class = "featurette-image img-fluid mx-auto" preserveAspectRatio="xMidYMid slice" focusable="false" src="/assets/images/home1.jpg" width="500" height="500">
+    </div>
   </div>
-  <div class="col-md-5">
-    <img class = "featurette-image img-fluid mx-auto" preserveAspectRatio="xMidYMid slice" focusable="false" src="/assets/images/home1.jpg" width="500" height="500">
-  </div>
-</div>
 
-<hr class="featurette-divider">
+  <hr class="featurette-divider">
 
-<div class="row featurette py-5">
-  <div class="col-md-7 order-md-2">
-    <h2 class="featurette-heading fw-normal lh-1">Expertise <span class="text-body-secondary">is our strength. </span></h2>
-    <p class="lead">We specialize in selecting and packaging professional audio equipment tailored to specific needs. Whether you're organizing a party, wedding, or corporate meeting, we have the perfect solution to ensure your event runs seamlessly.</p>
+  <div class="row featurette py-5">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading fw-normal lh-1">Expertise <span class="text-body-secondary">is our strength. </span></h2>
+      <p class="lead">We specialize in selecting and packaging professional audio equipment tailored to specific needs. Whether you're organizing a party, wedding, or corporate meeting, we have the perfect solution to ensure your event runs seamlessly.</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class = "featurette-image img-fluid mx-auto" preserveAspectRatio="xMidYMid slice" focusable="false"  src="/assets/images/home2.jpg" width="500" height="500">
+    </div>
   </div>
-  <div class="col-md-5 order-md-1">
-    <img class = "featurette-image img-fluid mx-auto" preserveAspectRatio="xMidYMid slice" focusable="false"  src="/assets/images/home2.jpg" width="500" height="500">
-  </div>
-</div>
 
-<hr class="featurette-divider">
+  <hr class="featurette-divider">
 
-<div class="row featurette py-5">
-  <div class="col-md-7">
-    <h2 class="featurette-heading fw-normal lh-1">Quality <span class="text-body-secondary">and reliability. </span></h2>
-    <p class="lead">Quality and reliability are our priorities. We carefully select top-tier equipment brands known for their performance and dependability, ensuring they won’t let you down. Our focus on quality, reliability, and exceptional sound guarantees a rental experience that exceeds expectations.</p>
+  <div class="row featurette py-5">
+    <div class="col-md-7">
+      <h2 class="featurette-heading fw-normal lh-1">Quality <span class="text-body-secondary">and reliability. </span></h2>
+      <p class="lead">Quality and reliability are our priorities. We carefully select top-tier equipment brands known for their performance and dependability, ensuring they won’t let you down. Our focus on quality, reliability, and exceptional sound guarantees a rental experience that exceeds expectations.</p>
+    </div>
+    <div class="col-md-5">
+      <img class = "featurette-image img-fluid mx-auto" preserveAspectRatio="xMidYMid slice" focusable="false" src="/assets/images/home3.jpg" width="500" height="500">
+    </div>
   </div>
-  <div class="col-md-5">
-    <img class = "featurette-image img-fluid mx-auto" preserveAspectRatio="xMidYMid slice" focusable="false" src="/assets/images/home3.jpg" width="500" height="500">
-  </div>
-</div>
 
-<!--<hr class="featurette-divider">-->
+  <!--<hr class="featurette-divider">-->
 
 </div><!-- /.container -->
 
 <!-- /END THE FEATURETTES -->
-  </div>
-</main>
+      </div>
+    </main>
+
     <!-- Footer -->
     <!--<div class="b-example-divider"></div>-->
+
 <div class="container">
-    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-      <div class="col mb-3">
-        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-            <img src="/assets/images/logo.svg" alt="Bootstrap" width="60" height="60">
-        </a>
-        <p class="text-body-info">&copy; 2024 VANS Professional Audio Rentals</p>
-      </div>
-  
-      <div class="col mb-3">
-  
-      </div>
-  
-      <div class="col mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-        </ul>
-      </div>
-  
-      <div class="col mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-        </ul>
-      </div>
-  
-      <div class="col mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-        </ul>
-      </div>
-    </footer>
-  </div>
- 
+  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+    <div class="col mb-3">
+      <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+          <img src="/assets/images/logo.svg" alt="Bootstrap" width="60" height="60">
+      </a>
+      <p class="text-body-info">&copy; 2024 VANS Professional Audio Rentals</p>
+    </div>
+
+    <div class="col mb-3">
+
+    </div>
+
+
+    <div class="col mb-3">
+
+
+    </div>
+
+      
+    <div class="col mb-3">
+      <h5>Packages</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="/packages/package1/" class="nav-link p-0 text-body-secondary">Package 1</a></li>
+        <li class="nav-item mb-2"><a href="/packages/package2/" class="nav-link p-0 text-body-secondary">Package 2</a></li>
+        <li class="nav-item mb-2"><a href="/packages/package3/" class="nav-link p-0 text-body-secondary">Package 3</a></li>
+        <li class="nav-item mb-2"><a href="/packages/package4/" class="nav-link p-0 text-body-secondary">Package 4</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+      <h5>Navigation</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-body-secondary">Home</a></li>
+        <li class="nav-item mb-2"><a href="/packages/" class="nav-link p-0 text-body-secondary">Packages</a></li>
+        <li class="nav-item mb-2"><a href="/about/faqs/" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="/about/brands/" class="nav-link p-0 text-body-secondary">Brands</a></li>
+        <li class="nav-item mb-2"><a href="/about/contact/" class="nav-link p-0 text-body-secondary">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
 
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
   </body>
