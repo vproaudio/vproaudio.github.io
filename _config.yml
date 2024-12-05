@@ -1,0 +1,16 @@
+# Site Settings
+title: VANS Pro Audio Rentals
+description: Affordable professional quality audio for your events.
+url: "https://www.vproaudio.rentals"
+baseurl: "/"
+author: "Vans"
+email: "bookings@vproaudio.rentals"
+
+plugins:
+  - jekyll-seo-tag
+
+seo:
+  title: "VANS Pro Audio Rentals"
+  description: "Affordable professional quality audio for your events."
+  url: "https://www.vproaudio.rentals"
+  image: "/assets/images/home1.jpg"
