@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: faq
 title: About - FAQs
 permalink: /about/faqs/
 ---
@@ -12,15 +12,17 @@ permalink: /about/faqs/
 </div>
 
 
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-How do I make a reservation?
-</p>
-<p class="fs-5 text-body-secondary">
-To rent equipment, simply contact us via email (<strong>bookings@vproaudio.rentals</strong>) with the following details: event dates, required equipment, delivery or pick-up preferences, and event location. 
-If you'd like a call back, please include your phone number.
-</p>
+{% for faq in site.faqs %}
+    <p class="fs-5 fw-bold mt-5 text-body-secondary">
+        {{faq.question}}
+    </p>
+    <p class="fs-5 text-body-secondary">
+        {{faq.answer}}
+    </p>
+{% endfor %}
 
 
+<!--
 <p class="fs-5 fw-bold mt-5 text-body-secondary">
 How far in advance should I book the equipment?
 </p>
@@ -44,7 +46,7 @@ How do I pick up and return the equipment?
 <p class="fs-5 text-body-secondary">
 You can pick up the equipment from our storage, with details provided upon confirmation. For returns, please drop off the equipment at our storage location by the agreed return date. 
 </p>
-
+-->
 
 <!--
 <p class="fs-5 fw-bold mt-5 text-body-secondary">
@@ -60,6 +62,8 @@ You can pick up the equipment from our storage, with details provided upon confi
     Yes, we offer discounts for multi day rentals. Contact us today to find out. 
 </p>
 -->
+
+<!--
 <p class="fs-5 fw-bold mt-5 text-body-secondary">
 What is included in the rental?
 </p>
@@ -109,5 +113,5 @@ Do you offer package deals or discounts?
 <p class="fs-5 text-body-secondary">
 Yes, we offer package deals for events requiring multiple items or long-term rentals. Discounts may be available based on the rental duration, type of event, and specific equipment. Contact us for a custom quote.
 </p>
-
+-->
 

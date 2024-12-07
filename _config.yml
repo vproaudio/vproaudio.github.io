@@ -6,6 +6,9 @@ baseurl: "/"
 author: "Vans"
 email: "bookings@vproaudio.rentals"
 
+year: 2024
+company: "VANS Professional Audio Rentals"
+
 plugins:
   - jekyll-seo-tag
 
@@ -14,3 +17,8 @@ seo:
   description: "Affordable professional quality audio for your events."
   url: "https://www.vproaudio.rentals"
   image: "/assets/images/home1.jpg"
+
+
+collections:
+  faqs:
+    output: false
