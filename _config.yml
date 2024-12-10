@@ -22,3 +22,6 @@ seo:
 collections:
   faqs:
     output: false
+  packages:
+    output: true 
+    permalink: /packages/:name/ 
