@@ -9,29 +9,8 @@
     <link href="/assets/css/carousel.css" rel="stylesheet">
 
     <!--Include the contact form scripts-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init({
-              publicKey: "8g9ogIfKnECKwhPCN",
-            });
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // these IDs from the previous steps
-                emailjs.sendForm('service_ilnhxr9', 'template_t1xv5a8', this)
-                    .then(() => {
-                        console.log('SUCCESS!');
-                    }, (error) => {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>About - Contact | VANS Pro Audio Rentals</title>
@@ -138,25 +117,29 @@
 </form>
 -->
 
-<div class="container mt-5">
-    <form id="contact-form">
+<div class="container my-5">
+    <form id="contactForm">
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
-        <input name="user_name" type="text" class="form-control" id="name" placeholder="Enter your name" required>
+        <input name="user_name" type="text" class="form-control" id="user_name" placeholder="Enter your name" required>
+        <div class="invalid-feedback">Please provide your name.</div>
       </div>
   
       <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
-        <input name="user_email" type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        <input name="user_email" type="email" class="form-control" id="user_email" placeholder="Enter your email" required>
+        <div class="invalid-feedback">Please provide a valid email address.</div>
       </div>
   
       <div class="mb-3">
         <label for="message" class="form-label">Message</label>
         <textarea name="message" class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
+        <div class="invalid-feedback">Please provide a message with at least 10 characters.</div>
       </div>
   
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="button" class="btn btn-success" onclick="submitForm()">Submit</button>
     </form>
+    <div id="responseMessage" class="mt-3"></div>
 </div>
 
 
@@ -173,6 +156,67 @@
 <p class="fs-5 text-body-secondary">
     We look forward to assisting you and making your experience with us exceptional!
 </p>
+
+<script>
+
+// Initialize EmailJS with your user ID
+(function(){
+    emailjs.init("8g9ogIfKnECKwhPCN");
+})();
+
+// JavaScript function to handle form submission
+function submitForm() {
+    // Get form elements
+    const name = document.getElementById("user_name").value;
+    const email = document.getElementById("user_email").value;
+    const message = document.getElementById("message").value;
+    
+    // Reset previous feedback
+    let formValid = true;
+    document.getElementById("responseMessage").innerHTML = '';
+
+    // Validate name
+    if (!name.trim()) {
+        formValid = false;
+        document.getElementById("user_name").classList.add("is-invalid");
+    } else {
+        document.getElementById("user_name").classList.remove("is-invalid");
+    }
+
+    // Validate email
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email.trim() || !emailRegex.test(email)) {
+        formValid = false;
+        document.getElementById("user_email").classList.add("is-invalid");
+    } else {
+        document.getElementById("user_email").classList.remove("is-invalid");
+    }
+
+    // Validate message
+    if (!message.trim() || message.length < 10) {
+        formValid = false;
+        document.getElementById("message").classList.add("is-invalid");
+    } else {
+        document.getElementById("message").classList.remove("is-invalid");
+    }
+
+    // If form is valid, proceed to show success message
+    if (formValid) {
+        // Send the email using the EmailJS service and template
+        emailjs.sendForm("service_ilnhxr9", "template_t1xv5a8", 'contactForm')
+            .then(function(response) {
+                console.log("Success", response);
+                document.getElementById("responseMessage").innerHTML = '<div class="alert alert-success">Thank you for contacting us. Your message has been sent!</div>';
+                document.getElementById("contactForm").reset();
+            }, function(error) {
+                console.log("Error", error);
+                document.getElementById("responseMessage").innerHTML = '<div class="alert alert-danger">Oops! Something went wrong, please try again later.</div>';
+            });
+    } else {
+        document.getElementById("responseMessage").innerHTML = '<div class="alert alert-danger">Please fill in all the fields correctly.</div>';
+    }
+}
+</script>
       </div>
     </main>
 
