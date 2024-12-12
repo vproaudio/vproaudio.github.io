@@ -13,13 +13,17 @@ permalink: /about/faqs/
 
 
 {% for faq in site.faqs %}
-    <p class="fs-5 fw-bold mt-5 text-body-secondary">
-        {{faq.question}}
-    </p>
-    <p class="fs-5 text-body-secondary">
-        {{faq.answer}}
-    </p>
+<p class="fs-5 fw-bold mt-5 text-body-secondary">
+    {{faq.question}}
+</p>
+
+<p class="fs-5 text-body-secondary">
+    {{faq.answer}}
+</p>
 {% endfor %}
+
+
+
 
 
 <!--
