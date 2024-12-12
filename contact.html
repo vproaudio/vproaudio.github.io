@@ -34,7 +34,7 @@ permalink: /about/contact/
 </p>
 
 <p class="fs-5 text-body-secondary">
-    Have a question or need a quote? Fill out the form below and we'll get back to you as soon as possible. You may also include the following details: event dates, required equipment, delivery and setup preferences, and event location.
+    Have a question or need a quote? Please fill out the form below, and we'll respond promptly. You can also provide additional details, such as event dates, required equipment, delivery and setup preferences, and event location.
 </p>
 
 <!--
@@ -48,32 +48,34 @@ permalink: /about/contact/
     <input type="submit" value="Send">
 </form>
 -->
-
-<div class="container my-5">
-    <form id="contactForm">
-      <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input name="user_name" type="text" class="form-control" id="user_name" placeholder="Enter your name" required>
-        <div class="invalid-feedback">Please provide your name.</div>
-      </div>
-  
-      <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input name="user_email" type="email" class="form-control" id="user_email" placeholder="Enter your email" required>
-        <div class="invalid-feedback">Please provide a valid email address.</div>
-      </div>
-  
-      <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
-        <textarea name="message" class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
-        <div class="invalid-feedback">Please provide a message with at least 10 characters.</div>
-      </div>
-  
-      <button type="button" class="btn btn-success" onclick="submitForm()">Submit</button>
-    </form>
-    <div id="responseMessage" class="mt-3"></div>
+<div class="row row-cols-1 row-cols-md-2">
+    <div class="col">
+        <div class="container my-5">
+            <form id="contactForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input name="user_name" type="text" class="form-control" id="user_name" placeholder="Enter your name" required>
+                <div class="invalid-feedback">Please provide your name.</div>
+            </div>
+        
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input name="user_email" type="email" class="form-control" id="user_email" placeholder="Enter your email" required>
+                <div class="invalid-feedback">Please provide a valid email address.</div>
+            </div>
+        
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea name="message" class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
+                <div class="invalid-feedback">Please provide a message with at least 10 characters.</div>
+            </div>
+        
+            <button type="button" class="btn btn-success" onclick="submitForm()">Submit</button>
+            </form>
+            <div id="responseMessage" class="mt-3"></div>
+        </div>
+    </div>
 </div>
-
 
 
 <p class="fs-5 fw-bold text-body-secondary mt-5">
