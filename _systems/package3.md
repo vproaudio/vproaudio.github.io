@@ -1,18 +1,18 @@
 ---
-title: "Package 4"
+title: "Package 3"
 
-description: "This package includes an analog mixer and is targeted for events or setups where you need to connect more inputs such as microphones, keyboards, guitars, electronic drums etc. Includes 2 1000W full range speakers and a 1020W subwoofer for sound reinforcement. Perfect for small bands and outdoor gigs. One vocal microphone package (microphone, stand and cable) is included but more can be rented out separately."
+description: "This package includes a Mackie ProFX10v3+ 10 channel analog mixer and is targeted for events or setups where you need to connect more inputs such as microphones, keyboards, guitars, electronic drums etc. Includes 2 powerful Yamaha DBR10 full range speakers and a Yamaha DXS12 subwoofer for powerful sound reinforcement. Perfect for small bands, DJs and outdoor gigs. One vocal microphone package (microphone, stand and cable) is included but more can be added to expand the sound setup."
 
-image: "/assets/images/package4.jpg"
+image: "/assets/images/package3.jpg"
 
 price: 179
 
 items_included:
-    - 2 x 1000W Full Range Powered Speaker
+    - 2 x Yamaha DBR10 Powered Speaker
     - 2 x Tripod Speaker Stand
-    - 1 x 1020W Powered Subwoofer
-    - 1 x 10 Channel Mixer with BT and Effects
-    - 1 x Wired Vocal Microphone
+    - 1 x Yamaha DXS12 Powered Subwoofer
+    - 1 x Mackie ProFX10v3+ 10 Channel Mixer
+    - 1 x Shure SM58 Wired Vocal Microphone
     - 1 x 25 ft XLR Microphone Cable
     - 1 x Microphone Stand
 
@@ -31,7 +31,7 @@ perfect_for:
     - Small bands
     - DJs
 
-system_power: 3020
+system_power: 2420
 
 upgrades: "Replace wired vocal microphone with a wireless vocal microphone for an extra $20 per day"
 

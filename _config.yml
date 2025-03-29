@@ -22,6 +22,18 @@ seo:
 collections:
   faqs:
     output: false
-  packages:
+  systems:
     output: true 
-    permalink: /packages/:name/ 
+    permalink: /packages/pa-systems/:name/ 
+  microphones:
+    output: true 
+    permalink: /packages/microphones/:name/ 
+  instruments:
+    output: true 
+    permalink: /packages/musical-instruments/:name/ 
+  lighting:
+    output: true 
+    permalink: /packages/party-lights/:name/ 
+  power:
+    output: true 
+    permalink: /packages/outdoor-power/:name/ 
