@@ -8,9 +8,9 @@ image: "/assets/images/package2.jpg"
 price: 99
 
 items_included:
-    - 2 x 1000W Full Range Powered Speaker
+    - 2 x EV ZLX-12P-G2 Powered Speaker
     - 2 x Tripod Speaker Stand
-    - 1 x Wired Vocal Microphone
+    - 1 x Shure SM58 Wired Vocal Microphone
     - 1 x 25 ft XLR Microphone Cable
     - 1 x Microphone Stand
 
@@ -22,10 +22,10 @@ features:
     - Built in effects such as reverb to further enhance your sound
 
 perfect_for:
-    - Weddings 
+    - Indoor Weddings 
     - Birthday parties 
     - Indoor school events
-    - Small bands
+    - Corporate events
 
 system_power: 2000
 

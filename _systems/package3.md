@@ -1,34 +1,37 @@
 ---
 title: "Package 3"
 
-description: "This package enhances Package 1 by adding a subwoofer, delivering the powerful low-end punch your sound system deserves. This is the go to package if you need to mostly play music for your audience. A wired vocal microphone package (microphone, stand and cable) is included with this package in case you need to make announcements between playing music."
+description: "This package includes a Mackie ProFX10v3+ 10 channel analog mixer and is targeted for events or setups where you need to connect more inputs such as microphones, keyboards, guitars, electronic drums etc. Includes 2 powerful Yamaha DBR10 full range speakers and a Yamaha DXS12 subwoofer for powerful sound reinforcement. Perfect for small bands, DJs and outdoor gigs. One vocal microphone package (microphone, stand and cable) is included but more can be added to expand the sound setup."
 
 image: "/assets/images/package3.jpg"
 
-price: 129
+price: 179
 
 items_included:
-    - 1 x 1000W Full Range Powered Speaker
-    - 1 x 1020W Powered Subwoofer
-    - 1 x Subwoofer to Speaker Stand
-    - 1 x Wired Vocal Microphone
+    - 2 x Yamaha DBR10 Powered Speaker
+    - 2 x Tripod Speaker Stand
+    - 1 x Yamaha DXS12 Powered Subwoofer
+    - 1 x Mackie ProFX10v3+ 10 Channel Mixer
+    - 1 x Shure SM58 Wired Vocal Microphone
     - 1 x 25 ft XLR Microphone Cable
     - 1 x Microphone Stand
 
 features:
-    - Bluetooth channel for playing audio from your phone/tablet
-    - Two XLR and 1/4 inch TS inputs allowing you to connect one microphone and one instrument or two microphones
-    - Hi-Z input for direct guitar connections
-    - 3-Band and Parametric EQ for sound enhancement
-    - Built in effects such as reverb to further enhance your sound
+    - Mixer features a bluetooth channel for playing audio from your phone/tablet
+    - Four mono channels with input gains to connect up to 4 microphones or line inputs
+    - 1 knob compressor on two mono channels
+    - Three stereo channels for instruments such as keyboards, music player etc
+    - Built in effects such as reverb and EQ to enhance your sound
 
 perfect_for:
-    - Backyard parties
-    - Corporate parties and events
-    - Karaokes
+    - Weddings (small to medium halls)
+    - Birthday parties (small to medium halls)
+    - Indoor school events
+    - Places of worship 
+    - Small bands
     - DJs
 
-system_power: 2020
+system_power: 2420
 
 upgrades: "Replace wired vocal microphone with a wireless vocal microphone for an extra $20 per day"
 
