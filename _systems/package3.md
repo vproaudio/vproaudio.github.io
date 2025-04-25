@@ -5,7 +5,7 @@ description: "This package includes a Mackie ProFX10v3+ 10 channel analog mixer 
 
 image: "/assets/images/package3.jpg"
 
-price: 179
+price: 129
 
 items_included:
     - 2 x Yamaha DBR10 Powered Speaker

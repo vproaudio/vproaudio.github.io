@@ -5,7 +5,7 @@ description: "This package is designed for those looking to expand their sound s
 
 image: "/assets/images/package2.jpg"
 
-price: 99
+price: 69
 
 items_included:
     - 2 x EV ZLX-12P-G2 Powered Speaker

@@ -5,7 +5,7 @@ description: "This is our basic package, ideal for solo performers, presenters a
 
 image: "/assets/images/package1.jpg"
 
-price: 59
+price: 39
 
 items_included:
     - 1 x EV ZLX-12P-G2 Powered Speaker
