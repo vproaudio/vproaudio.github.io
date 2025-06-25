@@ -5,22 +5,32 @@ permalink: /about/faqs/
 ---
 
 
-<div class="container py-5 mt-5">
-    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h1 class="display-4 fw-normal text-body-emphasis">Frequently Asked Questions</h1>
+<section class="my-5 py-4">
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold text-primary">Frequently Asked Questions</h1>
+    <p class="lead text-muted">Answers to common questions about our services and packages.</p>
+  </div>
+
+  <div class="accordion accordion-flush shadow-sm border rounded-3 bg-white" id="faqAccordion">
+    {% for faq in site.faqs %}
+    <div class="accordion-item border-bottom">
+      <h2 class="accordion-header" id="heading{{ forloop.index }}">
+        <button class="accordion-button collapsed py-3 px-4" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse{{ forloop.index }}" aria-expanded="false" aria-controls="collapse{{ forloop.index }}">
+          {{ faq.question }}
+        </button>
+      </h2>
+      <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse"
+        aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#faqAccordion">
+        <div class="accordion-body py-3 px-4 text-muted">
+          {{ faq.answer }}
+        </div>
+      </div>
     </div>
-</div>
+    {% endfor %}
+  </div>
+</section>
 
-
-{% for faq in site.faqs %}
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    {{faq.question}}
-</p>
-
-<p class="fs-5 text-body-secondary">
-    {{faq.answer}}
-</p>
-{% endfor %}
 
 
 

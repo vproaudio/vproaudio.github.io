@@ -128,40 +128,42 @@
   <body class ="bg-info">
     <!-- Header with Logo and Navigation -->
     <header> 
-      <nav class="navbar fixed-top navbar-expand-lg mb-5 bg-success">
+      <nav class="navbar fixed-top navbar-expand-lg bg-success shadow-sm border-bottom">
   <div class="container">
-    <a class="navbar-brand" href="/">
-      <img src="/assets/images/logo.svg" alt="Bootstrap" width="60" height="60">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="/assets/images/logo.svg" alt="Bootstrap" width="50" height="50" class="me-2">
+      <span class="fw-bold text-primary fs-4">VANS Pro Audio Rentals</span>
     </a>
-    <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
-      <ul class="nav mr-auto">
-          <li class="nav-item px-1">
-            <a class="nav-link fs-5" href="/"> HOME </a>
-          </li>
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item px-2">
+          <a class="nav-link fs-5 fw-medium text-dark hover-primary" href="/">Home</a>
+        </li>
 
-          <li class="nav-item dropdown px-1">
-            <a class="nav-link fs-5 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> PACKAGES </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/packages/pa-systems/">PA Systems</a></li>
-              <li><a class="dropdown-item" href="/packages/microphones/">Microphones</a></li>
-              <!-- <li><a class="dropdown-item" href="#">Musical Instruments</a></li>
-              <li><a class="dropdown-item" href="#">Party Lights</a></li>
-              <li><a class="dropdown-item" href="#">Power</a></li> -->
-            </ul>
-          </li>
+        <li class="nav-item dropdown px-2">
+          <a class="nav-link dropdown-toggle fs-5 fw-medium text-dark hover-primary" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">Packages</a>
+          <ul class="dropdown-menu shadow-sm border-0 rounded-3">
+            <li><a class="dropdown-item" href="/packages/pa-systems/">PA Systems</a></li>
+            <li><a class="dropdown-item" href="/packages/microphones/">Microphones</a></li>
+          </ul>
+        </li>
 
-          <li class="nav-item dropdown px-1">
-            <a class="nav-link fs-5 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> ABOUT </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/about/faqs/">FAQs</a></li>
-              <li><a class="dropdown-item" href="/about/brands/">Brands</a></li>
-              <li><a class="dropdown-item" href="/about/contact/">Contact</a></li>
-            </ul>
-          </li>
-
+        <li class="nav-item dropdown px-2">
+          <a class="nav-link dropdown-toggle fs-5 fw-medium text-dark hover-primary" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">About</a>
+          <ul class="dropdown-menu shadow-sm border-0 rounded-3">
+            <li><a class="dropdown-item" href="/about/faqs/">FAQs</a></li>
+            <li><a class="dropdown-item" href="/about/brands/">Brands</a></li>
+            <li><a class="dropdown-item" href="/about/contact/">Contact</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
@@ -172,77 +174,136 @@
     <!-- Main Content -->
     <main> 
       <div class="container mt-5">
-        <div class="container py-5 mt-5">
-    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h1 class="display-4 fw-normal text-body-emphasis">Frequently Asked Questions</h1>
+        <section class="my-5 py-4">
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold text-primary">Frequently Asked Questions</h1>
+    <p class="lead text-muted">Answers to common questions about our services and packages.</p>
+  </div>
+
+  <div class="accordion accordion-flush shadow-sm border rounded-3 bg-white" id="faqAccordion">
+    
+    <div class="accordion-item border-bottom">
+      <h2 class="accordion-header" id="heading1">
+        <button class="accordion-button collapsed py-3 px-4" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+          How do I make a reservation?
+        </button>
+      </h2>
+      <div id="collapse1" class="accordion-collapse collapse"
+        aria-labelledby="heading1" data-bs-parent="#faqAccordion">
+        <div class="accordion-body py-3 px-4 text-muted">
+          To rent equipment, simply contact us via email (<strong>bookings@vproaudio.rentals</strong>) with the following details: event dates, required equipment, delivery and setup preferences, and event location. If you'd like a call back, please include your phone number. Alternatively, you can send us a message through the <a class='link-opacity-50-hover' href='/about/contact/'>Contact Us</a> page on our website. Once your booking is confirmed, we will send you an online rental agreement to sign, along with a payment link. Payment is due on or before the scheduled date. A valid California ID is required to receive the rental equipment.
+        </div>
+      </div>
     </div>
-</div>
-
-
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    How do I make a reservation?
-</p>
-
-<p class="fs-5 text-body-secondary">
-    To rent equipment, simply contact us via email (<strong>bookings@vproaudio.rentals</strong>) with the following details: event dates, required equipment, delivery and setup preferences, and event location. If you'd like a call back, please include your phone number. Alternatively, you can send us a message through the <a class='link-opacity-50-hover' href='/about/contact/'>Contact Us</a> page on our website. Once your booking is confirmed, we will send you an online rental agreement to sign, along with a payment link. Payment is due on or before the scheduled date. A valid California ID is required to receive the rental equipment.
-</p>
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    How far in advance should I book the equipment?
-</p>
-
-<p class="fs-5 text-body-secondary">
-    We recommend booking at least 2-3 weeks in advance. However, we can often accommodate last-minute rentals depending on equipment availability.
-</p>
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    Do you deliver and set up the equipment?
-</p>
-
-<p class="fs-5 text-body-secondary">
-    All equipment rented from us will be delivered to and picked up from your chosen venue. Setup services are also available upon request when booking the equipment. Delivery and setup are free for events within the Vacaville, CA area. For events outside of Vacaville, delivery charges and setup fees may apply, depending on your location and the complexity of the setup. 
-</p>
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    What is included in the rental?
-</p>
-
-<p class="fs-5 text-body-secondary">
-    The rental includes the equipment itself, as well as basic cables and accessories (such as power cords and stands). Additional accessories or special requests may incur extra charges. If you're unsure, ask us for a detailed list of what's included.
-</p>
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    What forms of payment do you accept?
-</p>
-
-<p class="fs-5 text-body-secondary">
-    Payments can be made through the online payment links we provide upon confirmation. We accept all major credit and debit cards.
-</p>
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    What if the equipment is damaged or stops working during my rental?
-</p>
-
-<p class="fs-5 text-body-secondary">
-    If the equipment is malfunctioning or damaged during your rental period, please notify us immediately. Depending on the situation, we will either repair or replace the equipment as quickly as possible.
-</p>
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    Do you provide technical support during my event?
-</p>
-
-<p class="fs-5 text-body-secondary">
-    Yes, we offer on-site technical support for certain events, depending on the equipment rented. This service can be arranged in advance and may incur additional fees. Please inquire about support when booking.
-</p>
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    Do you offer package deals or discounts?
-</p>
-
-<p class="fs-5 text-body-secondary">
-    Yes, we offer package deals for events requiring multiple items or long-term rentals. Discounts may be available based on the rental duration, type of event, and specific equipment. Contact us for a custom quote.
-</p>
+    
+    <div class="accordion-item border-bottom">
+      <h2 class="accordion-header" id="heading2">
+        <button class="accordion-button collapsed py-3 px-4" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+          How far in advance should I book the equipment?
+        </button>
+      </h2>
+      <div id="collapse2" class="accordion-collapse collapse"
+        aria-labelledby="heading2" data-bs-parent="#faqAccordion">
+        <div class="accordion-body py-3 px-4 text-muted">
+          We recommend booking at least 2-3 weeks in advance. However, we can often accommodate last-minute rentals depending on equipment availability.
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item border-bottom">
+      <h2 class="accordion-header" id="heading3">
+        <button class="accordion-button collapsed py-3 px-4" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+          Do you deliver and set up the equipment?
+        </button>
+      </h2>
+      <div id="collapse3" class="accordion-collapse collapse"
+        aria-labelledby="heading3" data-bs-parent="#faqAccordion">
+        <div class="accordion-body py-3 px-4 text-muted">
+          All equipment rented from us will be delivered to and picked up from your chosen venue. Setup services are also available upon request when booking the equipment. Delivery and setup are free for events within the Vacaville, CA area. For events outside of Vacaville, delivery charges and setup fees may apply, depending on your location and the complexity of the setup. 
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item border-bottom">
+      <h2 class="accordion-header" id="heading4">
+        <button class="accordion-button collapsed py-3 px-4" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+          What is included in the rental?
+        </button>
+      </h2>
+      <div id="collapse4" class="accordion-collapse collapse"
+        aria-labelledby="heading4" data-bs-parent="#faqAccordion">
+        <div class="accordion-body py-3 px-4 text-muted">
+          The rental includes the equipment itself, as well as basic cables and accessories (such as power cords and stands). Additional accessories or special requests may incur extra charges. If you're unsure, ask us for a detailed list of what's included.
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item border-bottom">
+      <h2 class="accordion-header" id="heading5">
+        <button class="accordion-button collapsed py-3 px-4" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+          What forms of payment do you accept?
+        </button>
+      </h2>
+      <div id="collapse5" class="accordion-collapse collapse"
+        aria-labelledby="heading5" data-bs-parent="#faqAccordion">
+        <div class="accordion-body py-3 px-4 text-muted">
+          Payments can be made through the online payment links we provide upon confirmation. We accept all major credit and debit cards.
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item border-bottom">
+      <h2 class="accordion-header" id="heading6">
+        <button class="accordion-button collapsed py-3 px-4" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+          What if the equipment is damaged or stops working during my rental?
+        </button>
+      </h2>
+      <div id="collapse6" class="accordion-collapse collapse"
+        aria-labelledby="heading6" data-bs-parent="#faqAccordion">
+        <div class="accordion-body py-3 px-4 text-muted">
+          If the equipment is malfunctioning or damaged during your rental period, please notify us immediately. Depending on the situation, we will either repair or replace the equipment as quickly as possible.
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item border-bottom">
+      <h2 class="accordion-header" id="heading7">
+        <button class="accordion-button collapsed py-3 px-4" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+          Do you provide technical support during my event?
+        </button>
+      </h2>
+      <div id="collapse7" class="accordion-collapse collapse"
+        aria-labelledby="heading7" data-bs-parent="#faqAccordion">
+        <div class="accordion-body py-3 px-4 text-muted">
+          Yes, we offer on-site technical support for certain events, depending on the equipment rented. This service can be arranged in advance and may incur additional fees. Please inquire about support when booking.
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item border-bottom">
+      <h2 class="accordion-header" id="heading8">
+        <button class="accordion-button collapsed py-3 px-4" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+          Do you offer package deals or discounts?
+        </button>
+      </h2>
+      <div id="collapse8" class="accordion-collapse collapse"
+        aria-labelledby="heading8" data-bs-parent="#faqAccordion">
+        <div class="accordion-body py-3 px-4 text-muted">
+          Yes, we offer package deals for events requiring multiple items or long-term rentals. Discounts may be available based on the rental duration, type of event, and specific equipment. Contact us for a custom quote.
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
 
 
 

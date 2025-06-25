@@ -46,40 +46,42 @@
   <body class ="bg-info">
     <!-- Header with Logo and Navigation -->
     <header> 
-      <nav class="navbar fixed-top navbar-expand-lg mb-5 bg-success">
+      <nav class="navbar fixed-top navbar-expand-lg bg-success shadow-sm border-bottom">
   <div class="container">
-    <a class="navbar-brand" href="/">
-      <img src="/assets/images/logo.svg" alt="Bootstrap" width="60" height="60">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="/assets/images/logo.svg" alt="Bootstrap" width="50" height="50" class="me-2">
+      <span class="fw-bold text-primary fs-4">VANS Pro Audio Rentals</span>
     </a>
-    <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
-      <ul class="nav mr-auto">
-          <li class="nav-item px-1">
-            <a class="nav-link fs-5" href="/"> HOME </a>
-          </li>
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item px-2">
+          <a class="nav-link fs-5 fw-medium text-dark hover-primary" href="/">Home</a>
+        </li>
 
-          <li class="nav-item dropdown px-1">
-            <a class="nav-link fs-5 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> PACKAGES </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/packages/pa-systems/">PA Systems</a></li>
-              <li><a class="dropdown-item" href="/packages/microphones/">Microphones</a></li>
-              <!-- <li><a class="dropdown-item" href="#">Musical Instruments</a></li>
-              <li><a class="dropdown-item" href="#">Party Lights</a></li>
-              <li><a class="dropdown-item" href="#">Power</a></li> -->
-            </ul>
-          </li>
+        <li class="nav-item dropdown px-2">
+          <a class="nav-link dropdown-toggle fs-5 fw-medium text-dark hover-primary" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">Packages</a>
+          <ul class="dropdown-menu shadow-sm border-0 rounded-3">
+            <li><a class="dropdown-item" href="/packages/pa-systems/">PA Systems</a></li>
+            <li><a class="dropdown-item" href="/packages/microphones/">Microphones</a></li>
+          </ul>
+        </li>
 
-          <li class="nav-item dropdown px-1">
-            <a class="nav-link fs-5 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> ABOUT </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/about/faqs/">FAQs</a></li>
-              <li><a class="dropdown-item" href="/about/brands/">Brands</a></li>
-              <li><a class="dropdown-item" href="/about/contact/">Contact</a></li>
-            </ul>
-          </li>
-
+        <li class="nav-item dropdown px-2">
+          <a class="nav-link dropdown-toggle fs-5 fw-medium text-dark hover-primary" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">About</a>
+          <ul class="dropdown-menu shadow-sm border-0 rounded-3">
+            <li><a class="dropdown-item" href="/about/faqs/">FAQs</a></li>
+            <li><a class="dropdown-item" href="/about/brands/">Brands</a></li>
+            <li><a class="dropdown-item" href="/about/contact/">Contact</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
@@ -90,29 +92,44 @@
     <!-- Main Content -->
     <main> 
       <div class="container mt-5">
-        <div class="container py-5 mt-5">
-    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h1 class="display-4 fw-normal text-body-emphasis">Equipment Brands</h1>
-        <p class="fs-5 text-body-secondary">
-            We trust and stock only the following equipment brands.  
-        </p>
+        <!-- Header Section -->
+<div class="container py-5 mt-5 text-center">
+  <h1 class="display-4 fw-bold text-primary">Equipment Brands</h1>
+  <p class="fs-5 text-muted">We trust and stock only the following top-tier equipment brands.</p>
+</div>
+
+<!-- Brands Grid -->
+<div class="container pb-5">
+  <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
+    <div class="col">
+      <div class="card border-0 shadow-sm p-3 h-100 text-center brand-card fade-in">
+        <a href="https://www.electrovoice.com/" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Electro-Voice: High-quality microphones and speakers.">
+          <img src="/assets/images/Electro-Voice_logo.svg" alt="Electro-Voice" class="img-fluid mx-auto brand-logo">
+        </a>
+      </div>
     </div>
-</div>
-        
-<div class="px-4 py-3 my-5 text-center">
-    <img class="d-block mx-auto mb-4" src="/assets/images/Electro-Voice_logo.svg" alt="" width="200" height="200">
-</div>
-
-<div class="px-4 py-3 my-5 text-center">
-    <img class="d-block mx-auto mb-4" src="/assets/images/mackie_logo.svg" alt="" width="200" height="200">
-</div>
-
-<div class="px-4 py-3 my-5 text-center">
-    <img class="d-block mx-auto mb-4" src="/assets/images/Shure_Logo.svg" alt="" width="320" height="76">
-</div>
-
-<div class="px-4 py-3 my-5 text-center">
-    <img class="d-block mx-auto mb-4" src="/assets/images/yamaha_logo.svg" alt="" width="200" height="200">
+    <div class="col">
+      <div class="card border-0 shadow-sm p-3 h-100 text-center brand-card fade-in">
+        <a href="https://mackie.com/" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Mackie: Professional audio mixers and loudspeakers.">
+          <img src="/assets/images/mackie_logo.svg" alt="Mackie" class="img-fluid mx-auto brand-logo">
+        </a>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-0 shadow-sm p-3 h-100 text-center brand-card fade-in">
+        <a href="https://www.shure.com/" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Shure: Legendary microphones and audio electronics.">
+          <img src="/assets/images/Shure_Logo.svg" alt="Shure" class="img-fluid mx-auto brand-logo" style="max-width: 80%;">
+        </a>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-0 shadow-sm p-3 h-100 text-center brand-card fade-in">
+        <a href="https://usa.yamaha.com/" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Yamaha: Renowned musical instruments and professional audio.">
+          <img src="/assets/images/yamaha_logo.svg" alt="Yamaha" class="img-fluid mx-auto brand-logo">
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
       </div>
@@ -167,5 +184,32 @@
 
 
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+  // Initialize Bootstrap tooltips
+  document.addEventListener('DOMContentLoaded', () => {
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.forEach(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+    // Fade-in on scroll using IntersectionObserver
+    const faders = document.querySelectorAll('.fade-in');
+    const options = {
+      threshold: 0.1
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  });
+</script>
   </body>
 </html>
