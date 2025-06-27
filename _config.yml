@@ -24,7 +24,7 @@ collections:
     output: false
   systems:
     output: true 
-    permalink: /packages/pa-systems/:name/ 
+    permalink: /packages/:name/ 
   microphones:
     output: true 
     permalink: /packages/microphones/:name/ 
