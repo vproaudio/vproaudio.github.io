@@ -1,40 +1,41 @@
 ---
 title: "DJ Pro Essentials"
 
-description: "This package includes a Yamaha MG10XU 10 channel analog mixer and is targeted for events or setups where you need to connect more inputs such as microphones, keyboards, guitars, electronic drums etc. Includes 2 powerful Yamaha DBR10 full range speakers and a Yamaha DXS12 subwoofer for powerful sound reinforcement. Perfect for small bands, DJs and outdoor gigs. One vocal microphone package (microphone, stand and cable) is included but more can be added to expand the sound setup."
+description: "Elevate your event with the DJ Pro Essentials Package — a powerful, plug-and-play sound system designed for DJs, entertainers, and event hosts who need professional-grade performance without the complexity. Whether you're spinning at a wedding, birthday party, school dance, or small concert, this package delivers bold, crystal-clear sound with deep bass and reliable wireless connectivity. With bluetooth audio connectivity, premium powered subwoofer, and coverage for up to 200 guests, you’ll have everything you need to keep the energy high and the dance floor full — all in a compact, easy-to-use setup"
 
-image: "/assets/images/package3.jpg"
+image: "/assets/images/djproessentials.png"
 
-price: 129
+price: 149
 
 items_included:
     - 2 x Yamaha DBR10 Powered Speaker
     - 2 x Tripod Speaker Stand
-    - 1 x Yamaha DXS12 Powered Subwoofer
+    - 1 x Yamaha DXS12 MKII Powered Subwoofer
     - 1 x Yamaha MG10XU 10 Channel Mixer
-    - 1 x Shure SM58 Wired Vocal Microphone
-    - 1 x 25 ft XLR Microphone Cable
-    - 1 x Microphone Stand
+    - 1 x Shure SM58 Wired Vocal Microphone Package
+    - 1 x DJ Booth (not shown in the image)
 
 features:
-    - Mixer features a bluetooth channel for playing audio from your phone/tablet
-    - Four mono channels with input gains to connect up to 4 microphones or line inputs
-    - 1 knob compressor on two mono channels
-    - Three stereo channels for instruments such as keyboards, music player etc
-    - Built in effects such as reverb and EQ to enhance your sound
+    - Bluetooth audio streaming - premium bluetooth adapter provided
+    - Powered subwoofer for deep, punchy bass 
+    - Versatile mixer with pro-level control
+    - Mic support for announcements or MCing
+    - Plug-and-play setup
+    - Covers up to 200 guests 
 
 perfect_for:
-    - Weddings (small to medium halls)
-    - Birthday parties (small to medium halls)
-    - Indoor school events
-    - Places of worship 
-    - Small bands
     - DJs
+    - Weddings 
+    - Celebrations 
+    - Religious gatherings
+    - Small bands
+    - Live artists
 
 system_power: 2420
 
 upgrades: 
-    - Upgrade to a wireless vocal microphone for an extra $20 per day
+    - Add additional wireless microphones (supports up to 4 max) - $29/each per day
+    - Add additional wired microphones (supports up to 4 max) - $10/each per day
 
 
 layout: package

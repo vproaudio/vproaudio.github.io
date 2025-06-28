@@ -13,11 +13,11 @@ items_included:
     - 1 x Shure BLX14/SM31 Wireless Headworn Mic
 
 features:
-    - Bluetooth channel for playing audio from your phone/tablet
-    - Two XLR and 1/4 inch TS inputs allowing you to connect one microphone and one instrument or two microphones
-    - Hi-Z input for direct guitar connections
-    - 3-Band and Parametric EQ for sound enhancement
-    - Built in effects such as reverb to further enhance your sound
+    - Wireless bluetooth audio connectivity
+    - Pro-grade sweat-resistant headworn microphone
+    - Built-in digital mixer with presets & memory recall
+    - Ideal for outdoor use
+    - Caters for groups up to 100 people 
 
 perfect_for:
     - Yoga retreats
@@ -29,7 +29,7 @@ perfect_for:
 system_power: 1000
 
 upgrades: 
-    - Add another 1000W powered speaker and stand for an additional $30
+    - Add another 1000W powered speaker and stand for an additional $30/day (adequate coverage for groups up to 200 people)
 
 
 layout: package

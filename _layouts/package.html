@@ -61,6 +61,14 @@
           <h1 class="display-4 fw-bold text-primary">{{ page.title }}</h1>
           <img src="{{ page.image }}" class="img-fluid rounded shadow-sm my-4" alt="{{ page.title }}" width="700" height="500">
           <p class="lead text-muted">{{ page.description }}</p>
+
+          <!-- Centered Price Section -->
+          <div class="my-4 text-center">
+            <div class="d-inline-block bg-primary text-white px-4 py-2 rounded shadow-sm">
+              <span class="h3 fw-bold">${{ page.price }}</span>
+              <span class="h5 fw-bold">/day</span>
+            </div>
+          </div>
         </section>
 
         <!-- Feature Cards -->
