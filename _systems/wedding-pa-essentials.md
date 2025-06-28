@@ -27,7 +27,8 @@ perfect_for:
 
 system_power: 2000
 
-upgrades: "Add additional wireless microphones (supports up to 4 max) for an extra $29/each"
+upgrades: 
+    - Add additional wireless microphones (supports up to 4 max) for an extra $29/each
 
 
 layout: package

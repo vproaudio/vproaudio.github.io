@@ -33,7 +33,8 @@ perfect_for:
 
 system_power: 2420
 
-upgrades: "Upgrade to a wireless vocal microphone for an extra $20 per day"
+upgrades: 
+    - Upgrade to a wireless vocal microphone for an extra $20 per day
 
 
 layout: package

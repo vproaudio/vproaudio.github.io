@@ -11962,11 +11962,6 @@ img.img-fluid {
 .card ul li {
   margin-bottom: 0.5rem;
 }
-.card ul li::before {
-  content: "✔️ ";
-  margin-right: 0.4rem;
-  color: #222831;
-}
 
 .lead {
   font-size: 1.2rem;

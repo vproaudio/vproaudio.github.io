@@ -113,8 +113,11 @@
           <div class="col">
             <div class="card h-100 shadow-sm">
               <div class="card-body">
-                <h5 class="card-title text-primary">Add-ons</h5>
-                <p class="fs-5">{{ page.upgrades }}</p>
+                <h5 class="card-title text-primary">Optional Upgrades</h5>
+                <ul class="list-unstyled">
+                  {% for upgrade in page.upgrades %}
+                    <li> <i class="bi bi-arrow-up-circle me-2 text-success"></i> {{ upgrade }}</li>
+                  {% endfor %}
               </div>
             </div>
           </div>

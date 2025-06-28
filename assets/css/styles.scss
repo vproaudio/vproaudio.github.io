@@ -139,11 +139,6 @@ img.img-fluid {
     padding-left: 1rem;
     li {
       margin-bottom: 0.5rem;
-      &::before {
-        content: '✔️ ';
-        margin-right: 0.4rem;
-        color: $primary;
-      }
     }
   }
 }
