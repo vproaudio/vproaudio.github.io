@@ -1,0 +1,10 @@
+# Handle text files
+* text=auto
+
+# Jekyll-specific (optional)
+*.html text
+*.css  text
+*.js   text
+*.md   text
+*.yml  text
+*.scss text

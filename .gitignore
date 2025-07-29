@@ -1,0 +1,46 @@
+# Jekyll build files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+/vendor/
+.bundle/
+Gemfile.lock
+
+# Node modules (if you're using Bootstrap source via npm)
+node_modules/
+package-lock.json
+yarn.lock
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Optional: output from build tools (e.g., Webpack, Vite)
+dist/
+public/
+build/
+
+# Optional: temporary editor/project files
+*.swp
+*.swo
+*.tmp
+*.bak
+.idea/
+.vscode/
+
+# Ignore compiled CSS and JS if generated
+assets/css/*.css
+assets/css/*.map
+assets/js/*.min.js
+assets/js/*.map
+
+deploy.sh
