@@ -1,9 +1,9 @@
 # Site Settings
 title: VANS Pro Audio Rentals
-description: Affordable professional quality audio for your events.
+description: Affordable, professional quality audio for your events.
 url: "https://www.vproaudio.rentals"
 baseurl: "/"
-author: "Vans"
+author: "Edwin Vans"
 email: "bookings@vproaudio.rentals"
 
 year: 2025
@@ -14,10 +14,20 @@ plugins:
 
 seo:
   title: "VANS Pro Audio Rentals"
-  description: "Affordable professional quality audio for your events."
+  description: "Affordable, professional quality audio for your events."
   url: "https://www.vproaudio.rentals"
   image: "/assets/images/home1.jpg"
 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+sass:
+  load_paths:
+    - node_modules
+  style: compressed
 
 collections:
   faqs:

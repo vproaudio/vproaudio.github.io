@@ -16,8 +16,8 @@
     <title>{{ page.title }}</title>
 
     <!-- Styles -->
-    <link href="/assets/css/styles.css" rel="stylesheet">
-    <link href="/assets/css/carousel.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 
     {% seo %}
 
@@ -39,17 +39,17 @@
     </script>
   </head>
 
-  <body class="bg-light text-dark">
+  <body class="bg-info text-dark">
     <!-- Header -->
     <header>
-      {% include navigation.html %}
+      {% include header.html %}
     </header>
 
     <!-- Main Content -->
     <main>
-      <div class="container py-5">
+      <div class="container mt-3">
         <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" class="mb-4">
           <ol class="breadcrumb bg-white rounded shadow-sm px-4 py-2">
             <li class="breadcrumb-item">Packages</li>
             <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
@@ -115,8 +115,6 @@
             </div>
           </div>
 
-
-
           <!-- Upgrades -->
           <div class="col">
             <div class="card h-100 shadow-sm">
@@ -126,17 +124,22 @@
                   {% for upgrade in page.upgrades %}
                     <li> <i class="bi bi-arrow-up-circle me-2 text-success"></i> {{ upgrade }}</li>
                   {% endfor %}
+                </ul>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Spacer at the bottom for footer -->
+        <div class="my-5"></div>
+
       </div>
     </main>
 
     <!-- Footer -->
     {% include footer.html %}
 
-    <!-- Bootstrap JS -->
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>
 </html>

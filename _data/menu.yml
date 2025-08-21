@@ -1,0 +1,24 @@
+- title: Home
+  url: /
+
+- title: Packages
+  dropdown:
+    - title: Slideshow Starter Kit
+      url: /packages/slideshow-starter-kit/
+    - title: Corporate Wellness
+      url: /packages/corporate-wellness/
+    - title: Wedding PA Essentials
+      url: /packages/wedding-pa-essentials/
+    - title: DJ Pro Essentials
+      url: /packages/dj-pro-essentials/
+    - title: Karaoke Pro Pack
+      url: /packages/karaoke-pro-pack/
+
+- title: About
+  dropdown:
+    - title: FAQs
+      url: /about/faqs/
+    - title: Brands
+      url: /about/brands/
+    - title: Contact
+      url: /about/contact/

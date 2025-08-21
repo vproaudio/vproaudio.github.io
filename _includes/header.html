@@ -1,0 +1,49 @@
+<nav class="navbar fixed-top navbar-expand-lg bg-success shadow-sm border-bottom">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="/assets/images/logo.svg" alt="Logo" width="50" height="50" class="me-2">
+      <span class="fw-bold text-primary fs-4"></span>
+    </a>
+
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+      <ul class="navbar-nav align-items-lg-center">
+        {% for item in site.data.menu %}
+          {% if item.dropdown %}
+            {% assign active = false %}
+            {% for sub in item.dropdown %}
+              {% if page.url == sub.url %}
+                {% assign active = true %}
+              {% endif %}
+            {% endfor %}
+            <li class="nav-item dropdown px-2">
+              <a class="nav-link dropdown-toggle fs-5 fw-medium {% if active %}active text-primary{% else %}text-secondary hover-primary{% endif %}" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                {{ item.title }}
+              </a>
+              <ul class="dropdown-menu shadow-sm border-0 rounded-3">
+                {% for sub in item.dropdown %}
+                  <li>
+                    <a class="dropdown-item {% if page.url == sub.url %}active fw-bold text-primary{% endif %}" href="{{ sub.url }}">
+                      {{ sub.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li class="nav-item px-2">
+              <a class="nav-link fs-5 fw-medium {% if page.url == item.url %}active text-primary{% else %}text-secondary hover-primary{% endif %}" href="{{ item.url }}">
+                {{ item.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
