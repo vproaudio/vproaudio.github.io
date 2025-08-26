@@ -4,6 +4,9 @@ title: Privacy Policy
 permalink: /privacy-policy/
 ---
 
+
+
+
 # Privacy Policy
 
 Effective Date: {{ site.time | date: "%B %d, %Y" }}
@@ -39,7 +42,7 @@ We do **not** sell or share your personal data with third parties except as requ
 
 ## Your Rights
 
-You may request access to, correction, or deletion of your personal information by contacting us at: [bookings@vproaudio.rentals](mailto:bookings@vproaudio.rentals)
+You may request access to, correction, or deletion of your personal information by contacting us at: [privacy@vproaudio.rentals](mailto:privacy@vproaudio.rentals)
 
 ## Changes to This Policy
 
@@ -52,4 +55,7 @@ If you have any questions about this Privacy Policy, please contact us at:
 **VANS Pro Audio Rentals**  
 607 Elmira Rd, #112  
 Vacaville, CA 95687  
-Email: [bookings@vproaudio.rentals](mailto:bookings@vproaudio.rentals)
+Email: [privacy@vproaudio.rentals](mailto:privacy@vproaudio.rentals)
+
+
+

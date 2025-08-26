@@ -2,9 +2,11 @@
 title: VANS Pro Audio Rentals
 description: Affordable, professional quality audio for your events.
 url: "https://www.vproaudio.rentals"
-baseurl: "/"
+baseurl: ""
 author: "Edwin Vans"
 email: "bookings@vproaudio.rentals"
+lang: "en"
+timezone: "America/Los_Angeles"
 
 year: 2025
 company: "VANS Professional Audio Rentals"
@@ -16,7 +18,12 @@ seo:
   title: "VANS Pro Audio Rentals"
   description: "Affordable, professional quality audio for your events."
   url: "https://www.vproaudio.rentals"
-  image: "/assets/images/home1.jpg"
+  image: "/assets/images/home.jpg"
+
+social:
+  name: "VANS Pro Audio Rentals"
+  links:
+    - "https://www.tiktok.com/@vproaudiorentals"
 
 exclude:
   - Gemfile
@@ -32,18 +39,14 @@ sass:
 collections:
   faqs:
     output: false
-  systems:
-    output: true 
-    permalink: /packages/:name/ 
-  microphones:
-    output: true 
-    permalink: /packages/microphones/:name/ 
-  instruments:
-    output: true 
-    permalink: /packages/musical-instruments/:name/ 
-  lighting:
-    output: true 
-    permalink: /packages/party-lights/:name/ 
-  power:
-    output: true 
-    permalink: /packages/outdoor-power/:name/ 
+  packages:
+    output: true
+    permalink: /packages/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      image: "/assets/images/home.jpg"
+      author: "Edwin Vans"

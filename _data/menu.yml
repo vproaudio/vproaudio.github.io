@@ -1,18 +1,21 @@
 - title: Home
   url: /
 
-- title: Packages
+- title: Audio
+  dropdown:
+    - title: Corporate Wellness
+      url: /packages/audio/corporate-wellness/
+    - title: Wedding PA Essentials
+      url: /packages/audio/wedding-pa-essentials/
+    - title: DJ Pro Essentials
+      url: /packages/audio/dj-pro-essentials/
+    - title: Karaoke Pro Pack
+      url: /packages/audio/karaoke-pro-pack/
+
+- title: Visual
   dropdown:
     - title: Slideshow Starter Kit
-      url: /packages/slideshow-starter-kit/
-    - title: Corporate Wellness
-      url: /packages/corporate-wellness/
-    - title: Wedding PA Essentials
-      url: /packages/wedding-pa-essentials/
-    - title: DJ Pro Essentials
-      url: /packages/dj-pro-essentials/
-    - title: Karaoke Pro Pack
-      url: /packages/karaoke-pro-pack/
+      url: /packages/visual/slideshow-starter-kit/
 
 - title: About
   dropdown:
