@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/vproaudio/vproaudio.github.io#readme",
   "dependencies": {
-    "bootstrap": "^5.3.7"
+    "bootstrap": "^5.3.8"
   }
 }

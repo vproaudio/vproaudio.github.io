@@ -38,7 +38,8 @@ perfect_for:
 system_power: 1000
 
 upgrades: 
-  - None
+  - Upgrade to 100-inch indoor/outdoor screen (16:9) + $10
+  - Upgrade to 120-inch indoor/outdoor screen (16:9) + $20
 
 layout: package
 ---
