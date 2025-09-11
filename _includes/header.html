@@ -27,11 +27,15 @@
               </a>
               <ul class="dropdown-menu shadow-sm border-0 rounded-3">
                 {% for sub in item.dropdown %}
-                  <li>
-                    <a class="dropdown-item {% if page.url == sub.url %}active fw-bold text-primary{% endif %}" href="{{ sub.url }}">
-                      {{ sub.title }}
-                    </a>
-                  </li>
+                  {% if sub.divider %}
+                    <li><hr class="dropdown-divider"></li>
+                  {% else %}
+                    <li>
+                      <a class="dropdown-item {% if page.url == sub.url %}active fw-bold text-primary{% endif %}" href="{{ sub.url }}">
+                        {{ sub.title }}
+                      </a>
+                    </li>
+                  {% endif %}
                 {% endfor %}
               </ul>
             </li>

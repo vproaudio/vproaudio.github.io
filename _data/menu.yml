@@ -11,6 +11,9 @@
       url: /packages/audio/dj-pro-essentials/
     - title: Karaoke Pro Pack
       url: /packages/audio/karaoke-pro-pack/
+    - divider: true
+    - title: Microphone Packages
+      url: /packages/audio/microphones/
 
 - title: Visual
   dropdown:
