@@ -22,7 +22,16 @@ bundle exec jekyll serve
 
 Then open http://localhost:4000 in your browser.
 
-## 5. Run the deploy script to publish the site
+## 5. Commit changes
+
+```bash
+git status
+git add .
+git commit -m "Commit message"
+git push origin main 
+```
+
+## 6. Run the deploy script to publish the site
 
 Make the script executable:
 ```bash
