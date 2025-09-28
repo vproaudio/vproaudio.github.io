@@ -280,7 +280,9 @@ permalink: /about/contact/
 <!-- EmailJS and Validation Script -->
 <script>
 (function(){
-    emailjs.init("8g9ogIfKnECKwhPCN");
+    emailjs.init({
+        publicKey: "8g9ogIfKnECKwhPCN"
+    });
 })();
 
 function submitForm() {
@@ -315,7 +317,7 @@ function submitForm() {
     }
 
     if (isValid) {
-        emailjs.sendForm("service_ilnhxr9", "template_t1xv5a8", "contactForm")
+        emailjs.sendForm("service_ilnhxr9", "template_t1xv5a8", "#contactForm")
             .then(function(responseResult) {
                 response.innerHTML = '<div class="alert alert-success">Thank you for contacting us. Your message has been sent!</div>';
                 document.getElementById("contactForm").reset();
