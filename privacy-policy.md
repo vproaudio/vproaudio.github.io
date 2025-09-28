@@ -5,7 +5,7 @@ permalink: /privacy-policy/
 description: Learn how VANS Pro Audio Rentals collects, protects, and uses your personal information when you engage with our services.
 ---
 
-<section class="hero-section text-white py-5 py-lg-5 position-relative overflow-hidden">
+<section class="hero-section privacy-hero text-white py-5 py-lg-5 position-relative overflow-hidden">
   <div class="container py-4 py-lg-5 position-relative">
     <span class="badge badge-soft-light hero-eyebrow mb-3">Privacy Policy</span>
     <div class="row align-items-center gy-4">
