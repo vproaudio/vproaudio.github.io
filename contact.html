@@ -238,7 +238,7 @@ permalink: /about/contact/
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="button" class="btn btn-success btn-lg w-100" onclick="submitForm()">Send message</button>
+                                <button type="button" id="contactSubmit" class="btn btn-success btn-lg w-100" onclick="submitForm()">Send message</button>
                             </div>
                             <div class="col-12">
                                 <div id="responseMessage"></div>
@@ -279,17 +279,22 @@ permalink: /about/contact/
 
 <!-- EmailJS and Validation Script -->
 <script>
-(function(){
-    emailjs.init({
-        publicKey: "8g9ogIfKnECKwhPCN"
-    });
-})();
+document.addEventListener("DOMContentLoaded", function () {
+    if (typeof emailjs !== "undefined") {
+        emailjs.init({
+            publicKey: "8g9ogIfKnECKwhPCN"
+        });
+    } else {
+        console.error("EmailJS SDK failed to load.");
+    }
+});
 
 function submitForm() {
     const name = document.getElementById("user_name");
     const email = document.getElementById("user_email");
     const message = document.getElementById("message");
     const response = document.getElementById("responseMessage");
+    const submitButton = document.getElementById("contactSubmit");
 
     let isValid = true;
     response.innerHTML = '';
@@ -316,17 +321,34 @@ function submitForm() {
         message.classList.remove("is-invalid");
     }
 
-    if (isValid) {
-        emailjs.sendForm("service_ilnhxr9", "template_t1xv5a8", "#contactForm")
-            .then(function(responseResult) {
-                response.innerHTML = '<div class="alert alert-success">Thank you for contacting us. Your message has been sent!</div>';
-                document.getElementById("contactForm").reset();
-            }, function(error) {
-                response.innerHTML = '<div class="alert alert-danger">Oops! Something went wrong, please try again later.</div>';
-            });
-    } else {
+    if (!isValid) {
         response.innerHTML = '<div class="alert alert-warning">Please fill in all fields correctly before submitting.</div>';
+        return;
     }
+
+    if (typeof emailjs === "undefined") {
+        response.innerHTML = '<div class="alert alert-danger">Our email service is currently unavailable. Please reach out directly at <a href="mailto:bookings@vproaudio.rentals" class="alert-link">bookings@vproaudio.rentals</a>.</div>';
+        console.error("EmailJS SDK is not available when attempting to submit the contact form.");
+        return;
+    }
+
+    submitButton.disabled = true;
+    const originalText = submitButton.innerHTML;
+    submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
+
+    emailjs.sendForm("service_ilnhxr9", "template_t1xv5a8", "#contactForm")
+        .then(function() {
+            response.innerHTML = '<div class="alert alert-success">Thank you for contacting us. Your message has been sent!</div>';
+            document.getElementById("contactForm").reset();
+        })
+        .catch(function(error) {
+            console.error("EmailJS error:", error);
+            response.innerHTML = '<div class="alert alert-danger">Oops! Something went wrong while sending your message. Please try again later or email us directly at <a href="mailto:bookings@vproaudio.rentals" class="alert-link">bookings@vproaudio.rentals</a>.</div>';
+        })
+        .finally(function() {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalText;
+        });
 }
 </script>
 
