@@ -538,7 +538,11 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   border-radius: 1.25rem;
-  background: rgba($primary, 0.04);
+  background: linear-gradient(135deg, rgba($primary, 0.08) 0%, rgba($info, 0.95) 100%);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .package-card__media img {
