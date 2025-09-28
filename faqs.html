@@ -5,31 +5,237 @@ permalink: /about/faqs/
 ---
 
 
-<section class="my-5 py-4">
-  <div class="text-center mb-5">
-    <h1 class="display-5 fw-bold text-primary">Frequently Asked Questions</h1>
-    <p class="lead text-muted">Answers to common questions about our services and packages.</p>
-  </div>
+<section class="faq-hero py-5 position-relative overflow-hidden">
+  <div class="container position-relative py-5">
+    <div class="row g-4 align-items-center mb-5">
+      <div class="col-lg-8">
+        <span class="badge badge-soft-light d-inline-flex align-items-center gap-2 text-uppercase">
+          <i class="bi bi-stars fs-5"></i>
+          Support Center
+        </span>
+        <h1 class="display-4 fw-bold text-white mt-3">Frequently Asked Questions</h1>
+        <p class="lead text-white-50 mb-0">Discover quick answers about our rental process, delivery options, and how we help
+          events run smoothly.</p>
 
-  <div class="accordion accordion-flush shadow-sm border rounded-3 bg-white" id="faqAccordion">
-    {% for faq in site.faqs %}
-    <div class="accordion-item border-bottom">
-      <h2 class="accordion-header" id="heading{{ forloop.index }}">
-        <button class="accordion-button collapsed py-3 px-4" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapse{{ forloop.index }}" aria-expanded="false" aria-controls="collapse{{ forloop.index }}">
-          {{ faq.question }}
-        </button>
-      </h2>
-      <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse"
-        aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#faqAccordion">
-        <div class="accordion-body py-3 px-4 text-muted">
-          {{ faq.answer }}
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <div class="faq-highlight-pill">
+            <i class="bi bi-clock-history"></i>
+            <span>Average response time <strong>under 24 hours</strong></span>
+          </div>
+          <div class="faq-highlight-pill">
+            <i class="bi bi-shield-check"></i>
+            <span>Professional gear that’s <strong>maintained &amp; event ready</strong></span>
+          </div>
+          <div class="faq-highlight-pill">
+            <i class="bi bi-people"></i>
+            <span><strong>Trusted by clients</strong> across Northern California</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="faq-support-card card h-100">
+          <div class="card-body p-4 p-xl-5 d-flex flex-column gap-4">
+            <div>
+              <h2 class="h4 fw-semibold text-white mb-2">Need personalized guidance?</h2>
+              <p class="text-white-50 mb-0">Share your event details and we’ll tailor a rental plan with delivery,
+                setup, and on-site support recommendations.</p>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+              <div class="faq-support-icon">
+                <i class="bi bi-envelope-open"></i>
+              </div>
+              <div class="text-white-50 small lh-lg">
+                <span class="d-block fw-semibold text-white">Email us anytime</span>
+                bookings@vproaudio.rentals
+              </div>
+            </div>
+
+            <a class="btn btn-light btn-lg fw-semibold w-100" href="/about/contact/">
+              <i class="bi bi-chat-dots me-2"></i>
+              Start a conversation
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    {% endfor %}
+
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-8">
+        <div class="faq-card card h-100">
+          <div class="card-body p-4 p-xl-5">
+            <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3 mb-4">
+              <div class="faq-search flex-grow-1">
+                <i class="bi bi-search"></i>
+                <input id="faqSearch" type="search" class="form-control form-control-lg"
+                  placeholder="Search for equipment, delivery, setup…" aria-label="Search FAQs" />
+              </div>
+              <p class="small text-muted mb-0 text-lg-end">Type a keyword to filter answers instantly or expand a question to
+                read the full details.</p>
+            </div>
+
+            <div class="accordion accordion-modern" id="faqAccordion">
+              {% for faq in site.faqs %}
+              <div class="accordion-item" data-faq-text="{{ (faq.question | append: ' ' | append: faq.answer | strip_html) | escape }}">
+                <h2 class="accordion-header" id="heading{{ forloop.index }}">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse{{ forloop.index }}" aria-expanded="false"
+                    aria-controls="collapse{{ forloop.index }}">
+                    <span class="faq-index">Q{{ forloop.index }}</span>
+                    <span class="flex-grow-1 text-start">{{ faq.question }}</span>
+                  </button>
+                </h2>
+                <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse"
+                  aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    {{ faq.answer }}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            <div id="faqEmptyState" class="text-center py-5 d-none">
+              <div class="d-inline-flex flex-column align-items-center gap-3">
+                <div class="faq-empty-icon">
+                  <i class="bi bi-search"></i>
+                </div>
+                <div>
+                  <h3 class="h5 fw-semibold mb-2">No matching answers yet</h3>
+                  <p class="text-muted mb-0">Try a different keyword or connect with our team for tailored advice.</p>
+                </div>
+                <button id="faqReset" type="button" class="btn btn-outline-primary btn-sm">
+                  Clear search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="d-flex flex-column gap-4">
+          <div class="faq-side-card card">
+            <div class="card-body p-4 p-xl-5 d-grid gap-3">
+              <h2 class="h5 fw-semibold text-primary mb-0">Make the most of your rental</h2>
+              <ul class="list-unstyled d-grid gap-3 mb-0">
+                <li class="d-flex gap-3">
+                  <span class="faq-side-icon">
+                    <i class="bi bi-clipboard-check"></i>
+                  </span>
+                  <span>
+                    <strong>Share event details</strong> like venue size, schedule, and preferred setup to receive the ideal
+                    package recommendations.
+                  </span>
+                </li>
+                <li class="d-flex gap-3">
+                  <span class="faq-side-icon">
+                    <i class="bi bi-truck"></i>
+                  </span>
+                  <span>
+                    <strong>Plan delivery &amp; pickup</strong> windows early to lock-in logistics and make day-of execution
+                    effortless.
+                  </span>
+                </li>
+                <li class="d-flex gap-3">
+                  <span class="faq-side-icon">
+                    <i class="bi bi-headset"></i>
+                  </span>
+                  <span>
+                    <strong>Ask about on-site support</strong> if you’d like our technicians to handle sound checks and live
+                    monitoring during your event.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-side-card card">
+            <div class="card-body p-4 p-xl-5 d-grid gap-3">
+              <div>
+                <span class="badge badge-soft-primary">Service Hours</span>
+                <h2 class="h5 fw-semibold text-primary mt-3 mb-0">We’re here when you need us</h2>
+              </div>
+              <div class="d-grid gap-2 small text-muted">
+                <div class="d-flex justify-content-between">
+                  <span>Monday – Friday</span>
+                  <strong>9:00 AM – 6:00 PM PT</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span>Saturday</span>
+                  <strong>10:00 AM – 2:00 PM PT</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span>Sunday</span>
+                  <strong>By appointment</strong>
+                </div>
+              </div>
+              <p class="small text-muted mb-0">Need support outside these hours? Let us know—we often accommodate early load-ins
+                and late pickups for special events.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('#faqSearch');
+    const resetButton = document.querySelector('#faqReset');
+    const accordionItems = document.querySelectorAll('#faqAccordion .accordion-item');
+    const emptyState = document.querySelector('#faqEmptyState');
+
+    const updateVisibility = () => {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      accordionItems.forEach(item => {
+        const text = item.dataset.faqText ? item.dataset.faqText.toLowerCase() : '';
+        const matches = !query || text.includes(query);
+
+        if (matches) {
+          item.classList.remove('d-none');
+          visibleCount += 1;
+        } else {
+          const collapse = item.querySelector('.accordion-collapse');
+          const button = item.querySelector('.accordion-button');
+
+          if (collapse && collapse.classList.contains('show')) {
+            collapse.classList.remove('show');
+          }
+
+          if (button) {
+            button.classList.add('collapsed');
+            button.setAttribute('aria-expanded', 'false');
+          }
+
+          item.classList.add('d-none');
+        }
+      });
+
+      if (emptyState) {
+        emptyState.classList.toggle('d-none', visibleCount > 0);
+      }
+    };
+
+    if (searchInput) {
+      searchInput.addEventListener('input', updateVisibility);
+    }
+
+    if (resetButton) {
+      resetButton.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.focus();
+        updateVisibility();
+      });
+    }
+
+    updateVisibility();
+  });
+</script>
 
 
 
