@@ -9,7 +9,7 @@ permalink: /packages/audio/microphones/
   <div class="container py-5 py-lg-6">
     <div class="row align-items-center g-5">
       <div class="col-lg-7">
-        <span class="badge badge-soft-light text-uppercase">Microphone rentals</span>
+        <span class="badge rounded-pill text-bg-light hero-eyebrow text-uppercase">Microphone rentals</span>
         <h1 class="display-4 fw-bold mt-4 text-white">Crystal-clear vocals, speeches, and recordings.</h1>
         <p class="lead text-white-50">From handheld wireless mics to studio staples, our curated kits include stands, cables, and expert setup so every word lands with impact.</p>
         <div class="d-flex flex-wrap gap-3 mt-4">

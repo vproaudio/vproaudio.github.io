@@ -288,6 +288,24 @@ h1, h2, h3, h4, h5, h6 {
   color: $secondary;
 }
 
+.brands-hero-media {
+  backdrop-filter: blur(12px);
+}
+
+.brands-hero-media .brand-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.brands-hero-media .brand-preview-grid img {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0.85rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
 /* ============================================================
    Sections
    ============================================================ */
@@ -414,7 +432,6 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .faq-hero {
   position: relative;
-  background: linear-gradient(135deg, rgba($primary, 0.98) 0%, #1d2550 45%, #3b2f6c 100%);
   color: #fff;
 }
 
