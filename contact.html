@@ -6,30 +6,7 @@ permalink: /about/contact/
 
 <style>
     .contact-hero {
-        background: radial-gradient(circle at top left, rgba(25, 135, 84, 0.25), transparent 60%),
-                    radial-gradient(circle at bottom right, rgba(25, 135, 84, 0.4), transparent 55%),
-                    linear-gradient(135deg, #0f172a, #1e293b);
-        color: #f8fafc;
         position: relative;
-        overflow: hidden;
-    }
-
-    .contact-hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
-        mix-blend-mode: screen;
-        opacity: 0.5;
-        pointer-events: none;
-    }
-
-    .contact-hero .badge-soft {
-        background: rgba(248, 250, 252, 0.2);
-        color: #f8fafc;
-        border-radius: 999px;
-        padding: 0.5rem 1.25rem;
-        backdrop-filter: blur(4px);
     }
 
     .contact-hero h1 {
@@ -114,34 +91,34 @@ permalink: /about/contact/
     }
 </style>
 
-<section class="contact-hero py-5">
-    <div class="container position-relative">
+<section class="hero-section contact-hero text-white position-relative overflow-hidden">
+    <div class="hero-glow"></div>
+    <div class="container py-5 py-lg-6 position-relative">
         <div class="row align-items-center g-5">
-            <div class="col-lg-7">
-                <span class="badge-soft mb-3 d-inline-flex align-items-center gap-2">
-                    <i class="bi bi-stars"></i>
-                    Premium support for every event
-                </span>
-                <h1 class="fw-bold mb-3">Let’s bring your next production to life</h1>
+            <div class="col-lg-6">
+                <span class="badge rounded-pill text-bg-light hero-eyebrow text-uppercase">Concierge audio support</span>
+                <h1 class="fw-bold mt-4 mb-3">Let’s bring your next production to life</h1>
                 <p class="lead mb-4">Tell us about your goals, your gear list, or the experience you want to create. Our audio experts respond within one business day with tailored recommendations and pricing.</p>
-                <div class="d-flex flex-wrap gap-3">
-                    <div class="d-flex align-items-center gap-3">
-                        <span class="icon-circle bg-success bg-opacity-25 text-success"><i class="bi bi-lightning-charge-fill"></i></span>
-                        <div>
-                            <h6 class="mb-0 text-white">Rapid Response</h6>
-                            <small class="text-white-50">Replies in under 24 hours</small>
-                        </div>
+                <div class="d-flex flex-column flex-sm-row gap-3">
+                    <a href="/packages" class="btn btn-gradient btn-lg shadow-lg">Browse rental packages</a>
+                    <a href="/about/contact/#contactForm" class="btn btn-outline-light btn-lg">Plan your event</a>
+                </div>
+                <div class="d-flex flex-wrap gap-4 mt-5 hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">24 hr</span>
+                        <span class="stat-label">Average response time</span>
                     </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <span class="icon-circle bg-success bg-opacity-25 text-success"><i class="bi bi-people-fill"></i></span>
-                        <div>
-                            <h6 class="mb-0 text-white">Expert Guidance</h6>
-                            <small class="text-white-50">Seasoned engineers on staff</small>
-                        </div>
+                    <div class="stat">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Custom recommendations</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">On-call</span>
+                        <span class="stat-label">Support every rental</span>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-6">
                 <div class="contact-quick-links row g-3">
                     <div class="col-12">
                         <div class="card h-100 p-4">
