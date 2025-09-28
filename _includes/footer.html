@@ -1,66 +1,74 @@
-<!--<div class="b-example-divider"></div>-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<footer class="bg-light text-dark pt-5 border-top">
-  <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-4">
-      
-      <!-- Logo & Info -->
-      <div class="col mb-4">
-        <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-          <img src="/assets/images/logo.svg" alt="{{site.company}} Logo" width="60" height="60">
-        </a>
-        <p class="text-muted mb-1">&copy; {{ site.year }} {{ site.company }}. All Rights Reserved.</p>
-        <p class="text-muted mb-1">Vacaville, California</p>
-        <p class="text-muted small">All prices on this site are in USD.</p>
-      </div>
+<footer class="site-footer text-light">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-12 col-lg-4">
+          <a href="/" class="footer-brand d-inline-flex align-items-center text-decoration-none text-light mb-4">
+            <img src="/assets/images/logo.svg" alt="{{ site.company }} Logo" width="64" height="64" class="flex-shrink-0">
+            <div class="ms-3">
+              <span class="d-block fw-semibold fs-5">{{ site.company }}</span>
+              <span class="footer-tagline">{{ site.description }}</span>
+            </div>
+          </a>
+          <p class="footer-description pe-lg-5">We deliver curated audio and visual solutions with concierge-level setup so your event looks and sounds unforgettable.</p>
+          <ul class="footer-contact list-unstyled mb-4">
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>Vacaville, California</span>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill"></i>
+              <a href="mailto:bookings@vproaudio.rentals">bookings@vproaudio.rentals</a>
+            </li>
+          </ul>
+          <a href="/about/contact/" class="btn btn-outline-light btn-sm rounded-pill">Plan your event</a>
+        </div>
 
-      <!-- Spacer -->
-      <div class="col mb-4 d-none d-md-block"></div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h6 class="footer-heading">Packages</h6>
+          <ul class="footer-links list-unstyled">
+            <li><a href="/packages/visual/slideshow-starter-kit/">Slideshow Starter Kit</a></li>
+            <li><a href="/packages/audio/corporate-wellness/">Corporate Wellness</a></li>
+            <li><a href="/packages/audio/wedding-pa-essentials/">Wedding PA Essentials</a></li>
+            <li><a href="/packages/audio/dj-pro-essentials/">DJ Pro Essentials</a></li>
+            <li><a href="/packages/audio/karaoke-pro-pack/">Karaoke Pro Pack</a></li>
+          </ul>
+        </div>
 
-      <!-- Packages -->
-      <div class="col mb-4">
-        <h5 class="fw-semibold">Packages</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="/packages/visual/slideshow-starter-kit/" class="nav-link p-0 text-muted">Slideshow Starter Kit</a></li>
-          <li class="nav-item mb-2"><a href="/packages/audio/corporate-wellness/" class="nav-link p-0 text-muted">Corporate Wellness</a></li>
-          <li class="nav-item mb-2"><a href="/packages/audio/wedding-pa-essentials/" class="nav-link p-0 text-muted">Wedding PA Essentials</a></li>
-          <li class="nav-item mb-2"><a href="/packages/audio/dj-pro-essentials/" class="nav-link p-0 text-muted">DJ Pro Essentials</a></li>
-          <li class="nav-item mb-2"><a href="/packages/audio/karaoke-pro-pack/" class="nav-link p-0 text-muted">Karaoke Pro Pack</a></li>
-        </ul>
-      </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h6 class="footer-heading">Explore</h6>
+          <ul class="footer-links list-unstyled">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/faqs/">FAQs</a></li>
+            <li><a href="/about/brands/">Brands</a></li>
+            <li><a href="/about/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          </ul>
+        </div>
 
-      <!-- Navigation -->
-      <div class="col mb-4">
-        <h5 class="fw-semibold">Navigation</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="/about/faqs/" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="/about/brands/" class="nav-link p-0 text-muted">Brands</a></li>
-          <li class="nav-item mb-2"><a href="/about/contact/" class="nav-link p-0 text-muted">Contact</a></li>
-          <li class="nav-item mb-2"><a href="/privacy-policy/" class="nav-link p-0 text-muted">Privacy Policy</a></li>
-        </ul>
-      </div>
-
-      <!-- Social Links -->
-      <div class="col mb-4">
-        <h5 class="fw-semibold">Connect</h5>
-        <ul class="list-unstyled d-flex gap-3 mt-2">
-          <li>
-            <a href="https://www.tiktok.com/@vproaudiorentals" target="_blank" class="text-dark fs-5" aria-label="TikTok">
+        <div class="col-12 col-md-4 col-lg-3 offset-lg-1">
+          <h6 class="footer-heading">Stay Connected</h6>
+          <p class="footer-description small mb-3">Follow along for behind-the-scenes setups, gear drops, and rental inspiration.</p>
+          <div class="footer-social d-flex align-items-center gap-3 mb-4">
+            <a href="https://www.tiktok.com/@vproaudiorentals" target="_blank" rel="noreferrer" class="footer-social-link" aria-label="TikTok">
               <i class="bi bi-tiktok"></i>
             </a>
-          </li>
-          <!-- Add more icons if needed -->
-          <!--
-          <li>
-            <a href="#" class="text-dark fs-5" aria-label="Facebook">
-              <i class="bi bi-facebook"></i>
+            <a href="mailto:bookings@vproaudio.rentals" class="footer-social-link" aria-label="Email">
+              <i class="bi bi-envelope-fill"></i>
             </a>
-          </li>
-          -->
-        </ul>
+          </div>
+          <div class="footer-pill">Concierge delivery, setup, and teardown included in every rental.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-2">
+        <small>&copy; {{ site.year }} {{ site.company }}. All Rights Reserved.</small>
+        <small>All prices on this site are in USD.</small>
       </div>
     </div>
   </div>
 </footer>
-
