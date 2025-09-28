@@ -1,68 +1,280 @@
----
 layout: default
 title: About - Contact
 permalink: /about/contact/
 ---
 
-<div class="container py-5">
-    <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold">Contact Us</h1>
-        <p class="lead text-muted">We’d love to hear from you! Whether you have questions about our services or need assistance with your rental, we’re here to help.</p>
-    </div>
+<style>
+    .contact-hero {
+        background: radial-gradient(circle at top left, rgba(25, 135, 84, 0.25), transparent 60%),
+                    radial-gradient(circle at bottom right, rgba(25, 135, 84, 0.4), transparent 55%),
+                    linear-gradient(135deg, #0f172a, #1e293b);
+        color: #f8fafc;
+        position: relative;
+        overflow: hidden;
+    }
 
-    <div class="row g-5">
-        <!-- Contact Info -->
-        <div class="col-md-5">
-            <h4 class="fw-bold mb-3">Get in Touch</h4>
-            <p><i class="bi bi-envelope-fill me-2 text-success"></i> <strong>bookings@vproaudio.rentals</strong></p>
-            <p><i class="bi bi-geo-alt-fill me-2 text-success"></i> 607 Elmira Rd, #112, Vacaville, CA 95687</p>
+    .contact-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
+        mix-blend-mode: screen;
+        opacity: 0.5;
+        pointer-events: none;
+    }
 
-            <h4 class="fw-bold mt-5 mb-3">Follow Us</h4>
-            <p>Stay updated with the latest news, tutorials, and offers.</p>
-            <a href="https://www.tiktok.com/@vproaudiorentals" target="_blank" class="btn btn-outline-dark d-inline-flex align-items-center mt-2">
-                <i class="bi bi-tiktok me-2 fs-5 text-success"></i> Follow us on TikTok
-            </a>
-        </div>
+    .contact-hero .badge-soft {
+        background: rgba(248, 250, 252, 0.2);
+        color: #f8fafc;
+        border-radius: 999px;
+        padding: 0.5rem 1.25rem;
+        backdrop-filter: blur(4px);
+    }
 
-        <!-- Contact Form -->
-        <div class="col-md-7">
-            <div class="card shadow-sm">
-                <div class="card-body p-4">
-                    <h4 class="card-title fw-semibold mb-4">Send Us a Message</h4>
-                    <p class="mb-4 text-muted">Fill out the form below and we'll get back to you promptly.</p>
+    .contact-hero h1 {
+        font-size: clamp(2.5rem, 5vw, 3.75rem);
+    }
 
-                    <form id="contactForm" novalidate>
-                        <div class="mb-3">
-                            <label for="user_name" class="form-label">Name</label>
-                            <input name="user_name" type="text" class="form-control" id="user_name" placeholder="Enter your name" required>
-                            <div class="invalid-feedback">Please provide your name.</div>
+    .contact-hero p.lead {
+        color: rgba(248, 250, 252, 0.85);
+    }
+
+    .contact-quick-links .card {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .contact-quick-links .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 35px rgba(15, 23, 42, 0.35);
+    }
+
+    .contact-quick-links .icon-circle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: rgba(34, 197, 94, 0.15);
+        color: #22c55e;
+        font-size: 1.5rem;
+    }
+
+    .contact-form-wrapper {
+        margin-top: -4rem;
+    }
+
+    .contact-form-card {
+        border-radius: 1.25rem;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
+        overflow: hidden;
+    }
+
+    .contact-form-card .card-header {
+        background: linear-gradient(120deg, rgba(34, 197, 94, 0.12), rgba(34, 197, 94, 0));
+        border-bottom: none;
+        padding: 2.5rem 2.5rem 1.5rem;
+    }
+
+    .contact-form-card .card-body {
+        padding: 1.5rem 2.5rem 2.5rem;
+    }
+
+    .form-floating > .form-control:focus,
+    .form-floating > .form-control:not(:placeholder-shown) {
+        padding-top: 1.625rem;
+        padding-bottom: 0.625rem;
+    }
+
+    .contact-support-card {
+        border-radius: 1rem;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .contact-support-card .icon-circle {
+        background: rgba(34, 197, 94, 0.12);
+    }
+
+    @media (max-width: 767.98px) {
+        .contact-form-wrapper {
+            margin-top: -2.5rem;
+        }
+
+        .contact-form-card .card-header,
+        .contact-form-card .card-body {
+            padding-inline: 1.5rem;
+        }
+    }
+</style>
+
+<section class="contact-hero py-5">
+    <div class="container position-relative">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="badge-soft mb-3 d-inline-flex align-items-center gap-2">
+                    <i class="bi bi-stars"></i>
+                    Premium support for every event
+                </span>
+                <h1 class="fw-bold mb-3">Let’s bring your next production to life</h1>
+                <p class="lead mb-4">Tell us about your goals, your gear list, or the experience you want to create. Our audio experts respond within one business day with tailored recommendations and pricing.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="icon-circle bg-success bg-opacity-25 text-success"><i class="bi bi-lightning-charge-fill"></i></span>
+                        <div>
+                            <h6 class="mb-0 text-white">Rapid Response</h6>
+                            <small class="text-white-50">Replies in under 24 hours</small>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="user_email" class="form-label">Email address</label>
-                            <input name="user_email" type="email" class="form-control" id="user_email" placeholder="Enter your email" required>
-                            <div class="invalid-feedback">Please provide a valid email address.</div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="icon-circle bg-success bg-opacity-25 text-success"><i class="bi bi-people-fill"></i></span>
+                        <div>
+                            <h6 class="mb-0 text-white">Expert Guidance</h6>
+                            <small class="text-white-50">Seasoned engineers on staff</small>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea name="message" class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
-                            <div class="invalid-feedback">Please provide a message with at least 10 characters.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="contact-quick-links row g-3">
+                    <div class="col-12">
+                        <div class="card h-100 p-4">
+                            <div class="d-flex align-items-start gap-3">
+                                <span class="icon-circle"><i class="bi bi-envelope-fill"></i></span>
+                                <div>
+                                    <h5 class="text-white">Email our bookings team</h5>
+                                    <p class="text-white-50 mb-2">Share your event details, wishlist, or tech rider.</p>
+                                    <a href="mailto:bookings@vproaudio.rentals" class="btn btn-success btn-sm px-3">bookings@vproaudio.rentals</a>
+                                </div>
+                            </div>
                         </div>
-
-                        <button type="button" class="btn btn-success w-100" onclick="submitForm()">Submit</button>
-                    </form>
-
-                    <div id="responseMessage" class="mt-4"></div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card h-100 p-4">
+                            <div class="d-flex align-items-start gap-3">
+                                <span class="icon-circle"><i class="bi bi-geo-alt-fill"></i></span>
+                                <div>
+                                    <h5 class="text-white">Visit the warehouse</h5>
+                                    <p class="text-white-50 mb-2">607 Elmira Rd, #112, Vacaville, CA 95687</p>
+                                    <small class="text-white-50">Mon–Fri: 9am – 6pm PT<br>Sat: By appointment</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card h-100 p-4">
+                            <div class="d-flex align-items-start gap-3">
+                                <span class="icon-circle"><i class="bi bi-share"></i></span>
+                                <div>
+                                    <h5 class="text-white">Follow our behind-the-scenes</h5>
+                                    <p class="text-white-50 mb-3">Catch gear showcases, setup tutorials, and rental inspo.</p>
+                                    <a href="https://www.tiktok.com/@vproaudiorentals" target="_blank" class="btn btn-outline-light btn-sm px-3 d-inline-flex align-items-center gap-2">
+                                        <i class="bi bi-tiktok"></i> TikTok @vproaudiorentals
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="mt-5 text-center">
-        <p class="lead text-muted">We look forward to assisting you and making your experience with us exceptional!</p>
+<section class="contact-form-wrapper pb-5">
+    <div class="container">
+        <div class="row g-5 align-items-start">
+            <div class="col-lg-7">
+                <div class="card contact-form-card">
+                    <div class="card-header bg-transparent">
+                        <h3 class="fw-semibold mb-2">Tell us about your event</h3>
+                        <p class="mb-0 text-muted">Whether you’re planning a corporate meeting, a festival, or a weekend gig, let us know the scope and we’ll craft the ideal audio package.</p>
+                    </div>
+                    <div class="card-body">
+                        <form id="contactForm" class="row g-4" novalidate>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input name="user_name" type="text" class="form-control" id="user_name" placeholder="Your name" required>
+                                    <label for="user_name">Name</label>
+                                    <div class="invalid-feedback">Please provide your name.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input name="user_email" type="email" class="form-control" id="user_email" placeholder="name@example.com" required>
+                                    <label for="user_email">Email</label>
+                                    <div class="invalid-feedback">Please provide a valid email address.</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input name="event_date" type="text" class="form-control" id="event_date" placeholder="Event date (optional)">
+                                    <label for="event_date">Event date (optional)</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <select name="support_type" class="form-select" id="support_type">
+                                        <option value="General inquiry" selected>General inquiry</option>
+                                        <option value="Rental package">Rental package</option>
+                                        <option value="On-site engineering">On-site engineering</option>
+                                        <option value="Technical support">Technical support</option>
+                                        <option value="Partnership opportunity">Partnership opportunity</option>
+                                    </select>
+                                    <label for="support_type">What can we help with?</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea name="message" class="form-control" id="message" style="height: 160px" placeholder="Share the details" required></textarea>
+                                    <label for="message">Share the details</label>
+                                    <div class="invalid-feedback">Please provide a message with at least 10 characters.</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn btn-success btn-lg w-100" onclick="submitForm()">Send message</button>
+                            </div>
+                            <div class="col-12">
+                                <div id="responseMessage"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="contact-support-card p-4 p-lg-5 h-100 bg-white">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <span class="icon-circle text-success"><i class="bi bi-headset"></i></span>
+                        <div>
+                            <h4 class="mb-1">Need immediate assistance?</h4>
+                            <p class="mb-0 text-muted">Call our on-call engineer line at <strong>(707) 999-1318</strong>.</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled mb-4 text-muted">
+                        <li class="mb-3 d-flex align-items-start gap-3"><i class="bi bi-check2-circle text-success"></i> Dedicated project manager for multi-day productions.</li>
+                        <li class="mb-3 d-flex align-items-start gap-3"><i class="bi bi-check2-circle text-success"></i> Real-time updates on gear availability and delivery timelines.</li>
+                        <li class="d-flex align-items-start gap-3"><i class="bi bi-check2-circle text-success"></i> Complimentary system tuning with full-service packages.</li>
+                    </ul>
+                    <div class="bg-success bg-opacity-10 rounded-3 p-4">
+                        <h5 class="text-success mb-1">Prefer to book a consultation?</h5>
+                        <p class="mb-3 text-muted">Reserve a 30-minute planning session with our lead engineer to review your audio roadmap.</p>
+                        <a class="btn btn-outline-success d-inline-flex align-items-center gap-2" href="mailto:bookings@vproaudio.rentals?subject=Consultation%20Request">
+                            <i class="bi bi-calendar-check"></i> Schedule your consult
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 text-center">
+            <p class="lead text-muted mb-0">We can’t wait to help you create an unforgettable audio experience.</p>
+        </div>
     </div>
-</div>
+</section>
 
 <!-- EmailJS and Validation Script -->
 <script>
