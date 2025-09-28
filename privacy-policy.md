@@ -14,7 +14,7 @@ body_class: privacy-policy-page
         <h1 class="display-4 fw-bold mb-3">Your privacy, protected with intention.</h1>
         <p class="lead mb-4">
           We collect only what we need to support your event and safeguard it with industry-leading practices.
-          Review how your information is handled when you explore {{ site.company }} and our services.
+          Review how your information is handled when you explore {{ site.branding }} and our services.
         </p>
         <div class="d-inline-flex align-items-center gap-3 bg-white bg-opacity-10 rounded-4 px-4 py-3">
           <i class="bi bi-calendar-check fs-4 text-white"></i>
