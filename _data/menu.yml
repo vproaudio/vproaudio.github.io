@@ -24,7 +24,5 @@
   dropdown:
     - title: FAQs
       url: /about/faqs/
-    - title: Brands
-      url: /about/brands/
     - title: Contact
       url: /about/contact/
