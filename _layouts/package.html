@@ -125,19 +125,6 @@
             <div class="col-lg-6">
               <div class="package-media shadow-lg">
                 <img src="{{ page.image }}" alt="{{ page.title }}" class="img-fluid rounded-4" />
-                {% if page.items_included %}
-                  <div class="floating-card shadow-lg">
-                    <p class="mb-2 fw-semibold text-uppercase small text-muted">What's included</p>
-                    <ul class="list-unstyled mb-0 small text-muted">
-                      {% for inc in page.items_included limit: 3 %}
-                        <li><i class="bi bi-check-circle-fill me-2 text-success"></i>{{ inc }}</li>
-                      {% endfor %}
-                      {% if page.items_included and page.items_included.size > 3 %}
-                        <li class="text-primary fw-semibold mt-2">+ more essentials on the full list</li>
-                      {% endif %}
-                    </ul>
-                  </div>
-                {% endif %}
               </div>
             </div>
           </div>
