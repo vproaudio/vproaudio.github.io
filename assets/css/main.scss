@@ -727,6 +727,10 @@ footer.site-footer {
 }
 
 /* Adjust for fixed-top navbar height */
+body {
+  padding-top: 96px;
+}
+
 @media (max-width: 991.98px) {
   body {
     padding-top: 80px;
