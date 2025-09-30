@@ -131,6 +131,14 @@ h1, h2, h3, h4, h5, h6 {
 .btn-outline-light {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.75);
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: rgba(255, 255, 255, 0.75);
+  --bs-btn-hover-color: $primary;
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+  --bs-btn-active-color: $primary;
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #fff;
 
   &:hover,
   &:focus,
@@ -193,6 +201,7 @@ h1, h2, h3, h4, h5, h6 {
   background: radial-gradient(circle at center, rgba(111, 123, 255, 0.48) 0%, rgba(255, 183, 77, 0.22) 52%, rgba(16, 21, 45, 0) 85%);
   filter: blur(0);
   pointer-events: none;
+  mix-blend-mode: screen;
 }
 
 .hero-section .container {
