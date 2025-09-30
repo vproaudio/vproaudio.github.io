@@ -179,29 +179,26 @@ h1, h2, h3, h4, h5, h6 {
    Hero Section
    ============================================================ */
 .hero-section {
-  background: radial-gradient(circle at 15% 20%, rgba(94, 88, 255, 0.35), transparent 58%),
-    radial-gradient(circle at 80% 12%, rgba(56, 181, 230, 0.28), transparent 55%),
-    linear-gradient(145deg, #070b2a 0%, #111f45 40%, #122b4f 68%, #0b162c 100%);
+  background: conic-gradient(from 160deg at 22% 24%, #10152d 0deg, #19203a 150deg, #262a46 320deg, #10152d 360deg);
   position: relative;
 }
 
 .hero-section::before {
   content: "";
   position: absolute;
-  inset: -6rem -25rem auto;
-  height: 460px;
-  background: radial-gradient(circle at top left, rgba(56, 181, 230, 0.45), transparent 65%);
-  opacity: 0.8;
+  inset: -8rem -22rem auto;
+  height: 420px;
+  background: radial-gradient(circle at top left, rgba($success, 0.45) 0%, rgba($success, 0) 68%);
+  opacity: 0.75;
   z-index: 0;
 }
 
 .hero-glow {
   position: absolute;
-  inset: auto -18% -48% auto;
-  width: 540px;
-  height: 540px;
-  background: radial-gradient(ellipse at center, rgba(56, 181, 230, 0.35), rgba(94, 88, 255, 0) 70%),
-    conic-gradient(from 180deg at 50% 50%, rgba(94, 88, 255, 0.35), rgba(94, 88, 255, 0));
+  inset: auto -22% -46% auto;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle at center, rgba(111, 123, 255, 0.48) 0%, rgba(255, 183, 77, 0.22) 52%, rgba(16, 21, 45, 0) 85%);
   filter: blur(0);
   pointer-events: none;
   mix-blend-mode: screen;
