@@ -51,10 +51,10 @@ permalink: /packages/
               <span class="package-card__badge">{{ package.category | capitalize }}</span>
             </div>
             <div class="package-card__body">
-              <h3 class="h4">
-                <a href="{{ package.url | relative_url }}" class="stretched-link">{{ package.title }}</a>
-              </h3>
-              <p class="text-muted">{{ package.description | strip_html | truncate: 160 }}</p>
+              <h3 class="h4 mb-0">{{ package.title }}</h3>
+              <div class="mt-2">
+                <p class="text-muted mb-0">{{ package.description | strip_html | truncate: 160 }}</p>
+              </div>
             </div>
             <div class="package-card__footer d-flex align-items-center justify-content-between">
               <div>
