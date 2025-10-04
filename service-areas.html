@@ -1,0 +1,271 @@
+---
+layout: default
+title: About - Service Areas
+permalink: /about/service-areas/
+---
+
+<style>
+    .service-areas-hero {
+        position: relative;
+        color: #f8fafc;
+    }
+
+    .service-areas-hero .hero-glow {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.25), transparent 45%),
+                    radial-gradient(circle at 80% 10%, rgba(34, 197, 94, 0.25), transparent 55%),
+                    radial-gradient(circle at 50% 80%, rgba(14, 165, 233, 0.15), transparent 60%);
+        opacity: 0.85;
+        z-index: 0;
+    }
+
+    .service-areas-hero .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .service-areas-hero h1 {
+        font-size: clamp(2.75rem, 5vw, 3.75rem);
+    }
+
+    .coverage-card {
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 1.5rem;
+        padding: 2.5rem;
+        box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+    }
+
+    .coverage-highlights {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .coverage-highlights .highlight {
+        background: rgba(15, 23, 42, 0.65);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .coverage-highlights .badge {
+        width: fit-content;
+    }
+
+    .map-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .map-card {
+        background: #ffffff;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .map-card iframe {
+        width: 100%;
+        border: 0;
+        min-height: 220px;
+    }
+
+    .map-card-body {
+        padding: 1.5rem;
+    }
+
+    .map-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .map-card p {
+        color: #475569;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 767.98px) {
+        .coverage-card {
+            padding: 2rem;
+        }
+
+        .service-areas-hero h1 {
+            font-size: clamp(2.25rem, 7vw, 3rem);
+        }
+    }
+</style>
+
+<section class="service-areas-hero hero-section text-white py-5 py-lg-6 overflow-hidden">
+    <div class="hero-glow"></div>
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-7">
+                <span class="badge rounded-pill text-bg-light hero-eyebrow text-uppercase">About VPRO Audio</span>
+                <h1 class="fw-bold mt-4 mb-4">Trusted event audio across Northern California</h1>
+                <p class="lead mb-4">From intimate celebrations to large-scale corporate productions, we deliver premium sound, lighting, and staging support across Solano County, the Sacramento Valley, Napa, and the greater Bay Area. Every booking includes white-glove delivery, expert setup, and on-call support.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge text-bg-success">Same-day dispatch</span>
+                        <span class="text-white-50">for urgent requests</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge text-bg-success">On-site crew</span>
+                        <span class="text-white-50">available for full productions</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="coverage-card h-100 text-white">
+                    <h2 class="h4 mb-3">Coverage at a glance</h2>
+                    <div class="coverage-highlights">
+                        <div class="highlight">
+                            <span class="badge text-bg-success">Core Service Radius</span>
+                            <p class="mb-0">Vacaville-based crews regularly support events in Dixon, Winters, Davis, Woodland, and the broader Sacramento metro.</p>
+                        </div>
+                        <div class="highlight">
+                            <span class="badge text-bg-success">Expanded Bay Area</span>
+                            <p class="mb-0">Frequent delivery routes reach Fairfield, Suisun City, Vallejo, Napa, San Francisco, and San Jose.</p>
+                        </div>
+                        <div class="highlight">
+                            <span class="badge text-bg-success">Custom Travel</span>
+                            <p class="mb-0">Need support elsewhere in Northern California? Let us know—our logistics team will build a plan tailored to your venue and schedule.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 py-lg-6 bg-light">
+    <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+                <h2 class="fw-semibold mb-3">Service areas we cover every week</h2>
+                <p class="lead text-muted">Explore our primary delivery zones. Each location includes a quick map reference so you can confirm we service your venue.</p>
+            </div>
+        </div>
+        <div class="map-grid">
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Vacaville%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Vacaville, CA</h3>
+                    <p>Home base for VPRO Audio. Ideal for Solano County venues and rapid-response event support.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Dixon%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Dixon, CA</h3>
+                    <p>Farm-to-table weddings, city festivals, and school events trust our turnkey audio packages.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Winters%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Winters, CA</h3>
+                    <p>We bring clear sound to outdoor wineries, barn venues, and historic downtown gatherings.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Davis%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Davis, CA</h3>
+                    <p>From UC Davis campus activations to corporate retreats, we handle delivery, setup, and tech.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Woodland%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Woodland, CA</h3>
+                    <p>County fairs, civic celebrations, and private parties enjoy reliable gear and on-call support.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Sacramento%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Sacramento, CA</h3>
+                    <p>We support downtown venues, convention centers, and neighborhood activations across the capital.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Fairfield%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Fairfield, CA</h3>
+                    <p>Corporate meetings, churches, and private celebrations benefit from our curated equipment lists.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Suisun%20City%2C%20CA&t=&z=12&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Suisun City, CA</h3>
+                    <p>Waterfront events, community programming, and pop-up stages with custom sound design.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Vallejo%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Vallejo, CA</h3>
+                    <p>Concerts, cultural festivals, and civic events leverage our scalable audio and lighting systems.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Napa%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Napa, CA</h3>
+                    <p>Upscale winery celebrations and hospitality activations receive white-glove production support.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=San%20Francisco%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">San Francisco, CA</h3>
+                    <p>From rooftop product launches to immersive brand experiences, we design impactful soundscapes.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=San%20Jose%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">San Jose, CA</h3>
+                    <p>Tech conferences, esports showcases, and community gatherings get full-service production.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <iframe src="https://maps.google.com/maps?q=Bay%20Area&t=&z=9&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+                <div class="map-card-body">
+                    <h3 class="h5 mb-2">Greater Bay Area</h3>
+                    <p>We frequently travel across the wider Bay Area. Share your venue details for a custom quote.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 py-lg-6">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-semibold mb-3">Planning an event outside these cities?</h2>
+                <p class="lead text-muted">Our logistics team routinely coordinates deliveries to Lake Tahoe, Sonoma County, the Central Valley, and beyond. Provide your schedule and venue details, and we will confirm availability, travel fees, and crew requirements within one business day.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-4 p-lg-5 bg-dark text-white rounded-4 position-relative overflow-hidden">
+                    <div class="position-absolute top-0 end-0 opacity-25">
+                        <i class="bi bi-headset" style="font-size: 5rem;"></i>
+                    </div>
+                    <h3 class="h4 mb-3">Ready to secure your date?</h3>
+                    <p class="mb-4">Tell us about your event so we can recommend the ideal equipment package, staffing, and delivery schedule.</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="/packages" class="btn btn-success btn-lg">Explore packages</a>
+                        <a href="/about/contact/" class="btn btn-outline-light btn-lg">Contact our team</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
