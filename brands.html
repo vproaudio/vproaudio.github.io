@@ -35,11 +35,11 @@ permalink: /about/brands/
       <div class="col-lg-5">
         <div class="hero-media shadow-lg p-4 brands-hero-media">
           <p class="mb-3 fw-semibold text-uppercase small text-muted">Featured manufacturers</p>
+          {% assign featured_brands = site.data.brands | where: "featured", true %}
           <div class="brand-preview-grid">
-            <img src="/assets/images/shure.png" alt="Shure" class="img-fluid">
-            <img src="/assets/images/mackie.png" alt="Mackie" class="img-fluid">
-            <img src="/assets/images/ev.png" alt="Electro-Voice" class="img-fluid">
-            <img src="/assets/images/yamaha.png" alt="Yamaha" class="img-fluid">
+            {% for brand in featured_brands limit:4 %}
+              <img src="{{ brand.image }}" alt="{{ brand.title }}" class="img-fluid">
+            {% endfor %}
           </div>
           <div class="d-flex align-items-center gap-3 mt-4">
             <i class="bi bi-shield-check text-primary fs-4"></i>
@@ -55,58 +55,21 @@ permalink: /about/brands/
 <section class="brand-showcase py-5">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 brand-card-grid">
-      <div class="col">
-        <article class="brand-card h-100 position-relative">
-          <div class="brand-card-body">
-            <div class="brand-logo-wrapper">
-              <img src="/assets/images/ev.png" alt="Electro-Voice" class="brand-logo">
+      {% for brand in site.data.brands %}
+        <div class="col">
+          <article class="brand-card h-100 position-relative">
+            <div class="brand-card-body">
+              <div class="brand-logo-wrapper">
+                <img src="{{ brand.image }}" alt="{{ brand.title }}" class="brand-logo">
+              </div>
+              <h3 class="brand-name">
+                <a href="{{ brand.url }}" class="stretched-link text-decoration-none" target="_blank" rel="noopener noreferrer">{{ brand.title }}</a>
+              </h3>
+              <p class="brand-description">{{ brand.description }}</p>
             </div>
-            <h3 class="brand-name">
-              <a href="https://www.electrovoice.com/" class="stretched-link text-decoration-none" target="_blank" rel="noopener noreferrer">Electro-Voice</a>
-            </h3>
-            <p class="brand-description">High-quality microphones and speakers trusted for touring rigs.</p>
-          </div>
-        </article>
-      </div>
-      <div class="col">
-        <article class="brand-card h-100 position-relative">
-          <div class="brand-card-body">
-            <div class="brand-logo-wrapper">
-              <img src="/assets/images/mackie.png" alt="Mackie" class="brand-logo">
-            </div>
-            <h3 class="brand-name">
-              <a href="https://mackie.com/" class="stretched-link text-decoration-none" target="_blank" rel="noopener noreferrer">Mackie</a>
-            </h3>
-            <p class="brand-description">Professional mixers and loudspeakers for reliable live sound.</p>
-          </div>
-        </article>
-      </div>
-      <div class="col">
-        <article class="brand-card h-100 position-relative">
-          <div class="brand-card-body">
-            <div class="brand-logo-wrapper">
-              <img src="/assets/images/shure.png" alt="Shure" class="brand-logo">
-            </div>
-            <h3 class="brand-name">
-              <a href="https://www.shure.com/" class="stretched-link text-decoration-none" target="_blank" rel="noopener noreferrer">Shure</a>
-            </h3>
-            <p class="brand-description">Legendary microphones and wireless systems for every stage.</p>
-          </div>
-        </article>
-      </div>
-      <div class="col">
-        <article class="brand-card h-100 position-relative">
-          <div class="brand-card-body">
-            <div class="brand-logo-wrapper">
-              <img src="/assets/images/yamaha.png" alt="Yamaha" class="brand-logo">
-            </div>
-            <h3 class="brand-name">
-              <a href="https://usa.yamaha.com/" class="stretched-link text-decoration-none" target="_blank" rel="noopener noreferrer">Yamaha</a>
-            </h3>
-            <p class="brand-description">Renowned instruments and pro audio gear for any venue.</p>
-          </div>
-        </article>
-      </div>
+          </article>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </section>
