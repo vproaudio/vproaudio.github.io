@@ -18,3 +18,8 @@
   image: /assets/images/yamaha.png
   url: https://usa.yamaha.com/
   featured: true
+- title: EPSON
+  description: Major innovator of 3LCD projectors.
+  image: /assets/images/epson.png
+  url: https://epson.com/usa
+  featured: false
