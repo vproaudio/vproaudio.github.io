@@ -24,5 +24,7 @@
   dropdown:
     - title: FAQs
       url: /about/faqs/
+    - title: Equipment Brands
+      url: /about/brand/
     - title: Contact
       url: /about/contact/
