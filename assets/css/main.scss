@@ -304,6 +304,36 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+.brand-logos-scroll {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  overflow-x: auto;
+  padding: 0.5rem 1rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($primary, 0.2);
+    border-radius: 999px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba($primary, 0.05);
+    border-radius: 999px;
+  }
+
+  .brand-logo-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    min-width: 120px;
+  }
+}
+
 .brand-logos img {
   filter: grayscale(100%);
   opacity: 0.65;
