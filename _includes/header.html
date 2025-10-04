@@ -1,17 +1,27 @@
-<nav class="navbar fixed-top navbar-expand-lg bg-success shadow-sm border-bottom">
+<nav class="navbar navbar-expand-lg navbar-light glassy-nav fixed-top shadow-sm">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="/">
-      <img src="/assets/images/logo.svg" alt="Logo" width="50" height="50" class="me-2">
-      <span class="fw-bold text-primary fs-4"></span>
+      <img src="/assets/images/logo.svg" alt="Logo" width="48" height="48" class="me-2">
+      <span>
+        <span class="brand-title d-block">{{ site.branding }}</span>
+        <span class="brand-tagline d-none d-sm-block">Rentals &amp; Production</span>
+      </span>
     </a>
 
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
-      <ul class="navbar-nav align-items-lg-center">
+      <ul class="navbar-nav align-items-lg-center gap-lg-2">
         {% for item in site.data.menu %}
           {% if item.dropdown %}
             {% assign active = false %}
@@ -20,18 +30,23 @@
                 {% assign active = true %}
               {% endif %}
             {% endfor %}
-            <li class="nav-item dropdown px-2">
-              <a class="nav-link dropdown-toggle fs-5 fw-medium {% if active %}active text-primary{% else %}text-secondary hover-primary{% endif %}" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle {% if active %}active{% endif %}"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 {{ item.title }}
               </a>
-              <ul class="dropdown-menu shadow-sm border-0 rounded-3">
+              <ul class="dropdown-menu shadow-sm border-0 rounded-3 overflow-hidden">
                 {% for sub in item.dropdown %}
                   {% if sub.divider %}
                     <li><hr class="dropdown-divider"></li>
                   {% else %}
                     <li>
-                      <a class="dropdown-item {% if page.url == sub.url %}active fw-bold text-primary{% endif %}" href="{{ sub.url }}">
+                      <a class="dropdown-item {% if page.url == sub.url %}active{% endif %}" href="{{ sub.url }}">
                         {{ sub.title }}
                       </a>
                     </li>
@@ -40,14 +55,17 @@
               </ul>
             </li>
           {% else %}
-            <li class="nav-item px-2">
-              <a class="nav-link fs-5 fw-medium {% if page.url == item.url %}active text-primary{% else %}text-secondary hover-primary{% endif %}" href="{{ item.url }}">
+            <li class="nav-item">
+              <a class="nav-link {% if page.url == item.url %}active{% endif %}" href="{{ item.url }}">
                 {{ item.title }}
               </a>
             </li>
           {% endif %}
         {% endfor %}
       </ul>
+      <div class="d-flex align-items-center mt-3 mt-lg-0 ms-lg-4">
+        <a href="/about/contact/" class="btn btn-gradient btn-sm px-4 shadow-sm">Request a quote</a>
+      </div>
     </div>
   </div>
 </nav>

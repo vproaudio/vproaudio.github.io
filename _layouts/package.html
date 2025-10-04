@@ -1,22 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFK75SWM3H"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-FFK75SWM3H');
     </script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <title>{{ page.title }}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Styles -->
+    <!-- Dynamic Title -->
+    <title>
+      {% if page.title %}
+        {{ page.title }} | {{ site.title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </title>
+
+    <!-- Meta Description -->
+    {% if page.description %}
+      <meta name="description" content="{{ page.description | strip_html | escape }}" />
+    {% elsif site.description %}
+      <meta name="description" content="{{ site.description | strip_html | escape }}" />
+    {% endif %}
+
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- Site Styles -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 
     {% seo %}
@@ -28,10 +57,10 @@
         "@type": "Product",
         "name": "{{ page.title }}",
         "image": "{{ page.image }}",
-        "description": "{{ page.description }}",
+        "description": "{{ page.description | strip_html | escape }}",
         "offers": {
           "@type": "Offer",
-          "url": "{{ page.url }}",
+          "url": "{{ page.url | absolute_url }}",
           "priceCurrency": "USD",
           "price": "{{ page.price }}"
         }
@@ -39,107 +68,172 @@
     </script>
   </head>
 
-  <body class="bg-info text-dark">
+  <body class="site-body package-page">
     <!-- Header -->
     <header>
       {% include header.html %}
     </header>
 
     <!-- Main Content -->
-    <main>
-      <div class="container mt-3">
-        <!-- Breadcrumb 
-        <nav aria-label="breadcrumb" class="mb-4">
-          <ol class="breadcrumb bg-white rounded shadow-sm px-4 py-2">
-            <li class="breadcrumb-item">Packages</li>
-            <li class="breadcrumb-item">{{ page.category }}</li>
-            <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
-          </ol>
-        </nav> -->
+    <main class="site-main">
+      {% assign package_category = page.category | default: 'Audio' | capitalize %}
+      {% assign description_excerpt = page.description | strip_html | truncate: 220 %}
 
-        <!-- Product Header -->
-        <section class="text-center my-5">
-          <h1 class="display-4 fw-bold text-primary">{{ page.title }}</h1>
-          <img src="{{ page.image }}" class="img-fluid rounded shadow-sm my-4" alt="{{ page.title }}" width="700" height="500">
-          <p class="lead text-muted">{{ page.description }}</p>
+      <!-- Hero -->
+      <section class="package-hero hero-section text-white position-relative overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="container py-5 py-lg-6">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <span class="badge rounded-pill text-bg-light hero-eyebrow text-uppercase">{{ package_category }} Package</span>
+              <h1 class="display-4 fw-bold mt-4 text-white">{{ page.title }}</h1>
+              <p class="lead text-white-50 mb-4">{{ description_excerpt }}</p>
 
-          <!-- Centered Price Section -->
-          <div class="my-4 text-center">
-            <div class="d-inline-block bg-primary text-white px-4 py-2 rounded shadow-sm">
-              <span class="h3 fw-bold">${{ page.price }}</span>
-              <span class="h5 fw-bold">/day</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Feature Cards -->
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <!-- Includes -->
-          <div class="col">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title text-primary">Includes</h5>
-                <ul class="list-unstyled">
-                  {% for inc in page.items_included %}
-                    <li>✔️ {{ inc }}</li>
-                  {% endfor %}
-                </ul>
+              <div class="d-flex flex-wrap gap-3 align-items-center">
+                <div class="price-pill shadow-lg">
+                  <span class="price-amount">${{ page.price }}</span>
+                  <span class="price-period">per day</span>
+                </div>
+                <a href="/about/contact/" class="btn btn-gradient btn-lg shadow-lg">Reserve this package</a>
+                <a href="tel:+17076600414" class="btn btn-outline-light btn-lg">
+                  <i class="bi bi-telephone me-2"></i>Call us
+                </a>
               </div>
-            </div>
-          </div>
 
-          <!-- Features -->
-          <div class="col">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title text-primary">Features</h5>
-                <ul class="list-unstyled">
-                  {% for feature in page.features %}
-                    <li>⚙️ {{ feature }}</li>
-                  {% endfor %}
-                </ul>
-              </div>
+              <ul class="package-stats list-unstyled d-flex flex-wrap gap-4 mt-4 mb-0">
+                <li class="stat-item">
+                  <span class="stat-label">Service Area</span>
+                  <span class="stat-value">Vacaville, California</span>
+                </li>
+                <li class="stat-item">
+                  <span class="stat-label">Delivery &amp; Setup</span>
+                  <span class="stat-value">Included</span>
+                </li>
+              </ul>
             </div>
-          </div>
 
-          <!-- Perfect For -->
-          <div class="col">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title text-primary">Perfect For</h5>
-                <ul class="list-unstyled">
-                  {% for customers in page.perfect_for %}
-                    <li>🎯 {{ customers }}</li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Upgrades -->
-          <div class="col">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title text-primary">Optional Upgrades</h5>
-                <ul class="list-unstyled">
-                  {% for upgrade in page.upgrades %}
-                    <li> <i class="bi bi-arrow-up-circle me-2 text-success"></i> {{ upgrade }}</li>
-                  {% endfor %}
-                </ul>
+            <div class="col-lg-6">
+              <div class="package-media shadow-lg">
+                <img src="{{ page.image }}" alt="{{ page.title }}" class="img-fluid rounded-4" />
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Spacer at the bottom for footer -->
-        <div class="my-5"></div>
+      <!-- Overview -->
+      <section class="section-spacing package-overview">
+        <div class="container">
+          <div class="row g-4 align-items-start">
+            <div class="col-lg-8">
+              <article class="content-card shadow-sm h-100">
+                <h2 class="h3 mb-3">Package overview</h2>
+                <div class="text-muted fs-5">
+                  {{ page.description | markdownify }}
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4">
+              <aside class="content-card highlight-card shadow-sm h-100">
+                <h3 class="h5 fw-bold">Need a custom setup?</h3>
+                <p class="text-muted">Tell us about your venue, audience size, and vibe. We'll tune the package to match your event.</p>
+                <ul class="list-unstyled text-muted small mb-4">
+                  <li class="mb-2"><i class="bi bi-lightning-charge me-2 text-primary"></i>White-glove delivery &amp; strike</li>
+                  <li class="mb-2"><i class="bi bi-headset me-2 text-primary"></i>On-call audio engineer support</li>
+                  <li><i class="bi bi-check2-circle me-2 text-primary"></i>Optional rehearsal or sound check add-ons</li>
+                </ul>
+                <a href="/about/contact/" class="btn btn-gradient w-100">Plan my event</a>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      </div>
+      <!-- Details Grid -->
+      <section class="section-spacing pt-0">
+        <div class="container">
+          <div class="row g-4">
+            {% if page.items_included %}
+              <div class="col-md-6 col-xl-3">
+                <div class="content-card h-100 shadow-sm">
+                  <div class="card-icon text-primary"><i class="bi bi-box-seam"></i></div>
+                  <h3 class="h5">In the case</h3>
+                  <ul class="package-list mb-0">
+                    {% for inc in page.items_included %}
+                      <li>{{ inc }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            {% endif %}
+
+            {% if page.features %}
+              <div class="col-md-6 col-xl-3">
+                <div class="content-card h-100 shadow-sm">
+                  <div class="card-icon text-primary"><i class="bi bi-stars"></i></div>
+                  <h3 class="h5">Standout features</h3>
+                  <ul class="package-list mb-0">
+                    {% for feature in page.features %}
+                      <li>{{ feature }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            {% endif %}
+
+            {% if page.perfect_for %}
+              <div class="col-md-6 col-xl-3">
+                <div class="content-card h-100 shadow-sm">
+                  <div class="card-icon text-primary"><i class="bi bi-people"></i></div>
+                  <h3 class="h5">Perfect for</h3>
+                  <ul class="package-list mb-0">
+                    {% for audience in page.perfect_for %}
+                      <li>{{ audience }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            {% endif %}
+
+            {% if page.upgrades %}
+              <div class="col-md-6 col-xl-3">
+                <div class="content-card h-100 shadow-sm">
+                  <div class="card-icon text-primary"><i class="bi bi-arrow-up-circle"></i></div>
+                  <h3 class="h5">Optional upgrades</h3>
+                  <ul class="package-list mb-0">
+                    {% for upgrade in page.upgrades %}
+                      <li>{{ upgrade }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section-spacing pt-0">
+        <div class="container">
+          <div class="cta-banner shadow-lg">
+            <div>
+              <span class="badge badge-soft-primary">You're covered</span>
+              <h2 class="h3 fw-bold mt-3">Full-service rentals with concierge support.</h2>
+              <p class="text-muted mb-0">We handle delivery, setup, onsite checks, and 24/7 tech support so you can focus on your guests.</p>
+            </div>
+            <div class="d-flex flex-column flex-sm-row gap-3">
+              <a href="/about/contact/" class="btn btn-gradient btn-lg">Check availability</a>
+              <a href="mailto:bookings@vproaudio.rentals" class="btn btn-outline-primary btn-lg">Email our team</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     {% include footer.html %}
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>

@@ -1,0 +1,103 @@
+---
+layout: default
+title: Packages
+permalink: /packages/
+---
+
+<section class="packages-hero hero-section position-relative overflow-hidden text-white">
+  <div class="hero-glow"></div>
+  <div class="container py-5 py-lg-6">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="badge rounded-pill text-bg-light hero-eyebrow text-uppercase">Browse our rentals</span>
+        <h1 class="display-4 fw-bold mt-4 text-white">Curated packages for unforgettable events.</h1>
+        <p class="lead text-white-50">High-impact audio and visual setups tailored for weddings, celebrations, markets, and corporate experiences. Choose a ready-to-go package or let us customize one for you.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="/about/contact/" class="btn btn-gradient btn-lg shadow-lg">Talk to a specialist</a>
+          <a href="tel:+17076600414" class="btn btn-outline-light btn-lg">Call now</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="packages-hero-card shadow-lg">
+          <p class="mb-3 text-uppercase small fw-semibold text-muted">Why clients choose us</p>
+          <ul class="list-unstyled text-muted mb-0">
+            <li class="mb-2"><i class="bi bi-truck me-2 text-primary"></i>White-glove delivery, setup, and strike</li>
+            <li class="mb-2"><i class="bi bi-headset me-2 text-primary"></i>24/7 tech support from touring engineers</li>
+            <li><i class="bi bi-check-circle me-2 text-primary"></i>Flexible day-rate rentals with no surprise fees</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-5">
+      <div>
+        <span class="badge badge-soft-primary">All packages</span>
+        <h2 class="h1 fw-bold mt-3 mb-0">Ready-to-rent audio &amp; visual solutions</h2>
+      </div>
+      <p class="text-muted mb-0">Every package includes professional cabling, stands, and on-call support. Need adjustments? We'll tailor the gear list for your venue.</p>
+    </div>
+
+    <div class="row g-4">
+      {% assign sorted_packages = site.packages | sort: 'title' %}
+      {% for package in sorted_packages %}
+        <div class="col-12 col-md-6 col-xl-4">
+          <article class="package-card h-100">
+            <div class="package-card__media">
+              <img src="{{ package.image }}" alt="{{ package.title }}" class="img-fluid rounded-4" />
+              <span class="package-card__badge">{{ package.category | capitalize }}</span>
+            </div>
+            <div class="package-card__body">
+              <h3 class="h4 mb-0">{{ package.title }}</h3>
+              <div class="mt-2">
+                <p class="text-muted mb-0">{{ package.description | strip_html | truncate: 160 }}</p>
+              </div>
+            </div>
+            <div class="package-card__footer d-flex align-items-center justify-content-between">
+              <div>
+                <span class="price fw-bold">${{ package.price }}</span>
+                <span class="text-muted">/day</span>
+              </div>
+              <a href="{{ package.url | relative_url }}" class="btn btn-outline-primary btn-sm">View details</a>
+            </div>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing pt-0">
+  <div class="container">
+    <div class="microphone-highlight shadow-lg">
+      <div>
+        <span class="badge badge-soft-primary">Need more mics?</span>
+        <h2 class="h3 fw-bold mt-3">Microphone packages for vocals, instruments, and podcasts.</h2>
+        <p class="text-muted mb-0">Pair any rental with handheld, headset, or studio-grade microphones curated for clean, reliable performances.</p>
+      </div>
+      <div class="d-flex flex-column flex-sm-row gap-3">
+        <a href="/packages/audio/microphones/" class="btn btn-gradient btn-lg">Explore microphone rentals</a>
+        <a href="mailto:bookings@vproaudio.rentals" class="btn btn-outline-primary btn-lg">Ask about add-ons</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing pt-0">
+  <div class="container">
+    <div class="cta-banner shadow-lg">
+      <div>
+        <span class="badge badge-soft-primary">Let's plan it</span>
+        <h2 class="h3 fw-bold mt-3">Tell us about your event and we'll handle the sound.</h2>
+        <p class="text-muted mb-0">Send the timeline, venue size, and vibe. We'll confirm availability within one business day.</p>
+      </div>
+      <div class="d-flex flex-column flex-sm-row gap-3">
+        <a href="/about/contact/" class="btn btn-gradient btn-lg">Request a custom quote</a>
+        <a href="mailto:bookings@vproaudio.rentals?subject=Consult%20Call" class="btn btn-outline-primary btn-lg">Book a consult call</a>
+      </div>
+    </div>
+  </div>
+</section>
