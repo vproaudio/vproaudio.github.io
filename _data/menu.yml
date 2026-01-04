@@ -1,24 +1,28 @@
 - title: Home
   url: /
 
-- title: Audio
+- title: Event Audio
   dropdown:
-    - title: Corporate Wellness
-      url: /packages/audio/corporate-wellness/
-    - title: Wedding PA Essentials
-      url: /packages/audio/wedding-pa-essentials/
-    - title: DJ Pro Essentials
-      url: /packages/audio/dj-pro-essentials/
-    - title: Karaoke Pro Pack
-      url: /packages/audio/karaoke-pro-pack/
-    - divider: true
-    - title: Microphone Packages
-      url: /packages/audio/microphones/
+    - title: Backyard Event Sound System
+      url: /packages/event-audio/backyard-event-sound-system/
+    - title: Wedding Ceremony Audio System
+      url: /packages/event-audio/wedding-ceremony-audio-system/
+    - title: Ceremony + Cocktail Hour
+      url: /packages/event-audio/ceremony-plus-cocktail-hour/
+    - title: Wedding Reception Sound System
+      url: /packages/event-audio/wedding-reception-sound-system/
+    - title: Corporate Presentation Package
+      url: /packages/event-audio/corporate-presentation-package/
+    - title: Celebration of Life AV Package
+      url: /packages/event-audio/celebration-of-life-av-package/
 
-- title: Visual
+- title: Party Audio
   dropdown:
-    - title: Slideshow Starter Kit
-      url: /packages/visual/slideshow-starter-kit/
+    - title: Party Speaker Package
+      url: /packages/party-audio/party-speaker-package/
+    - title: Karaoke & Party Pack
+      url: /packages/party-audio/karaoke-and-party-pack/
+
 
 - title: About
   dropdown:
