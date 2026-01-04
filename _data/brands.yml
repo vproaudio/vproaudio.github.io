@@ -1,25 +1,25 @@
 - title: Electro-Voice
   description: High-quality microphones and speakers trusted for touring rigs.
-  image: /assets/images/ev.png
+  image: /assets/images/brands/ev.png
   url: https://www.electrovoice.com/
   featured: true
 - title: Mackie
   description: Professional mixers and loudspeakers for reliable live sound.
-  image: /assets/images/mackie.png
+  image: /assets/images/brands/mackie.png
   url: https://mackie.com/
   featured: true
 - title: Shure
   description: Legendary microphones and wireless systems for every stage.
-  image: /assets/images/shure.png
+  image: /assets/images/brands/shure.png
   url: https://www.shure.com/
   featured: true
 - title: Yamaha
   description: Renowned instruments and pro audio gear for any venue.
-  image: /assets/images/yamaha.png
+  image: /assets/images/brands/yamaha.png
   url: https://usa.yamaha.com/
   featured: true
 - title: EPSON
   description: Major innovator of 3LCD projectors.
-  image: /assets/images/epson.png
+  image: /assets/images/brands/epson.png
   url: https://epson.com/usa
   featured: false
