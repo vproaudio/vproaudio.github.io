@@ -1,29 +1,29 @@
 - title: "Wired Vocal Mic Package"
-  image: "/assets/images/mic1.png"
+  image: "/assets/images/mic/mic1.png"
   description: "Shure SM58 microphone, mic stand and 25 ft XLR cable."
   price: 10
 
 - title: "Wireless Vocal Mic Package 1"
-  image: "/assets/images/mic2.png"
+  image: "/assets/images/mic/mic2.png"
   description: "Shure BLX24/SM58 microphone, mic stand and 3 ft XLR cable."
   price: 29
 
 - title: "Wireless Vocal Mic Package 2"
-  image: "/assets/images/mic3.png"
+  image: "/assets/images/mic/mic3.png"
   description: "Shure SLXD24/SM58 microphone, mic stand and 3 ft XLR cable."
   price: 49
 
 - title: "Instrument Mic Package 1"
-  image: "/assets/images/mic4.png"
+  image: "/assets/images/mic/mic4.png"
   description: "Shure SM57 microphone, mic stand and 25 ft XLR cable."
   price: 10
 
 - title: "Instrument Mic Package 2"
-  image: "/assets/images/mic5.png"
+  image: "/assets/images/mic/mic5.png"
   description: "Shure SM81 microphone, mic stand and 25 ft XLR cable."
   price: 29
 
 - title: "Podcast Mic Package"
-  image: "/assets/images/mic6.png"
+  image: "/assets/images/mic/mic6.png"
   description: "Shure SM7B microphone, desktop mic stand and 25 ft XLR cable."
   price: 29
