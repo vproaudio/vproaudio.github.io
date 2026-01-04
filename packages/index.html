@@ -41,29 +41,83 @@ permalink: /packages/
       <p class="text-muted mb-0">Every package includes professional cabling, stands, and on-call support. Need adjustments? We'll tailor the gear list for your venue.</p>
     </div>
 
-    {% assign sorted_packages = site.packages | sort: 'title' %}
-    {% assign filtered_packages = sorted_packages | where_exp: "package", "package.category != 'Microphones'" %}
     <div class="table-responsive">
       <table class="table table-striped align-middle">
         <thead class="table-light">
           <tr>
             <th scope="col">Package</th>
-            <th scope="col">Category</th>
-            <th scope="col" class="d-none d-lg-table-cell">Overview</th>
-            <th scope="col" class="text-nowrap">Price</th>
+            <th scope="col">Speakers</th>
+            <th scope="col">Sub</th>
+            <th scope="col">Mics</th>
+            <th scope="col">Projector</th>
+            <th scope="col">Best For</th>
           </tr>
         </thead>
         <tbody>
-          {% for package in filtered_packages %}
-            <tr>
-              <th scope="row">
-                <a href="{{ package.url | relative_url }}" class="link-primary fw-semibold">{{ package.title }}</a>
-              </th>
-              <td>{{ package.category }}</td>
-              <td class="d-none d-lg-table-cell text-muted">{{ package.description | strip_html | truncate: 160 }}</td>
-              <td class="text-nowrap">${{ package.price }}/day</td>
-            </tr>
-          {% endfor %}
+          <tr>
+            <th scope="row"><strong>Party Speaker Package</strong></th>
+            <td>2× EV ZLX-12P</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>Birthdays, BBQs, pool parties</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Karaoke &amp; Party Pack</strong></th>
+            <td>2× EV ZLX-12P</td>
+            <td>—</td>
+            <td>1× wireless</td>
+            <td>—</td>
+            <td>Karaoke, teen parties, family events</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Backyard Event System</strong></th>
+            <td>2× Yamaha DBR10</td>
+            <td>—</td>
+            <td>1× wireless</td>
+            <td>—</td>
+            <td>Small gatherings, backyard weddings</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Wedding Ceremony Audio</strong></th>
+            <td>2× Yamaha DBR10</td>
+            <td>—</td>
+            <td>2× wireless</td>
+            <td>—</td>
+            <td>Vows, officiants, outdoor ceremonies</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Ceremony + Cocktail Hour</strong></th>
+            <td>2× DBR10 + 1× DBR12</td>
+            <td>—</td>
+            <td>2× wireless</td>
+            <td>—</td>
+            <td>Weddings with multiple areas</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Wedding Reception System</strong></th>
+            <td>2× Yamaha DBR12</td>
+            <td>✔</td>
+            <td>2× wireless</td>
+            <td>—</td>
+            <td>Backyard &amp; winery dance floors</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Corporate Presentation</strong></th>
+            <td>2× Yamaha DBR10</td>
+            <td>—</td>
+            <td>Lav + wireless</td>
+            <td>✔</td>
+            <td>Meetings, training, panels</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Celebration of Life AV</strong></th>
+            <td>2× Yamaha DBR10</td>
+            <td>—</td>
+            <td>1× wireless</td>
+            <td>✔</td>
+            <td>Memorials &amp; slideshows</td>
+          </tr>
         </tbody>
       </table>
     </div>
