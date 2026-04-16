@@ -1,0 +1,14 @@
+- slug: audio-systems
+  title: Audio Systems
+  icon: "🎤"
+  description: Speaker, microphone, and mixer setup workflows for general events.
+
+- slug: karaoke-systems
+  title: Karaoke Systems
+  icon: "🎤"
+  description: Plug-and-play karaoke configuration and audio balancing guides.
+
+- slug: projector-systems
+  title: Projector Systems
+  icon: "📽️"
+  description: Display and projection setup instructions for presentations and events.

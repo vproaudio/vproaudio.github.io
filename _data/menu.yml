@@ -23,6 +23,10 @@
     - title: Karaoke & Party Pack
       url: /packages/party-audio/karaoke-and-party-pack/
 
+- title: Support
+  dropdown:
+    - title: Setup Instructions
+      url: /support/setup-instructions/
 
 - title: About
   dropdown:

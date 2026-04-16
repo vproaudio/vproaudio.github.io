@@ -26,7 +26,7 @@
           {% if item.dropdown %}
             {% assign active = false %}
             {% for sub in item.dropdown %}
-              {% if page.url == sub.url %}
+              {% if page.url == sub.url or (sub.url != "/" and page.url contains sub.url) %}
                 {% assign active = true %}
               {% endif %}
             {% endfor %}
@@ -46,7 +46,7 @@
                     <li><hr class="dropdown-divider"></li>
                   {% else %}
                     <li>
-                      <a class="dropdown-item {% if page.url == sub.url %}active{% endif %}" href="{{ sub.url }}">
+                      <a class="dropdown-item {% if page.url == sub.url or (sub.url != "/" and page.url contains sub.url) %}active{% endif %}" href="{{ sub.url }}">
                         {{ sub.title }}
                       </a>
                     </li>
