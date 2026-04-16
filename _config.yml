@@ -43,6 +43,9 @@ collections:
   packages:
     output: true
     permalink: /packages/:name/
+  setup_instructions:
+    output: true
+    permalink: /support/setup-instructions/:name/
 
 defaults:
   - scope:
