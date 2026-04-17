@@ -14,6 +14,7 @@ company: "VANS Professional Audio Rentals"
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-paginate-v2
 
 seo:
   title: "VANS Pro Audio Rentals"
@@ -42,7 +43,6 @@ collections:
     output: false
   packages:
     output: true
-    permalink: /packages/:name/
 
 defaults:
   - scope:
@@ -51,3 +51,17 @@ defaults:
       layout: "default"
       image: "/assets/images/home.jpg"
       author: "Edwin Vans"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Setup guides pagination
+pagination:
+  enabled: true
+  collection: posts
+  category: setup-guides
+  per_page: 6
+  permalink: /support/setup-guides/page/:num/
+

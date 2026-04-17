@@ -1280,3 +1280,45 @@ body {
 .policy-hero-card .text-white-50 {
   color: rgba(255, 255, 255, 0.65) !important;
 }
+
+/* ============================================================
+   Setup Guides
+   ============================================================ */
+.page-link {
+  border: 1px solid rgba($primary, 0.12);
+  color: $primary;
+
+  &:hover {
+    color: $primary;
+    background: rgba($primary, 0.08);
+    border-color: rgba($primary, 0.2);
+  }
+}
+
+.page-item.active .page-link {
+  background: $primary;
+  border-color: $primary;
+}
+
+.setup-post-content {
+  font-size: 1.03rem;
+  line-height: 1.85;
+  color: lighten($secondary, 2%);
+
+  h2,
+  h3,
+  h4 {
+    margin-top: 2.2rem;
+    margin-bottom: 0.85rem;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25rem;
+  }
+
+  p,
+  li {
+    margin-bottom: 0.8rem;
+  }
+}
