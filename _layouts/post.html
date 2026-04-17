@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="setup-post section-spacing py-5">
+  <div class="container" style="max-width: 900px;">
+    <header class="mb-4">
+      <a href="/support/setup-guides/" class="text-decoration-none small text-uppercase fw-semibold">
+        <i class="bi bi-arrow-left"></i> Back to Setup Guides
+      </a>
+      <h1 class="display-5 fw-bold mt-3">{{ page.title }}</h1>
+      <div class="text-muted d-flex flex-wrap gap-3 align-items-center">
+        <span><i class="bi bi-calendar3 me-1"></i>{{ page.date | date: "%B %d, %Y" }}</span>
+        {% if page.tags and page.tags.size > 0 %}
+          <span>
+            <i class="bi bi-tags me-1"></i>
+            {% for tag in page.tags %}
+              <span class="badge badge-soft-primary me-1">{{ tag }}</span>
+            {% endfor %}
+          </span>
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="setup-post-content">
+      {{ content }}
+    </div>
+  </div>
+</article>
