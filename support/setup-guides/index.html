@@ -2,13 +2,8 @@
 layout: default
 title: Setup Guides
 description: Step-by-step setup guides for V Pro Audio rentals.
-permalink: /support/setup-guides/
 pagination:
   enabled: true
-  collection: posts
-  category: setup-guides
-  per_page: 6
-  permalink: /support/setup-guides/page/:num/
 ---
 
 <section class="hero-section position-relative overflow-hidden text-white py-5">
@@ -53,7 +48,7 @@ pagination:
             </div>
             <h2 class="h4 fw-bold mb-2">{{ post.title }}</h2>
             <p class="text-muted mb-4">{{ post.excerpt | strip_html | truncate: 160 }}</p>
-            <a href="{{ post.url }}" class="btn btn-gradient btn-sm px-3">Read guide</a>
+            <a href="{{ post.url | relative_url }}" class="btn btn-gradient btn-sm px-3">Read guide</a>
           </article>
         </div>
       {% endfor %}

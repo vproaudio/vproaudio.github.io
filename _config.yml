@@ -43,7 +43,6 @@ collections:
     output: false
   packages:
     output: true
-    permalink: /packages/:name/
 
 defaults:
   - scope:
@@ -58,5 +57,11 @@ defaults:
     values:
       layout: "post"
 
-# Blog pagination
-paginate_path: "/support/setup-guides/page/:num/"
+# Setup guides pagination
+pagination:
+  enabled: true
+  collection: posts
+  category: setup-guides
+  per_page: 6
+  permalink: /support/setup-guides/page/:num/
+
