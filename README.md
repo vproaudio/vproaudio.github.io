@@ -11,6 +11,14 @@ cd your-repo
 npm install bootstrap
 ```
 
+
+## Bootstrap strategy (single source of truth)
+
+This project uses **Bootstrap from npm** and compiles it through the Jekyll Sass pipeline via `assets/css/main.scss` (`@import "bootstrap/scss/bootstrap"`).
+
+- Do **not** include Bootstrap CSS from a CDN in layouts.
+- Keep Bootstrap in `package.json` and let Jekyll compile `assets/css/main.css`.
+
 ## 3. Make changes to the repo
 
 Edit your files as needed.
