@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Lint SCSS (fail-fast)
+        run: npm run lint:scss
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+
+      - name: Run HTMLProofer
+        run: bundle exec htmlproofer ./_site --disable-external --enforce-https --check-html
