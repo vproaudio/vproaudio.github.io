@@ -4,7 +4,6 @@ source "https://rubygems.org"
 
 # gem "rails"
 gem "jekyll"
-gem 'bootstrap', '~> 5.3.3'
 gem 'jekyll-seo-tag'
 
 gem 'jekyll-paginate-v2'
