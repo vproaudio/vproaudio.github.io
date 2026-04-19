@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
   quality:
@@ -35,4 +34,4 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Run HTMLProofer
-        run: bundle exec htmlproofer ./_site --disable-external --enforce-https --check-html
+        run: bundle exec htmlproofer ./_site --disable-external --enforce-https

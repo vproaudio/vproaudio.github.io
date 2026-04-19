@@ -1,18 +1,23 @@
 {
   "name": "vproaudio.github.io",
   "version": "1.0.0",
-  "description": "",
+  "description": "Official website for V PRO AUDIO",
   "main": "index.js",
   "scripts": {
-    "lint:scss": "stylelint \"assets/css/**/*.scss\" --allow-empty-input",
-    "test": "npm run lint:scss"
+    "sass:build": "sass --load-path=_sass assets/scss/main.scss:assets/css/main.css --style=expanded",
+    "sass:watch": "sass --watch --load-path=_sass assets/scss/main.scss:assets/css/main.css",
+    "lint:scss": "stylelint \"{assets/scss,_sass}/**/*.scss\" --allow-empty-input",
+    "build": "npm run sass:build && bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve",
+    "test": "npm run lint:scss",
+    "dev": "npm run sass:watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vproaudio/vproaudio.github.io.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Edwin Vans",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vproaudio/vproaudio.github.io/issues"
@@ -22,6 +27,7 @@
     "bootstrap": "^5.3.8"
   },
   "devDependencies": {
+    "sass": "^1.99.0",
     "stylelint": "^16.24.0",
     "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-scss": "^6.12.1"
