@@ -4,6 +4,7 @@ title: Privacy Policy
 permalink: /privacy-policy/
 description: Learn how VANS Pro Audio Rentals collects, protects, and uses your personal information when you engage with our services.
 body_class: privacy-policy-page
+effective_date: 2026-04-19
 ---
 
 <section class="hero-section text-white py-5 py-lg-5 position-relative overflow-hidden">
@@ -18,7 +19,7 @@ body_class: privacy-policy-page
         </p>
         <div class="d-inline-flex align-items-center gap-3 bg-white bg-opacity-10 rounded-4 px-4 py-3">
           <i class="bi bi-calendar-check fs-4 text-white"></i>
-          <div class="small text-uppercase letter-spacing-wide fw-semibold">Effective {{ site.time | date: "%B %d, %Y" }}</div>
+          <div class="small text-uppercase letter-spacing-wide fw-semibold">Effective {{ page.effective_date | date: "%B %d, %Y" }}</div>
         </div>
       </div>
       <div class="col-lg-5">
