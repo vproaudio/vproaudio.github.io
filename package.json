@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:scss": "stylelint \"assets/css/**/*.scss\" --allow-empty-input",
+    "test": "npm run lint:scss"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,10 @@
   "homepage": "https://github.com/vproaudio/vproaudio.github.io#readme",
   "dependencies": {
     "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "stylelint": "^16.24.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.12.1"
   }
 }
