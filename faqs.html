@@ -78,7 +78,7 @@ permalink: /about/faqs/
 
             <div class="accordion accordion-modern" id="faqAccordion">
               {% for faq in site.faqs %}
-              <div class="accordion-item" data-faq-text="{{ (faq.question | append: ' ' | append: faq.answer | strip_html) | escape }}">
+              <div class="accordion-item" data-faq-text="{{ faq.question | append: ' ' | append: faq.answer | strip_html | escape }}">
                 <h2 class="accordion-header" id="heading{{ forloop.index }}">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapse{{ forloop.index }}" aria-expanded="false"
