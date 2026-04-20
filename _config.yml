@@ -25,7 +25,7 @@ seo:
 social:
   name: "VANS Pro Audio Rentals"
   links:
-    - "https://www.tiktok.com/@vproaudiorentals"
+    - "https://www.youtube.com/@VProAudioRentals"
 
 exclude:
   - Gemfile
@@ -39,6 +39,8 @@ sass:
   style: compressed
 
 collections:
+  pages:
+    output: true
   faqs:
     output: false
   packages:
@@ -64,4 +66,3 @@ pagination:
   category: setup-guides
   per_page: 6
   permalink: /support/setup-guides/page/:num/
-

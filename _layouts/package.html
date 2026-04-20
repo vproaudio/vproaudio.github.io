@@ -1,81 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFK75SWM3H"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-FFK75SWM3H');
-    </script>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Dynamic Title -->
-    <title>
-      {% if page.title %}
-        {{ page.title }} | {{ site.title }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </title>
-
-    <!-- Meta Description -->
-    {% if page.description %}
-      <meta name="description" content="{{ page.description | strip_html | escape }}" />
-    {% elsif site.description %}
-      <meta name="description" content="{{ site.description | strip_html | escape }}" />
-    {% endif %}
-
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
-
-    <!-- Site Styles -->
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-
-    {% seo %}
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "{{ page.title }}",
-        "image": "{{ page.image }}",
-        "description": "{{ page.description | strip_html | escape }}",
-        "offers": {
-          "@type": "Offer",
-          "url": "{{ page.url | absolute_url }}",
-          "priceCurrency": "USD",
-          "price": "{{ page.price }}"
-        }
-      }
-    </script>
-  </head>
-
-  <body class="site-body package-page">
-    <!-- Header -->
-    <header>
-      {% include header.html %}
-    </header>
-
-    <!-- Main Content -->
-    <main class="site-main">
+---
+layout: base
+---
       {% assign package_category = page.category | default: 'Audio' | capitalize %}
       {% assign description_excerpt = page.description | strip_html | truncate: 220 %}
 
@@ -234,13 +159,4 @@
           </div>
         </div>
       </section>
-    </main>
-
-    <!-- Footer -->
-    {% include footer.html %}
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-  </body>
-</html>
+    
