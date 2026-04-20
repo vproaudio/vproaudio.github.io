@@ -39,6 +39,9 @@ sass:
   style: compressed
 
 collections:
+  pages:
+    output: true
+    permalink: /:path/
   faqs:
     output: false
   packages:
