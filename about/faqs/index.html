@@ -35,17 +35,8 @@
       rel="stylesheet"
     />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
     <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
 
     <!-- Site Styles -->
     <link rel="stylesheet" href="/assets/css/main.css" />
@@ -56,20 +47,23 @@
 <meta property="og:title" content="About - FAQs" />
 <meta name="author" content="Edwin Vans" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Affordable, professional quality audio for your events." />
-<meta property="og:description" content="Affordable, professional quality audio for your events." />
+<meta name="description" content="Support Center Frequently Asked Questions Discover quick answers about our rental process, delivery options, and how we help events run smoothly." />
+<meta property="og:description" content="Support Center Frequently Asked Questions Discover quick answers about our rental process, delivery options, and how we help events run smoothly." />
 <link rel="canonical" href="https://www.vproaudio.rentals/about/faqs/" />
 <meta property="og:url" content="https://www.vproaudio.rentals/about/faqs/" />
 <meta property="og:site_name" content="V Pro Audio" />
 <meta property="og:image" content="https://www.vproaudio.rentals/assets/images/home.jpg" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-19T22:55:44-07:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.vproaudio.rentals/assets/images/home.jpg" />
 <meta property="twitter:title" content="About - FAQs" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Edwin Vans"},"description":"Affordable, professional quality audio for your events.","headline":"About - FAQs","image":"https://www.vproaudio.rentals/assets/images/home.jpg","url":"https://www.vproaudio.rentals/about/faqs/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Edwin Vans"},"dateModified":"2026-04-19T22:55:44-07:00","datePublished":"2026-04-19T22:55:44-07:00","description":"Support Center Frequently Asked Questions Discover quick answers about our rental process, delivery options, and how we help events run smoothly.","headline":"About - FAQs","image":"https://www.vproaudio.rentals/assets/images/home.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.vproaudio.rentals/about/faqs/"},"url":"https://www.vproaudio.rentals/about/faqs/"}</script>
 <!-- End Jekyll SEO tag -->
 
+
+    
   </head>
 
   <body class="site-body">
@@ -329,7 +323,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <!-- <div class="col-lg-4">
         <div class="faq-support-card card h-100">
           <div class="card-body p-4 p-xl-5 d-flex flex-column gap-4">
             <div>
@@ -355,7 +349,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="row g-4 align-items-start">
       <div class="col-lg-8">
@@ -588,171 +582,18 @@
   </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.querySelector('#faqSearch');
-    const resetButton = document.querySelector('#faqReset');
-    const accordionItems = document.querySelectorAll('#faqAccordion .accordion-item');
-    const emptyState = document.querySelector('#faqEmptyState');
 
-    const updateVisibility = () => {
-      const query = searchInput.value.trim().toLowerCase();
-      let visibleCount = 0;
-
-      accordionItems.forEach(item => {
-        const text = item.dataset.faqText ? item.dataset.faqText.toLowerCase() : '';
-        const matches = !query || text.includes(query);
-
-        if (matches) {
-          item.classList.remove('d-none');
-          visibleCount += 1;
-        } else {
-          const collapse = item.querySelector('.accordion-collapse');
-          const button = item.querySelector('.accordion-button');
-
-          if (collapse && collapse.classList.contains('show')) {
-            collapse.classList.remove('show');
-          }
-
-          if (button) {
-            button.classList.add('collapsed');
-            button.setAttribute('aria-expanded', 'false');
-          }
-
-          item.classList.add('d-none');
-        }
-      });
-
-      if (emptyState) {
-        emptyState.classList.toggle('d-none', visibleCount > 0);
-      }
-    };
-
-    if (searchInput) {
-      searchInput.addEventListener('input', updateVisibility);
-    }
-
-    if (resetButton) {
-      resetButton.addEventListener('click', () => {
-        searchInput.value = '';
-        searchInput.focus();
-        updateVisibility();
-      });
-    }
-
-    updateVisibility();
-  });
-</script>
-
-
-
-
-
-
-<!--
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-How far in advance should I book the equipment?
-</p>
-<p class="fs-5 text-body-secondary">
-We recommend booking at least 2-3 weeks in advance. However, we can often accommodate last-minute rentals depending on equipment availability.
-</p>
-
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-Do you deliver and set up the equipment?
-</p>
-<p class="fs-5 text-body-secondary">
-We offer delivery and setup services for our equipment. Delivery and setup are free for events within the Vacaville, CA area. For events outside of Vacaville, delivery charges and setup fees may apply, 
-depending on your location and the complexity of the setup. You can request this service when booking the equipment. Alternatively, you have the option to pick up and return the equipment yourself.
-</p>
-
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-How do I pick up and return the equipment?
-</p>
-<p class="fs-5 text-body-secondary">
-You can pick up the equipment from our storage, with details provided upon confirmation. For returns, please drop off the equipment at our storage location by the agreed return date. 
-</p>
--->
-
-<!--
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    Is a rental agreement required?
-</p>
-<p class="fs-5 text-body-secondary">
-    Yes, a standard equipment rental agreement is required for renting all equipment from us.  
-</p>
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-    Do you offer discounts for long term (multi day) rentals?
-</p>
-<p class="fs-5 text-body-secondary">
-    Yes, we offer discounts for multi day rentals. Contact us today to find out. 
-</p>
--->
-
-<!--
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-What is included in the rental?
-</p>
-<p class="fs-5 text-body-secondary">
-The rental includes the equipment itself, as well as basic cables and accessories (such as power cords and stands). Additional accessories or special requests may incur extra charges. 
-If you're unsure, ask us for a detailed list of what's included.
-</p>
-
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-What forms of payment do you accept?
-</p>
-<p class="fs-5 text-body-secondary">
-Payments can be made through the online payment links we provide upon confirmation. We accept all major credit and debit cards.
-</p>
-
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-What if the equipment is damaged or stops working during my rental?
-</p>
-<p class="fs-5 text-body-secondary">
-If the equipment is malfunctioning or damaged during your rental period, please notify us immediately. Depending on the situation, we will either repair or replace the equipment as quickly as possible. 
-If the damage is due to misuse, you may be responsible for repair or replacement costs.
-</p>
-
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-Are there any late fees for returning the equipment late?
-</p>
-<p class="fs-5 text-body-secondary">
-Yes, late returns are subject to additional charges. If the equipment is returned later than the agreed-upon time, you will be charged a late fee, which is usually calculated on a daily basis. 
-Please contact us in advance if you're running late to discuss potential solutions.
-</p>
-
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-Do you provide technical support during my event?
-</p>
-<p class="fs-5 text-body-secondary">
-Yes, we offer on-site technical support for certain events, depending on the equipment rented. This service can be arranged in advance and may incur additional fees. Please inquire about support when booking.
-</p>
-
-
-<p class="fs-5 fw-bold mt-5 text-body-secondary">
-Do you offer package deals or discounts?
-</p>
-<p class="fs-5 text-body-secondary">
-Yes, we offer package deals for events requiring multiple items or long-term rentals. Discounts may be available based on the rental duration, type of event, and specific equipment. Contact us for a custom quote.
-</p>
--->
 
 
     </main>
 
     <!-- Footer -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<footer class="site-footer text-light">
+    <footer class="site-footer text-light">
   <div class="footer-top">
     <div class="container">
       <div class="row gy-5">
         <div class="col-12 col-lg-4">
-          <a href="/" class="footer-brand d-inline-flex align-items-center text-decoration-none text-light mb-4">
+          <a href="/" class="d-inline-flex align-items-center text-decoration-none text-light mb-4">
             <img src="/assets/images/logo.svg" alt="V Pro Audio Logo" width="64" height="64" class="flex-shrink-0">
             <div class="ms-3">
               <span class="d-block fw-semibold fs-5">V Pro Audio</span>
@@ -799,8 +640,8 @@ Yes, we offer package deals for events requiring multiple items or long-term ren
           <h6 class="footer-heading">Stay Connected</h6>
           <p class="footer-description small mb-3">Follow along for behind-the-scenes setups, gear drops, and rental inspiration.</p>
           <div class="footer-social d-flex align-items-center gap-3 mb-4">
-            <a href="https://www.tiktok.com/@vproaudiorentals" target="_blank" rel="noreferrer" class="footer-social-link" aria-label="TikTok">
-              <i class="bi bi-tiktok"></i>
+            <a href="https://www.youtube.com/@VProAudioRentals" target="_blank" rel="noreferrer" class="footer-social-link" aria-label="YouTube">
+              <i class="bi bi-youtube"></i>
             </a>
             <a href="mailto:bookings@vproaudio.rentals" class="footer-social-link" aria-label="Email">
               <i class="bi bi-envelope-fill"></i>

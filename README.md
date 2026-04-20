@@ -6,10 +6,11 @@ git clone https://github.com/your-username/your-repo.git
 cd your-repo
 ```
 
-## 2. Install Bootstrap using npm
+## 2. Install packages using npm
 ```bash
-npm install bootstrap
+npm install
 ```
+
 
 ## 3. Make changes to the repo
 
