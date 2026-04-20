@@ -4,92 +4,8 @@ title: About - Contact
 permalink: /about/contact/
 ---
 
-<style>
-    .contact-hero {
-        position: relative;
-    }
 
-    .contact-hero h1 {
-        font-size: clamp(2.5rem, 5vw, 3.75rem);
-    }
-
-    .contact-hero p.lead {
-        color: rgba(248, 250, 252, 0.85);
-    }
-
-    .contact-quick-links .card {
-        background: rgba(15, 23, 42, 0.75);
-        border: 1px solid rgba(148, 163, 184, 0.2);
-        border-radius: 1rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        backdrop-filter: blur(10px);
-    }
-
-    .contact-quick-links .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 15px 35px rgba(15, 23, 42, 0.35);
-    }
-
-    .contact-quick-links .icon-circle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        background: rgba(34, 197, 94, 0.15);
-        color: #22c55e;
-        font-size: 1.5rem;
-    }
-
-    .contact-form-wrapper {
-        margin-top: -4rem;
-    }
-
-    .contact-form-card {
-        border-radius: 1.25rem;
-        border: 1px solid rgba(148, 163, 184, 0.25);
-        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
-        overflow: hidden;
-    }
-
-    .contact-form-card .card-header {
-        background: linear-gradient(120deg, rgba(34, 197, 94, 0.12), rgba(34, 197, 94, 0));
-        border-bottom: none;
-        padding: 2.5rem 2.5rem 1.5rem;
-    }
-
-    .contact-form-card .card-body {
-        padding: 1.5rem 2.5rem 2.5rem;
-    }
-
-    .form-floating > .form-control:focus,
-    .form-floating > .form-control:not(:placeholder-shown) {
-        padding-top: 1.625rem;
-        padding-bottom: 0.625rem;
-    }
-
-    .contact-support-card {
-        border-radius: 1rem;
-        border: 1px solid rgba(15, 23, 42, 0.08);
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
-    }
-
-    .contact-support-card .icon-circle {
-        background: rgba(34, 197, 94, 0.12);
-    }
-
-    @media (max-width: 767.98px) {
-        .contact-form-wrapper {
-            margin-top: -2.5rem;
-        }
-
-        .contact-form-card .card-header,
-        .contact-form-card .card-body {
-            padding-inline: 1.5rem;
-        }
-    }
-</style>
+    
 
 <section class="hero-section contact-hero text-white position-relative overflow-hidden">
     <div class="hero-glow"></div>
@@ -215,7 +131,7 @@ permalink: /about/contact/
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="button" id="contactSubmit" class="btn btn-success btn-lg w-100" onclick="submitForm()">Send message</button>
+                                <button type="button" id="contactSubmit" class="btn btn-success btn-lg w-100" >Send message</button>
                             </div>
                             <div class="col-12">
                                 <div id="responseMessage"></div>
@@ -256,99 +172,4 @@ permalink: /about/contact/
         </div>
     </div>
 </section>
-
-<!-- EmailJS and Validation Script -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    if (typeof emailjs !== "undefined") {
-        emailjs.init({
-            publicKey: "8g9ogIfKnECKwhPCN"
-        });
-    } else {
-        console.error("EmailJS SDK failed to load.");
-    }
-});
-
-function submitForm() {
-    const name = document.getElementById("user_name");
-    const email = document.getElementById("user_email");
-    const eventDate = document.getElementById("event_date");
-    const supportType = document.getElementById("support_type");
-    const message = document.getElementById("message");
-    const response = document.getElementById("responseMessage");
-    const submitButton = document.getElementById("contactSubmit");
-
-    let isValid = true;
-    response.innerHTML = '';
-
-    if (!name.value.trim()) {
-        name.classList.add("is-invalid");
-        isValid = false;
-    } else {
-        name.classList.remove("is-invalid");
-    }
-
-    const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-    if (!email.value.trim() || !emailRegex.test(email.value)) {
-        email.classList.add("is-invalid");
-        isValid = false;
-    } else {
-        email.classList.remove("is-invalid");
-    }
-
-    if (!message.value.trim() || message.value.length < 10) {
-        message.classList.add("is-invalid");
-        isValid = false;
-    } else {
-        message.classList.remove("is-invalid");
-    }
-
-    if (!isValid) {
-        response.innerHTML = '<div class="alert alert-warning">Please fill in all fields correctly before submitting.</div>';
-        return;
-    }
-
-    if (typeof emailjs === "undefined") {
-        response.innerHTML = '<div class="alert alert-danger">Our email service is currently unavailable. Please reach out directly at <a href="mailto:bookings@vproaudio.rentals" class="alert-link">bookings@vproaudio.rentals</a>.</div>';
-        console.error("EmailJS SDK is not available when attempting to submit the contact form.");
-        return;
-    }
-
-    submitButton.disabled = true;
-    const originalText = submitButton.innerHTML;
-    submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
-
-    const originalMessageValue = message.value;
-    const composedMessageParts = [
-        `Support type: ${supportType.value}`
-    ];
-
-    if (eventDate.value.trim()) {
-        composedMessageParts.push(`Event date: ${eventDate.value.trim()}`);
-    }
-
-    composedMessageParts.push('', originalMessageValue);
-    message.value = composedMessageParts.join('\n');
-
-    let didSucceed = false;
-
-    emailjs.sendForm("service_ilnhxr9", "template_t1xv5a8", "#contactForm")
-        .then(function() {
-            didSucceed = true;
-            response.innerHTML = '<div class="alert alert-success">Thank you for contacting us. Your message has been sent!</div>';
-            document.getElementById("contactForm").reset();
-        })
-        .catch(function(error) {
-            console.error("EmailJS error:", error);
-            response.innerHTML = '<div class="alert alert-danger">Oops! Something went wrong while sending your message. Please try again later or email us directly at <a href="mailto:bookings@vproaudio.rentals" class="alert-link">bookings@vproaudio.rentals</a>.</div>';
-        })
-        .finally(function() {
-            if (!didSucceed) {
-                message.value = originalMessageValue;
-            }
-            submitButton.disabled = false;
-            submitButton.innerHTML = originalText;
-        });
-}
-</script>
 

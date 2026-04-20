@@ -174,61 +174,7 @@ permalink: /about/faqs/
   </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.querySelector('#faqSearch');
-    const resetButton = document.querySelector('#faqReset');
-    const accordionItems = document.querySelectorAll('#faqAccordion .accordion-item');
-    const emptyState = document.querySelector('#faqEmptyState');
 
-    const updateVisibility = () => {
-      const query = searchInput.value.trim().toLowerCase();
-      let visibleCount = 0;
-
-      accordionItems.forEach(item => {
-        const text = item.dataset.faqText ? item.dataset.faqText.toLowerCase() : '';
-        const matches = !query || text.includes(query);
-
-        if (matches) {
-          item.classList.remove('d-none');
-          visibleCount += 1;
-        } else {
-          const collapse = item.querySelector('.accordion-collapse');
-          const button = item.querySelector('.accordion-button');
-
-          if (collapse && collapse.classList.contains('show')) {
-            collapse.classList.remove('show');
-          }
-
-          if (button) {
-            button.classList.add('collapsed');
-            button.setAttribute('aria-expanded', 'false');
-          }
-
-          item.classList.add('d-none');
-        }
-      });
-
-      if (emptyState) {
-        emptyState.classList.toggle('d-none', visibleCount > 0);
-      }
-    };
-
-    if (searchInput) {
-      searchInput.addEventListener('input', updateVisibility);
-    }
-
-    if (resetButton) {
-      resetButton.addEventListener('click', () => {
-        searchInput.value = '';
-        searchInput.focus();
-        updateVisibility();
-      });
-    }
-
-    updateVisibility();
-  });
-</script>
 
 
 
