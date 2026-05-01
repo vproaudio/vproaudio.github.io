@@ -112,8 +112,7 @@
   color: t.$primary;
 }
 
-.cta-banner,
-.microphone-highlight {
+.cta-banner {
   background: #fff;
   border-radius: 1.75rem;
   padding: 2.5rem 3rem;
@@ -124,8 +123,7 @@
 }
 
 @media (width >= 768px) {
-  .cta-banner,
-  .microphone-highlight {
+  .cta-banner {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -174,19 +172,6 @@
   object-fit: cover;
 }
 
-.package-card__badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgb(255 255 255 / 85%);
-  color: t.$primary;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
 
 .package-card__body {
   flex: 1 1 auto;
