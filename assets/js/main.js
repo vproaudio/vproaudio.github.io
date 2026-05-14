@@ -27,6 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.package-submenu.show').forEach(closePackageSubmenu);
   };
 
+  const closeSiblingPackageSubmenus = (submenuItem) => {
+    if (!submenuItem || !submenuItem.parentElement) return;
+
+    const siblingSubmenus = submenuItem.parentElement.querySelectorAll('.package-submenu.show');
+    siblingSubmenus.forEach((sibling) => {
+      if (sibling !== submenuItem) {
+        sibling.classList.remove('show');
+        const siblingToggle = sibling.querySelector('.package-submenu-toggle');
+        if (siblingToggle) siblingToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  };
+
   packageSubmenuToggles.forEach((toggle) => {
     const submenuItem = toggle.closest('.package-submenu');
 
@@ -38,30 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       closeSiblingPackageSubmenus(submenuItem);
 
-      if (desktopPackageSubmenuQuery.matches) {
-        closePackageSubmenu(submenuItem);
-        toggle.blur();
-        return;
-      }
-
       const isOpen = submenuItem.classList.toggle('show');
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
     toggle.addEventListener('mouseenter', () => {
-      if (!desktopPackageSubmenuQuery.matches || !submenuItem) return;
-
       closeSiblingPackageSubmenus(submenuItem);
-      toggle.setAttribute('aria-expanded', 'true');
     });
 
-    toggle.addEventListener('mouseleave', () => {
-      if (desktopPackageSubmenuQuery.matches) toggle.setAttribute('aria-expanded', 'false');
+    toggle.addEventListener('focusin', () => {
+      closeSiblingPackageSubmenus(submenuItem);
     });
-  });
-
-  desktopPackageSubmenuQuery.addEventListener('change', (event) => {
-    if (event.matches) closeAllPackageSubmenus();
   });
 
   document.querySelectorAll('.nav-item.dropdown').forEach((dropdown) => {
