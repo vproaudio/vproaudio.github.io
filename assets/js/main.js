@@ -5,25 +5,40 @@ document.addEventListener('DOMContentLoaded', () => {
   // Nested package dropdowns
   const packageSubmenuToggles = document.querySelectorAll('.package-submenu-toggle');
 
+  const closeSiblingPackageSubmenus = (submenuItem) => {
+    if (!submenuItem || !submenuItem.parentElement) return;
+
+    const siblingSubmenus = submenuItem.parentElement.querySelectorAll('.package-submenu.show');
+    siblingSubmenus.forEach((sibling) => {
+      if (sibling !== submenuItem) {
+        sibling.classList.remove('show');
+        const siblingToggle = sibling.querySelector('.package-submenu-toggle');
+        if (siblingToggle) siblingToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  };
+
   packageSubmenuToggles.forEach((toggle) => {
+    const submenuItem = toggle.closest('.package-submenu');
+
     toggle.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
 
-      const submenuItem = toggle.closest('.package-submenu');
       if (!submenuItem) return;
 
-      const siblingSubmenus = submenuItem.parentElement.querySelectorAll('.package-submenu.show');
-      siblingSubmenus.forEach((sibling) => {
-        if (sibling !== submenuItem) {
-          sibling.classList.remove('show');
-          const siblingToggle = sibling.querySelector('.package-submenu-toggle');
-          if (siblingToggle) siblingToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
+      closeSiblingPackageSubmenus(submenuItem);
 
       const isOpen = submenuItem.classList.toggle('show');
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    toggle.addEventListener('mouseenter', () => {
+      closeSiblingPackageSubmenus(submenuItem);
+    });
+
+    toggle.addEventListener('focusin', () => {
+      closeSiblingPackageSubmenus(submenuItem);
     });
   });
 
