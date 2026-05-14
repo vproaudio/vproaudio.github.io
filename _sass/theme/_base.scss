@@ -100,12 +100,12 @@ footer.site-footer {
 
   a {
     color: rgba(#fff, 0.88);
+    text-decoration: none;
     transition: color 0.2s ease, transform 0.2s ease;
 
     &:hover,
     &:focus {
       color: #fff;
-      text-decoration: none;
     }
   }
 
@@ -207,6 +207,14 @@ footer.site-footer {
     small {
       color: rgba(#fff, 0.6);
       font-weight: 500;
+    }
+  }
+
+  .footer-contact a,
+  .footer-links a {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
     }
   }
 }
