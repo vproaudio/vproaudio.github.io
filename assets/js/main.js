@@ -4,27 +4,64 @@ console.log('Bootstrap + Jekyll loaded!');
 document.addEventListener('DOMContentLoaded', () => {
   // Nested package dropdowns
   const packageSubmenuToggles = document.querySelectorAll('.package-submenu-toggle');
+  const desktopPackageSubmenuQuery = window.matchMedia('(min-width: 992px)');
+
+  const closePackageSubmenu = (submenuItem) => {
+    if (!submenuItem) return;
+
+    submenuItem.classList.remove('show');
+    const toggle = submenuItem.querySelector('.package-submenu-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  const closeSiblingPackageSubmenus = (submenuItem) => {
+    if (!submenuItem || !submenuItem.parentElement) return;
+
+    const siblingSubmenus = submenuItem.parentElement.querySelectorAll('.package-submenu.show');
+    siblingSubmenus.forEach((sibling) => {
+      if (sibling !== submenuItem) closePackageSubmenu(sibling);
+    });
+  };
+
+  const closeAllPackageSubmenus = () => {
+    document.querySelectorAll('.package-submenu.show').forEach(closePackageSubmenu);
+  };
 
   packageSubmenuToggles.forEach((toggle) => {
+    const submenuItem = toggle.closest('.package-submenu');
+
     toggle.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
 
-      const submenuItem = toggle.closest('.package-submenu');
       if (!submenuItem) return;
 
-      const siblingSubmenus = submenuItem.parentElement.querySelectorAll('.package-submenu.show');
-      siblingSubmenus.forEach((sibling) => {
-        if (sibling !== submenuItem) {
-          sibling.classList.remove('show');
-          const siblingToggle = sibling.querySelector('.package-submenu-toggle');
-          if (siblingToggle) siblingToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
+      closeSiblingPackageSubmenus(submenuItem);
+
+      if (desktopPackageSubmenuQuery.matches) {
+        closePackageSubmenu(submenuItem);
+        toggle.blur();
+        return;
+      }
 
       const isOpen = submenuItem.classList.toggle('show');
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+
+    toggle.addEventListener('mouseenter', () => {
+      if (!desktopPackageSubmenuQuery.matches || !submenuItem) return;
+
+      closeSiblingPackageSubmenus(submenuItem);
+      toggle.setAttribute('aria-expanded', 'true');
+    });
+
+    toggle.addEventListener('mouseleave', () => {
+      if (desktopPackageSubmenuQuery.matches) toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  desktopPackageSubmenuQuery.addEventListener('change', (event) => {
+    if (event.matches) closeAllPackageSubmenus();
   });
 
   document.querySelectorAll('.nav-item.dropdown').forEach((dropdown) => {

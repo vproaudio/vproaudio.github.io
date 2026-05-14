@@ -475,9 +475,7 @@
     top: 0;
   }
 
-  .package-submenu:hover > .nested-dropdown-menu,
-  .package-submenu:focus-within > .nested-dropdown-menu,
-  .package-submenu.show > .nested-dropdown-menu {
+  .package-submenu:hover > .nested-dropdown-menu {
     display: block;
   }
 }
