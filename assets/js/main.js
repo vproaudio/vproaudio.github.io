@@ -4,7 +4,6 @@ console.log('Bootstrap + Jekyll loaded!');
 document.addEventListener('DOMContentLoaded', () => {
   // Nested package dropdowns
   const packageSubmenuToggles = document.querySelectorAll('.package-submenu-toggle');
-  const desktopPackageSubmenuQuery = window.matchMedia('(min-width: 992px)');
 
   const closePackageSubmenu = (submenuItem) => {
     if (!submenuItem) return;
@@ -23,23 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const closeAllPackageSubmenus = () => {
-    document.querySelectorAll('.package-submenu.show').forEach(closePackageSubmenu);
-  };
-
-  const closeSiblingPackageSubmenus = (submenuItem) => {
-    if (!submenuItem || !submenuItem.parentElement) return;
-
-    const siblingSubmenus = submenuItem.parentElement.querySelectorAll('.package-submenu.show');
-    siblingSubmenus.forEach((sibling) => {
-      if (sibling !== submenuItem) {
-        sibling.classList.remove('show');
-        const siblingToggle = sibling.querySelector('.package-submenu-toggle');
-        if (siblingToggle) siblingToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  };
-
   packageSubmenuToggles.forEach((toggle) => {
     const submenuItem = toggle.closest('.package-submenu');
 
@@ -54,23 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = submenuItem.classList.toggle('show');
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
-
-    toggle.addEventListener('mouseenter', () => {
-      closeSiblingPackageSubmenus(submenuItem);
-    });
-
-    toggle.addEventListener('focusin', () => {
-      closeSiblingPackageSubmenus(submenuItem);
-    });
   });
 
   document.querySelectorAll('.nav-item.dropdown').forEach((dropdown) => {
     dropdown.addEventListener('hidden.bs.dropdown', () => {
-      dropdown.querySelectorAll('.package-submenu.show').forEach((submenu) => {
-        submenu.classList.remove('show');
-        const toggle = submenu.querySelector('.package-submenu-toggle');
-        if (toggle) toggle.setAttribute('aria-expanded', 'false');
-      });
+      dropdown.querySelectorAll('.package-submenu.show').forEach(closePackageSubmenu);
     });
   });
 
