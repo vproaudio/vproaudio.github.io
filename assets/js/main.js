@@ -2,6 +2,41 @@
 console.log('Bootstrap + Jekyll loaded!');
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Nested package dropdowns
+  const packageSubmenuToggles = document.querySelectorAll('.package-submenu-toggle');
+
+  packageSubmenuToggles.forEach((toggle) => {
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const submenuItem = toggle.closest('.package-submenu');
+      if (!submenuItem) return;
+
+      const siblingSubmenus = submenuItem.parentElement.querySelectorAll('.package-submenu.show');
+      siblingSubmenus.forEach((sibling) => {
+        if (sibling !== submenuItem) {
+          sibling.classList.remove('show');
+          const siblingToggle = sibling.querySelector('.package-submenu-toggle');
+          if (siblingToggle) siblingToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      const isOpen = submenuItem.classList.toggle('show');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  document.querySelectorAll('.nav-item.dropdown').forEach((dropdown) => {
+    dropdown.addEventListener('hidden.bs.dropdown', () => {
+      dropdown.querySelectorAll('.package-submenu.show').forEach((submenu) => {
+        submenu.classList.remove('show');
+        const toggle = submenu.querySelector('.package-submenu-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+
   // Setup guides filtering
   const setupGuidesSearchInput = document.getElementById('setupGuidesSearch');
   const setupGuidesCards = Array.from(document.querySelectorAll('.guide-card-item'));
