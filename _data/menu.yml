@@ -23,6 +23,12 @@
           url: /packages/party-audio/party-speaker-package/
         - title: Karaoke & Party Pack
           url: /packages/party-audio/karaoke-and-party-pack/
+    - title: Event Lighting
+      dropdown:
+        - title: Silver Party Lighting Package
+          url: /packages/event-lighting/silver-party-lighting-package/
+        - title: Ultimate Dance Floor Experience
+          url: /packages/event-lighting/ultimate-dance-floor-experience/
 
 - title: Support
   dropdown:
