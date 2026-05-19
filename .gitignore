@@ -11,7 +11,6 @@ Gemfile.lock
 
 # Node modules (if you're using Bootstrap source via npm)
 node_modules/
-package-lock.json
 yarn.lock
 
 # System files

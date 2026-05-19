@@ -5,6 +5,7 @@ set -e  # Exit on any error
 BUILD_DIR="_site"
 BRANCH="gh-pages"
 MAIN_BRANCH="main"
+DEVEL_BRANCH="devel"
 
 # === Check for clean working directory ===
 if [ -n "$(git status --porcelain)" ]; then
@@ -47,5 +48,19 @@ git push origin $BRANCH
 
 echo "🔄 Switching back to $MAIN_BRANCH..."
 git checkout $MAIN_BRANCH
+
+echo "🧹 Removing local $DEVEL_BRANCH branch if it exists..."
+if git show-ref --verify --quiet "refs/heads/$DEVEL_BRANCH"; then
+  git branch -D $DEVEL_BRANCH
+fi
+
+echo "🧹 Removing remote $DEVEL_BRANCH branch if it exists..."
+if git ls-remote --exit-code --heads origin $DEVEL_BRANCH > /dev/null; then
+  git push origin --delete $DEVEL_BRANCH
+fi
+
+echo "🌱 Creating fresh $DEVEL_BRANCH branch from $MAIN_BRANCH..."
+git branch $DEVEL_BRANCH $MAIN_BRANCH
+git push -u origin $DEVEL_BRANCH
 
 echo "✅ Deployment complete!"

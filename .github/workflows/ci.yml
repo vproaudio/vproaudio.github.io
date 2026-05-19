@@ -25,7 +25,7 @@ jobs:
           cache: npm
 
       - name: Install Node dependencies
-        run: npm install
+        run: npm ci
 
       - name: Lint SCSS (fail-fast)
         run: npm run lint:scss
