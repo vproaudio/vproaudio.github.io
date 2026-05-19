@@ -8,3 +8,4 @@ gem 'jekyll-seo-tag'
 
 gem 'jekyll-paginate-v2'
 gem 'html-proofer'
+gem 'debug'

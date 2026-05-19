@@ -30,8 +30,8 @@ jobs:
       - name: Lint SCSS (fail-fast)
         run: npm run lint:scss
 
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
+      - name: Build site
+        run: JEKYLL_ENV=production npm run build
 
       - name: Run HTMLProofer
-        run: bundle exec htmlproofer ./_site --disable-external --enforce-https
+        run: JEKYLL_ENV=production bundle exec htmlproofer ./_site --disable-external --enforce-https
