@@ -14,8 +14,6 @@ if [ -n "$(git status --porcelain)" ]; then
 fi
 
 echo "🧪 Running CI checks..."
-npm ci
-npm run lint:scss
 JEKYLL_ENV=production npm run build
 JEKYLL_ENV=production bundle exec htmlproofer ./_site --disable-external --enforce-https
 
@@ -33,7 +31,7 @@ git rm -rf . > /dev/null || true
 
 # === Restore .gitignore to ignore unneeded files ===
 echo "📄 Restoring or creating .gitignore..."
-echo -e "node_modules/\n_site/\nvendor/\n.sass-cache/\n.jekyll-cache/\n*.log\n*.tmp\nGemfile.lock\ndeploy.sh\n" > .gitignore
+echo -e "node_modules/\n_site/\nvendor/\n.jekyll-cache/\n*.log\n*.tmp\nGemfile.lock\ndeploy.sh\n" > .gitignore
 git add .gitignore
 
 echo "📁 Copying built site to root (including hidden files)..."

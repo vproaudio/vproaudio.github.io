@@ -1,14 +1,54 @@
-// Custom JS can go here
-console.log('Bootstrap + Jekyll loaded!');
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Nested package dropdowns
+  // Navigation disclosure controls
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector(navbarToggler?.getAttribute('data-bs-target') || '#navbarResponsive');
+
+  if (navbarToggler && navbarCollapse) {
+    navbarToggler.addEventListener('click', () => {
+      const isOpen = navbarCollapse.classList.toggle('hidden') === false;
+      navbarToggler.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  const closeDropdown = (dropdown) => {
+    if (!dropdown) return;
+
+    dropdown.classList.remove('show');
+    dropdown.querySelector(':scope > .dropdown-menu')?.classList.add('hidden');
+    const toggle = dropdown.querySelector(':scope > .dropdown-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    dropdown.querySelectorAll('.package-submenu.show').forEach(closePackageSubmenu);
+  };
+
+  const closeSiblingDropdowns = (dropdown) => {
+    if (!dropdown || !dropdown.parentElement) return;
+
+    dropdown.parentElement.querySelectorAll(':scope > .dropdown.show').forEach((sibling) => {
+      if (sibling !== dropdown) closeDropdown(sibling);
+    });
+  };
+
+  document.querySelectorAll('.nav-item.dropdown > .dropdown-toggle').forEach((toggle) => {
+    const dropdown = toggle.closest('.dropdown');
+
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      closeSiblingDropdowns(dropdown);
+      const isOpen = dropdown.classList.toggle('show');
+      dropdown.querySelector(':scope > .dropdown-menu')?.classList.toggle('hidden', !isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
   const packageSubmenuToggles = document.querySelectorAll('.package-submenu-toggle');
 
   const closePackageSubmenu = (submenuItem) => {
     if (!submenuItem) return;
 
     submenuItem.classList.remove('show');
+    submenuItem.querySelector(':scope > .nested-dropdown-menu')?.classList.add('hidden');
     const toggle = submenuItem.querySelector('.package-submenu-toggle');
     if (toggle) toggle.setAttribute('aria-expanded', 'false');
   };
@@ -34,15 +74,76 @@ document.addEventListener('DOMContentLoaded', () => {
       closeSiblingPackageSubmenus(submenuItem);
 
       const isOpen = submenuItem.classList.toggle('show');
+      submenuItem.querySelector(':scope > .nested-dropdown-menu')?.classList.toggle('hidden', !isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   });
 
-  document.querySelectorAll('.nav-item.dropdown').forEach((dropdown) => {
-    dropdown.addEventListener('hidden.bs.dropdown', () => {
-      dropdown.querySelectorAll('.package-submenu.show').forEach(closePackageSubmenu);
+  document.addEventListener('click', (event) => {
+    if (event.target.closest('.dropdown')) return;
+
+    document.querySelectorAll('.dropdown.show').forEach(closeDropdown);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+
+    document.querySelectorAll('.dropdown.show').forEach(closeDropdown);
+    if (navbarCollapse && !navbarCollapse.classList.contains('hidden')) {
+      navbarCollapse.classList.add('hidden');
+      navbarToggler?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Accordion controls
+  document.querySelectorAll('.accordion-button[data-bs-toggle="collapse"]').forEach((button) => {
+    const collapse = document.querySelector(button.getAttribute('data-bs-target'));
+    if (!collapse) return;
+
+    button.addEventListener('click', () => {
+      const parentSelector = collapse.getAttribute('data-bs-parent');
+      const isOpen = collapse.classList.contains('show');
+
+      if (parentSelector) {
+        document.querySelectorAll(`${parentSelector} .accordion-collapse.show`).forEach((openCollapse) => {
+          if (openCollapse === collapse) return;
+
+          openCollapse.classList.remove('show');
+          openCollapse.classList.add('hidden');
+          const openButton = document.querySelector(`[data-bs-target="#${openCollapse.id}"]`);
+          if (openButton) {
+            openButton.classList.add('collapsed');
+            openButton.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      collapse.classList.toggle('show', !isOpen);
+      collapse.classList.toggle('hidden', isOpen);
+      button.classList.toggle('collapsed', isOpen);
+      button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
     });
   });
+
+  // Scroll reveal animations
+  const faders = document.querySelectorAll('.fade-in');
+
+  if (faders.length > 0) {
+    if (!('IntersectionObserver' in window)) {
+      faders.forEach((fader) => fader.classList.add('visible'));
+    } else {
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.1 });
+
+      faders.forEach((fader) => appearOnScroll.observe(fader));
+    }
+  }
 
   // Setup guides filtering
   const setupGuidesSearchInput = document.getElementById('setupGuidesSearch');
@@ -57,11 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
       setupGuidesCards.forEach((card) => {
         const haystack = card.dataset.search || '';
         const isVisible = !query || haystack.includes(query);
-        card.classList.toggle('d-none', !isVisible);
+        card.classList.toggle('hidden', !isVisible);
         if (isVisible) visibleCount += 1;
       });
 
-      setupGuidesNoResults.classList.toggle('d-none', visibleCount > 0);
+      setupGuidesNoResults.classList.toggle('hidden', visibleCount > 0);
     };
 
     setupGuidesSearchInput.addEventListener('input', filterGuides);
@@ -114,19 +215,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (!isValid) {
-        response.innerHTML = '<div class="alert alert-warning">Please fill in all fields correctly before submitting.</div>';
+        response.innerHTML = '<div class="rounded-xl border border-brand-gold/60 bg-brand-gold/20 p-4 text-brand-ink">Please fill in all fields correctly before submitting.</div>';
         return;
       }
 
       if (typeof emailjs === 'undefined') {
-        response.innerHTML = '<div class="alert alert-danger">Our email service is currently unavailable. Please reach out directly at <a href="mailto:bookings@vproaudio.rentals" class="alert-link">bookings@vproaudio.rentals</a>.</div>';
+        response.innerHTML = '<div class="rounded-xl border border-brand-muted/25 bg-brand-muted p-4 text-brand-soft">Our email service is currently unavailable. Please reach out directly at <a href="mailto:bookings@vproaudio.rentals" class="font-bold underline">bookings@vproaudio.rentals</a>.</div>';
         console.error('EmailJS SDK is not available when attempting to submit the contact form.');
         return;
       }
 
       contactSubmitButton.disabled = true;
       const originalText = contactSubmitButton.innerHTML;
-      contactSubmitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
+      contactSubmitButton.innerHTML = '<span class="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-brand-soft/40 border-t-brand-soft" role="status" aria-hidden="true"></span>Sending...';
 
       const originalMessageValue = message.value;
       const composedMessageParts = [
@@ -145,12 +246,12 @@ document.addEventListener('DOMContentLoaded', () => {
       emailjs.sendForm('service_ilnhxr9', 'template_t1xv5a8', '#contactForm')
         .then(() => {
           didSucceed = true;
-          response.innerHTML = '<div class="alert alert-success">Thank you for contacting us. Your message has been sent!</div>';
+          response.innerHTML = '<div class="rounded-xl border border-brand-gold/60 bg-brand-soft p-4 text-brand-ink">Thank you for contacting us. Your message has been sent!</div>';
           contactForm.reset();
         })
         .catch((error) => {
           console.error('EmailJS error:', error);
-          response.innerHTML = '<div class="alert alert-danger">Oops! Something went wrong while sending your message. Please try again later or email us directly at <a href="mailto:bookings@vproaudio.rentals" class="alert-link">bookings@vproaudio.rentals</a>.</div>';
+          response.innerHTML = '<div class="rounded-xl border border-brand-muted/25 bg-brand-muted p-4 text-brand-soft">Oops! Something went wrong while sending your message. Please try again later or email us directly at <a href="mailto:bookings@vproaudio.rentals" class="font-bold underline">bookings@vproaudio.rentals</a>.</div>';
         })
         .finally(() => {
           if (!didSucceed) {
@@ -180,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const matches = !query || text.includes(query);
 
         if (matches) {
-          item.classList.remove('d-none');
+          item.classList.remove('hidden');
           visibleCount += 1;
         } else {
           const collapse = item.querySelector('.accordion-collapse');
@@ -188,6 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (collapse && collapse.classList.contains('show')) {
             collapse.classList.remove('show');
+            collapse.classList.add('hidden');
           }
 
           if (button) {
@@ -195,11 +297,11 @@ document.addEventListener('DOMContentLoaded', () => {
             button.setAttribute('aria-expanded', 'false');
           }
 
-          item.classList.add('d-none');
+          item.classList.add('hidden');
         }
       });
 
-      faqEmptyState.classList.toggle('d-none', visibleCount > 0);
+      faqEmptyState.classList.toggle('hidden', visibleCount > 0);
     };
 
     faqSearchInput.addEventListener('input', updateFaqVisibility);

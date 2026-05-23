@@ -38,11 +38,6 @@ exclude:
   - package-lock.json
   - vendor
 
-sass:
-  load_paths:
-    - node_modules
-  style: compressed
-
 collections:
   pages:
     output: true

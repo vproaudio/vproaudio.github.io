@@ -87,7 +87,7 @@ permalink: /about/faqs/
                     <span class="flex-grow-1 text-start">{{ faq.question }}</span>
                   </button>
                 </h2>
-                <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse"
+                <div id="collapse{{ forloop.index }}" class="accordion-collapse hidden"
                   aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
                     {{ faq.answer }}
@@ -97,7 +97,7 @@ permalink: /about/faqs/
               {% endfor %}
             </div>
 
-            <div id="faqEmptyState" class="text-center py-5 d-none">
+            <div id="faqEmptyState" class="hidden text-center py-5">
               <div class="d-inline-flex flex-column align-items-center gap-3">
                 <div class="faq-empty-icon">
                   <i class="bi bi-search"></i>
@@ -173,5 +173,4 @@ permalink: /about/faqs/
     </div>
   </div>
 </section>
-
 
