@@ -32,7 +32,6 @@ exclude:
   - Gemfile.lock
   - README.md
   - maintenence.md
-  - deploy.sh
   - node_modules
   - package.json
   - package-lock.json

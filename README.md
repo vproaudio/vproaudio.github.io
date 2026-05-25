@@ -1,45 +1,85 @@
-# How to Run and Use
+# V PRO AUDIO Website
 
-## 1. Clone the repository
-```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-```
+Jekyll website for V PRO AUDIO, built locally with Bundler/npm and deployed automatically with GitHub Actions.
 
-## 2. Install packages using npm
+## Local Setup
+
 ```bash
+git clone https://github.com/vproaudio/vproaudio.github.io.git
+cd vproaudio.github.io
 npm install
+bundle install
 ```
 
+## Develop Locally
 
-## 3. Make changes to the repo
-
-Edit your files as needed.
-
-## 4. Test changes locally
 ```bash
-bundle exec jekyll serve
+npm run dev
 ```
 
-Then open http://localhost:4000 in your browser.
+Open `http://localhost:4000` in your browser.
 
-## 5. Commit changes
+## Local Checks
+
+Run the same checks used before deployment:
+
+```bash
+npm run doctor
+npm run build
+npm run proof
+```
+
+`npm run proof` runs HTMLProofer against `_site` after a build. External links are disabled, so the check focuses on generated HTML, internal links, images, scripts, and HTTPS enforcement.
+
+## Deployment
+
+Deployment is handled by `.github/workflows/ci.yml`. Do not deploy manually.
+
+When a pull request targets `main`, GitHub Actions runs:
+
+```bash
+npm run doctor
+npm run build
+npm run proof
+test -f _site/index.html
+```
+
+When changes are pushed or merged into `main`, GitHub Actions:
+
+1. Increments the patch site version.
+2. Commits the updated version files back to `main` with `[skip ci]`.
+3. Runs the pre-deploy checks.
+4. Builds the production site into `_site`.
+5. Publishes the generated site to the `gh-pages` branch.
+6. Refreshes the `devel` branch from the updated `main`.
+
+## Site Version
+
+The site version is stored in:
+
+```text
+package.json
+package-lock.json
+_data/site_version.yml
+```
+
+The footer displays the version from `_data/site_version.yml`. On every normal push or merge to `main`, the workflow increments the patch version automatically.
+
+To bump the version manually for testing:
+
+```bash
+npm run version:bump
+```
+
+Only commit a manual version bump if you intentionally want to change the displayed site version outside the deployment workflow.
+
+## Publishing Changes
 
 ```bash
 git status
 git add .
-git commit -m "Commit message"
-git push origin main 
+git commit -m "Describe the change"
+git push origin main
 ```
 
-## 6. Run the deploy script to publish the site
-
-Make the script executable:
-```bash
-chmod +x deploy.sh
-```
-
-Run the script:
-```bash
-./deploy.sh
-```
+After the push, check the GitHub Actions run for deployment status.
