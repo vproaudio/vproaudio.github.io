@@ -1,87 +1,85 @@
-# How to Run and Use
+# V PRO AUDIO Website
 
-## 1. Clone the repository
-```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-```
+Jekyll website for V PRO AUDIO, built locally with Bundler/npm and deployed automatically with GitHub Actions.
 
-## 2. Install packages using npm
+## Local Setup
+
 ```bash
+git clone https://github.com/vproaudio/vproaudio.github.io.git
+cd vproaudio.github.io
 npm install
+bundle install
 ```
 
+## Develop Locally
 
-## 3. Make changes to the repo
-
-Edit your files as needed.
-
-## 4. Test changes locally
 ```bash
-bundle exec jekyll serve
+npm run dev
 ```
 
-Then open http://localhost:4000 in your browser.
+Open `http://localhost:4000` in your browser.
 
-## 5. Commit changes
+## Local Checks
+
+Run the same checks used before deployment:
+
+```bash
+npm run doctor
+npm run build
+npm run proof
+```
+
+`npm run proof` runs HTMLProofer against `_site` after a build. External links are disabled, so the check focuses on generated HTML, internal links, images, scripts, and HTTPS enforcement.
+
+## Deployment
+
+Deployment is handled by `.github/workflows/ci.yml`. Do not deploy manually.
+
+When a pull request targets `main`, GitHub Actions runs:
+
+```bash
+npm run doctor
+npm run build
+npm run proof
+test -f _site/index.html
+```
+
+When changes are pushed or merged into `main`, GitHub Actions:
+
+1. Increments the patch site version.
+2. Commits the updated version files back to `main` with `[skip ci]`.
+3. Runs the pre-deploy checks.
+4. Builds the production site into `_site`.
+5. Publishes the generated site to the `gh-pages` branch.
+6. Refreshes the `devel` branch from the updated `main`.
+
+## Site Version
+
+The site version is stored in:
+
+```text
+package.json
+package-lock.json
+_data/site_version.yml
+```
+
+The footer displays the version from `_data/site_version.yml`. On every normal push or merge to `main`, the workflow increments the patch version automatically.
+
+To bump the version manually for testing:
+
+```bash
+npm run version:bump
+```
+
+Only commit a manual version bump if you intentionally want to change the displayed site version outside the deployment workflow.
+
+## Publishing Changes
 
 ```bash
 git status
 git add .
-git commit -m "Commit message"
-git push origin main 
+git commit -m "Describe the change"
+git push origin main
 ```
 
-## 6. Run the deploy script to publish the site
-
-Make the script executable:
-```bash
-chmod +x deploy.sh
-```
-
-Run the script:
-```bash
-./deploy.sh
-```
-
-## 7. Future UX improvements
-
-The current content focuses on core rental packages and brand credibility. To continue polishing the
-site experience, consider these enhancements:
-
-### Navigation & information architecture
-
-* **Surface service flows with fewer clicks.** Create a top-level “Services” link that summarizes
-  audio, visual, and add-on offerings before diving into individual packages. From there, direct
-  visitors to curated collections (e.g., “Ceremony Sound,” “Live Band Reinforcement,” or “Hybrid
-  Events”) so they can self-identify their needs quickly.
-* **Add a “Resources” menu bucket.** Consolidate FAQs, policies, and education under a single
-  dropdown (e.g., “Resources → FAQs, Planning Guide, Blog, Rental Policies”) to make the site feel
-  more authoritative and reduce cognitive load in the main navigation.
-* **Highlight direct conversion paths.** Keep “Plan your event” and “Book a consult” actions visible
-  in the sticky nav or as a secondary menu item that anchors to the contact form.
-
-### New and expanded pages
-
-* **Case studies / portfolio.** Showcase recent weddings, markets, and corporate activations with
-  photos, gear lists, and testimonial pull-quotes. This builds trust and signals real-world
-  experience for new prospects.
-* **Service area & logistics.** A dedicated page outlining delivery regions, travel fees, and load-in
-  requirements reassures planners who want to confirm coverage before reaching out.
-* **Planning resources.** Publish a downloadable checklist or blog-style articles on topics such as
-  “How to choose the right PA for outdoor ceremonies” or “Timeline tips for sound checks.” This
-  positions the brand as a partner rather than a transactional rental house.
-* **Add-on catalog.** Turn the microphone highlight into a full page detailing wireless mics, stage
-  monitors, lighting accents, and livestream support that can be bundled with any package.
-
-### Visual polish & trust signals
-
-* **Consistent hero imagery.** Expand the asset library so each hero (Home, Packages, Brands, etc.)
-  shares a cohesive color grade and lighting style.
-* **Social proof modules.** Add rotating review cards or embedded Google/Thumbtack badges to the
-  homepage and Contact page.
-* **Process timeline graphic.** Convert the “How it works” steps into an illustrated timeline or
-  icon-based journey graphic for an even more premium feel.
-
-Revisiting the menu structure and layering in story-driven pages will make the site feel more
-comprehensive while supporting stronger lead capture.
+After the push, check the GitHub Actions run for deployment status.

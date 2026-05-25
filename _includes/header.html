@@ -1,27 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-light glassy-nav fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="/">
-      <img src="/assets/images/logo.svg" alt="Logo" width="48" height="48" class="me-2">
+{% assign nav_link_classes = 'block rounded-full px-4 py-2 text-sm font-bold text-brand-ink/75 hover:bg-brand-soft hover:text-brand-ink' %}
+{% assign active_nav_classes = ' bg-brand-gold/25 text-brand-ink' %}
+{% assign dropdown_item_classes = 'block rounded-xl px-3 py-2 text-sm font-semibold text-brand-ink/75 hover:bg-brand-soft hover:text-brand-ink' %}
+{% assign submenu_toggle_classes = 'package-submenu-toggle flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-semibold text-brand-ink/75 hover:bg-brand-soft hover:text-brand-ink' %}
+
+<nav class="fixed top-0 right-0 left-0 z-50 border-b border-brand-ink/10 bg-brand-soft/90 py-3 shadow-[0_12px_36px_rgb(34_40_49/.08)] backdrop-blur-xl">
+  <div class="mx-auto flex w-[min(100%-1.5rem,1180px)] flex-wrap items-center justify-between md:w-[min(100%-2rem,1180px)]">
+    <a class="font-display inline-flex items-center text-brand-ink" href="/">
+      <img src="/assets/images/logo.svg" alt="Logo" width="48" height="48" class="mr-3 rounded-xl shadow-md">
       <span>
-        <span class="brand-title d-block">{{ site.branding }}</span>
-        <span class="brand-tagline d-none d-sm-block">Rentals &amp; Production</span>
+        <span class="block text-lg font-extrabold">{{ site.branding }}</span>
+        <span class="hidden text-xs font-semibold uppercase tracking-wider text-brand-muted/80 sm:block">Rentals &amp; Production</span>
       </span>
     </a>
 
     <button
-      class="navbar-toggler"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-brand-ink/10 bg-brand-soft text-brand-ink shadow-sm lg:hidden"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarResponsive"
+      data-nav-toggle
+      data-nav-target="#navbarResponsive"
       aria-controls="navbarResponsive"
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+      <span class="block h-0.5 w-5 rounded bg-current before:block before:h-0.5 before:w-5 before:-translate-y-1.5 before:rounded before:bg-current before:content-[''] after:block after:h-0.5 after:w-5 after:translate-y-1 after:rounded after:bg-current after:content-['']"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
-      <ul class="navbar-nav align-items-lg-center gap-lg-2">
+    <div class="hidden basis-full pt-4 lg:flex lg:basis-auto lg:items-center lg:justify-end lg:pt-0" id="navbarResponsive">
+      <ul class="flex flex-col gap-2 lg:flex-row lg:items-center">
         {% for item in site.data.menu %}
           {% if item.dropdown %}
             {% assign active = false %}
@@ -38,36 +43,36 @@
                 {% assign active = true %}
               {% endif %}
             {% endfor %}
-            <li class="nav-item dropdown">
+            <li class="nav-disclosure relative">
               <a
-                class="nav-link dropdown-toggle {% if active %}active{% endif %}"
+                class="{{ nav_link_classes }}{% if active %}{{ active_nav_classes }}{% endif %}"
                 href="#"
                 role="button"
-                data-bs-toggle="dropdown"
+                data-nav-disclosure-toggle
                 aria-expanded="false"
               >
                 {{ item.title }}
               </a>
-              <ul class="dropdown-menu main-dropdown-menu shadow-sm border-0 rounded-3{% unless has_nested %} overflow-hidden{% endunless %}">
+              <ul class="nav-disclosure-panel hidden min-w-64 rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-2 shadow-stage lg:absolute lg:left-0 lg:top-full lg:z-50{% unless has_nested %} overflow-hidden{% endunless %}">
                 {% for sub in item.dropdown %}
                   {% if sub.divider %}
-                    <li><hr class="dropdown-divider"></li>
+                    <li><hr class="my-2 border-brand-ink/10" /></li>
                   {% elsif sub.dropdown %}
-                    <li class="dropend package-submenu">
+                    <li class="dropend package-submenu relative">
                       <button
-                        class="dropdown-item dropdown-toggle package-submenu-toggle"
+                        class="{{ submenu_toggle_classes }}"
                         type="button"
                         aria-expanded="false"
                       >
                         {{ sub.title }}
                       </button>
-                      <ul class="dropdown-menu nested-dropdown-menu shadow-sm border-0 rounded-3 overflow-hidden">
+                      <ul class="nested-disclosure-panel hidden min-w-72 overflow-hidden rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-2 shadow-stage lg:absolute lg:left-full lg:top-0 lg:z-50">
                         {% for child in sub.dropdown %}
                           {% if child.divider %}
-                            <li><hr class="dropdown-divider"></li>
+                            <li><hr class="my-2 border-brand-ink/10" /></li>
                           {% else %}
                             <li>
-                              <a class="dropdown-item" href="{{ child.url }}">
+                              <a class="{{ dropdown_item_classes }}" href="{{ child.url }}">
                                 {{ child.title }}
                               </a>
                             </li>
@@ -77,7 +82,7 @@
                     </li>
                   {% else %}
                     <li>
-                      <a class="dropdown-item" href="{{ sub.url }}">
+                      <a class="{{ dropdown_item_classes }}" href="{{ sub.url }}">
                         {{ sub.title }}
                       </a>
                     </li>
@@ -86,16 +91,16 @@
               </ul>
             </li>
           {% else %}
-            <li class="nav-item">
-              <a class="nav-link {% if page.url == item.url %}active{% endif %}" href="{{ item.url }}">
+            <li>
+              <a class="{{ nav_link_classes }}{% if page.url == item.url %}{{ active_nav_classes }}{% endif %}" href="{{ item.url }}">
                 {{ item.title }}
               </a>
             </li>
           {% endif %}
         {% endfor %}
       </ul>
-      <div class="d-flex align-items-center mt-3 mt-lg-0 ms-lg-4">
-        <a href="/about/contact/" class="btn btn-gradient btn-sm px-4 shadow-sm">Request a quote</a>
+      <div class="mt-4 flex items-center lg:mt-0 lg:ml-6">
+        <a href="/about/contact/" class="font-display inline-flex min-h-10 items-center rounded-full bg-brand-gold px-5 text-sm font-bold text-brand-ink shadow-[0_18px_40px_rgb(255_211_105/.24)] transition hover:-translate-y-0.5 hover:bg-brand-ink hover:text-brand-soft">Request a quote</a>
       </div>
     </div>
   </div>

@@ -32,16 +32,10 @@ exclude:
   - Gemfile.lock
   - README.md
   - maintenence.md
-  - deploy.sh
   - node_modules
   - package.json
   - package-lock.json
   - vendor
-
-sass:
-  load_paths:
-    - node_modules
-  style: compressed
 
 collections:
   pages:

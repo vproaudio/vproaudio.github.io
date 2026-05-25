@@ -1,0 +1,17 @@
+{% if page.layout == 'package' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "{{ page.title }}",
+      "image": "{{ page.image }}",
+      "description": "{{ page.description | strip_html | escape }}",
+      "offers": {
+        "@type": "Offer",
+        "url": "{{ page.url | absolute_url }}",
+        "priceCurrency": "USD",
+        "price": "{{ page.price }}"
+      }
+    }
+  </script>
+{% endif %}
