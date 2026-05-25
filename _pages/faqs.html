@@ -52,7 +52,7 @@ permalink: /about/faqs/
                     <span class="grow">{{ faq.question }}</span>
                   </button>
                 </h2>
-                <div id="collapse{{ forloop.index }}" class="faq-accordion-panel hidden px-5 pb-5 leading-7" aria-labelledby="heading{{ forloop.index }}" data-collapse-parent="#faqAccordion">
+                <div id="collapse{{ forloop.index }}" class="faq-accordion-panel hidden px-5 pb-5 leading-7 text-brand-muted/90 [&_a]:font-semibold [&_a]:text-brand-ink [&_a]:underline" aria-labelledby="heading{{ forloop.index }}" data-collapse-parent="#faqAccordion">
                   {{ faq.answer }}
                 </div>
               </div>
@@ -82,7 +82,7 @@ permalink: /about/faqs/
           <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 shadow-card">
             <div class="grid gap-4 p-6 md:p-8">
               <h2 class="font-display text-lg font-semibold text-brand-ink">Make the most of your rental</h2>
-              <ul class="grid list-none gap-4 p-0">
+              <ul class="grid list-none gap-4 p-0 text-brand-muted/90">
                 <li class="flex gap-3">
                   <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-gold/25 text-brand-ink">
                     <i class="bi bi-clipboard-check"></i>

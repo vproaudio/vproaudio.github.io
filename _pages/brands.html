@@ -33,19 +33,12 @@ permalink: /about/brands/
       </div>
       <div class="lg:col-span-5">
         <div class="relative overflow-hidden rounded-3xl border border-brand-soft/15 bg-brand-soft/95 p-6 text-brand-muted shadow-stage">
-          <p class="mb-3 text-sm font-semibold uppercase text-brand-muted">Featured manufacturers</p>
-          {% assign featured_brands = site.data.brands | where: "featured", true %}
-          <div class="grid grid-cols-2 gap-4">
-            {% for brand in featured_brands limit:4 %}
-              <div class="grid aspect-square place-items-center rounded-2xl bg-brand-gold/15 p-4">
-                <img src="{{ brand.image }}" alt="{{ brand.title }}" class="max-h-28 max-w-full object-contain">
-              </div>
-            {% endfor %}
+          <p class="mb-3 text-sm font-semibold uppercase text-brand-muted">Featured manufacturer</p>
+          {% assign yamaha_brand = site.data.brands | where: "title", "Yamaha" | first %}
+          <div class="grid aspect-square place-items-center rounded-2xl bg-white p-6 shadow-card">
+            <img src="{{ yamaha_brand.image }}" alt="{{ yamaha_brand.title }}" class="max-h-56 max-w-full object-contain">
           </div>
-          <div class="mt-4 flex items-center gap-3">
-            <i class="bi bi-shield-check text-2xl text-brand-ink"></i>
-            <p>Delivered calibrated, cleaned, and ready for your stage or storefront.</p>
-          </div>
+          <p class="mt-4 text-sm leading-6 text-brand-muted/80">Yamaha is a global audio company known for dependable mixers, speakers, instruments, and sound systems used in venues, studios, and live productions worldwide.</p>
         </div>
       </div>
     </div>

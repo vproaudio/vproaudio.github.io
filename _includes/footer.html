@@ -25,7 +25,7 @@
         </div>
 
         <div class="col-span-6 md:col-span-4 lg:col-span-2">
-          <h2 class="mb-5 font-display text-xs font-bold uppercase tracking-widest text-brand-soft/55">Packages</h2>
+          <h2 class="mb-5 font-display text-xs font-bold uppercase tracking-widest text-brand-soft/55">Popular Packages</h2>
           <ul class="grid list-none gap-3 p-0">
             <li><a class="font-semibold text-brand-soft/75 hover:text-brand-soft" href="/packages/event-audio/backyard-event-sound-system/">Backyard Event</a></li>
             <li><a class="font-semibold text-brand-soft/75 hover:text-brand-soft" href="/packages/event-audio/wedding-ceremony-audio-system/">Wedding Ceremony</a></li>
@@ -42,7 +42,6 @@
             <li><a class="font-semibold text-brand-soft/75 hover:text-brand-soft" href="/about/faqs/">FAQs</a></li>
             <li><a class="font-semibold text-brand-soft/75 hover:text-brand-soft" href="/about/brands/">Brands</a></li>
             <li><a class="font-semibold text-brand-soft/75 hover:text-brand-soft" href="/about/contact/">Contact</a></li>
-            <li><a class="font-semibold text-brand-soft/75 hover:text-brand-soft" href="/privacy-policy/">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -57,15 +56,19 @@
               <i class="bi bi-envelope-fill"></i>
             </a>
           </div>
-          <div class="inline-flex rounded-full bg-brand-soft/10 px-4 py-3 text-sm">Concierge delivery, setup, and teardown included in every rental.</div>
         </div>
       </div>
     </div>
   </div>
   <div class="border-t border-brand-soft/10 py-6">
-    <div class="mx-auto flex w-[min(100%-1.5rem,1180px)] flex-col items-start gap-2 md:w-[min(100%-2rem,1180px)] md:flex-row md:items-center md:justify-between">
-      <small>&copy; {{ 'now' | date: '%Y' }} {{ site.company }}. All Rights Reserved.</small>
-      <small>All prices on this site are in USD.</small>
+    <div class="mx-auto w-[min(100%-1.5rem,1180px)] text-xs leading-6 text-brand-soft/55 md:w-[min(100%-2rem,1180px)] [&_a]:font-semibold [&_a]:text-brand-soft/75 [&_a:hover]:text-brand-soft [&_ol]:m-0 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-5 [&_p]:m-0">
+      {% capture footer_notes %}{% include footer-notes.md %}{% endcapture %}
+      {{ footer_notes | markdownify }}
+    </div>
+  </div>
+  <div class="border-t border-brand-soft/10 py-6">
+    <div class="mx-auto w-[min(100%-1.5rem,1180px)] md:w-[min(100%-2rem,1180px)]">
+      <small>&copy; {{ 'now' | date: '%Y' }} {{ site.company }}. All Rights Reserved. | <a class="font-semibold text-brand-soft/75 hover:text-brand-soft" href="/privacy-policy/">Privacy Policy</a></small>
     </div>
   </div>
 </footer>
