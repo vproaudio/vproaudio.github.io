@@ -1,27 +1,27 @@
 ---
 layout: default
 ---
-<article class="setup-post section-spacing py-5">
-  <div class="container" style="max-width: 900px;">
-    <header class="mb-4">
-      <a href="/support/setup-guides/" class="text-decoration-none small text-uppercase fw-semibold">
-        <i class="bi bi-arrow-left"></i> Back to Setup Guides
+<article class="py-16 lg:py-24">
+  <div class="mx-auto w-[min(100%-1.5rem,900px)] md:w-[min(100%-2rem,900px)]">
+    <header class="mb-8">
+      <a href="/support/setup-guides/" class="text-sm font-semibold uppercase text-brand-ink hover:text-brand-muted">
+        <i class="bi bi-arrow-left mr-1"></i> Back to Setup Guides
       </a>
-      <h1 class="display-5 fw-bold mt-3">{{ page.title }}</h1>
-      <div class="text-muted d-flex flex-wrap gap-3 align-items-center">
-        <span><i class="bi bi-calendar3 me-1"></i>{{ page.date | date: "%B %d, %Y" }}</span>
+      <h1 class="mt-4 font-display text-3xl font-bold text-brand-ink md:text-5xl">{{ page.title }}</h1>
+      <div class="mt-4 flex flex-wrap items-center gap-3 text-brand-muted/80">
+        <span><i class="bi bi-calendar3 mr-1"></i>{{ page.date | date: "%B %d, %Y" }}</span>
         {% if page.tags and page.tags.size > 0 %}
           <span>
-            <i class="bi bi-tags me-1"></i>
+            <i class="bi bi-tags mr-1"></i>
             {% for tag in page.tags %}
-              <span class="badge badge-soft-primary me-1">{{ tag }}</span>
+              <span class="mr-1 inline-flex rounded-full bg-brand-gold/25 px-3 py-1.5 text-xs font-bold tracking-wider text-brand-ink ring-1 ring-brand-gold/40">{{ tag }}</span>
             {% endfor %}
           </span>
         {% endif %}
       </div>
     </header>
 
-    <div class="setup-post-content">
+    <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-6 leading-7 shadow-card md:p-8 [&_blockquote]:border-l-4 [&_blockquote]:border-brand-gold [&_blockquote]:pl-4 [&_blockquote]:text-brand-muted/80 [&_h2]:mt-8 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-brand-ink [&_li]:mb-2 [&_ol]:my-4 [&_ol]:pl-6 [&_p]:my-4 [&_strong]:text-brand-ink [&_ul]:my-4 [&_ul]:pl-6">
       {{ content }}
     </div>
   </div>

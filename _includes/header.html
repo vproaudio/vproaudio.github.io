@@ -1,11 +1,11 @@
-{% assign nav_link_classes = 'nav-link block rounded-full px-4 py-2 text-sm font-bold text-brand-ink/75 hover:bg-brand-soft hover:text-brand-ink' %}
+{% assign nav_link_classes = 'block rounded-full px-4 py-2 text-sm font-bold text-brand-ink/75 hover:bg-brand-soft hover:text-brand-ink' %}
 {% assign active_nav_classes = ' bg-brand-gold/25 text-brand-ink' %}
-{% assign dropdown_item_classes = 'dropdown-item block rounded-xl px-3 py-2 text-sm font-semibold text-brand-ink/75 hover:bg-brand-soft hover:text-brand-ink' %}
-{% assign submenu_toggle_classes = 'dropdown-item dropdown-toggle package-submenu-toggle flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-semibold text-brand-ink/75 hover:bg-brand-soft hover:text-brand-ink' %}
+{% assign dropdown_item_classes = 'block rounded-xl px-3 py-2 text-sm font-semibold text-brand-ink/75 hover:bg-brand-soft hover:text-brand-ink' %}
+{% assign submenu_toggle_classes = 'package-submenu-toggle flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-semibold text-brand-ink/75 hover:bg-brand-soft hover:text-brand-ink' %}
 
-<nav class="navbar fixed top-0 right-0 left-0 z-50 border-b border-brand-ink/10 bg-brand-soft/90 py-3 shadow-[0_12px_36px_rgb(34_40_49/.08)] backdrop-blur-xl">
-  <div class="container flex flex-wrap items-center justify-between">
-    <a class="navbar-brand inline-flex items-center text-brand-ink" href="/">
+<nav class="fixed top-0 right-0 left-0 z-50 border-b border-brand-ink/10 bg-brand-soft/90 py-3 shadow-[0_12px_36px_rgb(34_40_49/.08)] backdrop-blur-xl">
+  <div class="mx-auto flex w-[min(100%-1.5rem,1180px)] flex-wrap items-center justify-between md:w-[min(100%-2rem,1180px)]">
+    <a class="font-display inline-flex items-center text-brand-ink" href="/">
       <img src="/assets/images/logo.svg" alt="Logo" width="48" height="48" class="mr-3 rounded-xl shadow-md">
       <span>
         <span class="block text-lg font-extrabold">{{ site.branding }}</span>
@@ -14,9 +14,10 @@
     </a>
 
     <button
-      class="navbar-toggler inline-flex h-11 w-11 items-center justify-center rounded-xl border border-brand-ink/10 bg-brand-soft text-brand-ink shadow-sm lg:hidden"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-brand-ink/10 bg-brand-soft text-brand-ink shadow-sm lg:hidden"
       type="button"
-      data-bs-target="#navbarResponsive"
+      data-nav-toggle
+      data-nav-target="#navbarResponsive"
       aria-controls="navbarResponsive"
       aria-expanded="false"
       aria-label="Toggle navigation"
@@ -24,8 +25,8 @@
       <span class="block h-0.5 w-5 rounded bg-current before:block before:h-0.5 before:w-5 before:-translate-y-1.5 before:rounded before:bg-current before:content-[''] after:block after:h-0.5 after:w-5 after:translate-y-1 after:rounded after:bg-current after:content-['']"></span>
     </button>
 
-    <div class="navbar-collapse hidden basis-full pt-4 lg:flex lg:basis-auto lg:items-center lg:justify-end lg:pt-0" id="navbarResponsive">
-      <ul class="navbar-nav flex flex-col gap-2 lg:flex-row lg:items-center">
+    <div class="hidden basis-full pt-4 lg:flex lg:basis-auto lg:items-center lg:justify-end lg:pt-0" id="navbarResponsive">
+      <ul class="flex flex-col gap-2 lg:flex-row lg:items-center">
         {% for item in site.data.menu %}
           {% if item.dropdown %}
             {% assign active = false %}
@@ -42,19 +43,20 @@
                 {% assign active = true %}
               {% endif %}
             {% endfor %}
-            <li class="nav-item dropdown relative">
+            <li class="nav-disclosure relative">
               <a
-                class="{{ nav_link_classes }} dropdown-toggle{% if active %}{{ active_nav_classes }}{% endif %}"
+                class="{{ nav_link_classes }}{% if active %}{{ active_nav_classes }}{% endif %}"
                 href="#"
                 role="button"
+                data-nav-disclosure-toggle
                 aria-expanded="false"
               >
                 {{ item.title }}
               </a>
-              <ul class="dropdown-menu main-dropdown-menu hidden min-w-64 rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-2 shadow-stage lg:absolute lg:left-0 lg:top-full lg:z-50{% unless has_nested %} overflow-hidden{% endunless %}">
+              <ul class="nav-disclosure-panel hidden min-w-64 rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-2 shadow-stage lg:absolute lg:left-0 lg:top-full lg:z-50{% unless has_nested %} overflow-hidden{% endunless %}">
                 {% for sub in item.dropdown %}
                   {% if sub.divider %}
-                    <li><hr class="my-2 border-brand-ink/10"></li>
+                    <li><hr class="my-2 border-brand-ink/10" /></li>
                   {% elsif sub.dropdown %}
                     <li class="dropend package-submenu relative">
                       <button
@@ -64,10 +66,10 @@
                       >
                         {{ sub.title }}
                       </button>
-                      <ul class="dropdown-menu nested-dropdown-menu hidden min-w-72 overflow-hidden rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-2 shadow-stage lg:absolute lg:left-full lg:top-0 lg:z-50">
+                      <ul class="nested-disclosure-panel hidden min-w-72 overflow-hidden rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-2 shadow-stage lg:absolute lg:left-full lg:top-0 lg:z-50">
                         {% for child in sub.dropdown %}
                           {% if child.divider %}
-                            <li><hr class="my-2 border-brand-ink/10"></li>
+                            <li><hr class="my-2 border-brand-ink/10" /></li>
                           {% else %}
                             <li>
                               <a class="{{ dropdown_item_classes }}" href="{{ child.url }}">
@@ -89,7 +91,7 @@
               </ul>
             </li>
           {% else %}
-            <li class="nav-item">
+            <li>
               <a class="{{ nav_link_classes }}{% if page.url == item.url %}{{ active_nav_classes }}{% endif %}" href="{{ item.url }}">
                 {{ item.title }}
               </a>

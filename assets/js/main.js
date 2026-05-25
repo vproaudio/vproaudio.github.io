@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Navigation disclosure controls
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarCollapse = document.querySelector(navbarToggler?.getAttribute('data-bs-target') || '#navbarResponsive');
+  const navbarToggler = document.querySelector('[data-nav-toggle]');
+  const navbarCollapse = document.querySelector(navbarToggler?.getAttribute('data-nav-target') || '#navbarResponsive');
 
   if (navbarToggler && navbarCollapse) {
     navbarToggler.addEventListener('click', () => {
@@ -13,31 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeDropdown = (dropdown) => {
     if (!dropdown) return;
 
-    dropdown.classList.remove('show');
-    dropdown.querySelector(':scope > .dropdown-menu')?.classList.add('hidden');
-    const toggle = dropdown.querySelector(':scope > .dropdown-toggle');
+    dropdown.classList.remove('is-open');
+    dropdown.querySelector(':scope > .nav-disclosure-panel')?.classList.add('hidden');
+    const toggle = dropdown.querySelector(':scope > [data-nav-disclosure-toggle]');
     if (toggle) toggle.setAttribute('aria-expanded', 'false');
-    dropdown.querySelectorAll('.package-submenu.show').forEach(closePackageSubmenu);
+    dropdown.querySelectorAll('.package-submenu.is-open').forEach(closePackageSubmenu);
   };
 
   const closeSiblingDropdowns = (dropdown) => {
     if (!dropdown || !dropdown.parentElement) return;
 
-    dropdown.parentElement.querySelectorAll(':scope > .dropdown.show').forEach((sibling) => {
+    dropdown.parentElement.querySelectorAll(':scope > .nav-disclosure.is-open').forEach((sibling) => {
       if (sibling !== dropdown) closeDropdown(sibling);
     });
   };
 
-  document.querySelectorAll('.nav-item.dropdown > .dropdown-toggle').forEach((toggle) => {
-    const dropdown = toggle.closest('.dropdown');
+  document.querySelectorAll('.nav-disclosure > [data-nav-disclosure-toggle]').forEach((toggle) => {
+    const dropdown = toggle.closest('.nav-disclosure');
 
     toggle.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
 
       closeSiblingDropdowns(dropdown);
-      const isOpen = dropdown.classList.toggle('show');
-      dropdown.querySelector(':scope > .dropdown-menu')?.classList.toggle('hidden', !isOpen);
+      const isOpen = dropdown.classList.toggle('is-open');
+      dropdown.querySelector(':scope > .nav-disclosure-panel')?.classList.toggle('hidden', !isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   });
@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const closePackageSubmenu = (submenuItem) => {
     if (!submenuItem) return;
 
-    submenuItem.classList.remove('show');
-    submenuItem.querySelector(':scope > .nested-dropdown-menu')?.classList.add('hidden');
+    submenuItem.classList.remove('is-open');
+    submenuItem.querySelector(':scope > .nested-disclosure-panel')?.classList.add('hidden');
     const toggle = submenuItem.querySelector('.package-submenu-toggle');
     if (toggle) toggle.setAttribute('aria-expanded', 'false');
   };
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeSiblingPackageSubmenus = (submenuItem) => {
     if (!submenuItem || !submenuItem.parentElement) return;
 
-    const siblingSubmenus = submenuItem.parentElement.querySelectorAll('.package-submenu.show');
+    const siblingSubmenus = submenuItem.parentElement.querySelectorAll('.package-submenu.is-open');
     siblingSubmenus.forEach((sibling) => {
       if (sibling !== submenuItem) closePackageSubmenu(sibling);
     });
@@ -73,22 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
       closeSiblingPackageSubmenus(submenuItem);
 
-      const isOpen = submenuItem.classList.toggle('show');
-      submenuItem.querySelector(':scope > .nested-dropdown-menu')?.classList.toggle('hidden', !isOpen);
+      const isOpen = submenuItem.classList.toggle('is-open');
+      submenuItem.querySelector(':scope > .nested-disclosure-panel')?.classList.toggle('hidden', !isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   });
 
   document.addEventListener('click', (event) => {
-    if (event.target.closest('.dropdown')) return;
+    if (event.target.closest('.nav-disclosure')) return;
 
-    document.querySelectorAll('.dropdown.show').forEach(closeDropdown);
+    document.querySelectorAll('.nav-disclosure.is-open').forEach(closeDropdown);
   });
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
 
-    document.querySelectorAll('.dropdown.show').forEach(closeDropdown);
+    document.querySelectorAll('.nav-disclosure.is-open').forEach(closeDropdown);
     if (navbarCollapse && !navbarCollapse.classList.contains('hidden')) {
       navbarCollapse.classList.add('hidden');
       navbarToggler?.setAttribute('aria-expanded', 'false');
@@ -96,31 +96,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Accordion controls
-  document.querySelectorAll('.accordion-button[data-bs-toggle="collapse"]').forEach((button) => {
-    const collapse = document.querySelector(button.getAttribute('data-bs-target'));
+  document.querySelectorAll('.faq-accordion-button[data-collapse-target]').forEach((button) => {
+    const collapse = document.querySelector(button.getAttribute('data-collapse-target'));
     if (!collapse) return;
 
     button.addEventListener('click', () => {
-      const parentSelector = collapse.getAttribute('data-bs-parent');
-      const isOpen = collapse.classList.contains('show');
+      const parentSelector = collapse.getAttribute('data-collapse-parent');
+      const isOpen = collapse.classList.contains('is-open');
 
       if (parentSelector) {
-        document.querySelectorAll(`${parentSelector} .accordion-collapse.show`).forEach((openCollapse) => {
+        document.querySelectorAll(`${parentSelector} .faq-accordion-panel.is-open`).forEach((openCollapse) => {
           if (openCollapse === collapse) return;
 
-          openCollapse.classList.remove('show');
+          openCollapse.classList.remove('is-open');
           openCollapse.classList.add('hidden');
-          const openButton = document.querySelector(`[data-bs-target="#${openCollapse.id}"]`);
+          const openButton = document.querySelector(`[data-collapse-target="#${openCollapse.id}"]`);
           if (openButton) {
-            openButton.classList.add('collapsed');
             openButton.setAttribute('aria-expanded', 'false');
           }
         });
       }
 
-      collapse.classList.toggle('show', !isOpen);
+      collapse.classList.toggle('is-open', !isOpen);
       collapse.classList.toggle('hidden', isOpen);
-      button.classList.toggle('collapsed', isOpen);
       button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
     });
   });
@@ -181,6 +179,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (contactForm && contactSubmitButton) {
+    const setFieldValidity = (field, isFieldValid) => {
+      field.classList.toggle('is-invalid', !isFieldValid);
+      field.classList.toggle('border-red-500', !isFieldValid);
+      field.classList.toggle('ring-4', !isFieldValid);
+      field.classList.toggle('ring-red-500/20', !isFieldValid);
+
+      const feedback = field.nextElementSibling;
+      if (feedback) feedback.classList.toggle('hidden', isFieldValid);
+    };
+
     const submitContactForm = () => {
       const name = document.getElementById('user_name');
       const email = document.getElementById('user_email');
@@ -192,27 +200,18 @@ document.addEventListener('DOMContentLoaded', () => {
       let isValid = true;
       response.innerHTML = '';
 
-      if (!name.value.trim()) {
-        name.classList.add('is-invalid');
-        isValid = false;
-      } else {
-        name.classList.remove('is-invalid');
-      }
+      const isNameValid = Boolean(name.value.trim());
+      setFieldValidity(name, isNameValid);
+      if (!isNameValid) isValid = false;
 
       const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-      if (!email.value.trim() || !emailRegex.test(email.value)) {
-        email.classList.add('is-invalid');
-        isValid = false;
-      } else {
-        email.classList.remove('is-invalid');
-      }
+      const isEmailValid = Boolean(email.value.trim()) && emailRegex.test(email.value);
+      setFieldValidity(email, isEmailValid);
+      if (!isEmailValid) isValid = false;
 
-      if (!message.value.trim() || message.value.length < 10) {
-        message.classList.add('is-invalid');
-        isValid = false;
-      } else {
-        message.classList.remove('is-invalid');
-      }
+      const isMessageValid = Boolean(message.value.trim()) && message.value.length >= 10;
+      setFieldValidity(message, isMessageValid);
+      if (!isMessageValid) isValid = false;
 
       if (!isValid) {
         response.innerHTML = '<div class="rounded-xl border border-brand-gold/60 bg-brand-gold/20 p-4 text-brand-ink">Please fill in all fields correctly before submitting.</div>';
@@ -268,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // FAQ filtering
   const faqSearchInput = document.querySelector('#faqSearch');
   const faqResetButton = document.querySelector('#faqReset');
-  const faqAccordionItems = document.querySelectorAll('#faqAccordion .accordion-item');
+  const faqAccordionItems = document.querySelectorAll('#faqAccordion .faq-accordion-item');
   const faqEmptyState = document.querySelector('#faqEmptyState');
 
   if (faqSearchInput && faqAccordionItems.length > 0 && faqEmptyState) {
@@ -284,16 +283,15 @@ document.addEventListener('DOMContentLoaded', () => {
           item.classList.remove('hidden');
           visibleCount += 1;
         } else {
-          const collapse = item.querySelector('.accordion-collapse');
-          const button = item.querySelector('.accordion-button');
+          const collapse = item.querySelector('.faq-accordion-panel');
+          const button = item.querySelector('.faq-accordion-button');
 
-          if (collapse && collapse.classList.contains('show')) {
-            collapse.classList.remove('show');
+          if (collapse && collapse.classList.contains('is-open')) {
+            collapse.classList.remove('is-open');
             collapse.classList.add('hidden');
           }
 
           if (button) {
-            button.classList.add('collapsed');
             button.setAttribute('aria-expanded', 'false');
           }
 

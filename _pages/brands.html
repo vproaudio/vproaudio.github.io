@@ -4,46 +4,47 @@ title: About - Brands
 permalink: /about/brands/
 ---
 
-<!-- Hero Section -->
-<section class="hero-section brands-hero text-white position-relative overflow-hidden">
-  <div class="hero-glow"></div>
-  <div class="container py-5 py-lg-6">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-7">
-        <span class="badge rounded-pill text-bg-light hero-eyebrow text-uppercase">Gear we trust</span>
-        <h1 class="display-4 fw-bold mt-4 text-white">Equipment brands we rely on every night.</h1>
-        <p class="lead text-white-50 mb-4">From wireless microphones to festival-ready speakers, every brand in our warehouse is tour-tested and supported by our engineering team.</p>
-        <div class="d-flex flex-column flex-sm-row gap-3">
-          <a href="/packages" class="btn btn-gradient btn-lg shadow-lg">Explore rental packages</a>
-          <a href="/about/contact/" class="btn btn-outline-light btn-lg">Request a gear checklist</a>
+<section class="relative isolate overflow-hidden bg-[radial-gradient(circle_at_12%_18%,rgb(255_211_105/.28),transparent_28%),radial-gradient(circle_at_88%_16%,rgb(255_211_105/.22),transparent_32%),linear-gradient(135deg,#222831_0%,#393E46_55%,#222831_100%)] py-16 text-brand-soft lg:py-24">
+  <div class="pointer-events-none absolute -right-24 -bottom-24 h-80 w-80 rounded-full bg-brand-gold/20 blur-3xl"></div>
+  <div class="relative mx-auto w-[min(100%-1.5rem,1180px)] md:w-[min(100%-2rem,1180px)]">
+    <div class="grid items-center gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <span class="font-display inline-flex rounded-full bg-brand-soft/15 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-soft ring-1 ring-brand-soft/20">Gear we trust</span>
+        <h1 class="mt-4 font-display text-4xl font-bold text-brand-soft md:text-6xl">Equipment brands we rely on every night.</h1>
+        <p class="mt-4 max-w-3xl text-lg leading-8 text-brand-soft/75">From wireless microphones to festival-ready speakers, every brand in our warehouse is tour-tested and supported by our engineering team.</p>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+          <a href="/packages" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-bold text-brand-ink shadow-[0_18px_40px_rgb(255_211_105/.26)] transition hover:-translate-y-0.5 hover:bg-brand-ink hover:text-brand-soft">Explore rental packages</a>
+          <a href="/about/contact/" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-brand-soft/35 bg-brand-soft/10 px-6 py-2.5 text-sm font-bold text-brand-soft transition hover:-translate-y-0.5 hover:bg-brand-soft hover:text-brand-ink">Request a gear checklist</a>
         </div>
-        <div class="d-flex flex-wrap gap-4 mt-5 hero-stats">
-          <div class="stat">
-            <span class="stat-value">25+</span>
-            <span class="stat-label">Premium manufacturers</span>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <div class="min-w-32 rounded-2xl border border-brand-soft/15 bg-brand-soft/10 p-4">
+            <span class="block font-display text-3xl font-bold text-brand-soft">25+</span>
+            <span class="block text-xs uppercase tracking-wider text-brand-soft/60">Premium manufacturers</span>
           </div>
-          <div class="stat">
-            <span class="stat-value">100%</span>
-            <span class="stat-label">Maintained in-house</span>
+          <div class="min-w-32 rounded-2xl border border-brand-soft/15 bg-brand-soft/10 p-4">
+            <span class="block font-display text-3xl font-bold text-brand-soft">100%</span>
+            <span class="block text-xs uppercase tracking-wider text-brand-soft/60">Maintained in-house</span>
           </div>
-          <div class="stat">
-            <span class="stat-value">Same-day</span>
-            <span class="stat-label">Tech support</span>
+          <div class="min-w-32 rounded-2xl border border-brand-soft/15 bg-brand-soft/10 p-4">
+            <span class="block font-display text-3xl font-bold text-brand-soft">Same-day</span>
+            <span class="block text-xs uppercase tracking-wider text-brand-soft/60">Tech support</span>
           </div>
         </div>
       </div>
-      <div class="col-lg-5">
-        <div class="hero-media shadow-lg p-4 brands-hero-media">
-          <p class="mb-3 fw-semibold text-uppercase small text-muted">Featured manufacturers</p>
+      <div class="lg:col-span-5">
+        <div class="relative overflow-hidden rounded-3xl border border-brand-soft/15 bg-brand-soft/95 p-6 text-brand-muted shadow-stage">
+          <p class="mb-3 text-sm font-semibold uppercase text-brand-muted">Featured manufacturers</p>
           {% assign featured_brands = site.data.brands | where: "featured", true %}
-          <div class="brand-preview-grid">
+          <div class="grid grid-cols-2 gap-4">
             {% for brand in featured_brands limit:4 %}
-              <img src="{{ brand.image }}" alt="{{ brand.title }}" class="img-fluid">
+              <div class="grid aspect-square place-items-center rounded-2xl bg-brand-gold/15 p-4">
+                <img src="{{ brand.image }}" alt="{{ brand.title }}" class="max-h-28 max-w-full object-contain">
+              </div>
             {% endfor %}
           </div>
-          <div class="d-flex align-items-center gap-3 mt-4">
-            <i class="bi bi-shield-check text-primary fs-4"></i>
-            <p class="text-muted mb-0">Delivered calibrated, cleaned, and ready for your stage or storefront.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <i class="bi bi-shield-check text-2xl text-brand-ink"></i>
+            <p>Delivered calibrated, cleaned, and ready for your stage or storefront.</p>
           </div>
         </div>
       </div>
@@ -51,24 +52,21 @@ permalink: /about/brands/
   </div>
 </section>
 
-<!-- Brands Grid -->
-<section class="brand-showcase py-5">
-  <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 brand-card-grid">
+<section class="py-16 lg:py-24">
+  <div class="mx-auto w-[min(100%-1.5rem,1180px)] md:w-[min(100%-2rem,1180px)]">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {% for brand in site.data.brands %}
-        <div class="col">
-          <article class="brand-card h-100 position-relative">
-            <div class="brand-card-body">
-              <div class="brand-logo-wrapper">
-                <img src="{{ brand.image }}" alt="{{ brand.title }}" class="brand-logo">
-              </div>
-              <h3 class="brand-name">
-                <a href="{{ brand.url }}" class="stretched-link text-decoration-none" target="_blank" rel="noopener noreferrer">{{ brand.title }}</a>
-              </h3>
-              <p class="brand-description">{{ brand.description }}</p>
+        <article class="relative rounded-2xl border border-brand-ink/10 bg-brand-soft/95 shadow-card transition hover:-translate-y-1 hover:shadow-stage">
+          <div class="flex flex-col items-center gap-5 p-8 text-center">
+            <div class="grid h-44 w-44 place-items-center rounded-2xl bg-brand-gold/15">
+              <img src="{{ brand.image }}" alt="{{ brand.title }}" class="max-h-36 max-w-full grayscale transition hover:grayscale-0">
             </div>
-          </article>
-        </div>
+            <h2 class="font-display text-sm uppercase tracking-wider text-brand-ink">
+              <a href="{{ brand.url }}" class="font-bold text-brand-ink hover:text-brand-muted" target="_blank" rel="noopener noreferrer">{{ brand.title }}</a>
+            </h2>
+            <p class="text-sm leading-6 text-brand-muted/80">{{ brand.description }}</p>
+          </div>
+        </article>
       {% endfor %}
     </div>
   </div>
