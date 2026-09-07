@@ -1,0 +1,13 @@
+<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="14,10 46,10 50,14 50,46 46,50 14,50 10,46 10,14"
+  style="fill:#FFD369;stroke:#222831;stroke-width:3" />
+  <polyline points="21,17 21,27 29,42 31,42 39,27 39,17"
+  style="fill:none;stroke:#222831;stroke-width:5" />
+
+
+  <!--
+  <text fill="#222831" font-size="20" font-family="Brush Script MT" x="55" y="28">pro</text>
+  <text fill="#222831" font-size="18" font-family="Arial" x="77" y="28">Audio</text>
+  <text fill="#393E46" font-size="20" font-family="Arial" x="55" y="48">Rentals</text> -->
+
+</svg>
