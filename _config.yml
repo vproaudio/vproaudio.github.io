@@ -23,6 +23,12 @@ seo:
   url: "https://www.vproaudio.rentals"
   image: "/assets/images/home.jpg"
 
+# After verifying in Google Search Console / Bing Webmaster Tools, uncomment and
+# paste your codes here — jekyll-seo-tag will render the verification meta tags.
+# webmaster_verifications:
+#   google: "your-google-verification-code"
+#   bing: "your-bing-verification-code"
+
 social:
   name: "VANS Pro Audio Rentals"
   links:

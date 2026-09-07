@@ -9,6 +9,7 @@ tags:
   - mixer
   - yamaha
 excerpt: "2x Yamaha DBR10 Powered Speakers with Yamaha MG10XU Mixer"
+image: "/assets/images/packages/package1.png"
 permalink: /support/:categories/:title/
 ---
 
