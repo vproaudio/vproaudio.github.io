@@ -4,9 +4,11 @@ layout: default
 <article class="py-16 lg:py-24">
   <div class="mx-auto w-[min(100%-1.5rem,900px)] md:w-[min(100%-2rem,900px)]">
     <header class="mb-8">
-      <a href="/support/setup-guides/" class="text-sm font-semibold uppercase text-brand-ink hover:text-brand-muted">
-        <i class="bi bi-arrow-left mr-1"></i> Back to Setup Guides
-      </a>
+      {% unless page.hide_back_link %}
+        <a href="{{ page.back_url | default: '/support/setup-guides/' }}" class="text-sm font-semibold uppercase text-brand-ink hover:text-brand-muted">
+          <i class="bi bi-arrow-left mr-1"></i> {{ page.back_label | default: 'Back to Setup Guides' }}
+        </a>
+      {% endunless %}
       <h1 class="mt-4 font-display text-3xl font-bold text-brand-ink md:text-5xl">{{ page.title }}</h1>
       <div class="mt-4 flex flex-wrap items-center gap-3 text-brand-muted/80">
         <span><i class="bi bi-calendar3 mr-1"></i>{{ page.date | date: "%B %d, %Y" }}</span>

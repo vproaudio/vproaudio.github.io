@@ -1,3 +1,27 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ site.social.name }}",
+    "url": "{{ site.url }}/",
+    "image": "{{ site.seo.image | absolute_url }}",
+    "telephone": "+17076600414",
+    "email": "{{ site.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vacaville",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Vacaville", "Solano County", "Napa", "Sacramento Valley", "San Francisco Bay Area"
+    ],
+    "sameAs": [
+      {% for link in site.social.links %}"{{ link }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+    ]
+  }
+</script>
+
 {% if page.layout == 'package' %}
   <script type="application/ld+json">
     {

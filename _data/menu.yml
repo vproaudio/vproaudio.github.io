@@ -3,6 +3,8 @@
 
 - title: Packages
   dropdown:
+    - title: Microphones
+      url: /packages/microphones/
     - title: Event Audio
       dropdown:
         - title: Backyard Event Sound System
@@ -34,6 +36,8 @@
   dropdown:
     - title: Setup Guides
       url: /support/setup-guides/
+    - title: Wedding Sound Guide
+      url: /support/wedding-sound/
 
 - title: About
   dropdown:

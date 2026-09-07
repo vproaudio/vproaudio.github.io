@@ -28,17 +28,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  document.querySelectorAll('.nav-disclosure > [data-nav-disclosure-toggle]').forEach((toggle) => {
-    const dropdown = toggle.closest('.nav-disclosure');
+  const openDropdown = (dropdown) => {
+    if (!dropdown) return;
 
-    toggle.addEventListener('click', (event) => {
+    closeSiblingDropdowns(dropdown);
+    dropdown.classList.add('is-open');
+    dropdown.querySelector(':scope > .nav-disclosure-panel')?.classList.remove('hidden');
+    dropdown.querySelector(':scope > [data-nav-disclosure-toggle]')?.setAttribute('aria-expanded', 'true');
+  };
+
+  const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
+
+  document.querySelectorAll('.nav-disclosure').forEach((dropdown) => {
+    const toggle = dropdown.querySelector(':scope > [data-nav-disclosure-toggle]');
+    let closeTimer;
+
+    toggle?.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
+
+      if (isDesktop()) return;
 
       closeSiblingDropdowns(dropdown);
       const isOpen = dropdown.classList.toggle('is-open');
       dropdown.querySelector(':scope > .nav-disclosure-panel')?.classList.toggle('hidden', !isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    dropdown.addEventListener('mouseenter', () => {
+      if (!isDesktop()) return;
+
+      clearTimeout(closeTimer);
+      openDropdown(dropdown);
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      if (!isDesktop()) return;
+
+      closeTimer = setTimeout(() => closeDropdown(dropdown), 150);
     });
   });
 
@@ -62,20 +89,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const openPackageSubmenu = (submenuItem) => {
+    if (!submenuItem) return;
+
+    closeSiblingPackageSubmenus(submenuItem);
+    submenuItem.classList.add('is-open');
+    submenuItem.querySelector(':scope > .nested-disclosure-panel')?.classList.remove('hidden');
+    submenuItem.querySelector('.package-submenu-toggle')?.setAttribute('aria-expanded', 'true');
+  };
+
   packageSubmenuToggles.forEach((toggle) => {
     const submenuItem = toggle.closest('.package-submenu');
+    let closeTimer;
 
     toggle.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
 
-      if (!submenuItem) return;
+      if (!submenuItem || isDesktop()) return;
 
       closeSiblingPackageSubmenus(submenuItem);
 
       const isOpen = submenuItem.classList.toggle('is-open');
       submenuItem.querySelector(':scope > .nested-disclosure-panel')?.classList.toggle('hidden', !isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    submenuItem?.addEventListener('mouseenter', () => {
+      if (!isDesktop()) return;
+
+      clearTimeout(closeTimer);
+      openPackageSubmenu(submenuItem);
+    });
+
+    submenuItem?.addEventListener('mouseleave', () => {
+      if (!isDesktop()) return;
+
+      closeTimer = setTimeout(() => closePackageSubmenu(submenuItem), 150);
     });
   });
 

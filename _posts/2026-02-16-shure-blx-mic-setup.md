@@ -9,6 +9,7 @@ tags:
   - wireless 
   - shure
 excerpt: "Multi-System Setup (H9 & H10 Bands)"
+image: "/assets/images/mics/mic2.png"
 permalink: /support/:categories/:title/
 ---
 
