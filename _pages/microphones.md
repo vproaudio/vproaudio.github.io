@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Microphone Rental Packages
-permalink: /packages/audio/microphones/
+permalink: /packages/microphones/
 description: >
   Rent professional wireless and wired microphones for weddings, speeches, and performances, available a la carte or bundled with our event audio packages.
 ---
@@ -55,20 +55,17 @@ description: >
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {% for mic in site.data.microphones %}
-        <article class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-4 shadow-card transition hover:-translate-y-1 hover:shadow-stage">
-          <div class="flex min-h-56 items-center justify-center rounded-xl bg-gradient-to-br from-brand-soft to-brand-gold/25 p-4">
+        <article class="rounded-2xl border border-brand-ink/10 bg-brand-soft p-4 shadow-card transition hover:-translate-y-1 hover:shadow-stage">
+          <div class="flex min-h-56 items-center justify-center rounded-xl bg-brand-soft p-4">
             <img src="{{ mic.image }}" alt="{{ mic.title }}" class="aspect-4/3 object-contain" />
           </div>
           <div class="p-4">
             <h2 class="font-display text-xl font-bold text-brand-ink">{{ mic.title }}</h2>
             <p class="mt-2 text-brand-muted/80">{{ mic.description }}</p>
           </div>
-          <div class="flex items-center justify-between p-4 pt-0">
-            <div>
-              <span class="font-bold text-brand-ink">${{ mic.price }}</span>
-              <span class="text-brand-muted/80">/day</span>
-            </div>
-            <a href="/about/contact/" class="font-display inline-flex min-h-9 items-center justify-center rounded-full border border-brand-ink/20 bg-brand-soft px-4 text-sm font-bold text-brand-ink transition hover:-translate-y-0.5">Add to package</a>
+          <div class="p-4 pt-0">
+            <span class="font-bold text-brand-ink">${{ mic.price }}</span>
+            <span class="text-brand-muted/80">/day</span>
           </div>
         </article>
       {% endfor %}
