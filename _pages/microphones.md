@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Microphone Packages
+title: Microphone Rental Packages
 permalink: /packages/audio/microphones/
+description: >
+  Rent professional wireless and wired microphones for weddings, speeches, and performances, available a la carte or bundled with our event audio packages.
 ---
 
 <section class="relative isolate overflow-hidden bg-[radial-gradient(circle_at_12%_18%,rgb(255_211_105/.28),transparent_28%),radial-gradient(circle_at_88%_16%,rgb(255_211_105/.22),transparent_32%),linear-gradient(135deg,#222831_0%,#393E46_55%,#222831_100%)] py-16 text-brand-soft lg:py-24">
