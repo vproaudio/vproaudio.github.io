@@ -85,9 +85,9 @@ description: >
               <input type="hidden" name="request_type" value="Quote request">
               <input type="hidden" name="destination_email" value="bookings@vproaudio.rentals">
               <input type="hidden" name="form_started_at" id="quoteFormStartedAt" value="">
-              <div hidden aria-hidden="true" role="presentation">
+              <div class="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true" role="presentation">
                 <label for="quote_website">Website</label>
-                <input id="quote_website" name="website" type="text" autocomplete="off">
+                <input id="quote_website" name="website" type="text" tabindex="-1" autocomplete="off">
               </div>
               <div>
                 <label for="quote_user_name" class="mb-2 block text-sm font-semibold text-brand-ink">Full name</label>
@@ -145,7 +145,7 @@ description: >
                 </select>
               </div>
               <div class="md:col-span-2">
-                <fieldset id="quoteServicesNeededGroup" class="rounded-xl border border-brand-ink/10 p-4">
+                <fieldset id="quoteServicesNeededGroup" class="rounded-xl border border-brand-ink/10 p-4" aria-describedby="quoteServicesNeededFeedback" aria-invalid="false">
                   <legend class="px-1 text-sm font-semibold text-brand-ink">Services needed</legend>
                   <div class="mt-2 grid gap-3 md:grid-cols-2">
                     <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="checkbox" name="services_needed" value="Equipment rental" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">Equipment rental</label>
@@ -185,9 +185,9 @@ description: >
               <input type="hidden" name="request_type" value="General inquiry">
               <input type="hidden" name="destination_email" value="bookings@vproaudio.rentals">
               <input type="hidden" name="form_started_at" id="contactFormStartedAt" value="">
-              <div hidden aria-hidden="true" role="presentation">
+              <div class="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true" role="presentation">
                 <label for="contact_website">Website</label>
-                <input id="contact_website" name="website" type="text" autocomplete="off">
+                <input id="contact_website" name="website" type="text" tabindex="-1" autocomplete="off">
               </div>
               <div>
                 <label for="contact_user_name" class="mb-2 block text-sm font-semibold text-brand-ink">Name</label>

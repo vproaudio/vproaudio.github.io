@@ -237,6 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
     group.classList.toggle('border-red-500', !isGroupValid);
     group.classList.toggle('ring-4', !isGroupValid);
     group.classList.toggle('ring-red-500/20', !isGroupValid);
+    group.setAttribute('aria-invalid', isGroupValid ? 'false' : 'true');
     feedback.classList.toggle('hidden', isGroupValid);
   };
 
@@ -249,7 +250,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (form && !form.dataset.spamGuardInitialized) {
-      const markInteraction = () => {
+      const markInteraction = (event) => {
+        const target = event.target;
+        const isTypingControl = target instanceof HTMLInputElement
+          || target instanceof HTMLSelectElement
+          || target instanceof HTMLTextAreaElement;
+        if (!isTypingControl) return;
+        if (target instanceof HTMLInputElement && ['submit', 'button'].includes(target.type)) return;
+
         if (!startedAtInput?.value) {
           startedAtInput.value = String(Date.now());
         }
@@ -404,6 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedServices = quoteServices.filter((option) => option.checked).map((option) => option.value);
         const servicesOk = selectedServices.length > 0;
         setGroupValidity(quoteServicesGroup, quoteServicesFeedback, servicesOk);
+        quoteServices.forEach((option) => option.setAttribute('aria-invalid', servicesOk ? 'false' : 'true'));
         quoteServicesSummary.value = servicesOk ? selectedServices.join(', ') : '';
         if (!servicesOk) isValid = false;
 
