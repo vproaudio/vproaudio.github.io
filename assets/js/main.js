@@ -244,21 +244,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const initializeFormGuards = (form) => {
     const startedAtInput = form?.querySelector('input[name="form_started_at"]');
-    if (startedAtInput && !startedAtInput.value) {
-      startedAtInput.value = String(Date.now());
+    if (startedAtInput) {
+      startedAtInput.value = '';
+    }
+
+    if (form && !form.dataset.spamGuardInitialized) {
+      const markInteraction = () => {
+        if (!startedAtInput?.value) {
+          startedAtInput.value = String(Date.now());
+        }
+      };
+
+      form.addEventListener('focusin', markInteraction);
+      form.addEventListener('input', markInteraction);
+      form.addEventListener('change', markInteraction);
+      form.dataset.spamGuardInitialized = 'true';
     }
   };
 
   const evaluateSpamGuards = (form) => {
     const honeypot = form.querySelector('input[name="website"]');
     const startedAtInput = form.querySelector('input[name="form_started_at"]');
-    const startedAt = Number(startedAtInput?.value || 0);
-    const elapsedMs = Date.now() - startedAt;
-    const elapsedIsInvalid = !Number.isFinite(elapsedMs) || elapsedMs <= 0;
+    const rawStartedAt = startedAtInput?.value.trim() || '';
+    const startedAt = rawStartedAt ? Number(rawStartedAt) : null;
+    const hasValidStartedAt = Number.isFinite(startedAt) && startedAt > 0;
+    const elapsedMs = hasValidStartedAt ? Date.now() - startedAt : null;
+    const hasInvalidTimestamp = Boolean(rawStartedAt) && !hasValidStartedAt;
+    const hasFutureOrZeroTimestamp = hasValidStartedAt && elapsedMs <= 0;
 
     return {
-      shouldBlock: Boolean(honeypot?.value.trim()) || !startedAt,
-      isSuspiciouslyFast: elapsedIsInvalid || elapsedMs < 500
+      shouldBlock: Boolean(honeypot?.value.trim()) || hasInvalidTimestamp || hasFutureOrZeroTimestamp,
+      isSuspiciouslyFast: hasValidStartedAt && elapsedMs < 500
     };
   };
 
