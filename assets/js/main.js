@@ -254,10 +254,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const startedAtInput = form.querySelector('input[name="form_started_at"]');
     const startedAt = Number(startedAtInput?.value || 0);
     const elapsedMs = Date.now() - startedAt;
+    const elapsedIsInvalid = !Number.isFinite(elapsedMs) || elapsedMs <= 0;
 
     return {
       shouldBlock: Boolean(honeypot?.value.trim()) || !startedAt,
-      isSuspiciouslyFast: elapsedMs > 0 && elapsedMs < 500
+      isSuspiciouslyFast: elapsedIsInvalid || elapsedMs < 500
     };
   };
 

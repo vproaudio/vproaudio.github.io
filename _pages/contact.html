@@ -83,11 +83,11 @@ description: >
           <div class="p-6 md:p-8">
             <form id="quoteForm" class="grid gap-6 md:grid-cols-2" novalidate>
               <input type="hidden" name="request_type" value="Quote request">
-              <input type="hidden" name="quote_destination" value="bookings@vproaudio.rentals">
+              <input type="hidden" name="destination_email" value="bookings@vproaudio.rentals">
               <input type="hidden" name="form_started_at" id="quoteFormStartedAt" value="">
-              <div hidden>
+              <div hidden aria-hidden="true" role="presentation">
                 <label for="quote_website">Website</label>
-                <input id="quote_website" name="website" type="text" tabindex="-1" autocomplete="off">
+                <input id="quote_website" name="website" type="text" autocomplete="off">
               </div>
               <div>
                 <label for="quote_user_name" class="mb-2 block text-sm font-semibold text-brand-ink">Full name</label>
@@ -183,11 +183,11 @@ description: >
           <div class="p-6 md:p-8">
             <form id="contactForm" class="grid gap-6 md:grid-cols-2" novalidate>
               <input type="hidden" name="request_type" value="General inquiry">
-              <input type="hidden" name="quote_destination" value="bookings@vproaudio.rentals">
+              <input type="hidden" name="destination_email" value="bookings@vproaudio.rentals">
               <input type="hidden" name="form_started_at" id="contactFormStartedAt" value="">
-              <div hidden>
+              <div hidden aria-hidden="true" role="presentation">
                 <label for="contact_website">Website</label>
-                <input id="contact_website" name="website" type="text" tabindex="-1" autocomplete="off">
+                <input id="contact_website" name="website" type="text" autocomplete="off">
               </div>
               <div>
                 <label for="contact_user_name" class="mb-2 block text-sm font-semibold text-brand-ink">Name</label>
