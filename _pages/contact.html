@@ -16,7 +16,7 @@ description: >
         <p class="mt-4 max-w-3xl text-lg leading-8 text-brand-soft/75">Tell us about your goals, your gear list, or the experience you want to create. Our audio experts respond within one business day with tailored recommendations and pricing.</p>
         <div class="mt-6 flex flex-col gap-3 sm:flex-row">
           <a href="/packages" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-bold text-brand-ink shadow-[0_18px_40px_rgb(255_211_105/.26)] transition hover:-translate-y-0.5 hover:bg-brand-ink hover:text-brand-soft">Browse rental packages</a>
-          <a href="/about/contact/#contactForm" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-brand-soft/35 bg-brand-soft/10 px-6 py-2.5 text-sm font-bold text-brand-soft transition hover:-translate-y-0.5 hover:bg-brand-soft hover:text-brand-ink">Plan your event</a>
+          <a href="/about/contact/#contactForm" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-brand-soft/35 bg-brand-soft/10 px-6 py-2.5 text-sm font-bold text-brand-soft transition hover:-translate-y-0.5 hover:bg-brand-soft hover:text-brand-ink">Request a quote</a>
         </div>
         <div class="mt-8 flex flex-wrap gap-4">
           <div class="min-w-32 rounded-2xl border border-brand-soft/15 bg-brand-soft/10 p-4">
@@ -77,42 +77,90 @@ description: >
       <div class="lg:col-span-7">
         <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 shadow-card">
           <div class="border-b border-brand-ink/10 p-6 md:p-8">
-            <h2 class="font-display text-2xl font-semibold text-brand-ink">Tell us about your event</h2>
-            <p class="mt-2 text-brand-muted/80">Whether you’re planning a corporate meeting, a festival, or a weekend gig, let us know the scope and we’ll craft the ideal audio package.</p>
+            <h2 class="font-display text-2xl font-semibold text-brand-ink">Request a quote</h2>
+            <p class="mt-2 text-brand-muted/80">Share your event logistics and support needs so we can send pricing, availability, and the best-fit audio package.</p>
           </div>
           <div class="p-6 md:p-8">
             <form id="contactForm" class="grid gap-6 md:grid-cols-2" novalidate>
               <div>
-                <label for="user_name" class="mb-2 block text-sm font-semibold text-brand-ink">Name</label>
-                <input name="user_name" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="user_name" placeholder="Your name" required>
-                <div class="mt-2 hidden text-sm text-brand-ink peer-[.is-invalid]:block">Please provide your name.</div>
+                <label for="user_name" class="mb-2 block text-sm font-semibold text-brand-ink">Full name</label>
+                <input name="user_name" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="user_name" placeholder="Your full name" autocomplete="name" required>
+                <div class="mt-2 hidden text-sm text-brand-ink">Please provide your full name.</div>
               </div>
               <div>
                 <label for="user_email" class="mb-2 block text-sm font-semibold text-brand-ink">Email</label>
-                <input name="user_email" type="email" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="user_email" placeholder="name@example.com" required>
+                <input name="user_email" type="email" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="user_email" placeholder="name@example.com" autocomplete="email" required>
                 <div class="mt-2 hidden text-sm text-brand-ink">Please provide a valid email address.</div>
               </div>
-              <div class="md:col-span-2">
-                <label for="event_date" class="mb-2 block text-sm font-semibold text-brand-ink">Event date (optional)</label>
-                <input name="event_date" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="event_date" placeholder="Event date (optional)">
+              <div>
+                <label for="event_type" class="mb-2 block text-sm font-semibold text-brand-ink">Event type</label>
+                <select name="support_type" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="event_type" required>
+                  <option value="" selected>Select event type</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Corporate event">Corporate event</option>
+                  <option value="Private party">Private party</option>
+                  <option value="Live performance">Live performance</option>
+                  <option value="Festival or community event">Festival or community event</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div class="mt-2 hidden text-sm text-brand-ink">Please select your event type.</div>
+              </div>
+              <div>
+                <label for="venue_city" class="mb-2 block text-sm font-semibold text-brand-ink">Venue or city</label>
+                <input name="venue_city" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="venue_city" placeholder="Venue name or city" autocomplete="address-level2" required>
+                <div class="mt-2 hidden text-sm text-brand-ink">Please provide the venue or city.</div>
+              </div>
+              <div>
+                <label for="guest_count" class="mb-2 block text-sm font-semibold text-brand-ink">Estimated guest count</label>
+                <input name="guest_count" type="number" min="1" max="100000" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="guest_count" placeholder="e.g. 120" required>
+                <div class="mt-2 hidden text-sm text-brand-ink">Please enter an estimated guest count.</div>
               </div>
               <div class="md:col-span-2">
-                <label for="support_type" class="mb-2 block text-sm font-semibold text-brand-ink">What can we help with?</label>
-                <select name="support_type" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="support_type">
-                  <option value="General inquiry" selected>General inquiry</option>
-                  <option value="Rental package">Rental package</option>
-                  <option value="On-site engineering">On-site engineering</option>
-                  <option value="Technical support">Technical support</option>
-                  <option value="Partnership opportunity">Partnership opportunity</option>
+                <label for="event_date" class="mb-2 block text-sm font-semibold text-brand-ink">Event date</label>
+                <input name="event_date" type="date" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="event_date" required>
+                <div class="mt-2 hidden text-sm text-brand-ink">Please choose your event date.</div>
+              </div>
+              <div>
+                <label for="event_time_window" class="mb-2 block text-sm font-semibold text-brand-ink">Time window</label>
+                <input name="event_time_window" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="event_time_window" placeholder="e.g. 5:00 PM to 11:00 PM" required>
+                <div class="mt-2 hidden text-sm text-brand-ink">Please provide your event time window.</div>
+              </div>
+              <div>
+                <label for="budget_range" class="mb-2 block text-sm font-semibold text-brand-ink">Budget range (optional)</label>
+                <select name="budget_range" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="budget_range">
+                  <option value="" selected>Select a budget range</option>
+                  <option value="Under $500">Under $500</option>
+                  <option value="$500 - $1,000">$500 - $1,000</option>
+                  <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                  <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                  <option value="$5,000+">$5,000+</option>
+                  <option value="Not sure yet">Not sure yet</option>
                 </select>
               </div>
               <div class="md:col-span-2">
-                <label for="message" class="mb-2 block text-sm font-semibold text-brand-ink">Share the details</label>
-                <textarea name="message" class="min-h-40 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="message" placeholder="Share the details" required></textarea>
-                <div class="mt-2 hidden text-sm text-brand-ink">Please provide a message with at least 10 characters.</div>
+                <fieldset id="servicesNeededGroup" class="rounded-xl border border-brand-ink/10 p-4">
+                  <legend class="px-1 text-sm font-semibold text-brand-ink">Services needed</legend>
+                  <div class="mt-2 grid gap-3 md:grid-cols-2">
+                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="checkbox" name="services_needed" value="Equipment rental" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">Equipment rental</label>
+                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="checkbox" name="services_needed" value="Delivery and pickup" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">Delivery and pickup</label>
+                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="checkbox" name="services_needed" value="Setup and strike" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">Setup and strike</label>
+                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="checkbox" name="services_needed" value="On-site engineer" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">On-site engineer</label>
+                  </div>
+                  <div id="servicesNeededFeedback" class="mt-2 hidden text-sm text-brand-ink">Please select at least one service.</div>
+                </fieldset>
+                <input type="hidden" name="services_summary" id="services_summary" value="">
               </div>
               <div class="md:col-span-2">
-                <button type="button" id="contactSubmit" class="font-display inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-full bg-brand-muted px-6 py-2.5 text-sm font-bold text-brand-soft transition hover:-translate-y-0.5">Send message</button>
+                <label for="package_interest" class="mb-2 block text-sm font-semibold text-brand-ink">Package or gear interests (optional)</label>
+                <input name="package_interest" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="package_interest" placeholder="Examples: Wedding reception package, wireless microphones">
+              </div>
+              <div class="md:col-span-2">
+                <label for="message" class="mb-2 block text-sm font-semibold text-brand-ink">Notes and timeline</label>
+                <textarea name="message" class="min-h-40 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="message" placeholder="Share your timeline, key moments, and any technical requirements." required></textarea>
+                <div class="mt-2 hidden text-sm text-brand-ink">Please provide notes with at least 10 characters.</div>
+              </div>
+              <div class="md:col-span-2">
+                <button type="submit" id="contactSubmit" class="font-display inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-full bg-brand-muted px-6 py-2.5 text-sm font-bold text-brand-soft transition hover:-translate-y-0.5">Request a quote</button>
               </div>
               <div class="md:col-span-2">
                 <div id="responseMessage"></div>
