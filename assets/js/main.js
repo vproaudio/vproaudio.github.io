@@ -245,8 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const initializeFormGuards = (form) => {
     const startedAtInput = form?.querySelector('input[name="form_started_at"]');
-    if (startedAtInput) {
-      startedAtInput.value = '';
+    if (startedAtInput && !startedAtInput.value) {
+      startedAtInput.value = String(Date.now());
     }
 
     if (form && !form.dataset.spamGuardInitialized) {
