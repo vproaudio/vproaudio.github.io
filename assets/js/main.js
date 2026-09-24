@@ -341,6 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
           didSucceed = true;
           response.innerHTML = `<div class="rounded-xl border border-brand-gold/60 bg-brand-soft p-4 text-brand-ink">${successMessage}</div>`;
           form.reset();
+          setFormGuardStartNow(form);
           initializeFormGuards(form);
         })
         .catch((error) => {
