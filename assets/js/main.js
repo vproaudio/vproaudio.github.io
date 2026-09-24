@@ -249,13 +249,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const failsSpamGuards = (form) => {
+  const evaluateSpamGuards = (form) => {
     const honeypot = form.querySelector('input[name="website"]');
     const startedAtInput = form.querySelector('input[name="form_started_at"]');
     const startedAt = Number(startedAtInput?.value || 0);
     const elapsedMs = Date.now() - startedAt;
 
-    return Boolean(honeypot?.value.trim()) || !startedAt || elapsedMs < 1500;
+    return {
+      shouldBlock: Boolean(honeypot?.value.trim()) || !startedAt,
+      isSuspiciouslyFast: elapsedMs > 0 && elapsedMs < 1500
+    };
   };
 
   if (formsUsingEmail.length > 0 && typeof emailjs !== 'undefined') {
@@ -280,9 +283,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      if (failsSpamGuards(form)) {
+      const spamCheck = evaluateSpamGuards(form);
+      if (spamCheck.shouldBlock) {
         response.innerHTML = '<div class="rounded-xl border border-brand-gold/60 bg-brand-gold/20 p-4 text-brand-ink">We could not verify your request. Please try again in a moment.</div>';
         return;
+      }
+      if (spamCheck.isSuspiciouslyFast) {
+        console.warn('Suspiciously fast form submission detected:', form.id);
       }
 
       if (typeof emailjs === 'undefined') {
@@ -299,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
       messageField.value = buildMessage(originalMessageValue);
       let didSucceed = false;
 
-      emailjs.sendForm('service_ilnhxr9', 'template_t1xv5a8', `#${form.id}`)
+      emailjs.sendForm('service_ilnhxr9', 'template_t1xv5a8', form)
         .then(() => {
           didSucceed = true;
           response.innerHTML = `<div class="rounded-xl border border-brand-gold/60 bg-brand-soft p-4 text-brand-ink">${successMessage}</div>`;
