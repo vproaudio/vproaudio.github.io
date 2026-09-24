@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     return {
       shouldBlock: Boolean(honeypot?.value.trim()) || !startedAt,
-      isSuspiciouslyFast: elapsedMs > 0 && elapsedMs < 1500
+      isSuspiciouslyFast: elapsedMs > 0 && elapsedMs < 500
     };
   };
 
@@ -289,7 +289,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       if (spamCheck.isSuspiciouslyFast) {
-        console.warn('Suspiciously fast form submission detected:', form.id);
+        response.innerHTML = '<div class="rounded-xl border border-brand-gold/60 bg-brand-gold/20 p-4 text-brand-ink">We could not verify your request. Please try again in a moment.</div>';
+        console.warn('Suspiciously fast form submission blocked:', form.id);
+        return;
       }
 
       if (typeof emailjs === 'undefined') {
