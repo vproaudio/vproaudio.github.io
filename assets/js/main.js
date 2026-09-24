@@ -216,87 +216,95 @@ document.addEventListener('DOMContentLoaded', () => {
     setupGuidesSearchInput.addEventListener('input', filterGuides);
   }
 
-  // Contact form handling
+  // Contact and quote form handling
+  const quoteForm = document.getElementById('quoteForm');
   const contactForm = document.getElementById('contactForm');
-  const contactSubmitButton = document.getElementById('contactSubmit');
+  const formsUsingEmail = [quoteForm, contactForm].filter(Boolean);
 
-  if (typeof emailjs !== 'undefined') {
+  const setFieldValidity = (field, isFieldValid) => {
+    if (!field) return;
+    field.classList.toggle('is-invalid', !isFieldValid);
+    field.classList.toggle('border-red-500', !isFieldValid);
+    field.classList.toggle('ring-4', !isFieldValid);
+    field.classList.toggle('ring-red-500/20', !isFieldValid);
+
+    const feedback = field.nextElementSibling;
+    if (feedback) feedback.classList.toggle('hidden', isFieldValid);
+  };
+
+  const setGroupValidity = (group, feedback, isGroupValid) => {
+    if (!group || !feedback) return;
+    group.classList.toggle('border-red-500', !isGroupValid);
+    group.classList.toggle('ring-4', !isGroupValid);
+    group.classList.toggle('ring-red-500/20', !isGroupValid);
+    feedback.classList.toggle('hidden', isGroupValid);
+  };
+
+  const isEmailValid = (value) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value);
+
+  const initializeFormGuards = (form) => {
+    const startedAtInput = form?.querySelector('input[name="form_started_at"]');
+    if (startedAtInput && !startedAtInput.value) {
+      startedAtInput.value = String(Date.now());
+    }
+  };
+
+  const failsSpamGuards = (form) => {
+    const honeypot = form.querySelector('input[name="website"]');
+    const startedAtInput = form.querySelector('input[name="form_started_at"]');
+    const startedAt = Number(startedAtInput?.value || 0);
+    const elapsedMs = Date.now() - startedAt;
+
+    return Boolean(honeypot?.value.trim()) || !startedAt || elapsedMs < 1500;
+  };
+
+  if (formsUsingEmail.length > 0 && typeof emailjs !== 'undefined') {
     emailjs.init({
       publicKey: '8g9ogIfKnECKwhPCN'
     });
-  } else if (contactForm) {
+  } else if (formsUsingEmail.length > 0) {
     console.error('EmailJS SDK failed to load.');
   }
 
-  if (contactForm && contactSubmitButton) {
-    const setFieldValidity = (field, isFieldValid) => {
-      field.classList.toggle('is-invalid', !isFieldValid);
-      field.classList.toggle('border-red-500', !isFieldValid);
-      field.classList.toggle('ring-4', !isFieldValid);
-      field.classList.toggle('ring-red-500/20', !isFieldValid);
+  formsUsingEmail.forEach(initializeFormGuards);
 
-      const feedback = field.nextElementSibling;
-      if (feedback) feedback.classList.toggle('hidden', isFieldValid);
-    };
+  const submitWithEmailJs = ({ form, button, response, messageField, validate, buildMessage, successMessage }) => {
+    if (!form || !button || !response || !messageField) return;
 
-    const submitContactForm = () => {
-      const name = document.getElementById('user_name');
-      const email = document.getElementById('user_email');
-      const eventDate = document.getElementById('event_date');
-      const supportType = document.getElementById('support_type');
-      const message = document.getElementById('message');
-      const response = document.getElementById('responseMessage');
-
-      let isValid = true;
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
       response.innerHTML = '';
 
-      const isNameValid = Boolean(name.value.trim());
-      setFieldValidity(name, isNameValid);
-      if (!isNameValid) isValid = false;
+      if (!validate()) {
+        response.innerHTML = '<div class="rounded-xl border border-brand-gold/60 bg-brand-gold/20 p-4 text-brand-ink">Please fill in all required fields before submitting.</div>';
+        return;
+      }
 
-      const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-      const isEmailValid = Boolean(email.value.trim()) && emailRegex.test(email.value);
-      setFieldValidity(email, isEmailValid);
-      if (!isEmailValid) isValid = false;
-
-      const isMessageValid = Boolean(message.value.trim()) && message.value.length >= 10;
-      setFieldValidity(message, isMessageValid);
-      if (!isMessageValid) isValid = false;
-
-      if (!isValid) {
-        response.innerHTML = '<div class="rounded-xl border border-brand-gold/60 bg-brand-gold/20 p-4 text-brand-ink">Please fill in all fields correctly before submitting.</div>';
+      if (failsSpamGuards(form)) {
+        response.innerHTML = '<div class="rounded-xl border border-brand-gold/60 bg-brand-gold/20 p-4 text-brand-ink">We could not verify your request. Please try again in a moment.</div>';
         return;
       }
 
       if (typeof emailjs === 'undefined') {
         response.innerHTML = '<div class="rounded-xl border border-brand-muted/25 bg-brand-muted p-4 text-brand-soft">Our email service is currently unavailable. Please reach out directly at <a href="mailto:bookings@vproaudio.rentals" class="font-bold underline">bookings@vproaudio.rentals</a>.</div>';
-        console.error('EmailJS SDK is not available when attempting to submit the contact form.');
+        console.error('EmailJS SDK is not available when attempting to submit form:', form.id);
         return;
       }
 
-      contactSubmitButton.disabled = true;
-      const originalText = contactSubmitButton.innerHTML;
-      contactSubmitButton.innerHTML = '<span class="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-brand-soft/40 border-t-brand-soft" role="status" aria-hidden="true"></span>Sending...';
+      button.disabled = true;
+      const originalText = button.innerHTML;
+      button.innerHTML = '<span class="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-brand-soft/40 border-t-brand-soft" role="status" aria-hidden="true"></span>Sending...';
 
-      const originalMessageValue = message.value;
-      const composedMessageParts = [
-        `Support type: ${supportType.value}`
-      ];
-
-      if (eventDate.value.trim()) {
-        composedMessageParts.push(`Event date: ${eventDate.value.trim()}`);
-      }
-
-      composedMessageParts.push('', originalMessageValue);
-      message.value = composedMessageParts.join('\n');
-
+      const originalMessageValue = messageField.value;
+      messageField.value = buildMessage(originalMessageValue);
       let didSucceed = false;
 
-      emailjs.sendForm('service_ilnhxr9', 'template_t1xv5a8', '#contactForm')
+      emailjs.sendForm('service_ilnhxr9', 'template_t1xv5a8', `#${form.id}`)
         .then(() => {
           didSucceed = true;
-          response.innerHTML = '<div class="rounded-xl border border-brand-gold/60 bg-brand-soft p-4 text-brand-ink">Thank you for contacting us. Your message has been sent!</div>';
-          contactForm.reset();
+          response.innerHTML = `<div class="rounded-xl border border-brand-gold/60 bg-brand-soft p-4 text-brand-ink">${successMessage}</div>`;
+          form.reset();
+          initializeFormGuards(form);
         })
         .catch((error) => {
           console.error('EmailJS error:', error);
@@ -304,14 +312,143 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .finally(() => {
           if (!didSucceed) {
-            message.value = originalMessageValue;
+            messageField.value = originalMessageValue;
           }
-          contactSubmitButton.disabled = false;
-          contactSubmitButton.innerHTML = originalText;
+          button.disabled = false;
+          button.innerHTML = originalText;
         });
-    };
+    });
+  };
 
-    contactSubmitButton.addEventListener('click', submitContactForm);
+  if (quoteForm) {
+    const quoteSubmitButton = document.getElementById('quoteSubmit');
+    const quoteResponse = document.getElementById('quoteResponseMessage');
+    const quoteName = document.getElementById('quote_user_name');
+    const quoteEmail = document.getElementById('quote_user_email');
+    const quoteEventType = document.getElementById('quote_event_type');
+    const quoteVenueCity = document.getElementById('quote_venue_city');
+    const quoteGuestCount = document.getElementById('quote_guest_count');
+    const quoteEventDate = document.getElementById('quote_event_date');
+    const quoteTimeWindow = document.getElementById('quote_event_time_window');
+    const quoteMessage = document.getElementById('quote_message');
+    const quoteServices = Array.from(quoteForm.querySelectorAll('input[name="services_needed"]'));
+    const quoteServicesSummary = document.getElementById('quote_services_summary');
+    const quoteServicesGroup = document.getElementById('quoteServicesNeededGroup');
+    const quoteServicesFeedback = document.getElementById('quoteServicesNeededFeedback');
+    const quoteBudgetRange = document.getElementById('budget_range');
+    const quotePackageInterest = document.getElementById('quote_package_interest');
+
+    submitWithEmailJs({
+      form: quoteForm,
+      button: quoteSubmitButton,
+      response: quoteResponse,
+      messageField: quoteMessage,
+      validate: () => {
+        let isValid = true;
+
+        const nameOk = Boolean(quoteName?.value.trim());
+        setFieldValidity(quoteName, nameOk);
+        if (!nameOk) isValid = false;
+
+        const emailOk = Boolean(quoteEmail?.value.trim()) && isEmailValid(quoteEmail.value.trim());
+        setFieldValidity(quoteEmail, emailOk);
+        if (!emailOk) isValid = false;
+
+        const typeOk = Boolean(quoteEventType?.value.trim());
+        setFieldValidity(quoteEventType, typeOk);
+        if (!typeOk) isValid = false;
+
+        const venueOk = Boolean(quoteVenueCity?.value.trim());
+        setFieldValidity(quoteVenueCity, venueOk);
+        if (!venueOk) isValid = false;
+
+        const guestCountValue = Number(quoteGuestCount?.value || 0);
+        const guestCountOk = Number.isFinite(guestCountValue) && guestCountValue > 0;
+        setFieldValidity(quoteGuestCount, guestCountOk);
+        if (!guestCountOk) isValid = false;
+
+        const eventDateOk = Boolean(quoteEventDate?.value.trim());
+        setFieldValidity(quoteEventDate, eventDateOk);
+        if (!eventDateOk) isValid = false;
+
+        const timeWindowOk = Boolean(quoteTimeWindow?.value.trim());
+        setFieldValidity(quoteTimeWindow, timeWindowOk);
+        if (!timeWindowOk) isValid = false;
+
+        const selectedServices = quoteServices.filter((option) => option.checked).map((option) => option.value);
+        const servicesOk = selectedServices.length > 0;
+        setGroupValidity(quoteServicesGroup, quoteServicesFeedback, servicesOk);
+        quoteServicesSummary.value = servicesOk ? selectedServices.join(', ') : '';
+        if (!servicesOk) isValid = false;
+
+        const messageOk = Boolean(quoteMessage?.value.trim()) && quoteMessage.value.trim().length >= 10;
+        setFieldValidity(quoteMessage, messageOk);
+        if (!messageOk) isValid = false;
+
+        return isValid;
+      },
+      buildMessage: (originalMessage) => {
+        const selectedServices = quoteServices.filter((option) => option.checked).map((option) => option.value).join(', ');
+        const details = [
+          `Request type: Quote request`,
+          `Event type: ${quoteEventType.value}`,
+          `Venue/city: ${quoteVenueCity.value.trim()}`,
+          `Guest count: ${quoteGuestCount.value.trim()}`,
+          `Event date: ${quoteEventDate.value.trim()}`,
+          `Time window: ${quoteTimeWindow.value.trim()}`,
+          `Services needed: ${selectedServices}`,
+          `Budget range: ${quoteBudgetRange?.value || 'Not specified'}`,
+          `Package or gear interests: ${quotePackageInterest?.value.trim() || 'Not specified'}`,
+          '',
+          originalMessage
+        ];
+        return details.join('\n');
+      },
+      successMessage: 'Thank you for your quote request. We will follow up shortly with availability and pricing.'
+    });
+  }
+
+  if (contactForm) {
+    const contactSubmitButton = document.getElementById('contactSubmit');
+    const contactResponse = document.getElementById('responseMessage');
+    const contactName = document.getElementById('contact_user_name');
+    const contactEmail = document.getElementById('contact_user_email');
+    const contactSupportType = document.getElementById('contact_support_type');
+    const contactMessage = document.getElementById('contact_message');
+
+    submitWithEmailJs({
+      form: contactForm,
+      button: contactSubmitButton,
+      response: contactResponse,
+      messageField: contactMessage,
+      validate: () => {
+        let isValid = true;
+
+        const nameOk = Boolean(contactName?.value.trim());
+        setFieldValidity(contactName, nameOk);
+        if (!nameOk) isValid = false;
+
+        const emailOk = Boolean(contactEmail?.value.trim()) && isEmailValid(contactEmail.value.trim());
+        setFieldValidity(contactEmail, emailOk);
+        if (!emailOk) isValid = false;
+
+        const messageOk = Boolean(contactMessage?.value.trim()) && contactMessage.value.trim().length >= 10;
+        setFieldValidity(contactMessage, messageOk);
+        if (!messageOk) isValid = false;
+
+        return isValid;
+      },
+      buildMessage: (originalMessage) => {
+        const details = [
+          `Request type: General inquiry`,
+          `Support type: ${contactSupportType?.value || 'General inquiry'}`,
+          '',
+          originalMessage
+        ];
+        return details.join('\n');
+      },
+      successMessage: 'Thank you for contacting us. Your inquiry has been sent.'
+    });
   }
 
   // FAQ filtering
