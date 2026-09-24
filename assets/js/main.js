@@ -243,11 +243,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const isEmailValid = (value) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value);
 
+  const setFormGuardStartNow = (form) => {
+    const startedAtInput = form?.querySelector('input[name="form_started_at"]');
+    if (!startedAtInput) return;
+    startedAtInput.value = String(Date.now());
+  };
+
   const initializeFormGuards = (form) => {
     const startedAtInput = form?.querySelector('input[name="form_started_at"]');
-    if (startedAtInput && !startedAtInput.value) {
-      startedAtInput.value = String(Date.now());
-    }
+    if (startedAtInput && !startedAtInput.value) setFormGuardStartNow(form);
 
     if (form && !form.dataset.spamGuardInitialized) {
       const markInteraction = (event) => {
@@ -259,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (target instanceof HTMLInputElement && ['submit', 'button'].includes(target.type)) return;
 
         if (!startedAtInput?.value) {
-          startedAtInput.value = String(Date.now());
+          setFormGuardStartNow(form);
         }
       };
 
@@ -338,6 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
           didSucceed = true;
           response.innerHTML = `<div class="rounded-xl border border-brand-gold/60 bg-brand-soft p-4 text-brand-ink">${successMessage}</div>`;
           form.reset();
+          setFormGuardStartNow(form);
           initializeFormGuards(form);
         })
         .catch((error) => {
