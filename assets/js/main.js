@@ -317,9 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       if (spamCheck.isSuspiciouslyFast) {
-        response.innerHTML = '<div class="rounded-xl border border-brand-gold/60 bg-brand-gold/20 p-4 text-brand-ink">We could not verify your request. Please try again in a moment.</div>';
-        console.warn('Suspiciously fast form submission blocked:', form.id);
-        return;
+        console.warn('Suspiciously fast form submission detected:', form.id);
       }
 
       if (typeof emailjs === 'undefined') {
