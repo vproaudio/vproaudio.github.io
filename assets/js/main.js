@@ -538,4 +538,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateFaqVisibility();
   }
+
+  // Pre-fill the quote form's package interest field from ?package= query param
+  const quotePackageField = document.getElementById('quote_package_interest');
+  if (quotePackageField) {
+    const requestedPackage = new URLSearchParams(window.location.search).get('package');
+    if (requestedPackage) {
+      quotePackageField.value = requestedPackage;
+    }
+  }
 });

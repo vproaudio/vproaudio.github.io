@@ -15,8 +15,8 @@ description: >
         <h1 class="mt-4 font-display text-4xl font-bold text-brand-soft md:text-6xl">Crystal-clear vocals, speeches, and recordings.</h1>
         <p class="mt-4 max-w-3xl text-lg leading-8 text-brand-soft/75">From handheld wireless mics to studio staples, our curated kits include stands, cables, and expert setup so every word lands with impact.</p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="/about/contact/" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-bold text-brand-ink shadow-[0_18px_40px_rgb(255_211_105/.26)] transition hover:-translate-y-0.5 hover:bg-brand-ink hover:text-brand-soft">Build a microphone kit</a>
-          <a href="mailto:bookings@vproaudio.rentals" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-brand-soft/35 bg-brand-soft/10 px-6 py-2.5 text-sm font-bold text-brand-soft transition hover:-translate-y-0.5 hover:bg-brand-soft hover:text-brand-ink">Email our engineers</a>
+          <a href="/about/request-a-quote/?package=Microphone%20kit#quoteForm" class="btn-primary">Build a microphone kit</a>
+          <a href="mailto:bookings@vproaudio.rentals" class="btn-outline">Email our engineers</a>
         </div>
       </div>
       <div class="lg:col-span-5">

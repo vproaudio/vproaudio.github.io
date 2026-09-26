@@ -15,8 +15,8 @@ description: >
         <h1 class="mt-4 font-display text-4xl font-bold text-brand-soft md:text-6xl">Tell us about your event and we’ll build your quote.</h1>
         <p class="mt-4 max-w-3xl text-lg leading-8 text-brand-soft/75">Share your event logistics and support needs so we can send pricing, availability, and a best-fit audio package.</p>
         <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-          <a href="/packages" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-bold text-brand-ink shadow-[0_18px_40px_rgb(255_211_105/.26)] transition hover:-translate-y-0.5 hover:bg-brand-ink hover:text-brand-soft">Browse rental packages</a>
-          <a href="/about/request-a-quote/#quoteForm" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-brand-soft/35 bg-brand-soft/10 px-6 py-2.5 text-sm font-bold text-brand-soft transition hover:-translate-y-0.5 hover:bg-brand-soft hover:text-brand-ink">Jump to form</a>
+          <a href="/packages" class="btn-primary">Browse rental packages</a>
+          <a href="/about/request-a-quote/#quoteForm" class="btn-outline">Jump to form</a>
         </div>
       </div>
       <div class="grid gap-4">
@@ -48,14 +48,14 @@ description: >
 <section class="py-16 lg:py-24">
   <div class="mx-auto w-[min(100%-1.5rem,1180px)] md:w-[min(100%-2rem,1180px)]">
     <div class="grid gap-12 lg:grid-cols-12">
-      <div class="lg:col-span-7">
-        <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 shadow-card">
+      <div class="lg:col-span-12">
+        <div class="card">
           <div class="border-b border-brand-ink/10 p-6 md:p-8">
             <h2 class="font-display text-2xl font-semibold text-brand-ink">Request a quote</h2>
             <p class="mt-2 text-brand-muted/80">Complete the form and our team will follow up with availability and pricing.</p>
           </div>
           <div class="p-6 md:p-8">
-            <form id="quoteForm" class="grid gap-6 md:grid-cols-2" novalidate>
+            <form id="quoteForm" class="grid scroll-mt-28 gap-6 md:grid-cols-2" novalidate>
               <input type="hidden" name="request_type" value="Quote request">
               <input type="hidden" name="destination_email" value="bookings@vproaudio.rentals">
               <input type="hidden" name="form_started_at" id="quoteFormStartedAt" value="">
@@ -141,38 +141,12 @@ description: >
                 <div class="mt-2 hidden text-sm text-brand-ink">Please provide notes with at least 10 characters.</div>
               </div>
               <div class="md:col-span-2">
-                <button type="submit" id="quoteSubmit" class="font-display inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-full bg-brand-muted px-6 py-2.5 text-sm font-bold text-brand-soft transition hover:-translate-y-0.5">Request a quote</button>
+                <button type="submit" id="quoteSubmit" class="btn-dark w-full">Request a quote</button>
               </div>
               <div class="md:col-span-2">
                 <div id="quoteResponseMessage"></div>
               </div>
             </form>
-          </div>
-        </div>
-      </div>
-      <div class="lg:col-span-5">
-        <div class="h-full rounded-2xl border border-brand-ink/10 bg-brand-soft p-6 shadow-card md:p-10">
-          <div class="mb-6 flex items-center gap-3">
-            <span class="grid h-12 w-12 place-items-center rounded-xl bg-brand-gold/25 text-brand-muted"><i class="bi bi-headset"></i></span>
-            <div>
-              <h2 class="font-display text-xl font-bold text-brand-ink">Need immediate assistance?</h2>
-              <p class="text-brand-muted/80">
-                Call our on-call engineer line at
-                <a href="tel:+17076600414" class="font-semibold text-brand-ink">(707) 660-0414</a>.
-              </p>
-            </div>
-          </div>
-          <ul class="mb-6 list-none p-0 text-brand-muted/80">
-            <li class="mb-3 flex items-start gap-3"><i class="bi bi-check2-circle text-brand-ink"></i> Dedicated project manager for multi-day productions.</li>
-            <li class="mb-3 flex items-start gap-3"><i class="bi bi-check2-circle text-brand-ink"></i> Real-time updates on gear availability and delivery timelines.</li>
-            <li class="flex items-start gap-3"><i class="bi bi-check2-circle text-brand-ink"></i> Complimentary system tuning with full-service packages.</li>
-          </ul>
-          <div class="rounded-2xl bg-brand-gold/15 p-6">
-            <h3 class="font-display text-lg font-bold text-brand-ink">Prefer to book a consultation?</h3>
-            <p class="mt-2 text-brand-muted/80">Reserve a 30-minute planning session with our lead engineer to review your audio roadmap.</p>
-            <a class="mt-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-soft px-5 py-2.5 font-display text-sm font-bold text-brand-ink" href="mailto:bookings@vproaudio.rentals?subject=Consultation%20Request">
-              <i class="bi bi-calendar-check"></i> Schedule your consult
-            </a>
           </div>
         </div>
       </div>

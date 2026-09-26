@@ -18,8 +18,8 @@ layout: base
             <span class="font-display text-3xl font-bold text-brand-soft">${{ page.price }}</span>
             <span class="ml-1 text-sm text-brand-soft/65">per day</span>
           </div>
-          <a href="/about/contact/" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-bold text-brand-ink shadow-[0_18px_40px_rgb(255_211_105/.26)] transition hover:-translate-y-0.5 hover:bg-brand-ink hover:text-brand-soft">Reserve this package</a>
-          <a href="tel:+17076600414" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-brand-soft/35 bg-brand-soft/10 px-6 py-2.5 text-sm font-bold text-brand-soft transition hover:-translate-y-0.5 hover:bg-brand-soft hover:text-brand-ink">
+          <a href="/about/request-a-quote/?package={{ page.title | uri_escape }}#quoteForm" class="btn-primary">Reserve this package</a>
+          <a href="tel:+17076600414" class="btn-outline">
             <i class="bi bi-telephone mr-2"></i>Call us
           </a>
         </div>
