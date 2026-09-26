@@ -10,4 +10,97 @@
     --shadow-card: 0 18px 50px rgb(34 40 49 / 10%);
     --shadow-stage: 0 34px 90px rgb(34 40 49 / 18%);
   }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+
+  @utility btn-primary {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: var(--color-brand-gold);
+    padding: 0.625rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-brand-ink);
+    box-shadow: 0 18px 40px rgb(255 211 105 / 0.26);
+    transition: all 0.2s ease;
+    &:hover {
+      transform: translateY(-2px);
+      background: var(--color-brand-ink);
+      color: var(--color-brand-soft);
+      box-shadow: 0 18px 40px rgb(255 211 105 / 0.35);
+    }
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgb(255 211 105 / 0.4);
+    }
+  }
+
+  @utility btn-outline {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 1px solid rgb(238 238 238 / 0.35);
+    background: rgb(238 238 238 / 0.1);
+    padding: 0.625rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-brand-soft);
+    transition: all 0.2s ease;
+    &:hover {
+      transform: translateY(-2px);
+      background: var(--color-brand-soft);
+      color: var(--color-brand-ink);
+    }
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgb(255 211 105 / 0.4);
+    }
+  }
+
+  @utility btn-dark {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: var(--color-brand-muted);
+    padding: 0.625rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-brand-soft);
+    transition: all 0.2s ease;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgb(255 211 105 / 0.35);
+    }
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgb(255 211 105 / 0.4);
+    }
+  }
+
+  @utility card {
+    border-radius: 1rem;
+    border: 1px solid rgb(34 40 49 / 0.1);
+    background: var(--color-brand-soft);
+    box-shadow: var(--shadow-card);
+  }
+
+  @utility card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-stage);
+    }
+  }
 </style>

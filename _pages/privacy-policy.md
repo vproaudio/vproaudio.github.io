@@ -56,6 +56,7 @@ effective_date: 2026-04-19
         <p class="mt-3 text-brand-muted/80">We gather details you choose to share so we can respond with the right solution.</p>
         <ul class="mt-5 list-disc pl-5 text-brand-muted/80">
           <li>Contact details when you fill out a form or request a quote</li>
+          <li>Event logistics for quote requests (event type, venue/city, guest count, date/time window, and requested services)</li>
           <li>Project requirements submitted for custom packages</li>
           <li>Communication preferences when you subscribe to updates</li>
           <li>Technical diagnostics such as analytics and cookies that help us improve performance</li>
@@ -68,10 +69,11 @@ effective_date: 2026-04-19
         <h2 class="mt-4 font-display text-xl font-bold text-brand-ink">How We Use Your Information</h2>
         <p class="mt-3 text-brand-muted/80">Every data point supports a better rental experience.</p>
         <ul class="mt-5 list-disc pl-5 text-brand-muted/80">
-          <li>Coordinate consultations and provide timely responses</li>
+          <li>Coordinate consultations, quote requests, and provide timely responses</li>
           <li>Tailor packages and recommend gear that fits your event</li>
           <li>Enhance our website through aggregate analytics</li>
           <li>Send news or offers only when you have opted in</li>
+          <li>Detect and reduce spam submissions through form abuse safeguards</li>
         </ul>
       </div>
       <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-8 shadow-card">
