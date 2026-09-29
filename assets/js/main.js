@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (typeof emailjs === 'undefined') {
-        response.innerHTML = '<div class="rounded-xl border border-brand-muted/25 bg-brand-muted p-4 text-brand-soft">Our email service is currently unavailable. Please reach out directly at <a href="mailto:bookings@vproaudio.rentals" class="font-bold underline">bookings@vproaudio.rentals</a>.</div>';
+        response.innerHTML = '<div class="rounded-xl border border-brand-muted/25 bg-brand-muted p-4 text-brand-soft">Our email service is currently unavailable. Please reach out directly at <a href="mailto:bookings@vansproaudio.com" class="font-bold underline">bookings@vansproaudio.com</a>.</div>';
         console.error('EmailJS SDK is not available when attempting to submit form:', form.id);
         return;
       }
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
       messageField.value = buildMessage(originalMessageValue);
       let didSucceed = false;
 
-      emailjs.sendForm('service_ilnhxr9', 'template_t1xv5a8', form)
+      emailjs.sendForm('service_h1tdht9', 'template_t1xv5a8', form)
         .then(() => {
           didSucceed = true;
           response.innerHTML = `<div class="rounded-xl border border-brand-gold/60 bg-brand-soft p-4 text-brand-ink">${successMessage}</div>`;
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch((error) => {
           console.error('EmailJS error:', error);
-          response.innerHTML = '<div class="rounded-xl border border-brand-muted/25 bg-brand-muted p-4 text-brand-soft">Oops! Something went wrong while sending your message. Please try again later or email us directly at <a href="mailto:bookings@vproaudio.rentals" class="font-bold underline">bookings@vproaudio.rentals</a>.</div>';
+          response.innerHTML = '<div class="rounded-xl border border-brand-muted/25 bg-brand-muted p-4 text-brand-soft">Oops! Something went wrong while sending your message. Please try again later or email us directly at <a href="mailto:bookings@vansproaudio.com" class="font-bold underline">bookings@vansproaudio.com</a>.</div>';
         })
         .finally(() => {
           if (!didSucceed) {
