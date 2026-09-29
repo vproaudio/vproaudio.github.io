@@ -16,7 +16,7 @@ description: >
         <p class="mt-4 max-w-3xl text-lg leading-8 text-brand-soft/75">From handheld wireless mics to studio staples, our curated kits include stands, cables, and expert setup so every word lands with impact.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/about/request-a-quote/?package=Microphone%20kit#quoteForm" class="btn-primary">Build a microphone kit</a>
-          <a href="mailto:bookings@vproaudio.rentals" class="btn-outline">Email our engineers</a>
+          <a href="mailto:bookings@vansproaudio.com" class="btn-outline">Email our engineers</a>
         </div>
       </div>
       <div class="lg:col-span-5">
