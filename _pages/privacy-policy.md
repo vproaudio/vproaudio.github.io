@@ -116,7 +116,7 @@ effective_date: 2026-04-19
           We'll respond promptly and confirm once your request is complete.
         </p>
       </div>
-      <a class="mt-6 inline-flex rounded-full bg-brand-gold px-5 py-2.5 font-display text-sm font-bold text-brand-ink md:mt-0" href="mailto:privacy@vproaudio.rentals">Request Changes</a>
+      <a class="mt-6 inline-flex rounded-full bg-brand-gold px-5 py-2.5 font-display text-sm font-bold text-brand-ink md:mt-0" href="mailto:privacy@vansproaudio.com">Request Changes</a>
     </div>
 
     <div class="mt-10 grid gap-6 lg:grid-cols-2">
@@ -140,7 +140,7 @@ effective_date: 2026-04-19
           </li>
           <li class="flex gap-3">
             <i class="bi bi-envelope-open text-brand-ink"></i>
-            <a href="mailto:privacy@vproaudio.rentals" class="font-semibold text-brand-ink">privacy@vproaudio.rentals</a>
+            <a href="mailto:privacy@vansproaudio.com" class="font-semibold text-brand-ink">privacy@vansproaudio.com</a>
           </li>
         </ul>
       </div>

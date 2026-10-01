@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
       messageField.value = buildMessage(originalMessageValue);
       let didSucceed = false;
 
-      emailjs.sendForm('service_h1tdht9', 'template_t1xv5a8', form)
+      emailjs.sendForm('service_q34g939', 'template_t1xv5a8', form)
         .then(() => {
           didSucceed = true;
           response.innerHTML = `<div class="rounded-xl border border-brand-gold/60 bg-brand-soft p-4 text-brand-ink">${successMessage}</div>`;

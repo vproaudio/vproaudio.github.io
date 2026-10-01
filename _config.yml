@@ -1,5 +1,5 @@
 # Site Settings
-title: V Pro Audio
+title: VANS PRO AUDIO
 description: Affordable, professional quality audio for your events.
 url: "https://www.vproaudio.rentals"
 baseurl: ""
@@ -7,10 +7,10 @@ author: "Edwin Vans"
 email: "bookings@vansproaudio.com"
 lang: "en"
 timezone: "America/Los_Angeles"
-branding: "V PRO AUDIO"
+branding: "VANS PRO AUDIO"
 
 year: 2025
-company: "VANS Pro Audio Rentals"
+company: "VANS PRO AUDIO"
 
 plugins:
   - jekyll-seo-tag
@@ -18,7 +18,7 @@ plugins:
   - jekyll-paginate-v2
 
 seo:
-  title: "VANS Pro Audio Rentals"
+  title: "VANS PRO AUDIO"
   description: "Affordable, professional quality audio for your events."
   url: "https://www.vproaudio.rentals"
   image: "/assets/images/home.jpg"
@@ -30,7 +30,7 @@ seo:
 #   bing: "your-bing-verification-code"
 
 social:
-  name: "VANS Pro Audio Rentals"
+  name: "VANS PRO AUDIO"
   links:
     - "https://www.youtube.com/@VProAudioRentals"
 
