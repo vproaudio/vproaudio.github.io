@@ -1,7 +1,7 @@
 # Site Settings
 title: VANS PRO AUDIO
 description: Affordable, professional quality audio for your events.
-url: "https://www.vproaudio.rentals"
+url: "https://www.vansproaudio.com"
 baseurl: ""
 author: "Edwin Vans"
 email: "bookings@vansproaudio.com"
@@ -20,7 +20,7 @@ plugins:
 seo:
   title: "VANS PRO AUDIO"
   description: "Affordable, professional quality audio for your events."
-  url: "https://www.vproaudio.rentals"
+  url: "https://www.vansproaudio.com"
   image: "/assets/images/home.jpg"
 
 # After verifying in Google Search Console / Bing Webmaster Tools, uncomment and
