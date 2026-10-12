@@ -13,7 +13,8 @@ permissions:
 
 concurrency:
   group: site-${{ github.ref }}
-  cancel-in-progress: true
+  # Finish an active production release; newer PR checks can replace older ones.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 env:
   JEKYLL_ENV: production
@@ -58,6 +59,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -75,22 +81,29 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Configure Git author
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
 
-      - name: Bump site version
-        if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+      - name: Prepare site version
+        id: version
         run: |
           NEXT_VERSION="$(npm run version:bump --silent)"
-          git add package.json package-lock.json _data/site_version.yml
+          TAG="v${NEXT_VERSION}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
 
-          if git diff --cached --quiet; then
-            echo "No version files changed."
+          # Retry a failed deployment using the same validated release commit.
+          # Never reuse a version tag belonging to different source changes.
+          if git rev-parse --verify "refs/tags/$TAG" >/dev/null 2>&1; then
+            if [ "$(git rev-parse "$TAG^1")" != "$GITHUB_SHA" ] ||
+               ! git diff --quiet "$TAG" -- .; then
+              echo "::error::Tag $TAG already belongs to different changes."
+              exit 1
+            fi
+            git restore package.json package-lock.json _data/site_version.yml
+            git checkout --detach "$TAG"
+            echo "existing=true" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "Bump site version to v${NEXT_VERSION} [skip ci]"
-            git push origin HEAD:main
+            echo "existing=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Run Jekyll doctor
@@ -105,33 +118,48 @@ jobs:
       - name: Verify build artifact
         run: test -f _site/index.html
 
-      - name: Deploy to gh-pages
+      - name: Commit and tag validated version
+        if: steps.version.outputs.existing != 'true'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
         run: |
-          DEPLOY_SHA="$(git rev-parse --short HEAD)"
-          DEPLOY_DIR="$(mktemp -d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json _data/site_version.yml
+          git commit -m "Bump site version to ${RELEASE_TAG} [skip ci]"
+          git tag -a "$RELEASE_TAG" -m "Release $RELEASE_TAG"
+          # Publish both refs together. Fail without overwriting newer main commits.
+          git push --atomic origin HEAD:refs/heads/main "refs/tags/$RELEASE_TAG"
 
-          cp -a _site/. "$DEPLOY_DIR/"
-          cat > "$DEPLOY_DIR/.gitignore" <<'GITIGNORE'
-          node_modules/
-          _site/
-          vendor/
-          .jekyll-cache/
-          *.log
-          *.tmp
-          Gemfile.lock
-          GITIGNORE
-          touch "$DEPLOY_DIR/.nojekyll"
+      - name: Verify release is still current
+        run: |
+          git fetch origin main
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+            echo "::error::main has advanced; let its newer workflow deploy instead."
+            exit 1
+          fi
 
-          git -C "$DEPLOY_DIR" init
-          git -C "$DEPLOY_DIR" config user.name "github-actions[bot]"
-          git -C "$DEPLOY_DIR" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git -C "$DEPLOY_DIR" checkout -b gh-pages
-          git -C "$DEPLOY_DIR" add .
-          git -C "$DEPLOY_DIR" commit -m "Deploy site from ${DEPLOY_SHA}"
-          git -C "$DEPLOY_DIR" remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git -C "$DEPLOY_DIR" push --force origin gh-pages
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          name: github-pages-${{ github.run_attempt }}
+          path: _site
 
-      - name: Refresh devel from main
-        run: git push origin HEAD:devel --force
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "Release $RELEASE_TAG already exists."
+          else
+            gh release create "$RELEASE_TAG" --verify-tag \
+              --title "$RELEASE_TAG" --generate-notes
+          fi
