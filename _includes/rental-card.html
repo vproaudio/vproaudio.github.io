@@ -1,0 +1,17 @@
+{% assign detail_url = '/rentals/' | append: include.item.category_slug | append: '/' | append: include.item.slug | append: '/' %}
+<article class="flex h-full flex-col rounded-2xl border border-brand-ink/10 bg-brand-soft p-4 shadow-card transition hover:-translate-y-1 hover:shadow-stage">
+  <div class="flex items-center justify-center overflow-hidden rounded-xl bg-white p-4">
+    <img src="{{ include.item.image | relative_url }}" alt="{{ include.item.image_alt | escape }}" class="aspect-4/3 w-full object-contain" loading="lazy" width="600" height="450">
+  </div>
+  <div class="flex flex-1 flex-col p-4">
+    <p class="text-xs font-bold uppercase tracking-wider text-brand-muted/70">{{ include.item.brand | escape }}</p>
+    <h2 class="mt-2 font-display text-xl font-bold text-brand-ink">
+      <a href="{{ detail_url | relative_url }}" class="rounded-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-ink">{{ include.item.name | escape }}</a>
+    </h2>
+    <p class="mt-3 leading-7 text-brand-muted/80">{{ include.item.description | escape }}</p>
+    <div class="mt-auto pt-6">
+      <p class="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-brand-ink">{% include rental-price.html item=include.item %}</p>
+      <a href="{{ detail_url | relative_url }}" class="btn-dark mt-4 w-full" aria-label="View details for {{ include.item.name | escape }}">View details <i class="bi bi-arrow-right ml-2" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</article>

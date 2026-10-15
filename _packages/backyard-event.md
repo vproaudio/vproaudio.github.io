@@ -8,7 +8,7 @@ description: >
   Perfect for birthdays, baby showers, backyard weddings, and small gatherings. This system provides clear, balanced sound for both music and voices without being overpowering. Easy to connect your phone, laptop, or tablet with Bluetooth while still having a professional microphone for announcements or toasts. Includes two professional powered speakers, wireless handheld microphone, bluetooth-enabled mixer, speaker stands and all cables.
 
 image: "/assets/images/packages/package1.png"
-price: 139
+price: 135
 
 items_included:
   - 2 x Yamaha DBR10 Powered Speaker with Stand

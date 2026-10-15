@@ -9,7 +9,7 @@ description: >
 
 image: "/assets/images/packages/package2.png"
 
-price: 99
+price: 100
 
 items_included:
   - 2 x EV ZLX12P Bluetooth Powered Speaker with Stand

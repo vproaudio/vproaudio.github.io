@@ -32,6 +32,19 @@
         - title: Ultimate Dance Floor Experience
           url: /packages/event-lighting/ultimate-dance-floor-experience/
 
+- title: Rentals
+  dropdown:
+    - title: Microphones
+      url: /rentals/microphones/
+    - title: Mixers and Controllers
+      url: /rentals/mixers-and-controllers/
+    - title: Powered Speakers
+      url: /rentals/powered-speakers/
+    - title: Powered Subwoofers
+      url: /rentals/powered-subwoofers/
+    - title: Stands and Accessories
+      url: /rentals/stands-and-accessories/
+
 - title: Support
   dropdown:
     - title: Setup Guides

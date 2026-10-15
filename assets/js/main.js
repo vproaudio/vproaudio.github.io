@@ -47,8 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       event.stopPropagation();
 
-      if (isDesktop()) return;
-
       closeSiblingDropdowns(dropdown);
       const isOpen = dropdown.classList.toggle('is-open');
       dropdown.querySelector(':scope > .nav-disclosure-panel')?.classList.toggle('hidden', !isOpen);

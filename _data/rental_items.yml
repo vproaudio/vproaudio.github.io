@@ -1,0 +1,780 @@
+# Individual rental catalog. Access in Jekyll as site.data.rental_items.
+# Prices are intentionally unset: replace rental_price: null with a number (e.g. 25).
+# USD per day follows the site's existing pricing convention; adjust if needed.
+# null means not priced, never free. rental_unit describes the quoted unit.
+# IDs preserve the supplied image stems; slugs are stable URL-safe identifiers.
+# Manufacturer specifications describe the model, not guaranteed rental accessories.
+# rental_notes are customer-facing setup notes; model_note is an internal review note.
+# Sources reviewed 2026-10-15. See README.md for editing and Liquid examples.
+
+- id: BLX24-SM58-1
+  slug: shure-blx24-sm58
+  name: Shure BLX24/SM58 Wireless Handheld Mic
+  brand: Shure
+  model: BLX24/SM58
+  category: Microphones
+  category_slug: microphones
+  image: /assets/images/add-ons/BLX24-SM58-1.png
+  image_alt: Shure BLX24/SM58 Wireless Handheld Mic
+  description: A handheld wireless microphone system for announcements, speeches, and live vocals. The SM58 capsule pairs with a compact BLX receiver for straightforward event setup.
+  features:
+  - SM58 cardioid dynamic capsule focuses pickup on the voice.
+  - QuickScan helps select a clear wireless channel.
+  - Receiver provides XLR and 1/4-inch audio outputs.
+  specifications:
+    System type: Analog UHF wireless handheld
+    Wireless channels: '1'
+    System components: BLX4 receiver and BLX2/SM58 transmitter
+    Capsule frequency response: 50 Hz–15 kHz
+    Transmitter power: 2 AA batteries; up to 14 hours
+    Operating range: Up to 300 ft line of sight; environment dependent
+  rental_price: 35
+  currency: USD
+  rental_period: day
+  rental_unit: system
+  rental_notes:
+  - Frequency band and compatible channel count depend on the supplied unit and local RF conditions.
+  sources:
+  - https://content-files.shure.com/Pubs2/files/259293.pdf
+
+- id: DDJFLX4
+  slug: pioneer-ddj-flx4
+  name: Pioneer DDJ-FLX4 DJ Controller
+  brand: Pioneer DJ
+  model: DDJ-FLX4
+  category: Mixers and Controllers
+  category_slug: mixers-and-controllers
+  image: /assets/images/add-ons/DDJFLX4.png
+  image_alt: Pioneer DDJ-FLX4 DJ Controller
+  description: A compact two-channel controller for mixing music from compatible DJ software. Useful for mobile DJ setups, parties, and learning to mix.
+  features:
+  - Smart Fader assists transitions between tracks.
+  - Smart CFX combines effects under one control.
+  - Built-in audio interface connects to powered speakers or an amplifier.
+  specifications:
+    Mixer channels: '2'
+    Master output: Stereo RCA, unbalanced
+    Microphone input: 1/4-inch jack
+    Computer connection: USB Type-C
+    Power: USB bus power with a compatible computer
+  rental_price: 30
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Requires a compatible computer or mobile device and DJ software. Software subscriptions, music libraries, and playback devices are not specified as rental inclusions.
+  sources:
+  - https://www.pioneerdj.com/en/product/dj-controllers/ddj-flx4/
+
+- id: EVZLX12P
+  slug: electro-voice-zlx-12p-g2
+  name: Electro-Voice ZLX-12P-G2 Powered Speaker
+  brand: Electro-Voice
+  model: ZLX-12P-G2
+  category: Powered Speakers
+  category_slug: powered-speakers
+  image: /assets/images/add-ons/EVZLX12P.png
+  image_alt: Electro-Voice ZLX-12P-G2 Powered Speaker
+  description: A powered 12-inch speaker for speech, music playback, and live sound. Its onboard mixer and Bluetooth streaming support compact event setups.
+  features:
+  - Onboard digital mixer offers effects, EQ, and feedback suppression.
+  - Bluetooth stereo streaming supports wireless music playback.
+  - QuickSmart Mobile app provides remote control.
+  specifications:
+    Configuration: 12-inch, two-way powered speaker
+    Amplifier rating: 1000 W
+    Maximum SPL: 127 dB
+    Frequency response (-3 dB): 54 Hz–18.5 kHz
+    Coverage (H × V): 90° × 60°
+    Inputs: 2 XLR/TRS combo inputs; Hi-Z support and 24 V phantom power
+  rental_price: 55
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Requires AC power. Price is per speaker.
+  sources:
+  - https://www.electrovoice.com/product/zlx-12p-g2
+
+- id: MGX12
+  slug: yamaha-mgx12
+  name: Yamaha MGX12 Digital Mixer
+  brand: Yamaha
+  model: MGX12
+  category: Mixers and Controllers
+  category_slug: mixers-and-controllers
+  image: /assets/images/add-ons/MGX12.png
+  image_alt: Yamaha MGX12 Digital Mixer
+  description: A digital mixer for live events, recording, and streaming, with 4 microphone preamps and hands-on fader control.
+  features:
+  - Touchscreen and physical faders provide direct control.
+  - Two USB-C host connections support computer workflows.
+  - Bluetooth input and microSD recording expand playback and capture options.
+  specifications:
+    Mixing capacity: 18 channels
+    Mic/line combo inputs: '4'
+    Physical faders: '12'
+    Display: 4.3-inch touchscreen
+    Weight: 3.9 kg / 8.6 lb
+  rental_price: 70
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - This is the audio-only MGX model; HDMI video features belong to MGX V models.
+  sources:
+  - https://usa.yamaha.com/products/proaudio/mixers/mgx/specs.html
+
+- id: MGX16
+  slug: yamaha-mgx16
+  name: Yamaha MGX16 Digital Mixer
+  brand: Yamaha
+  model: MGX16
+  category: Mixers and Controllers
+  category_slug: mixers-and-controllers
+  image: /assets/images/add-ons/MGX16.png
+  image_alt: Yamaha MGX16 Digital Mixer
+  description: A digital mixer for live events, recording, and streaming, with 8 microphone preamps and hands-on fader control.
+  features:
+  - Touchscreen and physical faders provide direct control.
+  - Two USB-C host connections support computer workflows.
+  - Bluetooth input and microSD recording expand playback and capture options.
+  specifications:
+    Mixing capacity: 22 channels
+    Mic/line combo inputs: '8'
+    Physical faders: '16'
+    Display: 4.3-inch touchscreen
+    Weight: 4.7 kg / 10.4 lb
+  rental_price: 100
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - This is the audio-only MGX model; HDMI video features belong to MGX V models.
+  sources:
+  - https://usa.yamaha.com/products/proaudio/mixers/mgx/specs.html
+
+- id: MIXER-CART
+  slug: gator-gfw-mixercart-0400
+  name: Gator Frameworks GFW-MIXERCART-0400 Adjustable Wheeled Mixer Stand
+  brand: Gator Frameworks
+  model: GFW-MIXERCART-0400
+  category: Stands and Accessories
+  category_slug: stands-and-accessories
+  image: /assets/images/add-ons/MIXER-CART.png
+  image_alt: Gator Frameworks GFW-MIXERCART-0400 Adjustable Wheeled Mixer Stand
+  description: A rolling support for a mixer or controller, with adjustable height and tilt to position equipment within comfortable reach.
+  features:
+  - Locking casters secure the stand during use.
+  - Adjustable support width and depth accommodate different equipment.
+  - Integrated hanger organizes headphones or cables.
+  specifications:
+    Height adjustment: 27.5–41.3 in
+    Support width: 14.5–22.5 in
+    Support depth: 12–16 in
+    Maximum load: 85 lb
+    Base: Five-leg wheeled base
+  rental_price: FREE
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Confirm equipment dimensions and weight before use.
+  sources:
+  - https://gatorco.com/product/height-and-angled-adjustable-wheeled-mixer-stand/
+
+- id: MIXER-STAND-2
+  slug: gator-tripod-laptop-projector-stand
+  name: Gator Frameworks Tripod Laptop and Projector Stand
+  brand: Gator Frameworks
+  model: GFWLAPTOP1500
+  category: Stands and Accessories
+  category_slug: stands-and-accessories
+  image: /assets/images/add-ons/MIXER-STAND-2.png
+  image_alt: Gator Frameworks Tripod Laptop and Projector Stand
+  description: A portable tray stand for a laptop, projector, or small audio device. Height and tilt adjustments help position equipment for presentations and performances.
+  features:
+  - Tilting tray with raised edges supports equipment.
+  - Non-slip tray pad protects and grips the device.
+  - Tripod base collapses for transport.
+  specifications:
+    Tray dimensions: 14 × 11 in
+    Height adjustment: 28.25–44.5 in
+    Maximum load: 20 lb / 9.07 kg
+    Construction: Steel
+    Weight: 6.6 lb / 3 kg
+  rental_price: FREE
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Confirm tray fit and device weight before use.
+  sources:
+  - https://gatorco.com/product/tripod-laptop-and-projector-stand-gfwlaptop1500/
+  model_note: GFWLAPTOP1500 is inferred from the supplied product description and image; confirm the model label on the rental unit.
+
+- id: MPROFX10V3P
+  slug: mackie-profx10v3-plus
+  name: Mackie ProFX10v3+ Mixer
+  brand: Mackie
+  model: ProFX10v3+
+  category: Mixers and Controllers
+  category_slug: mixers-and-controllers
+  image: /assets/images/add-ons/MPROFX10V3P.png
+  image_alt: Mackie ProFX10v3+ Mixer
+  description: A compact analog mixer with USB-C recording and Bluetooth connectivity for small performances, presentations, podcasts, and streaming.
+  features:
+  - Onyx preamps provide gain for microphones.
+  - GigFX+ processing adds effects to the mix.
+  - USB loopback supports bringing computer audio into a stream.
+  specifications:
+    Mixer type: Analog
+    Input channels: '10'
+    Computer connection: USB-C audio interface
+    Wireless audio: Bluetooth
+    Channel processing: EQ, one-knob compression, Hi-Z switching, and 100 Hz low-cut filters on applicable channels
+  rental_price: 35
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes: []
+  sources:
+  - https://mackie.com/en/products/mixers/profxv3-series/ProFX10v3plus.html
+
+- id: PROX-DJ-BOOTH
+  slug: prox-vista-dj-booth
+  name: ProX Vista DJ Booth and Workstation with Scrim Kit
+  brand: ProX
+  model: Vista
+  category: Stands and Accessories
+  category_slug: stands-and-accessories
+  image: /assets/images/add-ons/PROX-DJ-BOOTH.png
+  image_alt: ProX Vista DJ Booth and Workstation with Scrim Kit
+  description: A DJ workstation with a surrounding facade and scrim kit that helps present a tidy performance area at weddings, parties, and corporate events.
+  features:
+  - Integrated table provides a working surface for DJ equipment.
+  - Front and side panels screen the equipment area.
+  - Fabric scrims dress the facade for event presentation.
+  specifications:
+    Product type: DJ booth, facade, and workstation
+    Series: Vista
+    Finish shown: Black hardware
+    Covering: Scrim kit
+  rental_price: 35
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Confirm usable table dimensions, load rating, supplied scrim colors, and transport accessories for the rental unit.
+  sources:
+  - https://www.proxdirect.com/products/view/Replacement-Black-Spandex-Fabric-Lycra-Scrim-with-Bag-for-ProX-Vista-Facade-XF-VISTASCRIMBLK
+  model_note: Exact Vista generation and SKU were not supplied. Description and visible configuration follow the supplied image; the manufacturer source documents the Vista scrim accessory only. Variant-specific dimensions and load ratings are intentionally omitted.
+
+- id: QSCK10-2
+  slug: qsc-k10-2
+  name: QSC K10.2 Powered Speaker
+  brand: QSC
+  model: K10.2
+  category: Powered Speakers
+  category_slug: powered-speakers
+  image: /assets/images/add-ons/QSCK10-2.png
+  image_alt: QSC K10.2 Powered Speaker
+  description: A compact powered speaker for speech, music, and stage monitoring. Onboard inputs and processing suit portable event systems.
+  features:
+  - Two combo inputs accept microphone, line, or Hi-Z sources as applicable.
+  - Stereo mini-jack input accepts a playback source.
+  - Separate loop-through and mixed outputs support system expansion.
+  specifications:
+    Configuration: 10-inch, two-way powered speaker
+    Amplifier power (peak): 1800 W LF + 225 W HF
+    Maximum SPL: 130 dB peak at 1 m
+    Frequency range (-10 dB): 50 Hz–20 kHz
+    Coverage: 90° axisymmetric
+  rental_price: 80
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Requires AC power. Price is per speaker.
+  sources:
+  - https://www.qscaudio.com/solutions-products/loudspeakers/portable/powered/portable-pa/k2-series/k102/
+
+- id: SBLX14-CVL
+  slug: shure-blx14-cvl
+  name: Shure BLX14/CVL Wireless Lavalier Mic
+  brand: Shure
+  model: BLX14/CVL
+  category: Microphones
+  category_slug: microphones
+  image: /assets/images/add-ons/SBLX14-CVL.png
+  image_alt: Shure BLX14/CVL Wireless Lavalier Mic
+  description: A clip-on wireless microphone for presenters, officiants, and speakers who need their hands free. A compact bodypack sends audio to the BLX receiver.
+  features:
+  - Small lavalier clips to clothing for discreet placement.
+  - Cardioid pickup helps focus on speech.
+  - QuickScan assists wireless channel setup.
+  specifications:
+    System type: Analog UHF wireless lavalier
+    Wireless channels: '1'
+    System components: BLX4 receiver, BLX1 bodypack, and CVL microphone
+    Microphone type: Cardioid electret condenser
+    Microphone frequency response: 60 Hz–12 kHz
+    Transmitter power: 2 AA batteries; up to 14 hours
+  rental_price: 35
+  currency: USD
+  rental_period: day
+  rental_unit: system
+  rental_notes:
+  - Frequency band depends on the supplied unit; coordinate channels when using multiple wireless systems.
+  sources:
+  - https://content-files.shure.com/Pubs2/files/259293.pdf
+  - https://www.shure.com/en-US/docs/guide/CVL
+
+- id: SBLX14-PGA31
+  slug: shure-blx14-pga31
+  name: Shure BLX14/PGA31 Wireless Headset Mic
+  brand: Shure
+  model: BLX14/PGA31
+  category: Microphones
+  category_slug: microphones
+  image: /assets/images/add-ons/SBLX14-PGA31.png
+  image_alt: Shure BLX14/PGA31 Wireless Headset Mic
+  description: A wireless headset system for hands-free speech and performance. Its adjustable boom keeps the microphone near the mouth while the wearer moves.
+  features:
+  - Wireframe headset keeps the microphone in position.
+  - Flexible boom allows placement near the mouth.
+  - Cardioid pickup reduces sound arriving from behind the microphone.
+  specifications:
+    System type: Analog UHF wireless headset
+    Wireless channels: '1'
+    System components: BLX4 receiver, BLX1 bodypack, and PGA31 headset
+    Microphone type: Cardioid electret condenser
+    Microphone frequency response: 60 Hz–20 kHz
+    Transmitter power: 2 AA batteries; up to 14 hours
+  rental_price: 35
+  currency: USD
+  rental_period: day
+  rental_unit: system
+  rental_notes:
+  - Frequency band depends on the supplied unit; coordinate channels when using multiple wireless systems.
+  sources:
+  - https://www.shure.com/en-US/products/wireless-systems/blx_wireless/blx14-pga31-wireless-headset-set
+  - https://content-files.shure.com/Pubs/PGA31/PGA31_Specification_Sheet.pdf
+
+- id: SLXD24D+SM58
+  slug: shure-slxd24d-plus-sm58
+  name: Shure SLXD24D+/SM58 Dual Wireless Handheld Mic System
+  brand: Shure
+  model: SLXD24D+/58
+  category: Microphones
+  category_slug: microphones
+  image: /assets/images/add-ons/SLXD24D+SM58.png
+  image_alt: Shure SLXD24D+/SM58 Dual Wireless Handheld Mic System
+  description: A dual-channel digital wireless system with two SM58 handheld microphones for paired presenters, interviews, and live vocals.
+  features:
+  - Two independent wireless channels share one receiver.
+  - ShowLink Ease supports automatic transmitter management.
+  - Receiver includes Shure Digital Feedback Reducer processing.
+  specifications:
+    Wireless channels: '2'
+    System components: SLXD4D+ receiver and 2 SLXD2+/58 handheld transmitters
+    Capsule type: SM58 cardioid dynamic
+    Digital audio: 24-bit
+    Dynamic range: Greater than 118 dB
+  rental_price: 145
+  currency: USD
+  rental_period: day
+  rental_unit: system
+  rental_notes:
+  - Price is per dual-channel system, with two handheld microphones.
+  - Frequency band and regional configuration depend on the supplied unit.
+  sources:
+  - https://www.shure.com/en-IN/products/wireless-systems/slx_d_digital_wireless/slxd24d-sm58
+  model_note: Shure lists the SM58-equipped SLX-D+ bundle as SLXD24D+/58. The supplied filename and SM58 description are retained in the catalog identity.
+
+- id: YDBR10-3
+  slug: yamaha-dbr10
+  name: Yamaha DBR10 Powered Speaker
+  brand: Yamaha
+  model: DBR10
+  category: Powered Speakers
+  category_slug: powered-speakers
+  image: /assets/images/add-ons/YDBR10-3.png
+  image_alt: Yamaha DBR10 Powered Speaker
+  description: A portable 10-inch powered speaker for event sound and floor monitoring.
+  features:
+  - FIR-X tuning manages the crossover response.
+  - Built-in amplification simplifies setup.
+  - Cabinet supports main-speaker and floor-monitor use.
+  specifications:
+    Configuration: 10-inch, two-way powered speaker
+    Output power (dynamic): 700 W
+    Maximum SPL: 129 dB at 1 m
+    Frequency range (-10 dB): 55 Hz–20 kHz
+    Weight: 10.5 kg / 23.2 lb
+  rental_price: 35
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Requires AC power. Price is per speaker.
+  sources:
+  - https://usa.yamaha.com/products/proaudio/speakers/dbr/specs.html
+  - https://usa.yamaha.com/products/proaudio/speakers/dbr/
+
+- id: YDBR12-1
+  slug: yamaha-dbr12
+  name: Yamaha DBR12 Powered Speaker
+  brand: Yamaha
+  model: DBR12
+  category: Powered Speakers
+  category_slug: powered-speakers
+  image: /assets/images/add-ons/YDBR12-1.png
+  image_alt: Yamaha DBR12 Powered Speaker
+  description: A portable 12-inch powered speaker for event sound and floor monitoring.
+  features:
+  - FIR-X tuning manages the crossover response.
+  - Built-in amplification simplifies setup.
+  - Cabinet supports main-speaker and floor-monitor use.
+  specifications:
+    Configuration: 12-inch, two-way powered speaker
+    Output power (dynamic): 1000 W
+    Maximum SPL: 131 dB at 1 m
+    Frequency range (-10 dB): 52 Hz–20 kHz
+    Weight: 15.8 kg / 34.8 lb
+  rental_price: 45
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Requires AC power. Price is per speaker.
+  sources:
+  - https://usa.yamaha.com/products/proaudio/speakers/dbr/specs.html
+  - https://usa.yamaha.com/products/proaudio/speakers/dbr/
+
+- id: YDXR10MKIII
+  slug: yamaha-dxr10-mk3
+  name: Yamaha DXR10 mk3 Powered Speaker
+  brand: Yamaha
+  model: DXR10 mk3
+  category: Powered Speakers
+  category_slug: powered-speakers
+  image: /assets/images/add-ons/YDXR10MKIII.png
+  image_alt: Yamaha DXR10 mk3 Powered Speaker
+  description: A 10-inch powered speaker for live music, DJ playback, and event sound, with onboard processing for different applications.
+  features:
+  - Selectable DSP modes suit speech, music, and monitoring.
+  - FIR-X tuning controls the crossover.
+  - Two combo inputs accept external audio sources.
+  specifications:
+    Configuration: 10-inch, two-way powered speaker
+    Amplifier power (peak): 2000 W
+    Maximum SPL: 132 dB measured peak at 1 m
+    Frequency range (-10 dB): 53 Hz–20 kHz
+    Coverage (H × V): 90° × 60°
+    Weight: 14.5 kg / 32.0 lb
+  rental_price: 80
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Requires AC power. Price is per speaker.
+  sources:
+  - https://usa.yamaha.com/products/proaudio/speakers/dxr_mk3/specs.html
+
+- id: YDXR12MKIII
+  slug: yamaha-dxr12-mk3
+  name: Yamaha DXR12 mk3 Powered Speaker
+  brand: Yamaha
+  model: DXR12 mk3
+  category: Powered Speakers
+  category_slug: powered-speakers
+  image: /assets/images/add-ons/YDXR12MKIII.png
+  image_alt: Yamaha DXR12 mk3 Powered Speaker
+  description: A 12-inch powered speaker for live music, DJ playback, and event sound, with onboard processing for different applications.
+  features:
+  - Selectable DSP modes suit speech, music, and monitoring.
+  - FIR-X tuning controls the crossover.
+  - Two combo inputs accept external audio sources.
+  specifications:
+    Configuration: 12-inch, two-way powered speaker
+    Amplifier power (peak): 2000 W
+    Maximum SPL: 134 dB measured peak at 1 m
+    Frequency range (-10 dB): 50 Hz–20 kHz
+    Coverage (H × V): 90° × 60°
+    Weight: 17.4 kg / 38.4 lb
+  rental_price: 90
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Requires AC power. Price is per speaker.
+  sources:
+  - https://usa.yamaha.com/products/proaudio/speakers/dxr_mk3/specs.html
+
+- id: YDXS12MKII
+  slug: yamaha-dxs12-mkii
+  name: Yamaha DXS12 mkII Powered Subwoofer
+  brand: Yamaha
+  model: DXS12mkII
+  category: Powered Subwoofers
+  category_slug: powered-subwoofers
+  image: /assets/images/add-ons/YDXS12MKII.png
+  image_alt: Yamaha DXS12 mkII Powered Subwoofer
+  description: A compact powered subwoofer for adding low-frequency support to a PA system at music and DJ events.
+  features:
+  - Band-pass cabinet is designed for bass reinforcement.
+  - Built-in amplification supports portable systems.
+  - Selectable crossover and D-XSUB processing help match the main speakers.
+  specifications:
+    Driver: 12-inch woofer
+    Output power (dynamic): 1020 W
+    Output power (continuous): 800 W
+    Maximum SPL: 134 dB at 1 m
+    Frequency range (-10 dB): 42–150 Hz
+    Weight: 30.0 kg / 66.1 lb
+  rental_price: 90
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Requires AC power and a full-range speaker system. Price is per subwoofer.
+  sources:
+  - https://usa.yamaha.com/products/proaudio/speakers/dxs/specs.html
+  - https://usa.yamaha.com/products/proaudio/speakers/dxs/features.html
+
+- id: YDXS18MKIII
+  slug: yamaha-dxs18-mk3
+  name: Yamaha DXS18 mk3 Powered Subwoofer
+  brand: Yamaha
+  model: DXS18 mk3
+  category: Powered Subwoofers
+  category_slug: powered-subwoofers
+  image: /assets/images/add-ons/YDXS18MKIII.png
+  image_alt: Yamaha DXS18 mk3 Powered Subwoofer
+  description: An 18-inch powered subwoofer for extending the bass response of DJ and live music systems.
+  features:
+  - D-XSUB processing offers extended low-frequency operation.
+  - Cardioid mode supports bass control with an appropriate multi-subwoofer arrangement.
+  - Onboard DSP provides crossover and system adjustment.
+  specifications:
+    Driver: 18-inch woofer with 4-inch voice coil
+    Amplifier power (peak): 2500 W
+    Maximum SPL: 134 dB measured peak at 1 m
+    Frequency range (-10 dB): 32–120 Hz
+    Weight: 51.0 kg / 112.4 lb
+  rental_price: 145
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Requires AC power and a full-range speaker system. Price is per subwoofer.
+  sources:
+  - https://usa.yamaha.com/products/proaudio/speakers/dxs_mk3/specs.html
+  - https://usa.yamaha.com/products/proaudio/speakers/dxs_mk3/index.html
+
+- id: YMG10XU
+  slug: yamaha-mg10xu
+  name: Yamaha MG10XU Analog Mixer
+  brand: Yamaha
+  model: MG10XU
+  category: Mixers and Controllers
+  category_slug: mixers-and-controllers
+  image: /assets/images/add-ons/YMG10XU.png
+  image_alt: Yamaha MG10XU Analog Mixer
+  description: A small analog mixer for microphones and stereo playback sources, with onboard effects and USB audio for compact event and recording setups.
+  features:
+  - Four microphone inputs support small presentations and performances.
+  - SPX effects add reverb and other processing.
+  - Stereo USB audio connects to a compatible computer.
+  specifications:
+    Input channels: '10: 4 mono mic/line and 3 stereo line'
+    Microphone preamps: 4 D-PRE
+    USB audio: 2-in / 2-out, up to 24-bit / 192 kHz
+    Phantom power: +48 V
+    Weight: 2.1 kg / 4.6 lb
+  rental_price: 30
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes: []
+  sources:
+  - https://usa.yamaha.com/files/download/other_assets/2/1507032/MG10XU_technical_specifications_En_B0.pdf
+  - https://usa.yamaha.com/products/proaudio/mixers/mg_series_xu_model/
+
+- id: SSM58
+  slug: shure-sm58
+  name: Shure SM58 Vocal Mic
+  brand: Shure
+  model: SM58
+  category: Microphones
+  category_slug: microphones
+  image: /assets/images/add-ons/SSM58.png
+  image_alt: Shure SM58 Vocal Mic
+  description: A wired dynamic microphone for singing, speeches, and announcements, with a response tailored to the voice.
+  features:
+  - Cardioid pickup reduces sound from behind the microphone.
+  - Internal shock mounting reduces handling noise.
+  - Mesh grille and built-in pop filtering protect the capsule and reduce breath noise.
+  specifications:
+    Transducer: Dynamic
+    Polar pattern: Cardioid
+    Frequency response: 50 Hz–15 kHz
+    Connector: 3-pin XLR male
+    Weight: 330 g
+  rental_price: 10
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Connect to a microphone input using an XLR cable.
+  sources:
+  - https://content-files.shure.com/publications/specSheet/en/sm58-spec-sheet.pdf
+
+- id: SSM81
+  slug: shure-sm81
+  name: Shure SM81 Instrument Condenser Mic
+  brand: Shure
+  model: SM81
+  category: Microphones
+  category_slug: microphones
+  image: /assets/images/add-ons/SSM81.png
+  image_alt: Shure SM81 Instrument Condenser Mic
+  description: A condenser microphone for detailed capture of acoustic instruments, cymbals, and other sources in live sound or recording.
+  features:
+  - Flat response supports natural instrument capture.
+  - Switchable low-frequency rolloff helps manage rumble.
+  - Lockable 10 dB pad accommodates louder sources.
+  specifications:
+    Transducer: Electret condenser
+    Polar pattern: Cardioid
+    Frequency response: 20 Hz–20 kHz
+    Pad: 0 or -10 dB
+    Power: Phantom power required; 48 V recommended
+  rental_price: 40
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Requires phantom power and a balanced XLR-to-XLR microphone cable.
+  sources:
+  - https://www.shure.com/en-US/products/microphones/sm81
+  - https://pubs.shure.com/view/guide/SM81/en-US.pdf
+
+- id: SSM57
+  slug: shure-sm57
+  name: Shure SM57 Instrument Mic
+  brand: Shure
+  model: SM57
+  category: Microphones
+  category_slug: microphones
+  image: /assets/images/add-ons/SSM57.png
+  image_alt: Shure SM57 Instrument Mic
+  description: A wired dynamic microphone for close pickup of instruments and amplifiers, including drums, guitar cabinets, and brass.
+  features:
+  - Cardioid pickup helps isolate the source.
+  - Compact grille allows close placement.
+  - Dynamic capsule suits common stage and studio sources.
+  specifications:
+    Transducer: Dynamic
+    Polar pattern: Cardioid
+    Frequency response: 40 Hz–15 kHz
+    Connector: 3-pin XLR male
+  rental_price: 10
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Connect to a microphone input using an XLR cable.
+  sources:
+  - https://pubs.shure.com/view/guide/SM57/en-US.pdf
+
+- id: SSM7B
+  slug: shure-sm7b
+  name: Shure SM7B Podcast Mic
+  brand: Shure
+  model: SM7B
+  category: Microphones
+  category_slug: microphones
+  image: /assets/images/add-ons/SSM7B.png
+  image_alt: Shure SM7B Podcast Mic
+  description: A dynamic microphone for close-spoken podcasts, voiceover, broadcasting, and vocals. Its yoke mount makes positioning at a desk or stand straightforward.
+  features:
+  - Bass rolloff and presence controls adjust tonal balance.
+  - Internal shock isolation reduces mechanical noise.
+  - Hum shielding and foam windscreen support close vocal recording.
+  specifications:
+    Transducer: Dynamic
+    Polar pattern: Cardioid
+    Frequency response: 50 Hz–20 kHz
+    Sensitivity: -59 dBV/Pa at 1 kHz
+    Output impedance: 150 ohms
+    Weight: 764 g / 1.69 lb
+  rental_price: 40
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Use a microphone preamp or interface with sufficient clean gain for the source.
+  sources:
+  - https://www.shure.com/en-US/docs/guide/SM7B
+  - https://content-files.shure.com/Pubs/SM7B/sm7b-specification-sheet-english.pdf
+
+- id: MIC-STAND
+  slug: on-stage-ms7701b
+  name: On-Stage MS7701B Tripod Mic Stand with Boom
+  brand: On-Stage
+  model: MS7701B
+  category: Stands and Accessories
+  category_slug: stands-and-accessories
+  image: /assets/images/add-ons/MIC-STAND.png
+  image_alt: On-Stage MS7701B Tripod Mic Stand with Boom
+  description: A folding tripod microphone stand with a boom for positioning microphones for vocals, instruments, and presentations.
+  features:
+  - Height-adjustable shaft supports seated or standing use.
+  - Removable boom adjusts the microphone angle.
+  - Folding tripod base simplifies transport.
+  specifications:
+    Height adjustment: 32–61.5 in
+    Boom length: 30 in
+    Mount thread: 5/8-inch–27
+    Base spread: 23 in
+    Finish: Black
+  rental_price: FREE
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Select a microphone clip or mount compatible with the microphone.
+  sources:
+  - https://on-stage.com/images/2026%20Catalog/2_Microphone_2026.pdf
+  - https://tmppro.com/ms7701b
+
+- id: SPK-STAND
+  slug: on-stage-ss7761b
+  name: On-Stage SS7761B All-Aluminum Speaker Stand
+  brand: On-Stage
+  model: SS7761B
+  category: Stands and Accessories
+  category_slug: stands-and-accessories
+  image: /assets/images/add-ons/SPK-STAND.png
+  image_alt: On-Stage SS7761B All-Aluminum Speaker Stand
+  description: An adjustable tripod stand for elevating a compatible PA speaker above the audience area.
+  features:
+  - Aluminum construction keeps the stand portable.
+  - Reversible upper shaft accommodates two socket sizes.
+  - Adjustable tripod spread supports stable placement.
+  specifications:
+    Height adjustment: 45–72 in
+    Maximum load: 120 lb
+    Reversible pole diameters: 1-3/8 or 1-1/2 in
+    Base spread: 32–48 in
+    Construction: Aluminum
+  rental_price: FREE
+  currency: USD
+  rental_period: day
+  rental_unit: item
+  rental_notes:
+  - Confirm speaker socket compatibility and load before use. Price is per stand.
+  sources:
+  - https://on-stage.com/images/6_Speaker-and-Lighting_2024.pdf

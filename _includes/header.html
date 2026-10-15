@@ -44,15 +44,14 @@
               {% endif %}
             {% endfor %}
             <li class="nav-disclosure relative">
-              <a
+              <button
                 class="{{ nav_link_classes }}{% if active %}{{ active_nav_classes }}{% endif %}"
-                href="#"
-                role="button"
+                type="button"
                 data-nav-disclosure-toggle
                 aria-expanded="false"
               >
                 {{ item.title }}
-              </a>
+              </button>
               <ul class="nav-disclosure-panel hidden min-w-64 rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-2 shadow-stage lg:absolute lg:left-0 lg:top-full lg:z-50{% unless has_nested %} overflow-hidden{% endunless %}">
                 {% for sub in item.dropdown %}
                   {% if sub.divider %}

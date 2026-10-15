@@ -1,0 +1,8 @@
+{% if include.item.rental_price != nil %}
+  {% assign price_cents = include.item.rental_price | times: 100 | round %}
+  {% assign fractional_cents = price_cents | modulo: 100 %}
+  <span class="font-display text-2xl font-bold">{% if include.item.currency == 'USD' %}${% else %}{{ include.item.currency | escape }} {% endif %}{{ price_cents | divided_by: 100 }}.{% if fractional_cents < 10 %}0{% endif %}{{ fractional_cents }}</span>
+  <span class="text-sm opacity-75">/ {{ include.item.rental_period | escape }} per {{ include.item.rental_unit | escape }}</span>
+{% else %}
+  <span class="font-display text-lg font-bold">Contact for pricing</span>
+{% endif %}

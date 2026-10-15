@@ -74,6 +74,59 @@ Production runs are not canceled by newer pushes. If `main` advances before the 
 
 The automated version commit uses `[skip ci]` to avoid another release cycle. Do not use CI-skip markers on changes that you want deployed.
 
+## Individual Rental Catalog
+
+`_data/rental_items.yml` contains the 26 individual rental products and is available
+to Jekyll templates as `site.data.rental_items`. It is separate from the existing
+microphone packages in `_data/microphones.yml`. On each build,
+`_plugins/rental_catalog.rb` generates a detail page for every item and a listing
+page for every category. Product descriptions and prices stay in the YAML file;
+there are no individual page files to keep in sync.
+
+- Category URL: `/rentals/<category_slug>/`
+- Item URL: `/rentals/<category_slug>/<slug>/`
+- Example: `/rentals/microphones/shure-sm58/`
+
+`_layouts/rental-category.html` and `_layouts/rental-item.html` control the layouts.
+`_includes/rental-card.html` and `_includes/rental-price.html` share the card and
+pricing displays. Prices display with two decimal places; `null` displays
+**Contact for pricing**. Item quote links prefill the existing quote form.
+Internal `model_note` fields are not rendered on the public pages.
+
+The **Rentals** dropdown in `_data/menu.yml` links to the five category pages.
+Adding an item to an existing category requires only a catalog record and image.
+For a new category, also add its link to that dropdown. Keep slugs stable to
+preserve bookmarks; duplicate generated URLs fail the build. The generator runs
+through the existing Bundler/GitHub Actions build, which supports local Jekyll
+plugins.
+
+Each record has a stable `id` matching its supplied image filename, a URL-safe
+`slug`, `name`, `brand`, `model`, `category`, `category_slug`, `image`, `image_alt`,
+`description`, `features`, and a `specifications` map of display labels to values.
+The five category names are Microphones, Mixers and Controllers, Powered Speakers,
+Powered Subwoofers, and Stands and Accessories. Both supplied mixer category
+spellings use **Mixers and Controllers** for consistent filtering.
+
+Set each `rental_price` to an unquoted number, such as `25` or `32.50`. Prices start
+as `null` (not yet priced, not free). `currency: USD` and `rental_period: day` follow
+the site's existing convention; `rental_unit` is either `item` or `system`. The
+dual Shure SLX-D+ system is one rental unit containing two handheld microphones.
+Speaker, subwoofer, and stand prices are per individual item, not per pair.
+
+`rental_notes` contains setup and compatibility information suitable for customers.
+`sources` lists manufacturer references checked on October 15, 2026. Optional
+`model_note` fields are internal editorial notes about model identification; do
+not display these automatically. Review the Gator laptop stand model label and
+the ProX Vista generation before adding further variant-specific specifications.
+Model capabilities and manufacturer box contents do not establish which cables,
+stands, batteries, software licenses, or accessories are included in your rentals.
+Stock quantities, live availability, and accessory bundles are not inferred.
+
+Filter with `where: "category_slug", "microphones"`, or find a single item using
+`where: "slug", "shure-sm58" | first`. Keep image paths case-sensitive and preserve
+the `+` in `/assets/images/add-ons/SLXD24D+SM58.png`. Additional photos in the folder
+are not separate inventory records; only the 26 supplied primary images are used.
+
 ## Site Version
 
 The site version is stored in:
