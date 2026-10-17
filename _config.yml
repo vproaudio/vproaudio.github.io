@@ -1,6 +1,6 @@
 # Site Settings
 title: VANS PRO AUDIO
-description: Affordable, professional quality audio for your events.
+description: Professional audio and lighting equipment rentals in Vacaville, serving the Bay Area, Napa, and the Sacramento Valley in Northern California.
 url: "https://www.vansproaudio.com"
 baseurl: ""
 author: "Edwin Vans"
@@ -9,7 +9,7 @@ lang: "en"
 timezone: "America/Los_Angeles"
 branding: "VANS PRO AUDIO"
 
-year: 2025
+year: 2026
 company: "VANS PRO AUDIO"
 
 plugins:
@@ -19,7 +19,7 @@ plugins:
 
 seo:
   title: "VANS PRO AUDIO"
-  description: "Affordable, professional quality audio for your events."
+  description: "Professional audio and lighting equipment rentals in Vacaville, serving the Bay Area, Napa, and the Sacramento Valley in Northern California."
   url: "https://www.vansproaudio.com"
   image: "/assets/images/home.jpg"
 
@@ -38,7 +38,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - maintenence.md
+  - maintenance.md
   - node_modules
   - package.json
   - package-lock.json
