@@ -74,51 +74,56 @@ description: >
                 <input name="user_email" type="email" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_user_email" placeholder="name@example.com" autocomplete="email" required>
                 <div class="mt-2 hidden text-sm text-brand-ink">Please provide a valid email address.</div>
               </div>
-              <div>
-                <label for="quote_event_type" class="mb-2 block text-sm font-semibold text-brand-ink">Event type</label>
-                <select name="support_type" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_event_type" required>
-                  <option value="" selected>Select event type</option>
-                  <option value="Wedding">Wedding</option>
-                  <option value="Corporate event">Corporate event</option>
-                  <option value="Private party">Private party</option>
-                  <option value="Live performance">Live performance</option>
-                  <option value="Festival or community event">Festival or community event</option>
-                  <option value="Other">Other</option>
-                </select>
-                <div class="mt-2 hidden text-sm text-brand-ink">Please select your event type.</div>
-              </div>
-              <div>
-                <label for="quote_venue_city" class="mb-2 block text-sm font-semibold text-brand-ink">Venue or city</label>
-                <input name="venue_city" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_venue_city" placeholder="Venue name or city" autocomplete="address-level2" required>
-                <div class="mt-2 hidden text-sm text-brand-ink">Please provide the venue or city.</div>
-              </div>
-              <div>
-                <label for="quote_guest_count" class="mb-2 block text-sm font-semibold text-brand-ink">Estimated guest count</label>
-                <input name="guest_count" type="number" min="1" max="100000" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_guest_count" placeholder="e.g. 120" required>
-                <div class="mt-2 hidden text-sm text-brand-ink">Please enter an estimated guest count.</div>
-              </div>
-              <div class="md:col-span-2">
-                <label for="quote_event_date" class="mb-2 block text-sm font-semibold text-brand-ink">Event date</label>
-                <input name="event_date" type="date" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_event_date" required>
-                <div class="mt-2 hidden text-sm text-brand-ink">Please choose your event date.</div>
-              </div>
-              <div>
-                <label for="quote_event_time_window" class="mb-2 block text-sm font-semibold text-brand-ink">Time window</label>
-                <input name="event_time_window" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_event_time_window" placeholder="e.g. 5:00 PM to 11:00 PM" required>
-                <div class="mt-2 hidden text-sm text-brand-ink">Please provide your event time window.</div>
-              </div>
-              <div>
-                <label for="budget_range" class="mb-2 block text-sm font-semibold text-brand-ink">Budget range (optional)</label>
-                <select name="budget_range" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="budget_range">
-                  <option value="" selected>Select a budget range</option>
-                  <option value="Under $500">Under $500</option>
-                  <option value="$500 - $1,000">$500 - $1,000</option>
-                  <option value="$1,000 - $2,500">$1,000 - $2,500</option>
-                  <option value="$2,500 - $5,000">$2,500 - $5,000</option>
-                  <option value="$5,000+">$5,000+</option>
-                  <option value="Not sure yet">Not sure yet</option>
-                </select>
-              </div>
+              <fieldset class="min-w-0 rounded-xl border border-brand-ink/10 p-4 md:col-span-2">
+                <legend class="px-1 text-sm font-semibold text-brand-ink">Event details</legend>
+                <div class="mt-2 grid gap-5 md:grid-cols-2">
+                  <div>
+                    <label for="quote_event_type" class="mb-2 block text-sm font-semibold text-brand-ink">Event type</label>
+                    <select name="support_type" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_event_type" required>
+                      <option value="" selected>Select event type</option>
+                      <option value="Wedding">Wedding</option>
+                      <option value="Corporate event">Corporate event</option>
+                      <option value="Private party">Private party</option>
+                      <option value="Live performance">Live performance</option>
+                      <option value="Festival or community event">Festival or community event</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <div class="mt-2 hidden text-sm text-brand-ink">Please select your event type.</div>
+                  </div>
+                  <div>
+                    <label for="quote_venue_city" class="mb-2 block text-sm font-semibold text-brand-ink">Venue or city</label>
+                    <input name="venue_city" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_venue_city" placeholder="Venue name or city" autocomplete="address-level2" required>
+                    <div class="mt-2 hidden text-sm text-brand-ink">Please provide the venue or city.</div>
+                  </div>
+                  <div>
+                    <label for="quote_guest_count" class="mb-2 block text-sm font-semibold text-brand-ink">Estimated guest count</label>
+                    <input name="guest_count" type="number" min="1" max="100000" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_guest_count" placeholder="e.g. 120" required>
+                    <div class="mt-2 hidden text-sm text-brand-ink">Please enter an estimated guest count.</div>
+                  </div>
+                  <div>
+                    <label for="quote_event_date" class="mb-2 block text-sm font-semibold text-brand-ink">Event date</label>
+                    <input name="event_date" type="date" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_event_date" required>
+                    <div class="mt-2 hidden text-sm text-brand-ink">Please choose your event date.</div>
+                  </div>
+                  <div>
+                    <label for="quote_event_time_window" class="mb-2 block text-sm font-semibold text-brand-ink">Time window</label>
+                    <input name="event_time_window" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_event_time_window" placeholder="e.g. 5:00 PM to 11:00 PM" required>
+                    <div class="mt-2 hidden text-sm text-brand-ink">Please provide your event time window.</div>
+                  </div>
+                  <div>
+                    <label for="budget_range" class="mb-2 block text-sm font-semibold text-brand-ink">Budget range (optional)</label>
+                    <select name="budget_range" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="budget_range">
+                      <option value="" selected>Select a budget range</option>
+                      <option value="Under $500">Under $500</option>
+                      <option value="$500 - $1,000">$500 - $1,000</option>
+                      <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                      <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                      <option value="$5,000+">$5,000+</option>
+                      <option value="Not sure yet">Not sure yet</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
               <div class="md:col-span-2">
                 <fieldset class="rounded-xl border border-brand-ink/10 p-4">
                   <legend class="px-1 text-sm font-semibold text-brand-ink">Package or gear interests (optional)</legend>

@@ -31,9 +31,17 @@ features:
 perfect_for:
   - Receptions up to 250 guests
 
-upgrades: 
-  - Add additional wireless microphones (supports up to 4 max) — $30/each per day
-  - Additional subwoofer (Yamaha DXS12) - $75 per day
+upgrades: []
+
+add-ons:
+  - name: Additional wireless microphone
+    description: Add wireless microphones (supports up to 4 max).
+    price: 30
+    price_unit: each per day
+  - name: Additional subwoofer
+    description: Add a Yamaha DXS12 subwoofer.
+    price: 75
+    price_unit: per day
 
 layout: package
 ---

@@ -33,8 +33,13 @@ features:
 perfect_for:
   - Meetings, trainings, and speaking events
 
-upgrades: 
-  - Add additional wireless handheld or lavalier microphones (supports up to 4 max) — $30/each per day
+upgrades: []
+
+add-ons:
+  - name: Additional wireless microphone
+    description: Add wireless handheld or lavalier microphones (supports up to 4 max).
+    price: 30
+    price_unit: each per day
 
 layout: package
 ---

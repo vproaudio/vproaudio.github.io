@@ -26,10 +26,27 @@ features:
   - Easy, clean, and reliable setup
 
 perfect_for:
-  - Up to 50 guests indoors or outdoors
+  - Up to 10 guests indoors or outdoors
 
-upgrades: 
-  - Add additional wireless microphones (supports up to 4 max) — $30/each per day
+upgrades:
+  - name: Yamaha MGX12
+    description: 12 Channel digital mixer with effects
+    price: 30
+    price_unit: per day
+  - name: Yamaha MGX16
+    description: 16 Channel digital mixer with effects
+    price: 45
+    price_unit: per day
+  - name: Yamaha DBR12
+    description: Replaces Yamaha DBR10, up to 200 guest size
+    price: 45
+    price_unit: per day
+
+add-ons:
+  - name: Additional wireless microphone
+    description: Add wireless microphones (supports up to 4 max).
+    price: 30
+    price_unit: each per day
 
 layout: package
 ---

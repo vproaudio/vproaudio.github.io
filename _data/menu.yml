@@ -1,6 +1,3 @@
-- title: Home
-  url: /
-
 - title: Packages
   dropdown:
     - title: Event Audio

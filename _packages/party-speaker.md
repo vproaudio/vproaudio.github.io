@@ -26,8 +26,9 @@ features:
 perfect_for:
   - High-energy music and dancing
 
-upgrades: 
-  - None
+upgrades: []
+
+add-ons: []
 
 layout: package
 ---

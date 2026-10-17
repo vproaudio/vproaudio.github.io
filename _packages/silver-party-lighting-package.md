@@ -34,8 +34,14 @@ perfect_for:
   - Wedding receptions
   - Events up to 150 guests
 
-upgrades:
-  - Add fog or haze machine for enhanced beam effects — Starting at $35/day
+upgrades: []
+
+add-ons:
+  - name: Fog or haze machine
+    description: Add a fog or haze machine for enhanced beam effects.
+    price: 35
+    price_unit: per day
+    price_prefix: Starting at
 
 layout: package
 ---

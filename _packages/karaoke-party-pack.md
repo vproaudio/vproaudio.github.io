@@ -27,8 +27,9 @@ features:
 perfect_for:
   - Birthdays, family parties, karaoke nights
 
-upgrades: 
-  - None
+upgrades: []
+
+add-ons: []
 
 layout: package
 ---

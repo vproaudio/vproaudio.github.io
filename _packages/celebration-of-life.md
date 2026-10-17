@@ -31,8 +31,13 @@ features:
 perfect_for:
   - Indoor or outdoor services
 
-upgrades: 
-  - Add additional wireless handheld microphone (supports up to 4 max) — $30/each per day
+upgrades: []
+
+add-ons:
+  - name: Additional wireless microphone
+    description: Add a wireless handheld microphone (supports up to 4 max).
+    price: 30
+    price_unit: each per day
 
 layout: package
 ---

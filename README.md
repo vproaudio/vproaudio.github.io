@@ -176,3 +176,24 @@ git push origin main
 ```
 
 After the push, check the GitHub Actions run for deployment status.
+
+### Package upgrades and add-ons
+
+Each `_packages/*.md` file has two optional equipment lists:
+
+- `upgrades`: swaps or replacements for equipment already included in the package.
+- `add-ons`: extra equipment added to the package, such as another microphone, speaker, or subwoofer.
+
+Both lists use the same fields. Use `[]` when there are no options; empty sections are hidden on the package page. Existing additional-equipment offers are stored in `add-ons`.
+
+```yaml
+upgrades: []
+
+add-ons:
+  - name: Additional wireless microphone
+    description: Add wireless microphones (supports up to 4 max).
+    price: 30
+    price_unit: each per day
+```
+
+For an upgrade, add an entry with the same structure under `upgrades`, describing which included equipment is replaced. `price` is a numeric USD amount **added to** the base package price, not the replacement equipment's full rental price. `price_unit` describes the billing basis. For variable pricing, use `price_prefix: Starting at` (as on the fog/haze add-ons). Omit `price` if no price should be displayed; do not use `0` as a placeholder. Names and descriptions are plain text.

@@ -39,17 +39,52 @@ layout: base
           <li>{{ item | escape }}</li>
         {% endfor %}
       </ul>
-      {% if page.upgrades %}
-        <details class="mt-6 border-t border-brand-ink/10 pt-5">
-          <summary class="cursor-pointer font-semibold text-brand-ink">Optional equipment upgrades</summary>
-          <ul class="mt-3 list-disc space-y-2 pl-5 leading-7 text-brand-muted/80">
-            {% for upgrade in page.upgrades %}
-              <li>{{ upgrade | escape }}</li>
-            {% endfor %}
-          </ul>
-        </details>
-      {% endif %}
     </div>
+    {% assign option_groups = 'upgrades|add-ons' | split: '|' %}
+    {% for group in option_groups %}
+      {% assign options = page[group] %}
+      {% if options.size > 0 %}
+        {% if group == 'upgrades' %}
+          {% assign options_title = 'Equipment upgrades' %}
+        {% else %}
+          {% assign options_title = 'Equipment add-ons' %}
+        {% endif %}
+        <section class="mt-6 overflow-hidden rounded-2xl border border-brand-ink/10 bg-brand-soft/95 shadow-card" aria-labelledby="{{ group }}-heading">
+          <div class="p-6 md:p-8">
+            <h2 id="{{ group }}-heading" class="font-display text-2xl font-bold text-brand-ink">{{ options_title }}</h2>
+            <p class="mt-3 text-sm leading-6 text-brand-muted/80">{% if group == 'upgrades' %}Replace included equipment with an upgraded option.{% else %}Add extra equipment to your package.{% endif %} Prices are additional to the package price.</p>
+          </div>
+          <table class="w-full table-fixed text-left text-sm leading-6 text-brand-muted/90">
+            <caption class="sr-only">{{ options_title }} and additional rental prices</caption>
+            <thead class="border-y border-brand-ink/10 bg-brand-gold/25 text-brand-ink">
+              <tr>
+                <th scope="col" class="w-2/3 px-4 py-3 font-display font-bold md:px-8">Equipment &amp; description</th>
+                <th scope="col" class="w-1/3 px-4 py-3 font-display font-bold md:px-8">Additional price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for option in options %}
+                <tr class="border-b border-brand-ink/10 align-top last:border-b-0">
+                  <th scope="row" class="break-words px-4 py-5 font-normal md:px-8">
+                    <span class="block font-semibold text-brand-ink">{{ option.name | escape }}</span>
+                    {% if option.description %}<span class="mt-1 block">{{ option.description | escape }}</span>{% endif %}
+                  </th>
+                  <td class="break-words px-4 py-5 md:px-8">
+                    {% if option.price != nil %}
+                      {% if option.price_prefix %}<span class="block text-xs">{{ option.price_prefix | escape }}</span>{% endif %}
+                      <span class="block font-display text-xl font-bold text-brand-ink">${{ option.price }}</span>
+                      {% if option.price_unit %}<span class="block text-xs">{{ option.price_unit | escape }}</span>{% endif %}
+                    {% else %}
+                      <span class="text-brand-muted/80">Contact us for pricing</span>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </section>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
 

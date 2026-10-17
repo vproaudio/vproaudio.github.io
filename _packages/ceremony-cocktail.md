@@ -30,8 +30,13 @@ features:
 perfect_for:
   - Weddings and vineyard events with multiple areas
 
-upgrades: 
-  - Add additional wireless microphones (supports up to 4 max) — $30/each per day
+upgrades: []
+
+add-ons:
+  - name: Additional wireless microphone
+    description: Add wireless microphones (supports up to 4 max).
+    price: 30
+    price_unit: each per day
 
 layout: package
 ---
