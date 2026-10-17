@@ -59,11 +59,15 @@ defaults:
       layout: "default"
       image: "/assets/images/home.jpg"
       author: "Edwin Vans"
+      seo:
+        type: WebPage
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+      seo:
+        type: BlogPosting
 
 # Setup guides pagination
 pagination:
