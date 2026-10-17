@@ -2,7 +2,7 @@
 layout: base
 ---
 {% assign package_category = page.category | default: 'Audio' | capitalize %}
-{% assign description_excerpt = page.description | strip_html | truncate: 220 %}
+{% assign package_description = page.description | strip_html %}
 
 <section class="relative isolate overflow-hidden bg-[radial-gradient(circle_at_12%_18%,rgb(255_211_105/.28),transparent_28%),radial-gradient(circle_at_88%_16%,rgb(255_211_105/.22),transparent_32%),linear-gradient(135deg,#222831_0%,#393E46_55%,#222831_100%)] py-16 text-brand-soft lg:py-24">
   <div class="pointer-events-none absolute -right-24 -bottom-24 h-80 w-80 rounded-full bg-brand-gold/20 blur-3xl"></div>
@@ -11,34 +11,13 @@ layout: base
       <div>
         <span class="font-display inline-flex rounded-full bg-brand-soft/15 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-soft ring-1 ring-brand-soft/20">{{ package_category }} Package</span>
         <h1 class="mt-4 font-display text-4xl font-bold text-brand-soft md:text-6xl">{{ page.title }}</h1>
-        <p class="mt-4 max-w-3xl text-lg leading-8 text-brand-soft/75">{{ description_excerpt }}</p>
+        <p class="mt-4 max-w-3xl text-lg leading-8 text-brand-soft/75">{{ package_description }}</p>
 
-        <div class="mt-6 flex flex-wrap items-center gap-3">
-          <div class="rounded-full bg-brand-soft/15 px-5 py-3 shadow-[0_18px_40px_rgb(255_211_105/.18)]">
-            <span class="font-display text-3xl font-bold text-brand-soft">${{ page.price }}</span>
-            <span class="ml-1 text-sm text-brand-soft/65">per day</span>
-          </div>
-          <a href="/about/request-a-quote/?package={{ page.title | uri_escape }}#quoteForm" class="btn-primary">Reserve this package</a>
-          <a href="tel:+17076600414" class="btn-outline">
-            <i class="bi bi-telephone mr-2"></i>Call us
-          </a>
+        <div class="mt-6 max-w-md rounded-3xl border border-brand-gold/30 bg-brand-soft/10 p-6 shadow-[0_18px_40px_rgb(0_0_0/.18)] backdrop-blur-sm md:p-8">
+          <span class="inline-flex rounded-full bg-brand-gold/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-gold">Equipment only</span>
+          <p class="mt-4 font-display font-bold text-brand-soft"><span class="text-5xl">${{ page.price }}</span><span class="ml-2 text-lg font-medium text-brand-soft/75">/day</span></p>
         </div>
-
-        <ul class="mt-6 flex list-none flex-wrap gap-4 p-0">
-          <li class="min-w-32 rounded-2xl border border-brand-soft/15 bg-brand-soft/10 p-4">
-            <span class="block text-xs uppercase tracking-wider text-brand-soft/60">Delivery &amp; pickup</span>
-            <span class="block font-display text-xl font-bold text-brand-soft">Add-on service</span>
-          </li>
-          <li class="min-w-32 rounded-2xl border border-brand-soft/15 bg-brand-soft/10 p-4">
-            <span class="block text-xs uppercase tracking-wider text-brand-soft/60">Setup &amp; strike</span>
-            <span class="block font-display text-xl font-bold text-brand-soft">Add-on service</span>
-          </li>
-          <li class="min-w-32 rounded-2xl border border-brand-soft/15 bg-brand-soft/10 p-4">
-            <span class="block text-xs uppercase tracking-wider text-brand-soft/60">Audio engineer</span>
-            <span class="block font-display text-xl font-bold text-brand-soft">Add-on service</span>
-          </li>
-        </ul>
-        <p class="mt-4 max-w-2xl text-sm text-brand-soft/65">Package pricing covers equipment rental only. Delivery &amp; pickup, setup &amp; strike, and a full-time audio engineer are available on request and subject to availability.</p>
+        <p class="mt-3 max-w-md text-sm leading-6 text-brand-soft/75">Choose your service tier below. Mileage and service fees are additional.</p>
       </div>
 
       <div class="relative overflow-hidden rounded-3xl border border-brand-soft/15 bg-brand-soft/10 p-3 shadow-stage">
@@ -48,106 +27,69 @@ layout: base
   </div>
 </section>
 
-<section class="py-16 lg:py-24">
+<section class="py-16 lg:py-24" aria-labelledby="included-heading">
   <div class="mx-auto w-[min(100%-1.5rem,1180px)] md:w-[min(100%-2rem,1180px)]">
-    <div class="grid gap-6 lg:grid-cols-12">
-      <article class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-8 shadow-card lg:col-span-8">
-        <h2 class="font-display text-2xl font-bold text-brand-ink">Package overview</h2>
-        <div class="mt-3 text-xl text-brand-muted [&_p]:mb-4">
-          {{ page.description | markdownify }}
-        </div>
-      </article>
-      <aside class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-8 shadow-card lg:col-span-4">
-        <h2 class="font-display text-lg font-bold text-brand-ink">Need a custom setup?</h2>
-        <p class="mt-3 text-brand-muted/80">Tell us about your venue, audience size, and vibe. We'll tune the package to match your event.</p>
-        <ul class="my-5 grid list-none gap-2 p-0 text-sm text-brand-muted/80">
-          <li><i class="bi bi-lightning-charge mr-2 text-brand-ink"></i>White-glove delivery &amp; strike</li>
-          <li><i class="bi bi-headset mr-2 text-brand-ink"></i>On-call audio engineer support</li>
-          <li><i class="bi bi-check2-circle mr-2 text-brand-ink"></i>Optional rehearsal or sound check add-ons</li>
-        </ul>
-        <a href="/about/contact/" class="font-display inline-flex min-h-11 w-full items-center justify-center rounded-full bg-brand-gold px-5 py-2.5 text-sm font-bold text-brand-ink transition hover:-translate-y-0.5 hover:bg-brand-ink hover:text-brand-soft">Plan my event</a>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<section class="pb-16 lg:pb-24">
-  <div class="mx-auto w-[min(100%-1.5rem,1180px)] md:w-[min(100%-2rem,1180px)]">
-    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-      {% if page.items_included %}
-        <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-8 shadow-card">
-          <div class="grid h-[3.25rem] w-[3.25rem] place-items-center rounded-xl bg-brand-gold/25 text-xl text-brand-ink"><i class="bi bi-box-seam"></i></div>
-          <h2 class="mt-4 font-display text-lg font-bold text-brand-ink">In the case</h2>
-          <ul class="mt-4 list-none p-0 text-brand-muted/80 [&>li]:relative [&>li]:mb-2 [&>li]:pl-6 [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:font-bold [&>li]:before:text-brand-muted [&>li]:before:content-['✓']">
-            {% for inc in page.items_included %}
-              <li>{{ inc }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-
-      {% if page.features %}
-        <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-8 shadow-card">
-          <div class="grid h-[3.25rem] w-[3.25rem] place-items-center rounded-xl bg-brand-gold/25 text-xl text-brand-ink"><i class="bi bi-stars"></i></div>
-          <h2 class="mt-4 font-display text-lg font-bold text-brand-ink">Standout features</h2>
-          <ul class="mt-4 list-none p-0 text-brand-muted/80 [&>li]:relative [&>li]:mb-2 [&>li]:pl-6 [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:font-bold [&>li]:before:text-brand-muted [&>li]:before:content-['✓']">
-            {% for feature in page.features %}
-              <li>{{ feature }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-
+    <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-6 shadow-card md:p-8">
+      <h2 id="included-heading" class="font-display text-2xl font-bold text-brand-ink">What’s included</h2>
       {% if page.perfect_for %}
-        <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-8 shadow-card">
-          <div class="grid h-[3.25rem] w-[3.25rem] place-items-center rounded-xl bg-brand-gold/25 text-xl text-brand-ink"><i class="bi bi-people"></i></div>
-          <h2 class="mt-4 font-display text-lg font-bold text-brand-ink">Perfect for</h2>
-          <ul class="mt-4 list-none p-0 text-brand-muted/80 [&>li]:relative [&>li]:mb-2 [&>li]:pl-6 [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:font-bold [&>li]:before:text-brand-muted [&>li]:before:content-['✓']">
-            {% for audience in page.perfect_for %}
-              <li>{{ audience }}</li>
-            {% endfor %}
-          </ul>
-        </div>
+        <p class="mt-3 leading-7 text-brand-muted/80">Great for: {{ page.perfect_for | join: '; ' | escape }}.</p>
       {% endif %}
-
+      <ul class="mt-6 grid list-disc gap-x-10 gap-y-3 pl-5 leading-7 text-brand-muted/90 md:grid-cols-2">
+        {% for item in page.items_included %}
+          <li>{{ item | escape }}</li>
+        {% endfor %}
+      </ul>
       {% if page.upgrades %}
-        <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-8 shadow-card">
-          <div class="grid h-[3.25rem] w-[3.25rem] place-items-center rounded-xl bg-brand-gold/25 text-xl text-brand-ink"><i class="bi bi-arrow-up-circle"></i></div>
-          <h2 class="mt-4 font-display text-lg font-bold text-brand-ink">Optional upgrades</h2>
-          <ul class="mt-4 list-none p-0 text-brand-muted/80 [&>li]:relative [&>li]:mb-2 [&>li]:pl-6 [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:font-bold [&>li]:before:text-brand-muted [&>li]:before:content-['✓']">
+        <details class="mt-6 border-t border-brand-ink/10 pt-5">
+          <summary class="cursor-pointer font-semibold text-brand-ink">Optional equipment upgrades</summary>
+          <ul class="mt-3 list-disc space-y-2 pl-5 leading-7 text-brand-muted/80">
             {% for upgrade in page.upgrades %}
-              <li>{{ upgrade }}</li>
+              <li>{{ upgrade | escape }}</li>
             {% endfor %}
           </ul>
-        </div>
+        </details>
       {% endif %}
-
-      <div class="rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-8 shadow-card">
-        <div class="grid h-[3.25rem] w-[3.25rem] place-items-center rounded-xl bg-brand-gold/25 text-xl text-brand-ink"><i class="bi bi-plus-circle"></i></div>
-        <h2 class="mt-4 font-display text-lg font-bold text-brand-ink">Available add-on services</h2>
-        <p class="mt-3 text-sm text-brand-muted/80">Not included in the daily package price. Available on request and subject to availability:</p>
-        <ul class="mt-4 list-none p-0 text-brand-muted/80 [&>li]:relative [&>li]:mb-2 [&>li]:pl-6 [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:font-bold [&>li]:before:text-brand-muted [&>li]:before:content-['✓']">
-          <li>Delivery &amp; pickup</li>
-          <li>Setup &amp; strike</li>
-          <li>Full-time audio engineer</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
 
-<section class="pb-16 lg:pb-24">
+<section class="pb-16 lg:pb-24" aria-labelledby="service-tiers-heading">
   <div class="mx-auto w-[min(100%-1.5rem,1180px)] md:w-[min(100%-2rem,1180px)]">
-    <div class="relative overflow-hidden rounded-2xl border border-brand-ink/10 bg-brand-soft/95 p-8 shadow-stage md:flex md:items-center md:justify-between md:gap-8">
-      <div>
-        <span class="font-display inline-flex rounded-full bg-brand-gold/25 px-3 py-1.5 text-xs font-bold tracking-wider text-brand-ink ring-1 ring-brand-gold/40">You're covered</span>
-        <h2 class="mt-3 font-display text-2xl font-bold text-brand-ink">Full-service rentals with concierge support.</h2>
-        <p class="mt-2 text-brand-muted/80">Package pricing covers the gear. Add delivery &amp; pickup, setup &amp; strike, or a full-time audio engineer to any package on request, subject to availability — then focus on your guests while we handle the sound.</p>
-      </div>
-      <div class="mt-6 flex flex-col gap-3 sm:flex-row md:mt-0">
-        <a href="/about/contact/" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-bold text-brand-ink transition hover:-translate-y-0.5 hover:bg-brand-ink hover:text-brand-soft">Check availability</a>
-        <a href="mailto:bookings@vansproaudio.com" class="font-display inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-brand-ink/20 bg-brand-soft px-6 py-2.5 text-sm font-bold text-brand-ink transition hover:-translate-y-0.5">Email our team</a>
-      </div>
+    <h2 id="service-tiers-heading" class="font-display text-2xl font-bold text-brand-ink md:text-3xl">Choose your service tier</h2>
+    <p class="mt-3 max-w-3xl leading-7 text-brand-muted/80">The equipment stays the same. Choose how much help you need, from delivery and pickup to dedicated live engineering.</p>
+    <div class="mt-6 overflow-x-auto rounded-2xl border border-brand-ink/10 bg-brand-soft/95 shadow-card focus-visible:outline-2 focus-visible:outline-brand-ink" role="region" aria-labelledby="service-tiers-heading" tabindex="0">
+      <table class="w-full min-w-[640px] text-left text-brand-muted/90">
+        <caption class="sr-only">Compare service responsibilities and charges added to the equipment price.</caption>
+        <thead class="bg-brand-gold/25 text-brand-ink">
+          <tr>
+            <th scope="col" class="p-5 font-display font-bold">Service tier</th>
+            <th scope="col" class="p-5 font-display font-bold">Who handles the event?</th>
+            <th scope="col" class="p-5 font-display font-bold">Added to equipment price</th>
+          </tr>
+        </thead>
+        <tbody class="leading-7">
+          <tr class="border-t border-brand-ink/10">
+            <th scope="row" class="p-5 font-display font-bold text-brand-ink"><span class="block text-xs uppercase tracking-wider text-brand-muted/80">Tier 1</span>Delivered Rental</th>
+            <td class="p-5">We deliver and pick up. You set up, operate, and tear down.</td>
+            <td class="p-5">Mileage</td>
+          </tr>
+          <tr class="border-t border-brand-ink/10">
+            <th scope="row" class="p-5 font-display font-bold text-brand-ink"><span class="block text-xs uppercase tracking-wider text-brand-muted/80">Tier 2</span>Setup &amp; Strike</th>
+            <td class="p-5">We set up, test, and tear down. You operate.</td>
+            <td class="p-5">Mileage + flat setup/strike fee</td>
+          </tr>
+          <tr class="border-t border-brand-ink/10">
+            <th scope="row" class="p-5 font-display font-bold text-brand-ink"><span class="block text-xs uppercase tracking-wider text-brand-muted/80">Tier 3</span>Live Managed Production</th>
+            <td class="p-5">We handle delivery, setup, live sound, teardown, and load-out.</td>
+            <td class="p-5">Mileage + flat setup/strike fee + hourly production rate</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 text-sm leading-7 text-brand-muted/80">Setup/strike fees depend on setup complexity and venue type. Live production has a 4-hour minimum.</p>
+    <div class="mt-8 flex flex-col items-start gap-4">
+      <a href="/about/request-a-quote/?package={{ page.title | url_encode }}#quoteForm" class="font-display inline-flex min-h-12 items-center justify-center rounded-full bg-brand-gold px-6 py-3 font-bold text-brand-ink transition hover:-translate-y-0.5 hover:bg-brand-ink hover:text-brand-soft">Get my event quote</a>
+      <a href="/support/service-tiers/" class="text-sm font-semibold text-brand-ink underline underline-offset-4">Compare full service tier details</a>
     </div>
   </div>
 </section>

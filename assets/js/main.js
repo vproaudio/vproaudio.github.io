@@ -205,27 +205,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Setup guides filtering
-  const setupGuidesSearchInput = document.getElementById('setupGuidesSearch');
-  const setupGuidesCards = Array.from(document.querySelectorAll('.guide-card-item'));
-  const setupGuidesNoResults = document.getElementById('setupGuidesNoResults');
+  // Guide listing filtering
+  const guidesSearchInput = document.getElementById('guidesSearch');
+  const guidesCards = Array.from(document.querySelectorAll('.guide-card-item'));
+  const guidesNoResults = document.getElementById('guidesNoResults');
 
-  if (setupGuidesSearchInput && setupGuidesCards.length > 0 && setupGuidesNoResults) {
+  if (guidesSearchInput && guidesCards.length > 0 && guidesNoResults) {
     const filterGuides = () => {
-      const query = setupGuidesSearchInput.value.trim().toLowerCase();
+      const query = guidesSearchInput.value.trim().toLowerCase();
       let visibleCount = 0;
 
-      setupGuidesCards.forEach((card) => {
+      guidesCards.forEach((card) => {
         const haystack = card.dataset.search || '';
         const isVisible = !query || haystack.includes(query);
         card.classList.toggle('hidden', !isVisible);
         if (isVisible) visibleCount += 1;
       });
 
-      setupGuidesNoResults.classList.toggle('hidden', visibleCount > 0);
+      guidesNoResults.classList.toggle('hidden', visibleCount > 0);
     };
 
-    setupGuidesSearchInput.addEventListener('input', filterGuides);
+    guidesSearchInput.addEventListener('input', filterGuides);
   }
 
   // Contact and quote form handling
@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!timeWindowOk) isValid = false;
 
         const selectedServices = quoteServices.filter((option) => option.checked).map((option) => option.value);
-        const servicesOk = selectedServices.length > 0;
+        const servicesOk = selectedServices.length === 1;
         setGroupValidity(quoteServicesGroup, quoteServicesFeedback, servicesOk);
         quoteServices.forEach((option) => option.setAttribute('aria-invalid', servicesOk ? 'false' : 'true'));
         quoteServicesSummary.value = servicesOk ? selectedServices.join(', ') : '';
@@ -445,7 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
           `Guest count: ${quoteGuestCount.value.trim()}`,
           `Event date: ${quoteEventDate.value.trim()}`,
           `Time window: ${quoteTimeWindow.value.trim()}`,
-          `Services needed: ${selectedServices}`,
+          `Service tier: ${selectedServices}`,
           `Budget range: ${quoteBudgetRange?.value || 'Not specified'}`,
           `Package or gear interests: ${quotePackageInterest?.value.trim() || 'Not specified'}`,
           '',

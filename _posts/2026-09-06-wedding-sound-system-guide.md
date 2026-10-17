@@ -3,7 +3,7 @@ layout: post
 title: "How to Choose the Right Wedding Sound System"
 date: 2026-09-06
 categories:
-  - wedding-planning
+  - event-planning-guides
 tags:
   - weddings
   - planning
@@ -14,7 +14,8 @@ description: >
   Learn how to choose the right speakers, microphones, and backup gear for your wedding ceremony, cocktail hour, and reception — plus a free downloadable checklist.
 image: "/assets/images/packages/package4.webp"
 permalink: /support/wedding-sound/
-hide_back_link: true
+back_url: /support/event-planning-guides/
+back_label: Back to Event Planning Guides
 ---
 
 Your wedding day sound needs to cover three very different moments — the ceremony, cocktail hour, and reception — and each one has its own requirements for speakers, microphones, and backup gear. Here's how to plan it properly so nothing gets left to chance.
@@ -79,6 +80,6 @@ We turned all of this into a printable checklist you can share with your planner
 
 ## Need Help Planning Your Wedding Sound?
 
-Our team can help you pick the right package for your ceremony, cocktail hour, and reception — including backup gear and on-site support.
+Our team can help you pick the right package for your ceremony, cocktail hour, and reception — including backup gear and dedicated on-site engineering with [Live Managed Production](/support/service-tiers/).
 
 <a href="/about/contact/" class="font-display mt-4 inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-brand-ink/20 bg-brand-soft px-6 py-2.5 text-sm font-bold text-brand-ink transition hover:-translate-y-0.5">Talk to an audio specialist</a>

@@ -1,7 +1,7 @@
 1. All prices on this site are in USD and do not include applicable taxes, delivery, labor, venue fees, permits, insurance, damage waivers, or other charges unless stated in writing.
 2. Published prices, package contents, product photos, and availability are subject to change without notice.
 3. Rental reservations are not confirmed until V PRO AUDIO provides written confirmation and any required deposit or payment has been received.
-4. Final payment may be required before delivery, setup, or customer pickup unless another payment schedule is approved in writing.
+4. Final payment may be required before delivery or setup unless another payment schedule is approved in writing.
 5. Deposits, cancellation fees, rescheduling fees, rush fees, late return fees, cleaning fees, and replacement charges may apply.
 6. Customers are responsible for providing accurate event details, venue access, safe loading areas, parking, power, internet access when required, and any venue approvals or permits.
 7. Delivery, setup, strike, and pickup times depend on venue access, travel conditions, event schedules, and crew availability.

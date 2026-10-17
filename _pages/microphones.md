@@ -13,7 +13,7 @@ description: >
       <div class="lg:col-span-7">
         <span class="font-display inline-flex rounded-full bg-brand-soft/15 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-soft ring-1 ring-brand-soft/20">Microphone rentals</span>
         <h1 class="mt-4 font-display text-4xl font-bold text-brand-soft md:text-6xl">Crystal-clear vocals, speeches, and recordings.</h1>
-        <p class="mt-4 max-w-3xl text-lg leading-8 text-brand-soft/75">From handheld wireless mics to studio staples, our curated kits include stands, cables, and expert setup so every word lands with impact.</p>
+        <p class="mt-4 max-w-3xl text-lg leading-8 text-brand-soft/75">From handheld wireless mics to studio staples, our curated kits include stands, cables, and on-call support. Professional setup is available with Setup &amp; Strike and Live Managed Production.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/about/request-a-quote/?package=Microphone%20kit#quoteForm" class="btn-primary">Build a microphone kit</a>
           <a href="mailto:bookings@vansproaudio.com" class="btn-outline">Email our engineers</a>
@@ -24,7 +24,7 @@ description: >
           <p class="mb-3 text-sm font-semibold uppercase text-brand-muted">Included with every rental</p>
           <ul class="list-none p-0 text-brand-muted">
             <li class="mb-2"><i class="bi bi-gear-wide-connected mr-2 text-brand-ink"></i>Fresh batteries, cables, and stands</li>
-            <li class="mb-2"><i class="bi bi-broadcast-pin mr-2 text-brand-ink"></i>Frequency coordination for your venue</li>
+            <li class="mb-2"><i class="bi bi-broadcast-pin mr-2 text-brand-ink"></i>A 1-page instruction cheat sheet</li>
             <li><i class="bi bi-headset mr-2 text-brand-ink"></i>On-call support throughout your event</li>
           </ul>
         </div>

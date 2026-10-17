@@ -120,21 +120,24 @@ description: >
                 </select>
               </div>
               <div class="md:col-span-2">
-                <fieldset id="quoteServicesNeededGroup" class="rounded-xl border border-brand-ink/10 p-4" aria-describedby="quoteServicesNeededFeedback" aria-invalid="false">
-                  <legend class="px-1 text-sm font-semibold text-brand-ink">Services needed</legend>
-                  <div class="mt-2 grid gap-3 md:grid-cols-2">
-                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="checkbox" name="services_needed" value="Equipment rental" aria-describedby="quoteServicesNeededFeedback" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">Equipment rental</label>
-                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="checkbox" name="services_needed" value="Delivery and pickup" aria-describedby="quoteServicesNeededFeedback" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">Delivery and pickup</label>
-                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="checkbox" name="services_needed" value="Setup and strike" aria-describedby="quoteServicesNeededFeedback" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">Setup and strike</label>
-                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="checkbox" name="services_needed" value="On-site engineer" aria-describedby="quoteServicesNeededFeedback" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">On-site engineer</label>
-                  </div>
-                  <div id="quoteServicesNeededFeedback" class="mt-2 hidden text-sm text-brand-ink">Please select at least one service.</div>
+                <fieldset class="rounded-xl border border-brand-ink/10 p-4">
+                  <legend class="px-1 text-sm font-semibold text-brand-ink">Package or gear interests (optional)</legend>
+                  <label for="quote_package_interest" class="sr-only">Package or gear interests (optional)</label>
+                  <input name="package_interest" type="text" class="mt-2 min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_package_interest" placeholder="Examples: Wedding reception package, wireless microphones">
                 </fieldset>
-                <input type="hidden" name="services_summary" id="quote_services_summary" value="">
               </div>
               <div class="md:col-span-2">
-                <label for="quote_package_interest" class="mb-2 block text-sm font-semibold text-brand-ink">Package or gear interests (optional)</label>
-                <input name="package_interest" type="text" class="min-h-12 w-full rounded-xl border border-brand-ink/10 bg-brand-soft px-4 py-3 text-brand-ink outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/30" id="quote_package_interest" placeholder="Examples: Wedding reception package, wireless microphones">
+                <fieldset id="quoteServicesNeededGroup" class="rounded-xl border border-brand-ink/10 p-4" aria-describedby="quoteServicesNeededFeedback" aria-invalid="false">
+                  <legend class="px-1 text-sm font-semibold text-brand-ink">Service tier (choose one)</legend>
+                  <p class="mt-2 text-sm text-brand-muted/80">All service tiers include delivery and pickup, with mileage added to equipment cost. Choose Setup &amp; Strike for professional setup and teardown, or Live Managed Production for live engineering. Setup/strike fees depend on setup complexity and venue type; live production has a 4-hour minimum. <a href="/support/service-tiers/" class="font-semibold underline">Compare service tiers</a>.</p>
+                  <div class="mt-2 grid gap-3">
+                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="radio" name="services_needed" required value="Delivered Rental" checked aria-describedby="quoteServicesNeededFeedback" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">Delivered Rental (equipment with delivery &amp; pickup)</label>
+                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="radio" name="services_needed" required value="Setup &amp; Strike" aria-describedby="quoteServicesNeededFeedback" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">Setup &amp; Strike (professional setup and teardown)</label>
+                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink"><input type="radio" name="services_needed" required value="Live Managed Production" aria-describedby="quoteServicesNeededFeedback" class="h-4 w-4 rounded border-brand-ink/20 text-brand-ink focus:ring-brand-gold/40">Live Managed Production (on-site engineer)</label>
+                  </div>
+                  <div id="quoteServicesNeededFeedback" class="mt-2 hidden text-sm text-brand-ink">Please select one service tier.</div>
+                </fieldset>
+                <input type="hidden" name="services_summary" id="quote_services_summary" value="">
               </div>
               <div class="md:col-span-2">
                 <label for="quote_message" class="mb-2 block text-sm font-semibold text-brand-ink">Notes and timeline</label>

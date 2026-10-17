@@ -3,7 +3,7 @@ layout: post
 title: "DJ vs. Live Band: What Sound Setup Does Your Reception Actually Need?"
 date: 2026-04-14
 categories:
-  - setup-guides
+  - event-planning-guides
 tags:
   - weddings
   - planning
@@ -12,7 +12,9 @@ excerpt: "How your entertainment choice changes the speakers, mixers, and mics y
 description: >
   Comparing DJ and live band sound requirements for your wedding or event reception — speakers, mixers, mics, and stage power, explained.
 image: "/assets/images/packages/package6.webp"
-permalink: /support/:categories/:title/
+permalink: /support/setup-guides/dj-vs-live-band-sound-requirements/
+back_url: /support/event-planning-guides/
+back_label: Back to Event Planning Guides
 ---
 
 Choosing between a DJ and a live band changes more than the vibe of your reception — it changes the sound system you need behind the scenes.

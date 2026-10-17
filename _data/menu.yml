@@ -45,10 +45,12 @@
 
 - title: Support
   dropdown:
+    - title: Service Tiers
+      url: /support/service-tiers/
     - title: Setup Guides
       url: /support/setup-guides/
-    - title: Wedding Sound Guide
-      url: /support/wedding-sound/
+    - title: Event Planning Guides
+      url: /support/event-planning-guides/
 
 - title: About
   dropdown:

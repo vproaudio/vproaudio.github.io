@@ -3,7 +3,7 @@ layout: post
 title: "Corporate Event Audio Checklist: What to Ask Your AV Rental Company"
 date: 2026-06-22
 categories:
-  - setup-guides
+  - event-planning-guides
 tags:
   - corporate
   - planning
@@ -12,7 +12,9 @@ excerpt: "The questions to ask before booking audio for your next meeting, panel
 description: >
   A planning checklist for corporate presentations, panels, and meetings — from lav mics to projector audio and backup gear.
 image: "/assets/images/packages/package7.webp"
-permalink: /support/:categories/:title/
+permalink: /support/setup-guides/corporate-event-audio-checklist/
+back_url: /support/event-planning-guides/
+back_label: Back to Event Planning Guides
 ---
 
 Corporate audio has different priorities than a party — clarity and reliability matter more than volume. Here's what to confirm before your event.

@@ -1,8 +1,4 @@
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.data.site_version.version }}" />
+<link rel="preload" href="/assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/manrope-700.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.data.site_version.version }}&amp;build={{ site.time | date: "%s" }}" />

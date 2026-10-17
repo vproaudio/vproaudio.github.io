@@ -31,15 +31,23 @@ npm run proof
 
 `npm run proof` runs HTMLProofer against `_site` after a build. External links are disabled, so the check focuses on generated HTML, internal links, images, scripts, and HTTPS enforcement.
 
-## Styles
+## Styles, fonts, and icons
 
 The site uses Tailwind CSS v4 compiled at build time by `@tailwindcss/cli`. The
-source is `_src/tailwind.css` (theme tokens and shared button/card utilities).
-`npm run build`, `npm run dev`, and `npm run serve` run `npm run build:css` first,
-which writes the minified stylesheet to `assets/css/main.css` (gitignored). Use
-`npm run watch:css` alongside `npm run dev` for live stylesheet rebuilds. Do not
-reintroduce the Tailwind browser CDN script; it compiles CSS on every page load
-in the visitor's browser.
+source is `_src/tailwind.css` (theme tokens, `@font-face` rules, and shared
+button/card utilities). `npm run build`, `npm run dev`, and `npm run serve` run
+`npm run build:css` first, which writes the minified stylesheet to
+`assets/css/main.css` (gitignored). Use `npm run watch:css` alongside
+`npm run dev` for live stylesheet rebuilds. Do not reintroduce the Tailwind
+browser CDN script; it compiles CSS on every page load in the visitor's browser.
+
+Fonts (Manrope, Space Grotesk) are self-hosted as latin-subset woff2 files in
+`assets/fonts/` — there are no Google Fonts requests at runtime. Bootstrap Icons
+are self-hosted too: `scripts/subset-icons.mjs` scans the templates for `bi-*`
+classes and subsets `bootstrap-icons.woff2` to only those glyphs, generating
+`_src/icons.css` (gitignored) which `tailwind.css` imports. The subset runs
+automatically as part of `npm run build:css`; if a template uses an icon name
+that does not exist in Bootstrap Icons, the build fails with an error naming it.
 
 ## Deployment
 

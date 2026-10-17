@@ -41,3 +41,4 @@ assets/js/*.map
 
 # Generated Tailwind CSS (built by npm run build:css)
 assets/css/main.css
+_src/icons.css
