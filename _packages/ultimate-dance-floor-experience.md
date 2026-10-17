@@ -7,7 +7,7 @@ permalink: /packages/event-lighting/ultimate-dance-floor-experience/
 description: >
   Create an unforgettable nightclub-style atmosphere with a fully synchronized intelligent lighting show. Designed for weddings, receptions, school dances, DJs, and large private events, this premium package includes two professional all-in-one lighting systems featuring moving heads, wash lights, lasers, strobes, and derby effects. The fixtures operate together wirelessly using ILS technology to deliver a dynamic, high-energy dance floor experience with wide room coverage and professional visual effects.
 
-image: "/assets/images/packages/package-lighting-ultimate.png"
+image: "/assets/images/packages/package-lighting-ultimate.webp"
 
 price: 249
 

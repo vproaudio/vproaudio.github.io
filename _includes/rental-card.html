@@ -1,7 +1,7 @@
 {% assign detail_url = '/rentals/' | append: include.item.category_slug | append: '/' | append: include.item.slug | append: '/' %}
 <article class="flex h-full flex-col rounded-2xl border border-brand-ink/10 bg-brand-soft p-4 shadow-card transition hover:-translate-y-1 hover:shadow-stage">
   <div class="flex items-center justify-center overflow-hidden rounded-xl bg-white p-4">
-    <img src="{{ include.item.image | relative_url }}" alt="{{ include.item.image_alt | escape }}" class="aspect-4/3 w-full object-contain" loading="lazy" width="600" height="450">
+    <img src="{{ include.item.image | relative_url }}" alt="{{ include.item.image_alt | escape }}" class="aspect-4/3 w-full object-contain" loading="lazy" decoding="async" width="800" height="800">
   </div>
   <div class="flex flex-1 flex-col p-4">
     <p class="text-xs font-bold uppercase tracking-wider text-brand-muted/70">{{ include.item.brand | escape }}</p>

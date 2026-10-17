@@ -12,7 +12,7 @@ tags:
 excerpt: "A practical guide to planning ceremony, cocktail hour, and reception sound for your wedding day."
 description: >
   Learn how to choose the right speakers, microphones, and backup gear for your wedding ceremony, cocktail hour, and reception — plus a free downloadable checklist.
-image: "/assets/images/packages/package4.png"
+image: "/assets/images/packages/package4.webp"
 permalink: /support/wedding-sound/
 hide_back_link: true
 ---

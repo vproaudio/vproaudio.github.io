@@ -7,7 +7,7 @@ permalink: /packages/event-audio/celebration-of-life-av-package/
 description: >
   A respectful, reliable system for honoring loved ones. Designed for memorials, celebrations of life, and services, this package provides clear speech and beautiful video or photo slideshows so every moment is heard and seen.
 
-image: "/assets/images/packages/package8.png"
+image: "/assets/images/packages/package8.webp"
 
 price: 219
 

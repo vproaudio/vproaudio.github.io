@@ -7,7 +7,7 @@ permalink: /packages/party-audio/karaoke-and-party-pack/
 description: >
   Turn any backyard or living room into a karaoke night. Sing, host games, or make announcements with professional wireless microphones while your music plays through powerful party speakers. No complicated setup required — we make it simple. Includes two bluetooth party speakers, wireless handheld microphone, built in digital mixer for karaoke or mic control, stands and cables
 
-image: "/assets/images/packages/package3.png"
+image: "/assets/images/packages/package3.webp"
 
 price: 129
 

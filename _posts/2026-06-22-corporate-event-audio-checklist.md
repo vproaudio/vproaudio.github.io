@@ -11,7 +11,7 @@ tags:
 excerpt: "The questions to ask before booking audio for your next meeting, panel, or presentation."
 description: >
   A planning checklist for corporate presentations, panels, and meetings — from lav mics to projector audio and backup gear.
-image: "/assets/images/packages/package7.png"
+image: "/assets/images/packages/package7.webp"
 permalink: /support/:categories/:title/
 ---
 

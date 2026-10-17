@@ -31,6 +31,16 @@ npm run proof
 
 `npm run proof` runs HTMLProofer against `_site` after a build. External links are disabled, so the check focuses on generated HTML, internal links, images, scripts, and HTTPS enforcement.
 
+## Styles
+
+The site uses Tailwind CSS v4 compiled at build time by `@tailwindcss/cli`. The
+source is `_src/tailwind.css` (theme tokens and shared button/card utilities).
+`npm run build`, `npm run dev`, and `npm run serve` run `npm run build:css` first,
+which writes the minified stylesheet to `assets/css/main.css` (gitignored). Use
+`npm run watch:css` alongside `npm run dev` for live stylesheet rebuilds. Do not
+reintroduce the Tailwind browser CDN script; it compiles CSS on every page load
+in the visitor's browser.
+
 ## Deployment
 
 Deployment is handled by `.github/workflows/ci.yml`. Do not deploy manually.
@@ -52,7 +62,7 @@ When changes are pushed or merged into `main`, GitHub Actions:
 4. Uploads `_site` as a Pages artifact and deploys it with `actions/deploy-pages`.
 5. Publishes a GitHub Release for that tag with automatically generated release notes after deployment succeeds.
 
-Pull requests only run checks; they do not bump versions or publish. There is no separate unit test suite: `npm test` is another Jekyll build. HTMLProofer does not check external links.
+Pull requests only run checks; they do not bump versions or publish. There is no separate unit test suite: `npm test` is the same CSS + Jekyll build. HTMLProofer does not check external links.
 
 ### GitHub configuration
 
@@ -107,8 +117,9 @@ The five category names are Microphones, Mixers and Controllers, Powered Speaker
 Powered Subwoofers, and Stands and Accessories. Both supplied mixer category
 spellings use **Mixers and Controllers** for consistent filtering.
 
-Set each `rental_price` to an unquoted number, such as `25` or `32.50`. Prices start
-as `null` (not yet priced, not free). `currency: USD` and `rental_period: day` follow
+Set each `rental_price` to an unquoted number, such as `25` or `32.50`, or the
+literal string `FREE` for no-cost items (displayed as **FREE**). Prices start
+as `null` (not yet priced, not free; displays **Contact for pricing**). `currency: USD` and `rental_period: day` follow
 the site's existing convention; `rental_unit` is either `item` or `system`. The
 dual Shure SLX-D+ system is one rental unit containing two handheld microphones.
 Speaker, subwoofer, and stand prices are per individual item, not per pair.
@@ -124,7 +135,7 @@ Stock quantities, live availability, and accessory bundles are not inferred.
 
 Filter with `where: "category_slug", "microphones"`, or find a single item using
 `where: "slug", "shure-sm58" | first`. Keep image paths case-sensitive and preserve
-the `+` in `/assets/images/add-ons/SLXD24D+SM58.png`. Additional photos in the folder
+the `+` in `/assets/images/add-ons/SLXD24D+SM58.webp`. Additional photos in the folder
 are not separate inventory records; only the 26 supplied primary images are used.
 
 ## Site Version

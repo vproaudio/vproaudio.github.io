@@ -57,7 +57,7 @@ description: >
       {% for mic in site.data.microphones %}
         <article class="rounded-2xl border border-brand-ink/10 bg-brand-soft p-4 shadow-card transition hover:-translate-y-1 hover:shadow-stage">
           <div class="flex min-h-56 items-center justify-center rounded-xl bg-brand-soft p-4">
-            <img src="{{ mic.image }}" alt="{{ mic.title }}" class="aspect-4/3 object-contain" />
+            <img src="{{ mic.image }}" alt="{{ mic.title }}" class="aspect-4/3 object-contain" width="800" height="800" loading="lazy" decoding="async" />
           </div>
           <div class="p-4">
             <h2 class="font-display text-xl font-bold text-brand-ink">{{ mic.title }}</h2>

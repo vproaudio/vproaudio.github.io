@@ -7,7 +7,7 @@ permalink: /packages/event-audio/wedding-reception-sound-system/
 description: >
   Create a real dance floor in your backyard, barn, or winery. This is a true wedding reception system with deep bass, powerful speakers, and professional DJ-style sound. Perfect for couples who want to party without hiring a full DJ. Includes two high-power speakers, professional subwoofer for bass, DJ controller, two wireless microphones, mixer, stands, and cables
 
-image: "/assets/images/packages/package6.png"
+image: "/assets/images/packages/package6.webp"
 
 price: 399
 

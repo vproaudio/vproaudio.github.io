@@ -7,7 +7,7 @@ permalink: /packages/party-audio/party-speaker-package/
 description: >
   Big sound. Simple setup. Instant fun. This is our most popular package for graduation parties, backyard birthdays, pool parties, and BBQs. Just connect your phone via Bluetooth and enjoy loud, punchy sound that fills the space. Includes two high-power Bluetooth speakers, speaker stands and all cables.
 
-image: "/assets/images/packages/package2.png"
+image: "/assets/images/packages/package2.webp"
 
 price: 100
 

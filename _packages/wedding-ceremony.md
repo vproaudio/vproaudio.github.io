@@ -7,7 +7,7 @@ permalink: /packages/event-audio/wedding-ceremony-audio-system/
 description: >
   Make sure every guest hears every word. Designed for outdoor and indoor ceremonies, this system delivers crystal-clear sound for your vows, officiant, and music — even in windy vineyards, parks, or large gardens. Includes two professional event speakers, two wireless microphones (officiant + couple), mixer for music and microphones, speaker stands and all cabling.
 
-image: "/assets/images/packages/package4.png"
+image: "/assets/images/packages/package4.webp"
 
 price: 169
 

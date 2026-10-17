@@ -11,7 +11,7 @@ tags:
 excerpt: "How your entertainment choice changes the speakers, mixers, and mics you need for a great-sounding reception."
 description: >
   Comparing DJ and live band sound requirements for your wedding or event reception — speakers, mixers, mics, and stage power, explained.
-image: "/assets/images/packages/package6.png"
+image: "/assets/images/packages/package6.webp"
 permalink: /support/:categories/:title/
 ---
 

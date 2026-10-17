@@ -7,7 +7,7 @@ permalink: /packages/event-audio/corporate-presentation-package/
 description: >
   Professional sound and visuals for meetings, trainings, and presentations. Ideal for corporate events, HOA meetings, classrooms, and conferences. Clean voice clarity, wireless microphones, and a large projection screen make your presentation look polished and professional.
 
-image: "/assets/images/packages/package7.png"
+image: "/assets/images/packages/package7.webp"
 
 price: 279
 

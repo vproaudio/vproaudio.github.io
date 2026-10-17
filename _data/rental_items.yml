@@ -14,7 +14,7 @@
   model: BLX24/SM58
   category: Microphones
   category_slug: microphones
-  image: /assets/images/add-ons/BLX24-SM58-1.png
+  image: /assets/images/add-ons/BLX24-SM58-1.webp
   image_alt: Shure BLX24/SM58 Wireless Handheld Mic
   description: A handheld wireless microphone system for announcements, speeches, and live vocals. The SM58 capsule pairs with a compact BLX receiver for straightforward event setup.
   features:
@@ -44,7 +44,7 @@
   model: DDJ-FLX4
   category: Mixers and Controllers
   category_slug: mixers-and-controllers
-  image: /assets/images/add-ons/DDJFLX4.png
+  image: /assets/images/add-ons/DDJFLX4.webp
   image_alt: Pioneer DDJ-FLX4 DJ Controller
   description: A compact two-channel controller for mixing music from compatible DJ software. Useful for mobile DJ setups, parties, and learning to mix.
   features:
@@ -73,7 +73,7 @@
   model: ZLX-12P-G2
   category: Powered Speakers
   category_slug: powered-speakers
-  image: /assets/images/add-ons/EVZLX12P.png
+  image: /assets/images/add-ons/EVZLX12P.webp
   image_alt: Electro-Voice ZLX-12P-G2 Powered Speaker
   description: A powered 12-inch speaker for speech, music playback, and live sound. Its onboard mixer and Bluetooth streaming support compact event setups.
   features:
@@ -103,7 +103,7 @@
   model: MGX12
   category: Mixers and Controllers
   category_slug: mixers-and-controllers
-  image: /assets/images/add-ons/MGX12.png
+  image: /assets/images/add-ons/MGX12.webp
   image_alt: Yamaha MGX12 Digital Mixer
   description: A digital mixer for live events, recording, and streaming, with 4 microphone preamps and hands-on fader control.
   features:
@@ -132,7 +132,7 @@
   model: MGX16
   category: Mixers and Controllers
   category_slug: mixers-and-controllers
-  image: /assets/images/add-ons/MGX16.png
+  image: /assets/images/add-ons/MGX16.webp
   image_alt: Yamaha MGX16 Digital Mixer
   description: A digital mixer for live events, recording, and streaming, with 8 microphone preamps and hands-on fader control.
   features:
@@ -161,7 +161,7 @@
   model: GFW-MIXERCART-0400
   category: Stands and Accessories
   category_slug: stands-and-accessories
-  image: /assets/images/add-ons/MIXER-CART.png
+  image: /assets/images/add-ons/MIXER-CART.webp
   image_alt: Gator Frameworks GFW-MIXERCART-0400 Adjustable Wheeled Mixer Stand
   description: A rolling support for a mixer or controller, with adjustable height and tilt to position equipment within comfortable reach.
   features:
@@ -190,7 +190,7 @@
   model: GFWLAPTOP1500
   category: Stands and Accessories
   category_slug: stands-and-accessories
-  image: /assets/images/add-ons/MIXER-STAND-2.png
+  image: /assets/images/add-ons/MIXER-STAND-2.webp
   image_alt: Gator Frameworks Tripod Laptop and Projector Stand
   description: A portable tray stand for a laptop, projector, or small audio device. Height and tilt adjustments help position equipment for presentations and performances.
   features:
@@ -220,7 +220,7 @@
   model: ProFX10v3+
   category: Mixers and Controllers
   category_slug: mixers-and-controllers
-  image: /assets/images/add-ons/MPROFX10V3P.png
+  image: /assets/images/add-ons/MPROFX10V3P.webp
   image_alt: Mackie ProFX10v3+ Mixer
   description: A compact analog mixer with USB-C recording and Bluetooth connectivity for small performances, presentations, podcasts, and streaming.
   features:
@@ -248,7 +248,7 @@
   model: Vista
   category: Stands and Accessories
   category_slug: stands-and-accessories
-  image: /assets/images/add-ons/PROX-DJ-BOOTH.png
+  image: /assets/images/add-ons/PROX-DJ-BOOTH.webp
   image_alt: ProX Vista DJ Booth and Workstation with Scrim Kit
   description: A DJ workstation with a surrounding facade and scrim kit that helps present a tidy performance area at weddings, parties, and corporate events.
   features:
@@ -277,7 +277,7 @@
   model: K10.2
   category: Powered Speakers
   category_slug: powered-speakers
-  image: /assets/images/add-ons/QSCK10-2.png
+  image: /assets/images/add-ons/QSCK10-2.webp
   image_alt: QSC K10.2 Powered Speaker
   description: A compact powered speaker for speech, music, and stage monitoring. Onboard inputs and processing suit portable event systems.
   features:
@@ -306,7 +306,7 @@
   model: BLX14/CVL
   category: Microphones
   category_slug: microphones
-  image: /assets/images/add-ons/SBLX14-CVL.png
+  image: /assets/images/add-ons/SBLX14-CVL.webp
   image_alt: Shure BLX14/CVL Wireless Lavalier Mic
   description: A clip-on wireless microphone for presenters, officiants, and speakers who need their hands free. A compact bodypack sends audio to the BLX receiver.
   features:
@@ -337,7 +337,7 @@
   model: BLX14/PGA31
   category: Microphones
   category_slug: microphones
-  image: /assets/images/add-ons/SBLX14-PGA31.png
+  image: /assets/images/add-ons/SBLX14-PGA31.webp
   image_alt: Shure BLX14/PGA31 Wireless Headset Mic
   description: A wireless headset system for hands-free speech and performance. Its adjustable boom keeps the microphone near the mouth while the wearer moves.
   features:
@@ -368,7 +368,7 @@
   model: SLXD24D+/58
   category: Microphones
   category_slug: microphones
-  image: /assets/images/add-ons/SLXD24D+SM58.png
+  image: /assets/images/add-ons/SLXD24D+SM58.webp
   image_alt: Shure SLXD24D+/SM58 Dual Wireless Handheld Mic System
   description: A dual-channel digital wireless system with two SM58 handheld microphones for paired presenters, interviews, and live vocals.
   features:
@@ -399,7 +399,7 @@
   model: DBR10
   category: Powered Speakers
   category_slug: powered-speakers
-  image: /assets/images/add-ons/YDBR10-3.png
+  image: /assets/images/add-ons/YDBR10-3.webp
   image_alt: Yamaha DBR10 Powered Speaker
   description: A portable 10-inch powered speaker for event sound and floor monitoring.
   features:
@@ -429,7 +429,7 @@
   model: DBR12
   category: Powered Speakers
   category_slug: powered-speakers
-  image: /assets/images/add-ons/YDBR12-1.png
+  image: /assets/images/add-ons/YDBR12-1.webp
   image_alt: Yamaha DBR12 Powered Speaker
   description: A portable 12-inch powered speaker for event sound and floor monitoring.
   features:
@@ -459,7 +459,7 @@
   model: DXR10 mk3
   category: Powered Speakers
   category_slug: powered-speakers
-  image: /assets/images/add-ons/YDXR10MKIII.png
+  image: /assets/images/add-ons/YDXR10MKIII.webp
   image_alt: Yamaha DXR10 mk3 Powered Speaker
   description: A 10-inch powered speaker for live music, DJ playback, and event sound, with onboard processing for different applications.
   features:
@@ -489,7 +489,7 @@
   model: DXR12 mk3
   category: Powered Speakers
   category_slug: powered-speakers
-  image: /assets/images/add-ons/YDXR12MKIII.png
+  image: /assets/images/add-ons/YDXR12MKIII.webp
   image_alt: Yamaha DXR12 mk3 Powered Speaker
   description: A 12-inch powered speaker for live music, DJ playback, and event sound, with onboard processing for different applications.
   features:
@@ -519,7 +519,7 @@
   model: DXS12mkII
   category: Powered Subwoofers
   category_slug: powered-subwoofers
-  image: /assets/images/add-ons/YDXS12MKII.png
+  image: /assets/images/add-ons/YDXS12MKII.webp
   image_alt: Yamaha DXS12 mkII Powered Subwoofer
   description: A compact powered subwoofer for adding low-frequency support to a PA system at music and DJ events.
   features:
@@ -550,7 +550,7 @@
   model: DXS18 mk3
   category: Powered Subwoofers
   category_slug: powered-subwoofers
-  image: /assets/images/add-ons/YDXS18MKIII.png
+  image: /assets/images/add-ons/YDXS18MKIII.webp
   image_alt: Yamaha DXS18 mk3 Powered Subwoofer
   description: An 18-inch powered subwoofer for extending the bass response of DJ and live music systems.
   features:
@@ -580,7 +580,7 @@
   model: MG10XU
   category: Mixers and Controllers
   category_slug: mixers-and-controllers
-  image: /assets/images/add-ons/YMG10XU.png
+  image: /assets/images/add-ons/YMG10XU.webp
   image_alt: Yamaha MG10XU Analog Mixer
   description: A small analog mixer for microphones and stereo playback sources, with onboard effects and USB audio for compact event and recording setups.
   features:
@@ -609,7 +609,7 @@
   model: SM58
   category: Microphones
   category_slug: microphones
-  image: /assets/images/add-ons/SSM58.png
+  image: /assets/images/add-ons/SSM58.webp
   image_alt: Shure SM58 Vocal Mic
   description: A wired dynamic microphone for singing, speeches, and announcements, with a response tailored to the voice.
   features:
@@ -638,7 +638,7 @@
   model: SM81
   category: Microphones
   category_slug: microphones
-  image: /assets/images/add-ons/SSM81.png
+  image: /assets/images/add-ons/SSM81.webp
   image_alt: Shure SM81 Instrument Condenser Mic
   description: A condenser microphone for detailed capture of acoustic instruments, cymbals, and other sources in live sound or recording.
   features:
@@ -668,7 +668,7 @@
   model: SM57
   category: Microphones
   category_slug: microphones
-  image: /assets/images/add-ons/SSM57.png
+  image: /assets/images/add-ons/SSM57.webp
   image_alt: Shure SM57 Instrument Mic
   description: A wired dynamic microphone for close pickup of instruments and amplifiers, including drums, guitar cabinets, and brass.
   features:
@@ -696,7 +696,7 @@
   model: SM7B
   category: Microphones
   category_slug: microphones
-  image: /assets/images/add-ons/SSM7B.png
+  image: /assets/images/add-ons/SSM7B.webp
   image_alt: Shure SM7B Podcast Mic
   description: A dynamic microphone for close-spoken podcasts, voiceover, broadcasting, and vocals. Its yoke mount makes positioning at a desk or stand straightforward.
   features:
@@ -727,7 +727,7 @@
   model: MS7701B
   category: Stands and Accessories
   category_slug: stands-and-accessories
-  image: /assets/images/add-ons/MIC-STAND.png
+  image: /assets/images/add-ons/MIC-STAND.webp
   image_alt: On-Stage MS7701B Tripod Mic Stand with Boom
   description: A folding tripod microphone stand with a boom for positioning microphones for vocals, instruments, and presentations.
   features:
@@ -757,7 +757,7 @@
   model: SS7761B
   category: Stands and Accessories
   category_slug: stands-and-accessories
-  image: /assets/images/add-ons/SPK-STAND.png
+  image: /assets/images/add-ons/SPK-STAND.webp
   image_alt: On-Stage SS7761B All-Aluminum Speaker Stand
   description: An adjustable tripod stand for elevating a compatible PA speaker above the audience area.
   features:

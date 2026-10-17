@@ -7,7 +7,7 @@ permalink: /packages/event-audio/backyard-event-sound-system/
 description: >
   Perfect for birthdays, baby showers, backyard weddings, and small gatherings. This system provides clear, balanced sound for both music and voices without being overpowering. Easy to connect your phone, laptop, or tablet with Bluetooth while still having a professional microphone for announcements or toasts. Includes two professional powered speakers, wireless handheld microphone, bluetooth-enabled mixer, speaker stands and all cables.
 
-image: "/assets/images/packages/package1.png"
+image: "/assets/images/packages/package1.webp"
 price: 135
 
 items_included:

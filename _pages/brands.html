@@ -38,7 +38,7 @@ description: >
           <p class="mb-3 text-sm font-semibold uppercase text-brand-muted">Featured manufacturer</p>
           {% assign yamaha_brand = site.data.brands | where: "title", "Yamaha" | first %}
           <div class="grid aspect-square place-items-center rounded-2xl bg-white p-6 shadow-card">
-            <img src="{{ yamaha_brand.image }}" alt="{{ yamaha_brand.title }}" class="max-h-56 max-w-full object-contain">
+            <img src="{{ yamaha_brand.image }}" alt="{{ yamaha_brand.title }}" class="max-h-56 max-w-full object-contain" width="800" height="800" loading="lazy" decoding="async">
           </div>
           <p class="mt-4 text-sm leading-6 text-brand-muted/80">Yamaha is a global audio company known for dependable mixers, speakers, instruments, and sound systems used in venues, studios, and live productions worldwide.</p>
         </div>
@@ -54,7 +54,7 @@ description: >
         <article class="relative rounded-2xl border border-brand-ink/10 bg-brand-soft/95 shadow-card transition hover:-translate-y-1 hover:shadow-stage">
           <div class="flex flex-col items-center gap-5 p-8 text-center">
             <div class="grid h-44 w-44 place-items-center rounded-2xl bg-brand-gold/15">
-              <img src="{{ brand.image }}" alt="{{ brand.title }}" class="max-h-36 max-w-full grayscale transition hover:grayscale-0">
+              <img src="{{ brand.image }}" alt="{{ brand.title }}" class="max-h-36 max-w-full grayscale transition hover:grayscale-0" width="800" height="800" loading="lazy" decoding="async">
             </div>
             <h2 class="font-display text-sm uppercase tracking-wider text-brand-ink">
               <a href="{{ brand.url }}" class="font-bold text-brand-ink hover:text-brand-muted" target="_blank" rel="noopener noreferrer">{{ brand.title }}</a>

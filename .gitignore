@@ -38,3 +38,6 @@ build/
 # Ignore generated JS if added later
 assets/js/*.min.js
 assets/js/*.map
+
+# Generated Tailwind CSS (built by npm run build:css)
+assets/css/main.css

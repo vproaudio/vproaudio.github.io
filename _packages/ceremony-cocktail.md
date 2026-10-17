@@ -7,7 +7,7 @@ permalink: /packages/event-audio/ceremony-plus-cocktail-hour/
 description: >
   One system. Two spaces. Seamless sound. This package allows you to have beautiful ceremony audio and separate music for cocktail hour in another area, such as a patio, vineyard, or garden. Includes three professional speakers, two wireless microphones, mixer and professional bluetooth adapter for multiple sound zones, stands and cabling
 
-image: "/assets/images/packages/package5.png"
+image: "/assets/images/packages/package5.webp"
 
 price: 219
 
