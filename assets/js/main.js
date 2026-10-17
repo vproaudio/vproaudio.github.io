@@ -47,6 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       event.stopPropagation();
 
+      if (isDesktop()) {
+        // Hover already opens dropdowns on desktop; make clicks (including
+        // keyboard activation) open-only so they never fight the hover state.
+        openDropdown(dropdown);
+        return;
+      }
+
       closeSiblingDropdowns(dropdown);
       const isOpen = dropdown.classList.toggle('is-open');
       dropdown.querySelector(':scope > .nav-disclosure-panel')?.classList.toggle('hidden', !isOpen);
@@ -104,7 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       event.stopPropagation();
 
-      if (!submenuItem || isDesktop()) return;
+      if (!submenuItem) return;
+
+      if (isDesktop()) {
+        // Hover already opens submenus on desktop; make clicks (including
+        // keyboard activation) open-only so they never fight the hover state.
+        openPackageSubmenu(submenuItem);
+        return;
+      }
 
       closeSiblingPackageSubmenus(submenuItem);
 

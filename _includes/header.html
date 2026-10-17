@@ -2,6 +2,7 @@
 {% assign active_nav_classes = ' bg-brand-gold/60 text-brand-ink' %}
 {% assign dropdown_item_classes = 'block rounded-xl px-3 py-2 text-sm font-semibold text-brand-ink/75 outline outline-2 outline-offset-0 outline-transparent transition hover:bg-brand-soft hover:text-brand-ink hover:outline-brand-gold' %}
 {% assign submenu_toggle_classes = 'package-submenu-toggle flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-semibold text-brand-ink/75 outline outline-2 outline-offset-0 outline-transparent transition hover:bg-brand-soft hover:text-brand-ink hover:outline-brand-gold aria-expanded:outline-brand-ink aria-expanded:text-brand-ink' %}
+{% assign page_path = page.url | remove: 'index.html' | append: '/' | replace: '//', '/' %}
 
 <nav class="fixed top-0 right-0 left-0 z-50 border-b border-brand-ink/10 bg-brand-soft/90 py-3 shadow-[0_12px_36px_rgb(34_40_49/.08)] backdrop-blur-xl">
   <div class="mx-auto flex w-[min(100%-1.5rem,1180px)] flex-wrap items-center justify-between md:w-[min(100%-2rem,1180px)]">
@@ -35,12 +36,16 @@
               {% if sub.dropdown %}
                 {% assign has_nested = true %}
                 {% for child in sub.dropdown %}
-                  {% if page.url == child.url or page.url contains child.url %}
+                  {% assign child_path = child.url | append: '/' | replace: '//', '/' %}
+                  {% if page_path == child_path %}
                     {% assign active = true %}
                   {% endif %}
                 {% endfor %}
-              {% elsif page.url == sub.url or page.url contains sub.url %}
-                {% assign active = true %}
+              {% else %}
+                {% assign sub_path = sub.url | append: '/' | replace: '//', '/' %}
+                {% if page_path contains sub_path %}
+                  {% assign active = true %}
+                {% endif %}
               {% endif %}
             {% endfor %}
             <li class="nav-disclosure relative">
@@ -70,8 +75,9 @@
                           {% if child.divider %}
                             <li><hr class="my-2 border-brand-ink/10" /></li>
                           {% else %}
+                            {% assign child_path = child.url | append: '/' | replace: '//', '/' %}
                             <li>
-                              <a class="{{ dropdown_item_classes }}" href="{{ child.url }}">
+                              <a class="{{ dropdown_item_classes }}{% if page_path == child_path %}{{ active_nav_classes }}{% endif %}" href="{{ child.url }}"{% if page_path == child_path %} aria-current="page"{% endif %}>
                                 {{ child.title }}
                               </a>
                             </li>
@@ -80,8 +86,9 @@
                       </ul>
                     </li>
                   {% else %}
+                    {% assign sub_path = sub.url | append: '/' | replace: '//', '/' %}
                     <li>
-                      <a class="{{ dropdown_item_classes }}" href="{{ sub.url }}">
+                      <a class="{{ dropdown_item_classes }}{% if page_path == sub_path %}{{ active_nav_classes }}{% endif %}" href="{{ sub.url }}"{% if page_path == sub_path %} aria-current="page"{% endif %}>
                         {{ sub.title }}
                       </a>
                     </li>
@@ -90,8 +97,9 @@
               </ul>
             </li>
           {% else %}
+            {% assign item_path = item.url | append: '/' | replace: '//', '/' %}
             <li>
-              <a class="{{ nav_link_classes }}{% if page.url == item.url %}{{ active_nav_classes }}{% endif %}" href="{{ item.url }}">
+              <a class="{{ nav_link_classes }}{% if page_path == item_path %}{{ active_nav_classes }}{% endif %}" href="{{ item.url }}"{% if page_path == item_path %} aria-current="page"{% endif %}>
                 {{ item.title }}
               </a>
             </li>
