@@ -1,6 +1,6 @@
-# V PRO AUDIO Website
+# VANS PRO AUDIO Website
 
-Jekyll website for V PRO AUDIO, built locally with Bundler/npm and deployed automatically with GitHub Actions.
+Jekyll website for VANS PRO AUDIO, built locally with Bundler/npm and deployed automatically with GitHub Actions.
 
 ## Local Setup
 

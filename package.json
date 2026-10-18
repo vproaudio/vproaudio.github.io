@@ -1,7 +1,7 @@
 {
   "name": "vproaudio.github.io",
   "version": "1.0.6",
-  "description": "Official website for V PRO AUDIO",
+  "description": "Official website for VANS PRO AUDIO",
   "main": "index.js",
   "scripts": {
     "clean": "bundle exec jekyll clean",
