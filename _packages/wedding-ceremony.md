@@ -9,10 +9,10 @@ description: >
 
 image: "/assets/images/packages/package4.webp"
 
-price: 169
+price: 245
 
 items_included:
-  - 2 x Yamaha DXR10 mk3 OR QSC K10.2 Powered Speakers with Stand
+  - 2 x Yamaha DXR10 mk3 OR QSC K10.2 Premium Powered Speakers with Stand
   - 1 x Mackie ProFX10v3+ 10 Channel Mixer with Stand
   - 1 x Shure BLX24/SM58 Wireless Microphone
   - 1 x Shure BLX14/CVL Wireless Lavalier Microphone
@@ -27,12 +27,16 @@ features:
   - Elegant, unobtrusive speaker setup
 
 perfect_for:
-  - Ceremonies up to 150 guests
+  - Ceremonies of up to 200 guests
 
 upgrades:
   - name: 12-inch Premium Speakers
     description: Replace 10-inch speakers with 12-inch (Yamaha DXR12 mk3 or QSC K12.2). For up to 300 guest size. 
-    price: 30
+    price: 15
+    price_unit: per day
+  - name: Premium Digital Wireless Mics
+    description: Replace Shure BLX wireless mics with Shure SLXD+ wireless mics. 
+    price: 75
     price_unit: per day
 
 add-ons: []

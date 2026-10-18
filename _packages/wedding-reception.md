@@ -5,18 +5,17 @@ category: "Event Audio"
 permalink: /packages/event-audio/wedding-reception-sound-system/
 
 description: >
-  Create a real dance floor in your backyard, barn, or winery. This is a true wedding reception system with deep bass, powerful speakers, and professional DJ-style sound. Perfect for couples who want to party without hiring a full DJ. Includes two high-power speakers, professional subwoofer for bass, DJ controller, two wireless microphones, mixer, stands, and cables
+  Create a real dance floor in your backyard, barn, or winery. This is a true wedding reception system with deep bass, powerful speakers, and professional DJ-style sound. Perfect for couples who want to party without hiring a full DJ. Includes two high-power speakers, two professional subwoofer for bass, DJ controller, two wireless microphones, mixer, stands, and cables
 
 image: "/assets/images/packages/package6.webp"
 
-price: 399
+price: 465
 
 items_included:
-  - 2 x Yamaha DBR12 Powered Speaker with Stand
-  - 1 x Yamaha MG10XU 10 Channel Mixer
-  - 1 x Yamaha DXS12 Subwoofer
+  - 2 x Yamaha DXR10 mk3 Powered Speakers
+  - 1 x Yamaha MGX12 12 Channel Digital Mixer
+  - 2 x Yamaha DXS12 mkII Subwoofers
   - 2 x Shure BLX24/SM58 Wireless Microphone
-  - 1 x Pioneer DDJ-FLX4 Controller
   - 1 x ProX Vista DJ Booth
   - Audio and Power Cables
 
@@ -29,19 +28,20 @@ features:
   - Fills backyards, barns, and wineries
 
 perfect_for:
-  - Receptions up to 250 guests
+  - Receptions up to 400 guests
 
-upgrades: []
+upgrades:
+  - name: Extra Power Upgrade
+    description: Replace DXR10 tops with DXR12 and DXS12 subs with DXS18s 
+    price: 115
+    price_unit: per day
 
 add-ons:
-  - name: Additional wireless microphone
-    description: Add wireless microphones (supports up to 4 max).
+  - name: DJ Controller
+    description: Add a Pioneer DDJ-FLX4 Controller
     price: 30
-    price_unit: each per day
-  - name: Additional subwoofer
-    description: Add a Yamaha DXS12 subwoofer.
-    price: 75
     price_unit: per day
+
 
 layout: package
 ---
