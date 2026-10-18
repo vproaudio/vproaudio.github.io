@@ -40,10 +40,11 @@
     - title: Stands and Accessories
       url: /rentals/stands-and-accessories/
 
+- title: Services
+  url: /support/service-tiers/
+
 - title: Support
   dropdown:
-    - title: Service Tiers
-      url: /support/service-tiers/
     - title: Setup Guides
       url: /support/setup-guides/
     - title: Event Planning Guides

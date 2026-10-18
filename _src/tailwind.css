@@ -185,7 +185,7 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 65% center;
+  object-position: 65% bottom;
 }
 
 .home-hero-image-fade {
