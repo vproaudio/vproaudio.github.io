@@ -7,7 +7,7 @@ permalink: /packages/event-lighting/silver-party-lighting-package/
 description: >
   Transform your dance floor with a professional synchronized lighting show. Perfect for birthdays, private parties, DJs, school dances, and small wedding receptions, this package includes one intelligent all-in-one lighting system featuring moving heads, derby effects, wash lights, lasers, and strobes. Easy to operate and designed to create an exciting party atmosphere with minimal setup.
 
-image: "/assets/images/packages/package-lighting-silver.png"
+image: "/assets/images/packages/package-lighting-silver.webp"
 
 price: 149
 
@@ -34,8 +34,14 @@ perfect_for:
   - Wedding receptions
   - Events up to 150 guests
 
-upgrades:
-  - Add fog or haze machine for enhanced beam effects — Starting at $35/day
+upgrades: []
+
+add-ons:
+  - name: Fog or haze machine
+    description: Add a fog or haze machine for enhanced beam effects.
+    price: 35
+    price_unit: per day
+    price_prefix: Starting at
 
 layout: package
 ---

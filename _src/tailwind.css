@@ -1,0 +1,199 @@
+@import "tailwindcss";
+@import "./icons.css";
+
+/* Self-hosted fonts (latin subsets) — no third-party font requests. */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/manrope-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/manrope-500.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/manrope-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/manrope-700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/assets/fonts/manrope-800.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/space-grotesk-500.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/space-grotesk-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/space-grotesk-700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@theme {
+  --font-sans: Manrope, "Segoe UI", system-ui, sans-serif;
+  --font-display: "Space Grotesk", Manrope, "Segoe UI", system-ui, sans-serif;
+  --color-brand-ink: #222831;
+  --color-brand-muted: #393E46;
+  --color-brand-gold: #FFD369;
+  --color-brand-soft: #EEEEEE;
+  --shadow-card: 0 18px 50px rgb(34 40 49 / 10%);
+  --shadow-stage: 0 34px 90px rgb(34 40 49 / 18%);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--color-brand-gold);
+  padding: 0.625rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-brand-ink);
+  box-shadow: 0 18px 40px rgb(255 211 105 / 0.26);
+  transition: all 0.2s ease;
+  &:hover {
+    transform: translateY(-2px);
+    background: var(--color-brand-ink);
+    color: var(--color-brand-soft);
+    box-shadow: 0 18px 40px rgb(255 211 105 / 0.35);
+  }
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgb(255 211 105 / 0.4);
+  }
+}
+
+@utility btn-outline {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgb(238 238 238 / 0.35);
+  background: rgb(238 238 238 / 0.1);
+  padding: 0.625rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-brand-soft);
+  transition: all 0.2s ease;
+  &:hover {
+    transform: translateY(-2px);
+    background: var(--color-brand-soft);
+    color: var(--color-brand-ink);
+  }
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgb(255 211 105 / 0.4);
+  }
+}
+
+@utility btn-dark {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--color-brand-muted);
+  padding: 0.625rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-brand-soft);
+  transition: all 0.2s ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgb(255 211 105 / 0.35);
+  }
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgb(255 211 105 / 0.4);
+  }
+}
+
+@utility card {
+  border-radius: 1rem;
+  border: 1px solid rgb(34 40 49 / 0.1);
+  background: var(--color-brand-soft);
+  box-shadow: var(--shadow-card);
+}
+
+@utility card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-stage);
+  }
+}
+
+/* Full-bleed hero photo with a dark scrim behind the content. */
+.home-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.home-hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% bottom;
+}
+
+.home-hero-image-fade {
+  background: linear-gradient(to bottom, rgb(34 40 49 / 84%) 0%, rgb(34 40 49 / 76%) 60%, rgb(34 40 49 / 88%) 100%);
+}
+
+@media (min-width: 64rem) {
+  .home-hero-image-fade {
+    background: linear-gradient(to right, rgb(34 40 49 / 94%) 0%, rgb(34 40 49 / 86%) 38%, rgb(34 40 49 / 48%) 70%, rgb(34 40 49 / 32%) 100%), linear-gradient(to top, rgb(34 40 49 / 65%), transparent 45%);
+  }
+}

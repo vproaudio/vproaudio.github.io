@@ -1,14 +1,17 @@
 {
   "name": "vproaudio.github.io",
   "version": "1.0.6",
-  "description": "Official website for V PRO AUDIO",
+  "description": "Official website for VANS PRO AUDIO",
   "main": "index.js",
   "scripts": {
-    "build": "bundle exec jekyll build",
+    "clean": "bundle exec jekyll clean",
+    "build": "npm run build:css && bundle exec jekyll build",
+    "build:css": "node scripts/subset-icons.mjs && tailwindcss -i ./_src/tailwind.css -o ./assets/css/main.css --minify",
+    "watch:css": "node scripts/subset-icons.mjs && tailwindcss -i ./_src/tailwind.css -o ./assets/css/main.css --watch",
     "doctor": "bundle exec jekyll doctor",
-    "serve": "bundle exec jekyll serve",
-    "test": "bundle exec jekyll build",
-    "dev": "bundle exec jekyll serve --livereload",
+    "serve": "npm run build:css && bundle exec jekyll serve",
+    "test": "npm run build",
+    "dev": "npm run build:css && bundle exec jekyll serve --livereload",
     "proof": "bundle exec htmlproofer ./_site --disable-external --enforce-https",
     "version:bump": "node scripts/bump-site-version.js"
   },
@@ -22,5 +25,10 @@
   "bugs": {
     "url": "https://github.com/vproaudio/vproaudio.github.io/issues"
   },
-  "homepage": "https://github.com/vproaudio/vproaudio.github.io#readme"
+  "homepage": "https://github.com/vproaudio/vproaudio.github.io#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "bootstrap-icons": "^1.13.2",
+    "subset-font": "^2.9.0"
+  }
 }

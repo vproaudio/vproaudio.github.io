@@ -7,7 +7,7 @@ permalink: /packages/event-lighting/ultimate-dance-floor-experience/
 description: >
   Create an unforgettable nightclub-style atmosphere with a fully synchronized intelligent lighting show. Designed for weddings, receptions, school dances, DJs, and large private events, this premium package includes two professional all-in-one lighting systems featuring moving heads, wash lights, lasers, strobes, and derby effects. The fixtures operate together wirelessly using ILS technology to deliver a dynamic, high-energy dance floor experience with wide room coverage and professional visual effects.
 
-image: "/assets/images/packages/package-lighting-ultimate.png"
+image: "/assets/images/packages/package-lighting-ultimate.webp"
 
 price: 249
 
@@ -36,8 +36,14 @@ perfect_for:
   - Large birthday celebrations
   - Dance floors up to 300 guests
 
-upgrades:
-  - Add fog or haze machine for enhanced beam visibility — Starting at $35/day
+upgrades: []
+
+add-ons:
+  - name: Fog or haze machine
+    description: Add a fog or haze machine for enhanced beam visibility.
+    price: 35
+    price_unit: per day
+    price_prefix: Starting at
 
 layout: package
 ---

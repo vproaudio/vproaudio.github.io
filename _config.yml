@@ -1,6 +1,6 @@
 # Site Settings
 title: VANS PRO AUDIO
-description: Affordable, professional quality audio for your events.
+description: Professional audio and lighting equipment rentals in Vacaville, serving the Bay Area, Napa, and the Sacramento Valley in Northern California.
 url: "https://www.vansproaudio.com"
 baseurl: ""
 author: "Edwin Vans"
@@ -9,7 +9,7 @@ lang: "en"
 timezone: "America/Los_Angeles"
 branding: "VANS PRO AUDIO"
 
-year: 2025
+year: 2026
 company: "VANS PRO AUDIO"
 
 plugins:
@@ -19,15 +19,13 @@ plugins:
 
 seo:
   title: "VANS PRO AUDIO"
-  description: "Affordable, professional quality audio for your events."
+  description: "Professional audio and lighting equipment rentals in Vacaville, serving the Bay Area, Napa, and the Sacramento Valley in Northern California."
   url: "https://www.vansproaudio.com"
   image: "/assets/images/home.jpg"
 
-# After verifying in Google Search Console / Bing Webmaster Tools, uncomment and
-# paste your codes here — jekyll-seo-tag will render the verification meta tags.
-# webmaster_verifications:
-#   google: "your-google-verification-code"
-#   bing: "your-bing-verification-code"
+# jekyll-seo-tag renders these codes as webmaster verification meta tags.
+webmaster_verifications:
+  google: "UFWgR7bjKehXTsjzYygHzW4KB2sEuS4kTX8vC5lShrs"
 
 social:
   name: "VANS PRO AUDIO"
@@ -38,7 +36,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - maintenence.md
+  - maintenance.md
   - node_modules
   - package.json
   - package-lock.json
@@ -59,11 +57,15 @@ defaults:
       layout: "default"
       image: "/assets/images/home.jpg"
       author: "Edwin Vans"
+      seo:
+        type: WebPage
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+      seo:
+        type: BlogPosting
 
 # Setup guides pagination
 pagination:

@@ -7,7 +7,7 @@ permalink: /packages/event-audio/corporate-presentation-package/
 description: >
   Professional sound and visuals for meetings, trainings, and presentations. Ideal for corporate events, HOA meetings, classrooms, and conferences. Clean voice clarity, wireless microphones, and a large projection screen make your presentation look polished and professional.
 
-image: "/assets/images/packages/package7.png"
+image: "/assets/images/packages/package7.webp"
 
 price: 279
 
@@ -33,8 +33,13 @@ features:
 perfect_for:
   - Meetings, trainings, and speaking events
 
-upgrades: 
-  - Add additional wireless handheld or lavalier microphones (supports up to 4 max) — $30/each per day
+upgrades: []
+
+add-ons:
+  - name: Additional wireless microphone
+    description: Add wireless handheld or lavalier microphones (supports up to 4 max).
+    price: 30
+    price_unit: each per day
 
 layout: package
 ---
